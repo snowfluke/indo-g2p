@@ -17,3 +17,12 @@ serong	0	Not se- + rong. Upstream's own test suite asserts /seroŋ/, listing it 
 teknologi	0	Loanword, not te- + knologi. The onset check already rejects it; the row keeps that explicit if the check ever loosens.
 metode	0	Loanword from Dutch "methode", not me- + tode.
 medan	0	Not me- + dan; the common sense is the place name and the field noun, both /medan/.
+# Verified by a native speaker, 2026-08-25. These are homographs whose upstream
+# table offered two readings with no source to choose between them; the rows
+# below fix the default reading rather than the part-of-speech rule.
+keset	0	Native speaker: the common sense is /keset/ (doormat), not /kəsət/.
+kere	0	Native speaker: the common sense is /kere/ (poor, destitute), not /kəre/.
+jejer	0	Native speaker: the common sense is /dʒedʒer/ (a row, to line up), not /dʒədʒər/.
+teleng	0	Native speaker: the common sense is /teleŋ/ (tilted, the centre), not /tələŋ/.
+keder	1	Native speaker: the common sense is /kəder/ (nervous, intimidated), not /keder/.
+kelepak	3	Native speaker: the common sense is /kələpaʔ/ (the sound of flapping), not /kəlepaʔ/.

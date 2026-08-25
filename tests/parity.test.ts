@@ -26,6 +26,8 @@ const fixtures: ParityCase[] = cases;
  *   and `meɲeleŋgarakan` becomes `məɲələŋgarakan`.
  * - The glottal-stop rule no longer fires before `r` and `l`, which are Latin
  *   onset clusters, so `biroʔratismə` becomes `birokratismə`.
+ * - A native speaker corrected six homograph defaults, so `dʒədʒər` becomes
+ *   `dʒedʒer`. See data/schwa-overrides.tsv.
  *
  * Listing them explicitly means a new divergence fails this test instead of
  * slipping through.
@@ -59,6 +61,7 @@ const KNOWN_IMPROVEMENTS: ReadonlyMap<string, string> = new Map([
     "unifərsitas indonesia meɲeleŋgarakan səminar təntaŋ teʔnologi ketʃerdasan buatan.",
     "unifərsitas indonesia məɲələŋgarakan səminar təntaŋ teʔnologi kətʃərdasan buatan.",
   ],
+  ["dʒədʒər", "dʒedʒer"],
   ["mempermanènkan", "məmpərmanènkan"],
   ["nuʔleotidasə", "nukleotidasə"],
   ["səʔlub", "səklub"],

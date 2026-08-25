@@ -60,6 +60,9 @@ jsr.json and `src/version.ts` in lockstep; the pre-commit hook rejects drift.
   start with a legal Indonesian onset, and `data/schwa-overrides.tsv` pins the
   loanwords that slip through. This diverges from the Python original's
   `phonemes` for 8 of the 886 fixtures, each listed in the parity test.
+- The 27 homographs no source could settle were reviewed by a native speaker.
+  Six had the wrong default reading (`keset`, `kere`, `jejer`, `teleng`,
+  `keder`, `kelepak`) and are corrected; the other 21 were already right.
 - `data/schwa-overrides.tsv` corrects the upstream dictionary itself. It
   carries `mental`, whose common sense is `/mental/` rather than `/məntal/`.
 - Homograph resolution is on by default, driven by collocation rules: a word

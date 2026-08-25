@@ -144,3 +144,38 @@ describe("verified rules never corrupt ordinary text", () => {
     );
   });
 });
+
+/**
+ * The 27 homographs Wiktionary never marked, settled by a native speaker on
+ * 2026-08-25. Six had the wrong default; the other 21 were already right.
+ * Recorded here so a later data change cannot quietly undo the review.
+ */
+describe("speaker-verified homograph defaults", () => {
+  test.each([
+    ["keset", "keset"],
+    ["kere", "kere"],
+    ["jejer", "dʒedʒer"],
+    ["teleng", "teleŋ"],
+    ["keder", "kəder"],
+    ["kelepak", "kələpaʔ"],
+  ])("corrects %s", (word, expected) => {
+    expect(toPhoneme(word).phonemes).toBe(expected);
+  });
+
+  test.each([
+    ["kena", "kəna"],
+    ["telor", "təlor"],
+    ["sebat", "səbat"],
+    ["lenggang", "ləŋgaŋ"],
+    ["tepok", "təpoʔ"],
+    ["lembang", "ləmbaŋ"],
+    ["erang", "əraŋ"],
+    ["helat", "həlat"],
+    ["depak", "dəpaʔ"],
+    ["kekel", "kəkəl"],
+    ["memepet", "məmepet"],
+    ["sertu", "sərtu"],
+  ])("leaves %s as it was", (word, expected) => {
+    expect(toPhoneme(word).phonemes).toBe(expected);
+  });
+});

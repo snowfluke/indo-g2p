@@ -36,12 +36,23 @@ their upstream rules were simply wrong. The dictionary already spells them
 `gantəng`, `rəlai` and `səmi`, matching Wiktionary, so dropping those rules
 made the output more correct rather than less.
 
+### The unverified group, settled by review
+
+The `unverified` words have no pepet-marked entry anywhere, so no measurement
+can place them. They were read by a native speaker on 2026-08-25 instead. Six
+had the wrong default and are corrected in
+[data/schwa-overrides.tsv](../data/schwa-overrides.tsv); the other 21 were
+already right. `tests/no-regression.test.ts` records both halves, so a later
+data change cannot quietly undo the review.
+
 ### Why the other sources do not help
 
 KBBI, the official dictionary, splits homographs into numbered entries but
 publishes no pronunciation field at all, so it cannot say which `e` is a
-schwa. That leaves Wiktionary as the only machine-checkable source, and the
-`unverified` group is the set of words it has never marked.
+schwa. Bookbot's own 27,411-word lexicon keeps homographs in a separate file,
+so only one of these 57 words appears in it. That leaves Wiktionary as the
+only machine-checkable source, and the `unverified` group is the set of words
+it has never marked.
 
 ## The kept rules
 
