@@ -34,6 +34,10 @@ jsr.json and `src/version.ts` in lockstep; the pre-commit hook rejects drift.
   word reaching them is borrowed: `demokrat`, `sekretaris`, `iklan`, `nuklir`,
   `akrab`. The clitic `-lah` is excepted, since its `k` ends a root, so
   `tidaklah` stays `tidaʔlah`.
+- The passive prefix `di-` exposes its root to the schwa rules. It has no
+  vowel of its own, so it can only add information: `digelar` becomes
+  `digəlar` and `diselenggarakan` becomes `disələŋgarakan`, while `dingin` and
+  `dinas` are untouched. 1,368 tokens of the news corpus.
 - Schwa is now recovered in derived words the dictionary does not list. The
   17,888-word dictionary covers roots, but Indonesian affixes them, so 28% of
   running text missed it and was read with a plain `/e/`. The prefixes `me-`,

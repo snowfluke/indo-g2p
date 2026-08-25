@@ -2,10 +2,17 @@
 // Copyright (c) 2026 snowfluke
 
 /**
- * Indonesian prefixes whose vowel is always a schwa.
+ * Indonesian prefixes, longest first, so `ter-` is tried before `te-` and the
+ * root of `tersebut` comes out as `sebut` rather than `rsebut`.
  *
- * Longest first, so `ter-` is tried before `te-` and the root of `tersebut`
- * comes out as `sebut` rather than `rsebut`.
+ * The vowel of every prefix that has one is a schwa. `di-` has none, and is
+ * listed because stripping it still exposes a root whose own vowels can be
+ * looked up: `digelar` is `di` + `gelar`, so it is `digəlar`. A prefix with no
+ * `e` contributes no bits, so listing one can only add information, never
+ * change a word on its own. It covers 1,368 tokens of the news corpus.
+ *
+ * `ku-` and `kau-` are left out. They are rare in written Indonesian, and
+ * every word they would newly reach scored worse rather than better.
  */
 const SCHWA_PREFIXES: readonly string[] = [
   "memper",
@@ -31,6 +38,7 @@ const SCHWA_PREFIXES: readonly string[] = [
   "te",
   "se",
   "ke",
+  "di",
 ];
 
 /** Suffixes stripped when looking for a root. None of them contains an `e`. */

@@ -216,3 +216,19 @@ describe("glottal stops in borrowings", () => {
     expect(toPhoneme("tidaklah").phonemes).toBe("tidaʔlah");
   });
 });
+
+describe("the di- prefix exposes its root", () => {
+  test.each([
+    ["digelar", "digəlar"],
+    ["diketahui", "dikətahui"],
+    ["ditemukan", "ditəmukan"],
+    ["diselenggarakan", "disələŋgarakan"],
+  ])("%s", (word, expected) => {
+    expect(toPhoneme(word).phonemes).toBe(expected);
+  });
+
+  test.each(["dingin", "dinas", "diam", "dia"])("leaves %s alone", (word) => {
+    // `di` is not a prefix here, and a prefix with no `e` cannot add one.
+    expect(toPhoneme(word).phonemes).not.toContain("ə");
+  });
+});
