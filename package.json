@@ -79,6 +79,7 @@
     "build": "bun scripts/build.ts",
     "build:site": "bun build demo/index.html --outdir=site --minify --splitting",
     "bump": "bun scripts/bump.ts",
+    "coverage": "bun scripts/gen-coverage.ts",
     "demo": "bun scripts/demo.ts",
     "docs": "bun scripts/gen-homograph-doc.ts",
     "fmt": "oxfmt --check src tests scripts demo",

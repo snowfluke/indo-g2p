@@ -71,3 +71,11 @@ jobs:
         run: |
           python3 scripts/dump-pos.py .
           git diff --exit-code -- src/data/homographs.ts src/data/collocations.ts
+
+      # The README's coverage matrix is produced by running the library. Three
+      # hand-written examples in it were wrong before a review caught them, so
+      # it is generated and the build fails if the checked-in copy has drifted.
+      - name: Verify the coverage matrix matches reality
+        run: |
+          bun run coverage
+          git diff --exit-code -- README.md
