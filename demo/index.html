@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>indo-g2p demo</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>indo-g2p</h1>
+        <p>Indonesian text to IPA phonemes, in the browser. No network calls.</p>
+      </header>
+
+      <label class="field">
+        <span>Indonesian text</span>
+        <textarea id="input" rows="3" spellcheck="false">Tak seorang pun boleh ditangkap, ditahan atau dibuang dengan sewenang-wenang.</textarea>
+      </label>
+
+      <div class="samples" id="samples"></div>
+
+      <div class="options">
+        <label>
+          <input type="checkbox" id="expandAbbr" />
+          <span>Spell out abbreviations <code>tv</code> to <code>téfé</code></span>
+        </label>
+        <label>
+          <input type="checkbox" id="homographs" />
+          <span>Resolve homographs <em>(loads a 3.3 MB tagger)</em></span>
+        </label>
+      </div>
+
+      <section class="out">
+        <h2>Phonemes</h2>
+        <output id="phonemes" class="big"></output>
+      </section>
+
+      <section class="out">
+        <h2>Syllables</h2>
+        <output id="syllables" class="chips"></output>
+      </section>
+
+      <section class="out">
+        <h2>Back to spelling</h2>
+        <output id="grapheme"></output>
+      </section>
+
+      <p class="timing" id="timing"></p>
+
+      <footer>
+        <a href="https://github.com/snowfluke/indo-g2p">GitHub</a>
+        <a href="https://www.npmjs.com/package/indo-g2p">npm</a>
+        <a href="https://jsr.io/@snowfluke/indo-g2p">JSR</a>
+      </footer>
+    </main>
+
+    <script type="module" src="./demo.ts"></script>
+  </body>
+</html>
