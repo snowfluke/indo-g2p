@@ -3,6 +3,7 @@
 
 import { HOMOGRAPHS } from "./data/homographs.ts";
 import { POS_GROUPS } from "./data/pos-model.ts";
+import { applyMask } from "./mask.ts";
 
 /**
  * One homograph's two readings, as schwa bitmasks over the word's `e`s, each
@@ -37,25 +38,6 @@ export function homographTable(): Map<string, Homograph> {
 export function hasHomograph(words: readonly string[]): boolean {
   const entries = homographTable();
   return words.some((word) => entries.has(word));
-}
-
-/**
- * Rewrite the `e`s selected by `mask` as `ə`.
- *
- * @param word The word to rewrite.
- * @param mask Bit `i` set means the `i`-th `e` of the word is a schwa.
- * @returns The word with those vowels written as `ə`.
- */
-export function applyMask(word: string, mask: number): string {
-  let seen = 0;
-  return [...word]
-    .map((char) => {
-      if (char !== "e") return char;
-      const isSchwa = (mask >> seen) & 1;
-      seen++;
-      return isSchwa ? "ə" : char;
-    })
-    .join("");
 }
 
 /** True when `tag` belongs to the coarse class `name`, such as `N` or `V`. */

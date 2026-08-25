@@ -2,7 +2,7 @@
 // Copyright (c) 2026 snowfluke
 
 import { COLLOCATION_WINDOW, COLLOCATIONS } from "./data/collocations.ts";
-import { applyMask } from "./homograph-table.ts";
+import { applyMask } from "./mask.ts";
 
 /** One homograph's non-default reading, and the words that select it. */
 type Collocation = { mask: number; triggers: ReadonlySet<string> };
