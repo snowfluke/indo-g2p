@@ -38,6 +38,13 @@ jsr.json and `src/version.ts` in lockstep; the pre-commit hook rejects drift.
   vowel of its own, so it can only add information: `digelar` becomes
   `digəlar` and `diselenggarakan` becomes `disələŋgarakan`, while `dingin` and
   `dinas` are untouched. 1,368 tokens of the news corpus.
+- Bookbot's 27,411-word Indonesian lexicon (Apache-2.0) fills the gaps the
+  curated dictionary leaves, adding 22,659 words. It sits below the dictionary,
+  which is right on native vocabulary where the lexicon is not (`memang`,
+  `desa`, `merah`, `bebas`), and above the affix rules, which it corrects in
+  both directions: `pəmerintah` becomes `pəmərintah`, and `mədia` becomes
+  `media`. Tokens with no schwa evidence fall from 9.3% to 6.0%; 2.05% of all
+  tokens change reading.
 - Schwa is now recovered in derived words the dictionary does not list. The
   17,888-word dictionary covers roots, but Indonesian affixes them, so 28% of
   running text missed it and was read with a plain `/e/`. The prefixes `me-`,

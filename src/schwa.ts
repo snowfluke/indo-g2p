@@ -2,6 +2,7 @@
 // Copyright (c) 2026 snowfluke
 
 import { affixSchwaMask } from "./affix.ts";
+import { LEXICON } from "./data/lexicon.ts";
 import { SCHWA_DICT } from "./data/schwa-dict.ts";
 import { SCHWA_OVERRIDES } from "./data/schwa-overrides.ts";
 import { applyMask } from "./mask.ts";
@@ -13,8 +14,10 @@ function schwaMasks(): Map<string, number> {
   if (masks) return masks;
 
   const parsed = new Map<string, number>();
-  for (const source of [SCHWA_DICT, SCHWA_OVERRIDES]) {
-    // Overrides are read last so they win. See data/schwa-overrides.tsv.
+  // Read weakest first, so a later source wins: Bookbot's lexicon fills gaps,
+  // the curated dictionary overrules it on native vocabulary, and the
+  // hand-written corrections in data/schwa-overrides.tsv overrule both.
+  for (const source of [LEXICON, SCHWA_DICT, SCHWA_OVERRIDES]) {
     for (const line of source.split("\n")) {
       const space = line.lastIndexOf(" ");
       parsed.set(line.slice(0, space), Number.parseInt(line.slice(space + 1), 16));
@@ -28,11 +31,15 @@ function schwaMasks(): Map<string, number> {
 /**
  * Rewrite the `e`s that are pronounced as a schwa `/ə/`, as in `təman`.
  *
- * Indonesian spelling does not distinguish `/e/` from `/ə/`. A curated
- * dictionary answers first; a word it does not list falls back to the affix
- * rules in `affix.ts`, because the language derives most of its vocabulary by
- * prefixing roots and every such prefix carries a schwa. A word neither can
- * place is returned unchanged.
+ * Indonesian spelling does not distinguish `/e/` from `/ə/`, so three sources
+ * are consulted in order of how much they are trusted:
+ *
+ * 1. The curated dictionary, plus the corrections in
+ *    `data/schwa-overrides.tsv`.
+ * 2. Bookbot's lexicon, for the 22,659 words the dictionary does not list.
+ * 3. The affix rules in `affix.ts`, which need no word list at all.
+ *
+ * A word none of them can place is returned unchanged.
  *
  * @param word A single lowercase word.
  * @returns The word with schwa vowels written as `ə`.

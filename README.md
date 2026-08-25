@@ -199,12 +199,26 @@ resolution entirely.
 
 ## Schwa in derived words
 
-Indonesian spelling writes `/e/` and `/ə/` with the same letter, so a
-dictionary decides which is which. Upstream ships a 17,888-word one, but the
+Indonesian spelling writes `/e/` and `/ə/` with the same letter, so a word
+list decides which is which. Upstream ships a 17,888-word one, but the
 language builds most of its vocabulary by affixing roots, and the derived
-forms are not listed. On 141,770 tokens of news text, **28% of all words** are
-`e`-words the dictionary has never seen, and every one of them was read with a
-plain `/e/`.
+forms are not listed. On 141,770 tokens of news text, **28% of all words**
+were `e`-words it had never seen, and every one was read with a plain `/e/`.
+
+Three sources answer instead, in order of how far each is trusted:
+
+| Source                                                                   | Words       | Answers         |
+| ------------------------------------------------------------------------ | ----------- | --------------- |
+| Curated dictionary, plus `data/schwa-overrides.tsv`                      | 17,888      | 32.6% of tokens |
+| [Bookbot's lexicon](https://github.com/bookbot-kids/g2p_id) (Apache-2.0) | 22,659 more | included above  |
+| Affix rules, no word list at all                                         | n/a         | 1.9% of tokens  |
+| Nothing places it, so it keeps a plain `/e/`                             |             | 6.0% of tokens  |
+
+The dictionary outranks the lexicon because it is right on native vocabulary
+where the lexicon is not: it reads `memang`, `desa`, `merah` and `bebas` with
+a schwa, and the lexicon does not. The lexicon outranks the affix rules
+because it is a word list rather than a guess, correcting both their misses
+(`pəmerintah` to `pəmərintah`) and their overreach (`mədia` to `media`).
 
 The prefixes `me-`, `se-`, `te-`, `be-`, `pe-`, `ke-`, `ber-`, `ter-`, `per-`
 always carry a schwa. That is a fact about the language rather than about any
@@ -217,10 +231,9 @@ mengatakan   upstream: mengatakan     here: məŋatakan
 beberapa     upstream: beberapa       here: bəbərapa
 ```
 
-The rules only run for words the dictionary does not list, so all 17,888
-curated entries are untouched. Scored against the dictionary itself, guessing
-each known word as if it were missing, the prefix vowel comes out right
-**96.8%** of the time.
+The rules only run for words no list places, so every curated entry is
+untouched. Scored against the dictionary itself, guessing each known word as
+if it were missing, the prefix vowel comes out right **96.8%** of the time.
 
 Loanwords that merely begin with a prefix's letters are the failure mode. Two
 things hold them back: a root has to start with a legal Indonesian onset, so

@@ -21,8 +21,9 @@ const fixtures: ParityCase[] = cases;
  *
  * There are two causes, both deliberate:
  *
- * - The affix rules in `src/affix.ts` recover a prefix schwa upstream misses,
- *   so `seoraŋ` becomes `səoraŋ` and `terbenam` becomes `tərbənam`.
+ * - The affix rules in `src/affix.ts`, and Bookbot's lexicon, recover a schwa
+ *   upstream misses: `seoraŋ` becomes `səoraŋ`, `terbenam` becomes `tərbənam`
+ *   and `meɲeleŋgarakan` becomes `məɲələŋgarakan`.
  * - The glottal-stop rule no longer fires before `r` and `l`, which are Latin
  *   onset clusters, so `biroʔratismə` becomes `birokratismə`.
  *
@@ -56,7 +57,7 @@ const KNOWN_IMPROVEMENTS: ReadonlyMap<string, string> = new Map([
   ],
   [
     "unifərsitas indonesia meɲeleŋgarakan səminar təntaŋ teʔnologi ketʃerdasan buatan.",
-    "unifərsitas indonesia məɲeleŋgarakan səminar təntaŋ teʔnologi kətʃərdasan buatan.",
+    "unifərsitas indonesia məɲələŋgarakan səminar təntaŋ teʔnologi kətʃərdasan buatan.",
   ],
   ["mempermanènkan", "məmpərmanènkan"],
   ["nuʔleotidasə", "nukleotidasə"],
@@ -230,5 +231,39 @@ describe("the di- prefix exposes its root", () => {
   test.each(["dingin", "dinas", "diam", "dia"])("leaves %s alone", (word) => {
     // `di` is not a prefix here, and a prefix with no `e` cannot add one.
     expect(toPhoneme(word).phonemes).not.toContain("ə");
+  });
+});
+
+describe("the lexicon fills gaps the dictionary leaves", () => {
+  test.each([
+    // Words the curated dictionary does not list, where Bookbot's lexicon is
+    // more precise than the affix rules alone.
+    ["pemerintah", "pəmərintah"],
+    ["menerima", "mənərima"],
+    ["kendaraan", "kəndaraan"],
+    ["ledakan", "lədakan"],
+  ])("recovers the schwa in %s", (word, expected) => {
+    expect(toPhoneme(word).phonemes).toBe(expected);
+  });
+
+  test.each([
+    // And corrects the affix rules where they over-applied.
+    ["media", "media"],
+    ["tema", "tema"],
+    ["kesehatan", "kəsehatan"],
+    ["tewas", "tewas"],
+  ])("keeps %s free of schwa", (word, expected) => {
+    expect(toPhoneme(word).phonemes).toBe(expected);
+  });
+
+  test.each([
+    // The curated dictionary is right on native vocabulary where the lexicon
+    // is not, so it must keep winning.
+    ["memang", "məmaŋ"],
+    ["desa", "dəsa"],
+    ["merah", "mərah"],
+    ["bebas", "bəbas"],
+  ])("the curated dictionary still wins for %s", (word, expected) => {
+    expect(toPhoneme(word).phonemes).toBe(expected);
   });
 });
