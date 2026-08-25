@@ -32,6 +32,14 @@ default. Only the first was marked `feat!:` at the time.
   15.6% of ordinary words came back as a single syllable. Folding `ə` to `e`
   for tagging drops that to 0.2%, and boundaries are no longer allowed inside
   `tʃ` or `dʒ` (975 such splits, now none). `phonemes` output is unchanged.
+- A spelled-out number no longer spends the collocation window. Normalisation
+  turns `17` into `tujuh belas` and `12345` into eight words, which pushed a
+  homograph's trigger out of range and silently gave the wrong reading:
+  `apel 17 agustus di lapangan` read as the fruit rather than the roll call.
+- Every syllable now has a vowel. The syllabifier was trained on Indonesian and
+  is fed English phonemes for words the English table answers, where it cut
+  `beautiful` into `b|ju|tə|fəl`. A piece with no nucleus now joins its
+  neighbour.
 - Digits, currency, percentages, degrees and arithmetic symbols are spelled
   out as Indonesian words, and typographic quotes and dashes are folded onto
   the plain ones, so text reaching a speech model contains only words and the

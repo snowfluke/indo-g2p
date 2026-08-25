@@ -39,10 +39,25 @@ describe("collocation rules", () => {
   });
 
   test("a trigger outside the window does not reach", () => {
-    const far = "apel satu dua tiga empat lima enam lapangan".split(" ");
+    // Filler must not be number words; those are skipped on purpose below.
+    const far = "apel alfa beta gama delta epsilon zeta lapangan".split(" ");
     expect(resolveCollocations(far)[0]).toBeUndefined();
-    const near = "apel satu dua tiga lapangan".split(" ");
+    const near = "apel alfa beta gama lapangan".split(" ");
     expect(resolveCollocations(near)[0]).toBe("apel");
+  });
+
+  test("a spelled-out number does not spend the window", () => {
+    // `17` normalises to `tujuh belas`, and `12345` to eight words. A number
+    // is one thing said in several words, so counting each of them would push
+    // the trigger out of reach and silently give the wrong reading.
+    expect(toPhoneme("apel 17 agustus di lapangan").phonemes).toBe(
+      "apel tudʒuh bəlas agustus di lapaŋan"
+    );
+    expect(toPhoneme("apel 12345 upacara").phonemes).toContain("apel ");
+  });
+
+  test("but a number alone is not a trigger", () => {
+    expect(toPhoneme("harga apel 15000 rupiah").phonemes).toContain("apəl");
   });
 
   test("a word is never its own trigger", () => {

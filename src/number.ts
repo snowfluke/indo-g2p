@@ -26,6 +26,28 @@ const SCALES: readonly (readonly [number, string])[] = [
 const LIMIT = 1_000_000_000_000_000;
 
 /**
+ * Every word {@linkcode spellNumber} can produce.
+ *
+ * A spelled-out number is one thing said in many words, so anything measuring
+ * distance between words has to be able to skip it.
+ */
+export const NUMBER_WORDS: ReadonlySet<string> = new Set([
+  ...ONES,
+  "sepuluh",
+  "sebelas",
+  "belas",
+  "puluh",
+  "seratus",
+  "ratus",
+  "seribu",
+  "ribu",
+  "juta",
+  "miliar",
+  "triliun",
+  "koma",
+]);
+
+/**
  * Spell a whole number below one thousand.
  *
  * Indonesian uses `se-` rather than `satu` for a single ten or hundred, so

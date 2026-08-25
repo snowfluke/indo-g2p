@@ -3,6 +3,7 @@
 
 import { COLLOCATION_WINDOW, COLLOCATIONS } from "./data/collocations.ts";
 import { applyMask } from "./mask.ts";
+import { NUMBER_WORDS } from "./number.ts";
 
 /** One homograph's non-default reading, and the words that select it. */
 type Collocation = { mask: number; triggers: ReadonlySet<string> };
@@ -53,11 +54,16 @@ export function resolveCollocations(words: readonly string[]): (string | undefin
     const rule = rulesByWord.get(word);
     if (!rule) return undefined;
 
-    const from = Math.max(0, index - COLLOCATION_WINDOW);
-    const to = Math.min(words.length, index + COLLOCATION_WINDOW + 1);
-    for (let near = from; near < to; near++) {
-      if (near !== index && rule.triggers.has(words[near] ?? "")) {
-        return applyMask(word, rule.mask);
+    // Walk outwards, spending the window on real words only. Normalisation
+    // turns `17` into `tujuh belas`, and a number is one thing said in several
+    // words, so counting each of them would push the trigger out of reach.
+    for (const step of [-1, 1]) {
+      let spent = 0;
+      for (let near = index + step; near >= 0 && near < words.length; near += step) {
+        const other = words[near] ?? "";
+        if (rule.triggers.has(other)) return applyMask(word, rule.mask);
+        if (NUMBER_WORDS.has(other)) continue;
+        if (++spent >= COLLOCATION_WINDOW) break;
       }
     }
     return undefined;

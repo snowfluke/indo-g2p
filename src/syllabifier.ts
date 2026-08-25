@@ -120,6 +120,38 @@ function keepAffricatesWhole(syllables: readonly string[]): string[] {
   return fixed;
 }
 
+/** Every vowel this library emits, including the borrowed ones. */
+const VOWELS = /[aiueoəɪʊɔ]/;
+
+/**
+ * Fold away any piece with no vowel in it.
+ *
+ * A syllable needs a nucleus, so `b` is not one. The model was trained on
+ * Indonesian, and words answered by the English table reach it as English
+ * phonemes, where it happily cuts `beautiful` into `b|ju|tə|fəl`. Attaching a
+ * nucleus-less piece to its neighbour is always closer to the truth than
+ * leaving it standing alone.
+ */
+function requireNucleus(syllables: readonly string[]): string[] {
+  const fixed: string[] = [];
+
+  for (const syllable of syllables) {
+    const previous = fixed.at(-1);
+    if (previous !== undefined && !VOWELS.test(previous)) {
+      fixed[fixed.length - 1] = previous + syllable;
+      continue;
+    }
+    fixed.push(syllable);
+  }
+
+  // A trailing piece with no vowel joins the one before it instead.
+  const last = fixed.at(-1);
+  if (fixed.length > 1 && last !== undefined && !VOWELS.test(last)) {
+    fixed.splice(-2, 2, (fixed.at(-2) ?? "") + last);
+  }
+  return fixed;
+}
+
 /**
  * Split a word into syllables with the CRF model ported from g2p-id.
  *
@@ -156,5 +188,5 @@ export function toSyllables(word: string): string[] {
 
   // A trailing boundary leaves an empty tail, which upstream keeps.
   syllables.push(current);
-  return keepAffricatesWhole(syllables);
+  return requireNucleus(keepAffricatesWhole(syllables));
 }
