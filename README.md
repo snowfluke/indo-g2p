@@ -181,11 +181,14 @@ const myResolver: SchwaResolver = (words) => words.map(() => undefined);
 ## Text for a speech model
 
 A speech model has no phoneme for `5`, `%` or `°`, so those either fail or get
-dropped. `normalize: true` spells them out in Indonesian first:
+dropped. They are spelled out in Indonesian by default:
 
 ```ts
-toPhoneme("harga Rp15.000 naik 5%", { normalize: true }).phonemes;
+toPhoneme("harga Rp15.000 naik 5%").phonemes;
 // "harga lima bəlas ribu rupiah naɪʔ lima pərsen"
+
+toPhoneme("harga Rp15.000 naik 5%", { normalize: false }).phonemes;
+// "harga rp15.000 naɪʔ 5%"
 ```
 
 It handles digits with Indonesian grouping (`1.234,56`), currency, percentages,
@@ -197,9 +200,9 @@ Times and dates are deliberately not interpreted. `07.30` could be a time, a
 version or a price, and guessing wrong is worse than reading the digits, so
 `versi 1.2.3` becomes `versi satu titik dua titik tiga`.
 
-It is off by default, since a caller doing its own normalisation would not
-want its input rewritten. `normalizeText` and `spellNumber` are exported for
-use on their own.
+Pass `normalize: false` to hand the text through untouched, which is what a
+caller doing its own normalisation wants. `normalizeText` and `spellNumber`
+are exported for use on their own.
 
 ## API
 
@@ -317,7 +320,7 @@ These are upstream behaviours the port reproduces rather than fixes:
 
 - Only `[a-z]` runs are converted. Accented and non-ASCII input passes through
   like punctuation, so it belongs to no syllable.
-- Digits and symbols pass through unless `normalize: true` is set.
+- Digits and symbols are spelled out unless `normalize: false` is set.
 - No stress marks are emitted. Indonesian stress is not contrastive, and a
   speech model learns the symbol set it is trained on, so adding them would
   enlarge the vocabulary for nothing.

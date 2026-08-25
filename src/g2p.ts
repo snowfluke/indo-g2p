@@ -90,7 +90,8 @@ function wordToPhonemes(
  * ```
  */
 export function toPhoneme(text: string, options: ToPhonemeOptions = {}): G2PResult {
-  const lowered = (options.normalize ? normalizeText(text) : text).toLowerCase();
+  const prepared = options.normalize === false ? text : normalizeText(text);
+  const lowered = prepared.toLowerCase();
   const matches = [...lowered.matchAll(WORD_PATTERN)];
 
   // The resolver sees the whole sentence at once, so it can use context.

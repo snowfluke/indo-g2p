@@ -89,5 +89,7 @@ export function normalizeText(text: string): string {
   const allowed = new Set(KEPT_PUNCTUATION);
   result = [...result].filter((char) => /[\p{Letter}\s]/u.test(char) || allowed.has(char)).join("");
 
-  return result.replace(/\s+/g, " ").trim();
+  // Substitutions insert their own spacing, so runs are collapsed. Leading
+  // and trailing space is left alone; trimming is the caller's business.
+  return result.replace(/\s+/g, " ");
 }

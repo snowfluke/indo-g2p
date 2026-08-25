@@ -28,6 +28,9 @@ const fixtures: ParityCase[] = cases;
  *   onset clusters, so `biroʔratismə` becomes `birokratismə`.
  * - A native speaker corrected six homograph defaults, so `dʒədʒər` becomes
  *   `dʒedʒer`. See data/schwa-overrides.tsv.
+ * - Normalisation is on by default, so digits and symbols are spelled out:
+ *   `1 dʒanuari` becomes `satu dʒanuari` and `50%` becomes `lima puluh
+ *   pərsen`. Pass `normalize: false` for the untouched behaviour.
  *
  * Listing them explicitly means a new divergence fails this test instead of
  * slipping through.
@@ -43,11 +46,15 @@ const KNOWN_IMPROVEMENTS: ReadonlyMap<string, string> = new Map([
   ],
   [
     "pt kaɪ meŋumumkan dʒadwal baru krl dʒabodetabəʔ mulaɪ 1 dʒanuari.",
-    "pt kaɪ məŋumumkan dʒadwal baru krl dʒabodetabəʔ mulaɪ 1 dʒanuari.",
+    "pt kaɪ məŋumumkan dʒadwal baru krl dʒabodetabəʔ mulaɪ satu dʒanuari.",
   ],
   [
     "pété kaɪ meŋumumkan dʒadwal baru kaèrèl dʒabodetabəʔ mulaɪ 1 dʒanuari.",
-    "pété kaɪ məŋumumkan dʒadwal baru kaèrèl dʒabodetabəʔ mulaɪ 1 dʒanuari.",
+    "pété kaɪ məŋumumkan dʒadwal baru kaèrèl dʒabodetabəʔ mulaɪ satu dʒanuari.",
+  ],
+  [
+    "xusus hari ini, harga baʔso dan miə ajam turun 50%!",
+    "xusus hari ini, harga baʔso dan miə ajam turun lima puluh pərsen!",
   ],
   [
     "anaʔ-anaʔ bermain lajaŋ-lajaŋ di pantaɪ kətika matahari terbenam.",
@@ -61,6 +68,8 @@ const KNOWN_IMPROVEMENTS: ReadonlyMap<string, string> = new Map([
     "unifərsitas indonesia meɲeleŋgarakan səminar təntaŋ teʔnologi ketʃerdasan buatan.",
     "unifərsitas indonesia məɲələŋgarakan səminar təntaŋ teʔnologi kətʃərdasan buatan.",
   ],
+  ["   ", " "],
+  ["12345", "dua bəlas ribu tiga ratus əmpat puluh lima"],
   ["dʒədʒər", "dʒedʒer"],
   ["mempermanènkan", "məmpərmanènkan"],
   ["nuʔleotidasə", "nukleotidasə"],
@@ -79,10 +88,12 @@ test("phonemes match the upstream Python implementation on every fixture", () =>
     if (phonemes !== item.phonemes && phonemes !== allowed) {
       mismatches.push(`phonemes ${JSON.stringify(item.text)}: ${phonemes} != ${item.phonemes}`);
     }
-    // toGrapheme maps ə back to e, so it is unaffected by the schwa recovery.
-    if (toGrapheme(phonemes) !== item.grapheme) {
+    // toGrapheme is checked against upstream's own phonemes, so it tests the
+    // mapping itself rather than the pipeline feeding it. Our phonemes now
+    // differ deliberately, and spelling `satu` back is not a round trip to `1`.
+    if (toGrapheme(item.phonemes) !== item.grapheme) {
       mismatches.push(
-        `grapheme ${JSON.stringify(item.text)}: ${toGrapheme(phonemes)} != ${item.grapheme}`
+        `grapheme ${JSON.stringify(item.text)}: ${toGrapheme(item.phonemes)} != ${item.grapheme}`
       );
     }
   }

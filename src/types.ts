@@ -34,10 +34,10 @@ export type ToPhonemeOptions = {
    * Spell out digits, currency, percentages and symbols before converting,
    * and fold typographic quotes and dashes onto the plain ones.
    *
-   * A speech model has no phoneme for `5` or `%`, so text going to one wants
-   * this on. It is off by default because it rewrites the input, which a
-   * caller doing its own normalisation would not want. See
-   * {@linkcode normalizeText}.
+   * On by default: a speech model has no phoneme for `5` or `%`, so leaving
+   * them in means they are dropped or fail. Set `false` to pass the text
+   * through untouched, which a caller doing its own normalisation wants.
+   * See {@linkcode normalizeText}.
    */
   normalize?: boolean;
 

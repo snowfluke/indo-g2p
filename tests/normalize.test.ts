@@ -65,8 +65,12 @@ describe("normalizeText", () => {
     expect(normalizeText("versi 1.2.3")).toBe("versi satu titik dua titik tiga");
   });
 
-  test("is off by default", () => {
-    expect(toPhoneme("naik 5%").phonemes).toBe("naɪʔ 5%");
-    expect(toPhoneme("naik 5%", { normalize: true }).phonemes).toBe("naɪʔ lima pərsen");
+  test("is on by default, and can be switched off", () => {
+    expect(toPhoneme("naik 5%").phonemes).toBe("naɪʔ lima pərsen");
+    expect(toPhoneme("naik 5%", { normalize: false }).phonemes).toBe("naɪʔ 5%");
+  });
+
+  test("leading and trailing space is the caller's business", () => {
+    expect(normalizeText("  halo  ")).toBe(" halo ");
   });
 });

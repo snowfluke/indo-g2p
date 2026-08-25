@@ -73,8 +73,15 @@ describe("abbreviations", () => {
 });
 
 describe("non-letter input", () => {
-  test.each(["", "   ", "12345", "!!!", "2026-08-22"])("%p passes through", (text) => {
-    expect(phonemesOf(text)).toBe(text);
+  test.each(["", "   ", "12345", "!!!", "2026-08-22"])(
+    "%p passes through when normalisation is off",
+    (text) => {
+      expect(toPhoneme(text, { normalize: false }).phonemes).toBe(text);
+    }
+  );
+
+  test("digits are spelled out by default", () => {
+    expect(phonemesOf("12345")).toBe("dua bəlas ribu tiga ratus əmpat puluh lima");
   });
 
   test("keeps punctuation and casing position", () => {
