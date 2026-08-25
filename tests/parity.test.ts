@@ -28,6 +28,8 @@ const fixtures: ParityCase[] = cases;
  *   onset clusters, so `biroʔratismə` becomes `birokratismə`.
  * - A native speaker corrected six homograph defaults, so `dʒədʒər` becomes
  *   `dʒedʒer`. See data/schwa-overrides.tsv.
+ * - English words are read as English, so `the` is `də` rather than `tə`.
+ *   Pass `english: false` for the Indonesian-rules behaviour.
  * - Normalisation is on by default, so digits and symbols are spelled out:
  *   `1 dʒanuari` becomes `satu dʒanuari` and `50%` becomes `lima puluh
  *   pərsen`. Pass `normalize: false` for the untouched behaviour.
@@ -77,6 +79,7 @@ const KNOWN_IMPROVEMENTS: ReadonlyMap<string, string> = new Map([
   ["deʔristənisasi", "dekristənisasi"],
   ["pətiʔrah", "pətikrah"],
   ["biroʔratismə", "birokratismə"],
+  ["sms", "esemes"],
 ]);
 
 test("phonemes match the upstream Python implementation on every fixture", () => {
@@ -307,12 +310,14 @@ describe("the ny digraph needs a following vowel", () => {
 });
 
 describe("the ch digraph is a single affricate", () => {
+  // These names are also in the English table, so the Indonesian rule is
+  // exercised with the English layer switched off.
   test.each([
     ["manchester", "mantʃester"],
     ["michael", "mitʃael"],
     ["chelsea", "tʃelsea"],
   ])("reads ch in %s", (word, expected) => {
-    expect(toPhoneme(word).phonemes).toBe(expected);
+    expect(toPhoneme(word, { english: false }).phonemes).toBe(expected);
   });
 
   test.each([
@@ -323,5 +328,39 @@ describe("the ch digraph is a single affricate", () => {
     ["cahaya", "tʃahaja"],
   ])("leaves %s alone", (word, expected) => {
     expect(toPhoneme(word).phonemes).toBe(expected);
+  });
+});
+
+describe("English words are read as English", () => {
+  test.each([
+    ["event", "ifent"],
+    ["game", "gem"],
+    ["new", "nju"],
+    ["city", "siti"],
+    ["download", "daunlod"],
+    ["online", "onlain"],
+    // Names come out better this way than through Indonesian spelling rules,
+    // which would give mitʃael and dʒames.
+    ["michael", "maɪkəl"],
+    ["james", "dʒemz"],
+  ])("%s", (word, expected) => {
+    expect(toPhoneme(word).phonemes).toBe(expected);
+  });
+
+  test.each([
+    // Anything an Indonesian source places is answered before English is
+    // consulted, and proper nouns are blocked by name.
+    ["jakarta", "dʒakarta"],
+    ["april", "april"],
+    ["islam", "islam"],
+    ["indonesia", "indonesia"],
+    ["makan", "makan"],
+    ["pemerintah", "pəmərintah"],
+  ])("never touches %s", (word, expected) => {
+    expect(toPhoneme(word).phonemes).toBe(expected);
+  });
+
+  test("can be switched off", () => {
+    expect(toPhoneme("event", { english: false }).phonemes).toBe("efent");
   });
 });

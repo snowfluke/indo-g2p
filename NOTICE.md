@@ -41,3 +41,12 @@ paraphrases the marked headwords; no Wiktionary text is redistributed.
 Vendored into `tools/oxlint/anti-slop/`, which upstream distributes by copying.
 The copy is byte-identical to its `src/`, minus the plugin's own tests and its
 Effect-specific rules. See `tools/oxlint/anti-slop/LICENSE`.
+
+## open-dict-data/ipa-dict: MIT
+
+<https://github.com/open-dict-data/ipa-dict>, Copyright (c) 2016 Yuchen Zhang
+and contributors.
+
+- `src/data/english.ts` - English pronunciations from `data/en_US.txt`, mapped
+  onto this library's phoneme set and limited to words no Indonesian source
+  places. `scripts/dump-english.py` reproduces it.

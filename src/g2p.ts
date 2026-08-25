@@ -14,6 +14,7 @@ import {
   WORD_PATTERN,
 } from "./constants.ts";
 import { resolveCollocations } from "./collocations.ts";
+import { lookUpEnglish } from "./english.ts";
 import { normalizeText } from "./normalize.ts";
 import { applySchwa } from "./schwa.ts";
 import { toSyllables } from "./syllabifier.ts";
@@ -58,9 +59,18 @@ type WordPhonemes = { phonemes: string; abbr: boolean };
 function wordToPhonemes(
   word: string,
   expandAbbr: boolean,
-  resolved: string | undefined
+  resolved: string | undefined,
+  useEnglish: boolean
 ): WordPhonemes {
   const abbr = expandAbbr && isAbbreviation(word);
+
+  // Consulted before the Indonesian rules, but the table only holds words
+  // those rules have no answer for, so it can never override them.
+  if (useEnglish && !abbr && resolved === undefined) {
+    const borrowed = lookUpEnglish(word);
+    if (borrowed !== undefined) return { phonemes: borrowed, abbr };
+  }
+
   let result = abbr ? spellOut(word) : word;
 
   if (!abbr && resolved !== undefined) result = resolved;
@@ -107,7 +117,8 @@ export function toPhoneme(text: string, options: ToPhonemeOptions = {}): G2PResu
     const { phonemes, abbr } = wordToPhonemes(
       match[0],
       options.expandAbbr ?? false,
-      resolved[index]
+      resolved[index],
+      options.english !== false
     );
     let wordSyllables = toSyllables(phonemes);
 

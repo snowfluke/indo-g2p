@@ -134,6 +134,7 @@ uv run --with python-crfsuite scripts/dump-model.py    ../g2p-id
 uv run --with python-crfsuite scripts/dump-fixtures.py ../g2p-id
 python3 scripts/dump-pos.py .
 python3 scripts/dump-lexicon.py <path-to>/lexicon_id.tsv
+python3 scripts/dump-english.py <path-to>/en_US.txt <path-to>/common-words.txt
 ```
 
 ## Code Quality

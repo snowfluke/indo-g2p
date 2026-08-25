@@ -204,6 +204,27 @@ Pass `normalize: false` to hand the text through untouched, which is what a
 caller doing its own normalisation wants. `normalizeText` and `spellNumber`
 are exported for use on their own.
 
+## English words in Indonesian text
+
+Indonesian writing borrows English freely, and reading those words with
+Indonesian spelling rules gives `efent` for `event`. English words are read as
+English instead, in the same phoneme set as everything else:
+
+```ts
+toPhoneme("event").phonemes; // "ifent"
+toPhoneme("download").phonemes; // "daunlod"
+toPhoneme("michael").phonemes; // "maɪkəl", not "mitʃael"
+```
+
+Three filters keep it away from Indonesian. A word is only eligible if no
+Indonesian source places it, if it is a reasonably common English word rather
+than one of the 125,000-word tail that is mostly names, and if it is not in
+[data/indonesian-proper-nouns.tsv](./data/indonesian-proper-nouns.tsv). That
+last file is why `jakarta`, `april` and `islam` keep their Indonesian
+readings, since English dictionaries carry those spellings too.
+
+Pass `english: false` to switch it off.
+
 ## API
 
 | Export                                       | Signature                                                 |
@@ -218,7 +239,7 @@ are exported for use on their own.
 
 `G2PResult` is `{ phonemes: string; syllables: string[] }`.
 `ToPhonemeOptions` is
-`{ expandAbbr?: boolean; normalize?: boolean; resolveSchwa?: SchwaResolver | false }`, where
+`{ expandAbbr?: boolean; normalize?: boolean; english?: boolean; resolveSchwa?: SchwaResolver | false }`, where
 `resolveSchwa` defaults to `resolveCollocations` and `false` disables
 resolution entirely.
 `SchwaResolver` is `(words: readonly string[]) => readonly (string | undefined)[]`.
@@ -324,8 +345,8 @@ These are upstream behaviours the port reproduces rather than fixes:
 - No stress marks are emitted. Indonesian stress is not contrastive, and a
   speech model learns the symbol set it is trained on, so adding them would
   enlarge the vocabulary for nothing.
-- Foreign names are not read correctly. `denny` and `sony` follow Indonesian
-  grapheme rules, which is the wrong language for them.
+- Names outside the English table still follow Indonesian rules, which is the
+  wrong language for many of them. `denny` and `sony` are read as Indonesian.
 - The syllabifier is still the upstream CRF and still gets words wrong, for
   example `dəŋ|an` rather than `də|ŋan`. It is a character model with no notion
   of Indonesian morphology.

@@ -33,6 +33,14 @@ jsr.json and `src/version.ts` in lockstep; the pre-commit hook rejects drift.
   the untouched behaviour. It changes 8 of the 886 parity fixtures, every one
   an improvement, and removes no characters from ordinary text.
   `normalizeText`, `spellNumber` and `spellDecimal` are exported on their own.
+- English words are read as English rather than through Indonesian spelling
+  rules, so `event` is `ifent` and `michael` is `maɪkəl`. Pronunciations come
+  from ipa-dict (MIT), mapped onto the phoneme set this library already emits.
+  Three filters keep it away from Indonesian: a word must be placed by no
+  Indonesian source, must be a common English word rather than part of the
+  125,000-word tail that is mostly names, and must not be in
+  `data/indonesian-proper-nouns.tsv`. That last file is why `jakarta`, `april`
+  and `islam` are untouched. On by default; pass `english: false` to disable.
 - `ch` is read as a single `/tʃ/`. Mapping `c` first left `tʃh`, a sound
   Indonesian cannot make, in every borrowed name carrying it: `manchester` was
   `mantʃhester` and is now `mantʃester`. Only three dictionary words contain

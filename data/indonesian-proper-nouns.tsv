@@ -1,0 +1,24 @@
+# Proper nouns that must keep their Indonesian reading.
+#
+# The English layer only ever sees words no Indonesian list places, and many
+# of those are names that English dictionaries also carry: `jakarta` is in
+# en_US.txt, and reading it as /dʒəkɑɹtə/ instead of /dʒakarta/ is wrong.
+#
+# A word here is never handed to the English layer. Ordinary Indonesian
+# vocabulary does not belong in this file; it belongs in the schwa dictionary.
+#
+# This is a list of names, so it is facts rather than anyone's data set.
+#
+# category	words (space separated)
+month	januari februari maret april mei juni juli agustus september oktober november desember
+day	senin selasa rabu kamis jumat sabtu minggu
+country	indonesia malaysia singapura brunei thailand filipina vietnam kamboja laos myanmar timor australia selandia amerika serikat kanada meksiko brasil argentina chili peru kolombia inggris britania irlandia jerman perancis prancis belanda belgia swiss austria italia spanyol portugal yunani turki rusia ukraina polandia swedia norwegia denmark finlandia islandia china tiongkok jepang korea india pakistan bangladesh nepal srilanka afghanistan iran irak arab saudi qatar kuwait emirat oman yaman suriah lebanon yordania israel palestina mesir libya tunisia maroko aljazair sudan somalia etiopia kenya nigeria ghana senegal afrika
+province	aceh sumatera riau jambi bengkulu lampung banten jakarta jawa yogyakarta bali kalimantan sulawesi gorontalo maluku papua nusa tenggara
+city	bandung surabaya medan semarang palembang makassar depok tangerang bekasi bogor batam pekanbaru padang malang solo surakarta denpasar manado balikpapan samarinda pontianak banjarmasin mataram kupang jayapura ambon ternate serang cirebon tasikmalaya purwokerto magelang salatiga kudus jepara madiun kediri jember probolinggo pasuruan sidoarjo gresik lamongan tuban
+foreign city	london madrid paris roma milan barcelona munchen berlin moskow tokyo osaka beijing shanghai seoul bangkok manila hanoi delhi mumbai dubai doha riyadh kairo istanbul sydney melbourne york washington chicago boston texas florida
+organisation	golkar gerindra nasdem demokrat hanura perindo berkarya garuda pertamina telkom mandiri bri bni bca antara kompas tempo detik tribun republika
+institution	kpk dpr mpr dpd tni polri kejaksaan mahkamah bawaslu kpu ojk bpjs bumn bulog basarnas bnpb kemenkeu kemendagri kemenlu
+faith	islam kristen protestan katolik hindu buddha konghucu muslim nasrani
+misc	pancasila garuda merdeka nusantara majapahit sriwijaya borobudur prambanan
+web	com net org www http https amp html php aspx co id
+brand	yamaha honda suzuki toyota daihatsu samsung xiaomi oppo vivo realme telkomsel indosat

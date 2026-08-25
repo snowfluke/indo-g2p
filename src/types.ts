@@ -42,6 +42,15 @@ export type ToPhonemeOptions = {
   normalize?: boolean;
 
   /**
+   * Read English words with English pronunciation rather than Indonesian
+   * spelling rules, so `event` is not `efent`.
+   *
+   * On by default. Only words no Indonesian source places are eligible, and
+   * proper nouns are excluded by name, so this never touches `jakarta`.
+   */
+  english?: boolean;
+
+  /**
    * How homographs are resolved.
    *
    * Defaults to the built-in collocation rules, which read the words around

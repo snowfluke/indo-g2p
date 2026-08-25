@@ -19,6 +19,7 @@
 export { toGrapheme, toPhoneme } from "./g2p.ts";
 export { toSyllables } from "./syllabifier.ts";
 export { collocationRules, resolveCollocations } from "./collocations.ts";
+export { englishWords, lookUpEnglish } from "./english.ts";
 export { normalizeText } from "./normalize.ts";
 export { spellDecimal, spellNumber } from "./number.ts";
 export { applySchwa } from "./schwa.ts";
