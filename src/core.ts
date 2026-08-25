@@ -22,8 +22,9 @@
  * @module
  */
 
+import { trace } from "./explain.ts";
 import { convert } from "./g2p.ts";
-import type { G2PResult, ToPhonemeOptions } from "./types.ts";
+import type { G2PResult, ToPhonemeOptions, WordTrace } from "./types.ts";
 
 /**
  * Convert Indonesian text to IPA phonemes, reading English words as
@@ -53,3 +54,24 @@ export type {
   WordTrace,
 } from "./types.ts";
 export { VERSION } from "./version.ts";
+
+/**
+ * Show where every word's pronunciation came from, reading English words by Indonesian rules.
+ *
+ * @param text The text to explain, handled exactly as {@linkcode toPhoneme}
+ * would, including normalisation.
+ * @param options The same options {@linkcode toPhoneme} takes.
+ * @returns One entry per word, in order.
+ *
+ * @example
+ * ```ts
+ * explain("upacara apel di jakarta");
+ * // [ { word: "upacara", phonemes: "upatʃara", source: "lexicon" },
+ * //   { word: "apel",    phonemes: "apel",     source: "collocation" },
+ * //   { word: "di",      phonemes: "di",       source: "rules" },
+ * //   { word: "jakarta", phonemes: "dʒakarta", source: "lexicon" } ]
+ * ```
+ */
+export function explain(text: string, options: ToPhonemeOptions = {}): WordTrace[] {
+  return trace(text, options, undefined);
+}

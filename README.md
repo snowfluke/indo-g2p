@@ -55,7 +55,7 @@ Three entry points, so a bundle carries only the tables it uses:
 
 | Entry point           | What it adds                          |
 | --------------------- | ------------------------------------- |
-| `indo-g2p/core`       | the converter, 234 KB gzipped         |
+| `indo-g2p/core`       | the converter, 235 KB gzipped         |
 | `indo-g2p`            | the same, plus English word readings  |
 | `indo-g2p/homographs` | the part-of-speech homograph resolver |
 
@@ -468,18 +468,18 @@ instead and the table is never referenced:
 
 | Import          | Minified | Gzipped | English words            |
 | --------------- | -------- | ------- | ------------------------ |
-| `indo-g2p`      | 2.69 MB  | 888 KB  | read as English          |
-| `indo-g2p/core` | 0.72 MB  | 234 KB  | read by Indonesian rules |
+| `indo-g2p`      | 2.69 MB  | 887 KB  | read as English          |
+| `indo-g2p/core` | 0.72 MB  | 235 KB  | read by Indonesian rules |
 
-Both entry points expose the same API and agree on every Indonesian word.
-`indo-g2p/core` is the better default for a browser bundle; take the full
-entry point when the input mixes in English, which Indonesian writing usually
-does.
+Both entry points expose the same API, minus `lookUpEnglish` and
+`englishWords`, and agree on every Indonesian word. `indo-g2p/core` is the
+better default for a browser bundle; take the full entry point when the input
+mixes in English, which Indonesian writing usually does.
 
 The part-of-speech tagger is separate again: it lives behind
-`indo-g2p/homographs` and reaches neither of the tables above. All three
-figures come from building a real consumer and checking for each table's
-symbols.
+`indo-g2p/homographs` and reaches neither bundle above. Both figures come from
+minifying a consumer that imports the whole public API of each entry point,
+then checking the output for each table's symbols.
 
 ## Known limits
 

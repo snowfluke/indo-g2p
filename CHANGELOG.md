@@ -21,11 +21,12 @@ default. Only the first was marked `feat!:` at the time.
 
 ### Entry points
 
-`indo-g2p/core` is the converter without the English table: 234 KB gzipped
-against 888 KB for the main entry point. Both expose the same API and agree on
-every Indonesian word; only English words differ, since `core` reads them by
-Indonesian rules. `english: false` still works on the main entry point but
-cannot remove the data from a bundle.
+`indo-g2p/core` is the converter without the English table: 235 KB gzipped
+against 887 KB for the main entry point. It exports the same API bar
+`lookUpEnglish` and `englishWords`, and agrees on every Indonesian word; only
+English words differ, since `core` reads them by Indonesian rules.
+`english: false` still works on the main entry point but cannot remove the
+data from a bundle.
 
 ### Added
 

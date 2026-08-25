@@ -16,9 +16,10 @@
  * @module
  */
 
-import { convert } from "./g2p.ts";
 import { lookUpEnglish } from "./english.ts";
-import type { G2PResult, ToPhonemeOptions } from "./types.ts";
+import { trace } from "./explain.ts";
+import { convert } from "./g2p.ts";
+import type { G2PResult, ToPhonemeOptions, WordTrace } from "./types.ts";
 
 /**
  * Convert Indonesian text to IPA phonemes.
@@ -46,7 +47,6 @@ export { toGrapheme } from "./g2p.ts";
 export { toSyllables } from "./syllabifier.ts";
 export { collocationRules, resolveCollocations } from "./collocations.ts";
 export { englishWords, lookUpEnglish } from "./english.ts";
-export { explain } from "./explain.ts";
 export { normalizeText } from "./normalize.ts";
 export { spellDecimal, spellNumber } from "./number.ts";
 export { applySchwa } from "./schwa.ts";
@@ -60,3 +60,24 @@ export type {
   WordTrace,
 } from "./types.ts";
 export { VERSION } from "./version.ts";
+
+/**
+ * Show where every word's pronunciation came from, reading English words as English.
+ *
+ * @param text The text to explain, handled exactly as {@linkcode toPhoneme}
+ * would, including normalisation.
+ * @param options The same options {@linkcode toPhoneme} takes.
+ * @returns One entry per word, in order.
+ *
+ * @example
+ * ```ts
+ * explain("upacara apel di jakarta");
+ * // [ { word: "upacara", phonemes: "upatʃara", source: "lexicon" },
+ * //   { word: "apel",    phonemes: "apel",     source: "collocation" },
+ * //   { word: "di",      phonemes: "di",       source: "rules" },
+ * //   { word: "jakarta", phonemes: "dʒakarta", source: "lexicon" } ]
+ * ```
+ */
+export function explain(text: string, options: ToPhonemeOptions = {}): WordTrace[] {
+  return trace(text, options, lookUpEnglish);
+}
