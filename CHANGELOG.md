@@ -41,6 +41,11 @@ jsr.json and `src/version.ts` in lockstep; the pre-commit hook rejects drift.
   125,000-word tail that is mostly names, and must not be in
   `data/indonesian-proper-nouns.tsv`. That last file is why `jakarta`, `april`
   and `islam` are untouched. On by default; pass `english: false` to disable.
+- 66 more names blocked from the English layer: 41 Indonesian place names that
+  English dictionaries also carry, and 25 Indonesian and Arabic personal names.
+  `dwi` was being read as the spelled-out initialism `didəbəjuaɪ`. Place names
+  that are also common English words, such as `metro` and `bone`, are
+  deliberately left English.
 - Foreign names are read as names. ipa-dict already carried them, and dropping
   the common-word filter lets them through: `denny` was `dennj`, a syllable
   with no vowel, and is now `deni`. 113,187 entries.

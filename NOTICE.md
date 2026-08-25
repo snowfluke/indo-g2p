@@ -57,3 +57,15 @@ checking every eligible English word against
 Only the answer is kept: 1,757 words that list claims as Indonesian, recorded
 as our own list. None of its data is redistributed here, and it is not needed
 to build this package.
+
+## Badan Pusat Statistik region names: ODbL 1.0
+
+Indonesian administrative region names were checked against
+<https://github.com/edwardsamuel/Wilayah-Administratif-Indonesia>, whose CSV
+data is ODbL 1.0 and attributed to Badan Pusat Statistik (BPS) Indonesia.
+
+Only the answer is kept: 41 single-word place names that an English dictionary
+also carries, recorded in `data/indonesian-proper-nouns.tsv` as our own list.
+That is 41 of 4,241 names, neither a quantitatively nor a qualitatively
+substantial part of the database, so no derivative database is created. None of
+its data is redistributed here and it is not needed to build this package.

@@ -116,3 +116,17 @@ naturalised	virga virginia virgo virtual virtuoso viscount vista vitiligo vitrio
 naturalised	war waring watermark waterway watt web wei wein were wet wig wiki wing wisdom wisman wispy wit wolfram wombat won
 naturalised	wong wor workaholic wow xenia xenon yacht yagi yah yahya yak yankee yard yasmin yen yeti yin yogi yolk yolks
 naturalised	yom yon yoyo yuk yup yuri zan zarah zeitgeist zen zero zeta zink zion zoom zulfikar zulu
+
+# Single-word Indonesian place names that an English dictionary also carries,
+# found by checking every eligible English word against the BPS administrative
+# region list. Names that are also common English words, such as `metro`,
+# `bone` and `sail`, are deliberately left out: written in Indonesian text they
+# usually mean the English word.
+name place	alla arse aweida balla beji bies buer carita doro glenmore kabila kayo koba kora
+name place	laham lape ledo malo marisa maron mauk mazo moro moti nakama nita pino rengel
+name place	rhee sako salo sanden sekerak sidey simo sobey suppa talaga tallo tobu yuko
+
+# Indonesian and Arabic personal names the English layer would otherwise
+# mangle. `dwi` was being read as the spelled-out initialism didəbəjuaɪ.
+name person	faisal lukman raisa dwi saul hasan husein ridwan wahyu bagus indra rizky agus budi
+name person	joko prabowo megawati yusuf hidayat rahman anwar fadli irwan taufik zulkifli
