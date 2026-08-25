@@ -118,32 +118,56 @@ always spells as `k`, so the round trip is lossy.
 ## Homographs
 
 `apel` is `/apəl/` as a noun (the fruit) and `/apel/` as a verb (roll call).
-Telling them apart needs the sentence, so it lives behind its own entry point:
+Which one you get depends on the sentence, so resolution is **on by default**:
+
+```ts
+import { toPhoneme } from "indo-g2p";
+
+toPhoneme("upacara apel di lapangan").phonemes; // "upatʃara apel di lapaŋan"
+toPhoneme("dia makan apel merah").phonemes; // "dia makan apəl mərah"
+```
+
+The default resolver reads the words around each homograph. A rule fires only
+when one of its trigger words is within four words in the same sentence;
+otherwise the schwa dictionary decides. That makes a missing trigger free and
+keeps the whole thing to a few kilobytes with no model.
+
+The readings come from
+[data/homographs-verified.tsv](./data/homographs-verified.tsv), each checked
+against the Indonesian entry on [en.wiktionary.org](https://en.wiktionary.org),
+which marks the pepet vowel (`ê` is `/ə/`, `é` and `è` are not). The trigger
+lists live in
+[data/homographs-collocations.tsv](./data/homographs-collocations.tsv).
+
+Turn it off with `resolveSchwa: false`:
+
+```ts
+toPhoneme("upacara apel di lapangan", { resolveSchwa: false }).phonemes;
+// "upatʃara apəl di lapaŋan"
+```
+
+### The part-of-speech resolver
+
+`indo-g2p/homographs` swaps the collocation rules for an averaged-perceptron
+POSP tagger ported from
+[Bookbot's g2p_id](https://github.com/bookbot-kids/g2p_id). It covers 11 words
+instead of 4, at the cost of a 3.3 MB table:
 
 ```ts
 import { toPhoneme } from "indo-g2p";
 import { resolveHomographs } from "indo-g2p/homographs";
 
-toPhoneme("setiap senin kami apel di lapangan", {
-  resolveSchwa: resolveHomographs,
-}).phonemes;
+toPhoneme(text, { resolveSchwa: resolveHomographs });
 ```
 
-`resolveHomographs` tags the sentence with an averaged-perceptron POSP tagger
-ported from [Bookbot's g2p_id](https://github.com/bookbot-kids/g2p_id), then
-picks the reading whose part of speech matches. It knows **11 words**: every
-rule was checked against the Indonesian entry on
-[en.wiktionary.org](https://en.wiktionary.org), which marks the pepet vowel
-(`ê` is `/ə/`, `é` and `è` are not). Anything unverified is left to the schwa
-dictionary, and a sentence with no homograph never runs the tagger at all.
+Measured on 176,038 tokens of Indonesian news text, the tagger changed the
+output of **zero** sentences while the collocation rules corrected three. The
+tagger has never seen 42 of the upstream homographs in training, so it emits
+its unknown-word default for them and the resolver abstains. That is why it is
+not the default. See
+[docs/homograph-review.md](./docs/homograph-review.md).
 
-The tagger is 3.3 MB, so importing `indo-g2p` alone never pulls it in.
-
-See [docs/homograph-review.md](./docs/homograph-review.md) for every rule and
-its source. [`data/homographs-verified.tsv`](./data/homographs-verified.tsv) is
-the table you edit.
-
-Any function of the same shape works, so you can bring your own model:
+Any function of the same shape works, so you can bring your own:
 
 ```ts
 import type { SchwaResolver } from "indo-g2p";
@@ -165,7 +189,10 @@ const myResolver: SchwaResolver = (words) => words.map(() => undefined);
 | `knownHomographs` <sub>`/homographs`</sub>   | `() => string[]`                                          |
 
 `G2PResult` is `{ phonemes: string; syllables: string[] }`.
-`ToPhonemeOptions` is `{ expandAbbr?: boolean; resolveSchwa?: SchwaResolver }`.
+`ToPhonemeOptions` is
+`{ expandAbbr?: boolean; resolveSchwa?: SchwaResolver | false }`, where
+`resolveSchwa` defaults to `resolveCollocations` and `false` disables
+resolution entirely.
 `SchwaResolver` is `(words: readonly string[]) => readonly (string | undefined)[]`.
 
 ## How it works
@@ -196,7 +223,10 @@ These are upstream behaviours the port reproduces rather than fixes:
 - The syllabifier is still the upstream CRF and still gets words wrong, for
   example `dəŋ|an` rather than `də|ŋan`. It is a character model with no notion
   of Indonesian morphology.
-- Homographs are off by default and cover 11 words. Upstream ships 102 entries;
+- The default collocation rules cover 4 words. They only fire on a lexical
+  trigger, so a syntactic case like _mereka tetap apel seperti biasa_ is left
+  to the dictionary rather than guessed.
+- The part-of-speech resolver covers 11 words. Upstream ships 102 entries;
   45 have identical readings or share a part of speech, and of the 57 that
   remain, 27 have no pepet-marked Wiktionary entry, 16 turn out to have one
   pronunciation across every sense, and 3 contradict the upstream mapping.

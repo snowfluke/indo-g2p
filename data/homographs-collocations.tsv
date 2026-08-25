@@ -1,0 +1,20 @@
+# Collocation rules for Indonesian homographs.
+#
+# A homograph's default reading comes from the schwa dictionary. A rule here
+# fires only when one of its trigger words appears within WINDOW words in the
+# same sentence, and then selects the OTHER reading.
+#
+# Every reading below is verified against the Indonesian entry on
+# en.wiktionary.org, which marks the pepet vowel: "ê" is /ə/, "é" and "è" are
+# not. See data/homographs-verified.tsv for that audit. The trigger lists are
+# ordinary collocations, not dictionary data, and are the part a speaker
+# should check.
+#
+# A word with no trigger nearby keeps its dictionary reading, so a missing
+# trigger costs nothing and a wrong trigger costs a mispronunciation.
+#
+# word	mask	triggers (space separated)	evidence
+apel	0	upacara bendera lapangan komandan pasukan barisan digelar menggelar mengikuti gabungan kesiapan kesiapsiagaan siaga akbar personel anggota polres polda kodim rutin	apèl (roll call) vs apêl (apple); dictionary default is the fruit
+per	0	mobil motor kasur sofa patah ganti baja suspensi pegas	per (spring) vs pêr (the preposition); dictionary default is the preposition
+seret	0	kursi meja kaki tangan tubuh barang koper karung	seret (to drag) vs sêrêt (stiff, jammed); dictionary default is stiff
+pepet	0	lawan musuh jalan sudut tembok pojok	pepet (to close in, to narrow) vs pêpêt (the schwa vowel itself)

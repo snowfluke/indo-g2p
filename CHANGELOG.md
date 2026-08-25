@@ -26,6 +26,11 @@ jsr.json and `src/version.ts` in lockstep; the pre-commit hook rejects drift.
   15.6% of ordinary words came back as a single syllable. Folding `ə` to `e`
   for tagging drops that to 0.2%, and boundaries are no longer allowed inside
   `tʃ` or `dʒ` (975 such splits, now none). `phonemes` output is unchanged.
+- Homograph resolution is on by default, driven by collocation rules: a word
+  keeps its dictionary reading unless one of its trigger words is within four
+  words in the same sentence. Under 1 KB, no model, deterministic. Disable with
+  `resolveSchwa: false`. On 176,038 tokens of news text it corrects three
+  sentences and disturbs none of the 886 parity fixtures.
 - `indo-g2p/homographs`: opt-in homograph resolution for 11 words, driven by an
   averaged-perceptron POSP tagger ported from Bookbot's g2p_id (Apache-2.0).
   Parity-tested against the Python tagger over 4,470 recorded tags.

@@ -75,6 +75,27 @@ def dump_homographs(tsv_path: Path, out: Path) -> int:
     return len(lines)
 
 
+def dump_collocations(tsv_path: Path, out: Path) -> int:
+    """Pack the collocation rules. See data/homographs-collocations.tsv."""
+    lines = []
+    for row in tsv_path.read_text(encoding="utf-8").splitlines():
+        if not row.strip() or row.startswith("#"):
+            continue
+        word, mask, triggers, _evidence = row.split("\t")
+        assert triggers.strip(), row
+        lines.append(f"{word} {int(mask, 16):x} {' '.join(triggers.split())}")
+
+    out.write_text(
+        f"{HEADER}\n"
+        f'/** Packed collocations: `word mask trigger...` per line. A trigger within\n'
+        f' * COLLOCATION_WINDOW words selects the reading `mask` describes. */\n'
+        f"export const COLLOCATIONS: string = {chr(10).join(lines)!r};\n\n"
+        f"/** How many words either side of a homograph are searched for a trigger. */\n"
+        f"export const COLLOCATION_WINDOW: number = 4;\n"
+    )
+    return len(lines)
+
+
 def main() -> None:
     src = Path(sys.argv[1])
     if (src / "g2p_id" / "resources").is_dir():
@@ -91,6 +112,9 @@ def main() -> None:
 
     verified = Path(__file__).resolve().parent.parent / "data" / "homographs-verified.tsv"
     print(f"wrote {dump_homographs(verified, out / 'homographs.ts')} homographs")
+
+    collocations = Path(__file__).resolve().parent.parent / "data" / "homographs-collocations.tsv"
+    print(f"wrote {dump_collocations(collocations, out / 'collocations.ts')} collocation rules")
 
 
 if __name__ == "__main__":

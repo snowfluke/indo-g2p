@@ -39,8 +39,14 @@ export function hasHomograph(words: readonly string[]): boolean {
   return words.some((word) => entries.has(word));
 }
 
-/** Rewrite the `e`s selected by `mask` as `ə`. */
-function applyMask(word: string, mask: number): string {
+/**
+ * Rewrite the `e`s selected by `mask` as `ə`.
+ *
+ * @param word The word to rewrite.
+ * @param mask Bit `i` set means the `i`-th `e` of the word is a schwa.
+ * @returns The word with those vowels written as `ə`.
+ */
+export function applyMask(word: string, mask: number): string {
   let seen = 0;
   return [...word]
     .map((char) => {

@@ -128,9 +128,12 @@ const COMMON_SENSE: [string, string][] = [
 ];
 
 describe("verified rules never corrupt ordinary text", () => {
+  // Compared against the schwa dictionary alone. The default resolver is the
+  // collocation rules, which are allowed to change these, and are covered by
+  // tests/collocations.test.ts.
   test.each(COMMON_SENSE)("%s: %s", (_word, sentence) => {
     expect(toPhoneme(sentence, { resolveSchwa: resolveHomographs }).phonemes).toBe(
-      toPhoneme(sentence).phonemes
+      toPhoneme(sentence, { resolveSchwa: false }).phonemes
     );
   });
 

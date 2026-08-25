@@ -18,6 +18,7 @@
 
 export { toGrapheme, toPhoneme } from "./g2p.ts";
 export { toSyllables } from "./syllabifier.ts";
+export { collocationRules, resolveCollocations } from "./collocations.ts";
 export { applySchwa } from "./schwa.ts";
 export type { G2PResult, SchwaResolver, SyllableTag, ToPhonemeOptions } from "./types.ts";
 export { VERSION } from "./version.ts";

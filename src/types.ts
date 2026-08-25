@@ -31,10 +31,14 @@ export type ToPhonemeOptions = {
   expandAbbr?: boolean;
 
   /**
-   * Override the schwa decision with sentence context, for homographs.
-   * Defaults to the built-in dictionary alone.
+   * How homographs are resolved.
+   *
+   * Defaults to the built-in collocation rules, which read the words around
+   * each homograph. Pass a {@linkcode SchwaResolver} to use your own, such as
+   * `resolveHomographs` from `indo-g2p/homographs`, or `false` to resolve
+   * nothing and let the schwa dictionary decide every word.
    */
-  resolveSchwa?: SchwaResolver;
+  resolveSchwa?: SchwaResolver | false;
 };
 
 /**

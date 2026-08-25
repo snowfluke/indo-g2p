@@ -89,8 +89,15 @@ What we are cautious about:
 
 ## Homograph rules
 
-`data/homographs-verified.tsv` is the source of truth, and every row needs
-evidence. The bar is a source that marks the pepet vowel explicitly, such as
+There are two tables. `data/homographs-verified.tsv` holds the readings, and
+every row needs evidence. `data/homographs-collocations.tsv` holds the trigger
+words that select a non-default reading; those are ordinary collocations
+rather than dictionary data, so they need a speaker's judgement and a test.
+
+A trigger that also occurs around the other sense is a bug: `pagi` was dropped
+from `apel` because _makan apel setiap pagi_ is fruit, not a roll call.
+
+The readings themselves still need a source. The bar is a source that marks the pepet vowel explicitly, such as
 the Indonesian entry on [en.wiktionary.org](https://en.wiktionary.org), where
 `ê` is `/ə/` while `é` and `è` are not.
 

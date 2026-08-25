@@ -11,6 +11,7 @@ import {
   VOWELS,
   WORD_PATTERN,
 } from "./constants.ts";
+import { resolveCollocations } from "./collocations.ts";
 import { applySchwa } from "./schwa.ts";
 import { toSyllables } from "./syllabifier.ts";
 import type { G2PResult, ToPhonemeOptions } from "./types.ts";
@@ -84,8 +85,11 @@ function wordToPhonemes(
 export function toPhoneme(text: string, options: ToPhonemeOptions = {}): G2PResult {
   const lowered = text.toLowerCase();
   const matches = [...lowered.matchAll(WORD_PATTERN)];
+
   // The resolver sees the whole sentence at once, so it can use context.
-  const resolved = options.resolveSchwa?.(matches.map((match) => match[0])) ?? [];
+  // Collocation rules are the default; `false` turns resolution off entirely.
+  const resolver = options.resolveSchwa ?? resolveCollocations;
+  const resolved = resolver === false ? [] : resolver(matches.map((match) => match[0]));
 
   const syllables: string[] = [];
   const parts: string[] = [];
