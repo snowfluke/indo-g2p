@@ -95,14 +95,34 @@ const GROUPS: { title: string; cases: Case[] }[] = [
 
 const escape = (text: string): string => text.replaceAll("|", "\\|");
 
+/**
+ * Pad a table's columns to an even width.
+ *
+ * The checked-in README is padded, and CI fails the build when this file's
+ * output differs from it, so the padding has to happen here rather than in a
+ * formatter. Nothing formats markdown in this repo.
+ */
+function table(header: string[], body: string[][]): string {
+  const all = [header, ...body];
+  const widths = header.map((_, column) =>
+    Math.max(...all.map((row) => [...(row[column] ?? "")].length))
+  );
+  // Counted in code points, so a phoneme like `ʃ` costs one column, not two.
+  const line = (cells: string[]): string =>
+    `| ${cells.map((cell, i) => cell + " ".repeat((widths[i] ?? 0) - [...cell].length)).join(" | ")} |`;
+  return [line(header), line(widths.map((width) => "-".repeat(width))), ...body.map(line)].join(
+    "\n"
+  );
+}
+
 const rows = GROUPS.map(({ title, cases }) => {
   const body = cases.map((item) => {
     const expand = item.note?.includes("expandAbbr") ?? false;
     const { phonemes } = toPhoneme(item.input, expand ? { expandAbbr: true } : {});
     const note = item.note ? ` <sub>${item.note}</sub>` : "";
-    return `| ${item.covers}${note} | \`${escape(item.input)}\` | \`${escape(phonemes)}\` |`;
+    return [`${item.covers}${note}`, `\`${escape(item.input)}\``, `\`${escape(phonemes)}\``];
   });
-  return `### ${title}\n\n| Covers | Input | Output |\n| --- | --- | --- |\n${body.join("\n")}`;
+  return `### ${title}\n\n${table(["Covers", "Input", "Output"], body)}`;
 }).join("\n\n");
 
 const syllables = ["cerdas", "sekolah", "memperbaiki", "beautiful"]
@@ -132,7 +152,10 @@ const end = readme.indexOf("\n## ", start + 1);
 const updated =
   start === -1
     ? readme.replace("\n## API", `\n${section}\n## API`)
-    : readme.slice(0, start) + section + readme.slice(end + 1);
+    : // The extra newline restores the blank line before the next heading,
+      // which `end` consumed. Without it the check-in and the generator drift
+      // by one line and CI fails the coverage gate.
+      `${readme.slice(0, start)}${section}\n${readme.slice(end + 1)}`;
 
 await Bun.write(path, updated);
 console.log(`coverage matrix: ${GROUPS.reduce((n, g) => n + g.cases.length, 0)} rows`);
