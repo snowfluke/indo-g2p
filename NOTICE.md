@@ -4,7 +4,8 @@
 
 ## Wikidepia/g2p-id: MIT
 
-<https://github.com/Wikidepia/g2p-id>, Copyright (c) 2026 Akmal.
+<https://github.com/Wikidepia/g2p-id>, Copyright (c) 2026 Akmal. A copy of that
+MIT License is in [licenses/g2p-id-MIT.txt](./licenses/g2p-id-MIT.txt).
 
 - `src/data/syllabifier-model.ts`: CRF syllabifier weights, unpacked from
   `syllabifier.crfsuite`.
