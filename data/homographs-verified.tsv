@@ -1,0 +1,25 @@
+# Verified Indonesian homographs.
+#
+# Every row was checked against the Indonesian entry on en.wiktionary.org,
+# which marks the pepet vowel explicitly: "ê" is /ə/, "é" and "è" are not.
+# A rule is kept only where Wiktionary shows two readings that genuinely
+# split along the two parts of speech named here.
+#
+# class is the coarse POS that selects the reading. A "-" marks a side that is
+# either unverifiable, or verifiable but unsafe because the tagger mislabels
+# the common sense. Either way the resolver abstains and the dictionary decides.
+# tests/no-regression.test.ts keeps every rule honest against real sentences.
+# mask is a hex bitmask over the word's "e"s: bit i set = the i-th "e" is /ə/.
+#
+# word	class1	mask1	class2	mask2	evidence
+apel	-	0	V	0	apêl (n, apple) vs apèl (n/v, roll call)
+ketel	-	0	A	3	ketèl (n, kettle) vs kêtêl (adj, thick)
+letak	A	0	N	1	lêtak (n, placement) vs letak (adj, weak)
+leter	A	0	-	0	leter (adj, chatter) vs letêr (n, letter)
+pening	A	1	-	0	pêning (adj, dizzy) vs pening (n, tax plate); noun side dropped, the tagger reads the common adjective as a noun
+pepet	V	0	N	3	pêpêt (n, schwa) vs pepet (v, to close)
+per	N	0	P	1	per (n, spring) vs pêr (prep, per/through)
+rebak	A	0	-	0	rebak (adj, torn) vs rêbak (v, to melt)
+rembes	A	0	-	0	rembes (adj, runny) vs rêmbês (v, to ooze)
+seret	V	0	-	0	seret (v, to drag) vs sêrêt (adj, stiff)
+terapi	N	0	A	1	terapi (n, therapy) vs têrapi (adj, tidiest)

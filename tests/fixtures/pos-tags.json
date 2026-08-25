@@ -1,0 +1,6390 @@
+[
+  [
+    [
+      "komunikasi",
+      "dengar",
+      "pembelas",
+      "cinta",
+      "disepakati",
+      "eksplotasi",
+      "kecap",
+      "sokongan",
+      "berbiras"
+    ],
+    ["B-NNO", "B-VBP", "B-NNO", "B-NNO", "B-VBP", "B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "radiasi",
+      "sabat",
+      "menyelingar",
+      "bercengkerama",
+      "pengap",
+      "gelang",
+      "dempulan",
+      "melebar",
+      "selangka",
+      "pencut",
+      "pejatian"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-VBI",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO"
+    ]
+  ],
+  [
+    [
+      "pupur",
+      "didahulukan",
+      "bukti",
+      "mencacah",
+      "permusuhan",
+      "cipan",
+      "najis",
+      "keluak",
+      "sertu"
+    ],
+    ["B-NNO", "B-VBP", "B-NNO", "B-VBT", "B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["kedi", "kebatinan", "liliput", "aswa"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "derus",
+      "kesebatan",
+      "menyamar",
+      "beranta",
+      "mencahayai",
+      "belok",
+      "delusif",
+      "pemilik",
+      "mencampak"
+    ],
+    ["B-NNO", "B-NNO", "B-NNP", "B-VBI", "B-VBT", "B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["dihiasi", "segi", "caling", "serpihan", "mejan"],
+    ["B-NNO", "B-ADV", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["mengelak", "begar", "ceronggah", "arip", "berkomplot"],
+    ["B-NNO", "B-VBI", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "rabana",
+      "tidurnya",
+      "mekanisasi",
+      "berantukan",
+      "meludahi",
+      "pengingkaran",
+      "angel",
+      "bissu",
+      "karar",
+      "pendurhaka"
+    ],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-VBT", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["bi", "menguliti", "lombong", "dengut", "mejan", "banal", "penyearah", "dibutuhkan"],
+    ["B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "lisan",
+      "transplantasi",
+      "sebat",
+      "bersuamikan",
+      "kerancang",
+      "retribusi",
+      "mendekus",
+      "bandan",
+      "bertih",
+      "sentral",
+      "sekeber"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNO",
+      "B-NNP"
+    ]
+  ],
+  [
+    [
+      "lurah",
+      "berserak",
+      "berefleksi",
+      "berpintu",
+      "blokade",
+      "janda",
+      "cerah",
+      "kelesa",
+      "main",
+      "bolu",
+      "diam",
+      "modus"
+    ],
+    [
+      "B-NNO",
+      "B-VBI",
+      "B-NNO",
+      "B-NNP",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-VBI",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["filter", "berpelukan", "titis", "kesaktian", "berang", "prinsip"],
+    ["B-NNP", "B-VBI", "B-NNO", "B-NNO", "B-VBI", "B-NNO"]
+  ],
+  [
+    ["ajar", "pe-te", "lembang", "baal", "kelintingan", "diikuti", "klerus"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-VBP", "B-NNO"]
+  ],
+  [
+    [
+      "kreditor",
+      "manjur",
+      "tersengih",
+      "ketimbul",
+      "menyambung",
+      "berdecut",
+      "tekek",
+      "arloji",
+      "keuzuran"
+    ],
+    ["B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "disengkang",
+      "kasino",
+      "pergaulan",
+      "kelesa",
+      "perempuan",
+      "sekolahan",
+      "karton",
+      "berkelam",
+      "rapsodi",
+      "seksual"
+    ],
+    ["B-VBP", "B-NNP", "B-NNO", "B-NNP", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["kontur", "jangkung", "lenggang", "seti", "beranggar", "memberangsangkan"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-VBT"]
+  ],
+  [
+    ["mengelai", "istiadat", "ragam", "terapi"],
+    ["B-VBT", "B-NNP", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "bertahap",
+      "fatihah",
+      "membalutkan",
+      "intensifikasi",
+      "mahal",
+      "perkenan",
+      "tuangan",
+      "pencebakan",
+      "cagut",
+      "hipokrit",
+      "sepak"
+    ],
+    [
+      "B-VBI",
+      "B-NNP",
+      "B-VBT",
+      "B-NNO",
+      "B-ADJ",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO"
+    ]
+  ],
+  [
+    [
+      "penembakan",
+      "perusuh",
+      "segaris",
+      "membingkis",
+      "serang",
+      "kompartemen",
+      "kelilip",
+      "deler",
+      "kenaf",
+      "acara",
+      "perwatakan",
+      "kereceng"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["pertempuran", "peselam", "cenderasa", "sengkang", "penyanderaan", "galas"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["lupus", "kenalan", "perisian", "lemper", "pelekat", "berlian"],
+    ["B-NNP", "B-NNO", "B-NNO", "B-ADJ", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["-wati", "mengongkong", "karisma", "penggemblengan", "sersan", "cekel"],
+    ["B-NNP", "B-VBT", "B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["gede", "seruput", "senur", "materiil", "menceruh", "pentil"],
+    ["B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "suria",
+      "kelepak",
+      "ucapannya",
+      "suis",
+      "pemintal",
+      "sweter",
+      "impresionisme",
+      "dengkel",
+      "seok",
+      "ambek",
+      "berkedai",
+      "terkucil"
+    ],
+    [
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    [
+      "antik",
+      "teleng",
+      "materialis",
+      "jerang",
+      "keterangannya",
+      "metanol",
+      "pengedropan",
+      "sebentuk",
+      "pegon",
+      "operasional",
+      "jalin",
+      "debam"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-ADJ",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    [
+      "legiun",
+      "tengkek",
+      "cengi",
+      "gelegar",
+      "menatah",
+      "kejenuhan",
+      "serang",
+      "bertertib",
+      "memenangkan"
+    ],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-VBT", "B-NNO", "B-NNO", "B-NNP", "B-VBT"]
+  ],
+  [
+    [
+      "monumen",
+      "segenggam",
+      "cintamani",
+      "kerpus",
+      "elastis",
+      "diamankan",
+      "seret",
+      "mencandu",
+      "nyata"
+    ],
+    ["B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-VBP", "B-NNO", "B-VBT", "B-ADV"]
+  ],
+  [
+    ["tuding", "sengkelat", "nyawa", "pengeboran", "mendemonstrasi"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["apel", "dop", "menanggap", "mengukir"],
+    ["B-NNO", "B-NNP", "B-VBT", "B-NNP"]
+  ],
+  [
+    ["terbenam", "mengancam", "belongkeng", "kelepur", "serak", "senat", "abuk", "ngilu"],
+    ["B-NNP", "B-VBT", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["keder", "kebuntungan", "manipulasi"],
+    ["B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["pei", "azirah", "layaknya", "arau", "kepar"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["merobek", "silap", "ionisasi", "cacat", "waktunya", "bena"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-CSN"]
+  ],
+  [
+    [
+      "diselenggarakannya",
+      "ketek",
+      "daidan",
+      "berpeluk",
+      "menempong",
+      "cenela",
+      "gugus",
+      "hak",
+      "periuk"
+    ],
+    ["B-VBP", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "demamnya",
+      "sepak",
+      "miliuner",
+      "ceper",
+      "saintis",
+      "keramunting",
+      "perdayangan",
+      "tersumbat",
+      "menyapa",
+      "berarakan",
+      "serandang"
+    ],
+    [
+      "B-VBP",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-PRI",
+      "B-NNO",
+      "B-NNO"
+    ]
+  ],
+  [
+    ["transmisi", "bicokok", "buat", "menyertakan", "bekel"],
+    ["B-NNO", "B-VBI", "B-PPO", "B-VBT", "B-NNO"]
+  ],
+  [
+    [
+      "cedera",
+      "kerang",
+      "telefoni",
+      "sejelas",
+      "diskredit",
+      "dendang",
+      "penanda",
+      "sopan",
+      "pencedok"
+    ],
+    ["B-ADJ", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["leter", "terpana", "pengatur"],
+    ["B-NNO", "B-NNP", "B-NNO"]
+  ],
+  [
+    ["teken", "senuh", "berlagu", "bongkaran", "menganugerahkan", "penyemu", "mengkhayalkan"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-VBT", "B-NNP", "B-VBT"]
+  ],
+  [
+    ["klausul", "puntung", "teran", "berencana", "jejer", "terbahana"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-VBI", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "sen",
+      "teralun",
+      "pembubukan",
+      "beranggotakan",
+      "ketel",
+      "camilan",
+      "waris",
+      "cecere",
+      "tamunya",
+      "membungkam"
+    ],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["pektin", "awah", "pasung", "laso", "apel", "jingkrak", "cad", "berumput"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "jamin",
+      "inspirasi",
+      "bersengkela",
+      "mengalingi",
+      "memancing",
+      "serak",
+      "belu",
+      "aseton",
+      "kerana",
+      "capaian",
+      "pemujaan"
+    ],
+    [
+      "B-NNP",
+      "B-NNP",
+      "B-VBI",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["personil", "kegusaran", "terkempa", "sela", "apik", "kitir", "tersenyawa", "goda"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "bucu",
+      "representatif",
+      "plastisitas",
+      "tepok",
+      "studi",
+      "info",
+      "senur",
+      "lembayung",
+      "mel",
+      "menggantungkan",
+      "sehari"
+    ],
+    [
+      "B-VBI",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-VBT",
+      "B-NNO"
+    ]
+  ],
+  [
+    ["mengungsi", "loteng", "semi", "dicintai", "duet"],
+    ["B-VBT", "B-NNP", "B-NNO", "B-VBP", "B-NNO"]
+  ],
+  [
+    ["namun", "begu", "membehandel", "acara", "mustahak"],
+    ["B-CCN", "B-NNO", "B-VBT", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["ciut", "penggalan", "jimat", "barung", "embel"],
+    ["B-NNP", "B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "breksi",
+      "abreviasi",
+      "penyerangan",
+      "seba",
+      "mengekstraksi",
+      "lapis",
+      "memelintir",
+      "benderang",
+      "cawan"
+    ],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-VBI", "B-NNP"]
+  ],
+  [
+    [
+      "membegitukan",
+      "bertunang",
+      "mendesing",
+      "pencirian",
+      "berdabus",
+      "keterlibatan",
+      "mengegos",
+      "helat"
+    ],
+    ["B-VBT", "B-NNO", "B-VBT", "B-NNO", "B-VBI", "B-NNO", "B-VBT", "B-NNP"]
+  ],
+  [
+    ["sehabis", "dera", "membelongsongi", "pencelupan", "deparpolisasi", "terdodong"],
+    ["B-ADV", "B-VBP", "B-VBT", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "sentil",
+      "eksplotasi",
+      "cengkam",
+      "zahir",
+      "rampasan",
+      "fasa",
+      "cekrem",
+      "perca",
+      "pelekat",
+      "pilu"
+    ],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["ditimbun", "dramatik", "menguraikan", "serak"],
+    ["B-VBP", "B-NNO", "B-VBT", "B-NNO"]
+  ],
+  [
+    [
+      "mengupah",
+      "mondar",
+      "beludar",
+      "pelat",
+      "elektrodinamika",
+      "kedesaan",
+      "sup",
+      "muntah",
+      "kelebek"
+    ],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-VBT", "B-NNO"]
+  ],
+  [
+    ["leter", "pengentalan", "anjur", "artefak"],
+    ["B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["daluang", "bagea", "persepuluh", "isinya", "apel", "gergasi", "piknik", "eskalator"],
+    ["B-VBP", "B-VBI", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["selokan", "kesepakatan", "bermobil", "cagil", "kemukakan", "debut"],
+    ["B-NNO", "B-NNO", "B-VBI", "B-NNP", "B-NNO", "B-VBP"]
+  ],
+  [
+    ["mentega", "helat", "demagog", "memperburuk", "bancuhan", "anggun", "kerbuk"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-VBT", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "begar",
+      "ustazah",
+      "komisi",
+      "almalun",
+      "keroco",
+      "kebinasaan",
+      "kilang",
+      "eboni",
+      "menyelidiki",
+      "bumban",
+      "teka",
+      "benderung"
+    ],
+    [
+      "B-VBI",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["telor", "dimiliki", "kemis", "pengabulan", "faks"],
+    ["B-NNP", "B-VBP", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["leter", "bermilik", "perkaramu"],
+    ["B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["mengarah", "melik", "mewek", "kinja", "surau", "kena", "penyetir", "gaplek"],
+    ["B-VBI", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["gunakan", "bekel", "durat", "bayuan"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["kegaduhan", "jeli", "berjabat", "golf", "kambing", "pengadun", "pengasuh"],
+    ["B-NNO", "B-NNO", "B-VBI", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "cela",
+      "membusakan",
+      "mengoles",
+      "aliansi",
+      "pembongkaran",
+      "serangsang",
+      "gandengan",
+      "berabe",
+      "taruhan",
+      "kontrol"
+    ],
+    ["B-NNP", "B-VBT", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["mengancuk", "subur", "teleng", "sambungan", "memboroskan", "meluncur", "terarah"],
+    ["B-NNP", "B-NNO", "B-NNP", "B-NNO", "B-VBT", "B-VBT", "B-NNO"]
+  ],
+  [
+    [
+      "dituduhkan",
+      "pemerolehan",
+      "reproduksi",
+      "menyangga",
+      "berkelanjutan",
+      "imannya",
+      "legenda",
+      "kekel",
+      "diarah",
+      "belacak",
+      "pelanturan"
+    ],
+    [
+      "B-VBP",
+      "B-NNO",
+      "B-NNO",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNO"
+    ]
+  ],
+  [
+    [
+      "kelopak",
+      "pemalu",
+      "berbelasungkawa",
+      "lempeng",
+      "amang",
+      "azmat",
+      "mufakat",
+      "berbalikan",
+      "pengumuman",
+      "bertempur"
+    ],
+    ["B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-VBT", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "perseptif",
+      "perkawinan",
+      "pecut",
+      "gelang",
+      "alkaloid",
+      "amalannya",
+      "berselaju",
+      "tercium",
+      "kecekungan"
+    ],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-VBI", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["akik", "embel", "ubun", "imej"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["cicak", "sangkalan", "martil", "lenggang", "karaoke", "cun", "setiba"],
+    ["B-NNP", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["berabonemen", "kecap", "meningkatkan", "kacaukan"],
+    ["B-NNO", "B-NNO", "B-VBT", "B-NNO"]
+  ],
+  [
+    ["semaian", "bersengkeling", "apositif", "kecap", "pemerkosa", "tunaaksara", "belatuk"],
+    ["B-NNO", "B-VBI", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "bertegah",
+      "intelijen",
+      "pembaptisan",
+      "menempa",
+      "memepet",
+      "syekh",
+      "mengedipkan",
+      "kalut",
+      "tunakarya"
+    ],
+    ["B-NNP", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-VBT", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "empati",
+      "pengunjung",
+      "culika",
+      "pelekat",
+      "honor",
+      "brevet",
+      "damping",
+      "kejernihan",
+      "mengesumba",
+      "bertekap",
+      "terhadapnya"
+    ],
+    [
+      "B-NNP",
+      "B-NNO",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-VBI",
+      "B-NNO"
+    ]
+  ],
+  [
+    [
+      "kercup",
+      "pembongkar",
+      "menghadkan",
+      "belengkokan",
+      "dipulihkan",
+      "mertabat",
+      "membekukan",
+      "telaah",
+      "bogot",
+      "nyenyak",
+      "k",
+      "tekek"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-VBT",
+      "B-NNO",
+      "B-VBP",
+      "B-VBT",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    [
+      "berok",
+      "terang",
+      "beratap",
+      "ahmar",
+      "melekatkan",
+      "bercakar",
+      "melunasi",
+      "memutihkan",
+      "berkelun"
+    ],
+    ["B-VBI", "B-VBT", "B-NNP", "B-NNP", "B-VBT", "B-NNO", "B-NNO", "B-VBT", "B-NNP"]
+  ],
+  [
+    ["bercacat", "taruh", "duduknya", "jemput", "darah", "debut"],
+    ["B-NNO", "B-ADJ", "B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["erang", "karimah", "centeng", "tuam", "merisaukan", "potlot", "penyehatan"],
+    ["B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-VBT", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "berlanjut",
+      "kedekai",
+      "anda",
+      "wajah",
+      "dikehendaki",
+      "jejak",
+      "lobi",
+      "kecap",
+      "mengelilingi",
+      "atan",
+      "membukai",
+      "perangsang"
+    ],
+    [
+      "B-VBI",
+      "B-NNP",
+      "B-PRN",
+      "B-NNO",
+      "B-VBP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-VBT",
+      "B-NNO",
+      "B-VBT",
+      "B-NNO"
+    ]
+  ],
+  [
+    [
+      "pendita",
+      "kepemimpinan",
+      "dikembangkan",
+      "helat",
+      "berterusan",
+      "atase",
+      "salib",
+      "keduniaan",
+      "rimas",
+      "merempuh",
+      "pintas"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-VBP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNO",
+      "B-NNP",
+      "B-VBT",
+      "B-NNO"
+    ]
+  ],
+  [
+    [
+      "pemerintahan",
+      "melombong",
+      "sekeber",
+      "mendelegasikan",
+      "pepet",
+      "pemelihara",
+      "kentung",
+      "meteor",
+      "ceteng",
+      "semaput",
+      "menghidu"
+    ],
+    [
+      "B-NNO",
+      "B-VBT",
+      "B-NNP",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["kere", "peminjam", "pelisir"],
+    ["B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["membelikan", "awalengas", "belahak", "menyalahi", "sepak"],
+    ["B-VBT", "B-NNO", "B-NNO", "B-VBT", "B-NNO"]
+  ],
+  [
+    ["serang", "kesejahteraan", "cengkol", "merentang", "kejelasan", "renjis", "tamar"],
+    ["B-NNO", "B-NNO", "B-NNP", "B-VBT", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "jambatan",
+      "antropomorfisme",
+      "pesero",
+      "kemerosotan",
+      "melicinkan",
+      "demisioner",
+      "penisilin",
+      "berpendar",
+      "asetat",
+      "cerkam",
+      "pengetahuan"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-VBT",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNO"
+    ]
+  ],
+  [
+    [
+      "memasukkan",
+      "keder",
+      "menyerit",
+      "komersil",
+      "keturunannya",
+      "peledakan",
+      "penyelaman",
+      "unggul",
+      "kloroform"
+    ],
+    ["B-VBT", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-ADJ", "B-NNO"]
+  ],
+  [
+    ["berseri", "kepuasan", "bestari", "batung", "ganang", "pujian"],
+    ["B-NNO", "B-NNO", "B-VBI", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "kurikulum",
+      "kayuh",
+      "peliputan",
+      "dobi",
+      "kelentang",
+      "bersepi",
+      "pemerataan",
+      "persundalan"
+    ],
+    ["B-NNO", "B-NNP", "B-NNO", "B-VBP", "B-NNO", "B-VBI", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "tepak",
+      "besut",
+      "perwakilan",
+      "zina",
+      "bertempias",
+      "impian",
+      "sahsiah",
+      "perpaduan",
+      "telingkah"
+    ],
+    ["B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "mengerebok",
+      "menyarankan",
+      "gangster",
+      "bisa",
+      "eks",
+      "maksud",
+      "leter",
+      "merebahkan",
+      "bertebaran",
+      "gelinding",
+      "kabaret"
+    ],
+    [
+      "B-NNP",
+      "B-VBT",
+      "B-NNO",
+      "B-ADV",
+      "B-ADJ",
+      "B-VBT",
+      "B-NNO",
+      "B-VBT",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["wajib", "kenang", "anjar", "helat"],
+    ["B-VBI", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["pelekat", "jorok", "duduknya", "teguh"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["memperjuangkan", "relai", "terabai", "belau", "kercup"],
+    ["B-VBT", "B-NNO", "B-ADJ", "B-VBI", "B-NNP"]
+  ],
+  [
+    ["tekek", "sepeda", "menyebarluaskan", "aseran", "be", "akustika", "tumpu", "dihormati"],
+    ["B-NNO", "B-NNO", "B-VBT", "B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "teken",
+      "penyentuh",
+      "mengurung",
+      "sponsor",
+      "menabur",
+      "menganut",
+      "peningset",
+      "sekati",
+      "abrasi",
+      "diiris"
+    ],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-VBT", "B-VBT", "B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "dilantik",
+      "bunyi",
+      "penyaringan",
+      "membangatkan",
+      "cuma",
+      "bersilang",
+      "terma",
+      "menyusup",
+      "memurnikan",
+      "industriawan",
+      "urusan",
+      "begar"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-VBT",
+      "B-ADV",
+      "B-VBI",
+      "B-NNO",
+      "B-NNP",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO"
+    ]
+  ],
+  [
+    ["jotos", "bandulan", "bekel"],
+    ["B-NNP", "B-VBI", "B-NNO"]
+  ],
+  [
+    ["ngeong", "lamanya", "cetok", "sogokan", "mengasari", "subang"],
+    ["B-NNP", "B-ADJ", "B-NNP", "B-NNP", "B-VBT", "B-NNO"]
+  ],
+  [
+    [
+      "kepandaiannya",
+      "rombakan",
+      "bu",
+      "rekening",
+      "antihistamin",
+      "temukut",
+      "kekacauan",
+      "orientasi",
+      "tonase",
+      "keuskupan",
+      "ganteng",
+      "zirafah"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    [
+      "potong",
+      "gedebak",
+      "cidukan",
+      "menggaris",
+      "enteng",
+      "mendiagnosis",
+      "seri",
+      "beralih",
+      "kumpul"
+    ],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNO", "B-NNO", "B-VBI", "B-NNP"]
+  ],
+  [
+    ["pemirsa", "kabarkan", "mendirikan", "d", "mesra", "begu", "tabu"],
+    ["B-NNP", "B-NNO", "B-VBT", "B-NUM", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["disokong", "cengking", "plasma", "secanggih", "zapin", "alkari", "pentil"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["jerangan", "fail", "dendang", "laman", "kernai", "lepasan"],
+    ["B-NNO", "B-NNO", "B-VBP", "B-NNO", "B-NNP", "B-NNO"]
+  ],
+  [
+    ["teleku", "cebar", "adik", "bupati", "menyidik", "mencangkung", "mencebur", "tela"],
+    ["B-NNP", "B-NNP", "B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["seminggu", "pengikis", "cicinda", "kehitaman", "naif", "bintit", "belok", "penduduk"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "pesimis",
+      "pedupaan",
+      "bulur",
+      "terbawah",
+      "mencerabih",
+      "dicerai",
+      "kepang",
+      "berpentingan",
+      "terandal",
+      "rantaian",
+      "latih"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-ADJ",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP"
+    ]
+  ],
+  [
+    [
+      "kebapakan",
+      "kejam",
+      "leding",
+      "sambutan",
+      "bayonet",
+      "berceloteh",
+      "dipancarkan",
+      "pengesanan",
+      "skema",
+      "ekses",
+      "terbadai"
+    ],
+    [
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-VBP",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["secara", "lumpang", "disenangi", "kemarau", "beranjangsana", "bena"],
+    ["B-PPO", "B-ADJ", "B-VBP", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["lebam", "penghakiman", "mencoret"],
+    ["B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["membenum", "kelucahan", "mengemudiankan", "semen", "coro", "perdamaian", "merumuskan"],
+    ["B-NNO", "B-NNO", "B-VBT", "B-NNO", "B-NNP", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "penyerobot",
+      "membega",
+      "kebuntuan",
+      "handal",
+      "seni",
+      "celengan",
+      "pengandak",
+      "cetok",
+      "mendupai",
+      "negaranya",
+      "khusus",
+      "rekabentuk"
+    ],
+    [
+      "B-NNO",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-VBT",
+      "B-NNO",
+      "B-ADJ",
+      "B-NNP"
+    ]
+  ],
+  [
+    [
+      "mencari",
+      "cucu",
+      "mempermisikan",
+      "ramu",
+      "menghubungkan",
+      "menerjuni",
+      "pembaktian",
+      "pemangkas",
+      "jering",
+      "memepet"
+    ],
+    ["B-VBT", "B-NNO", "B-VBT", "B-NNO", "B-VBT", "B-VBT", "B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "tegah",
+      "berganti",
+      "menelurkan",
+      "anyam",
+      "pong",
+      "memperluas",
+      "apel",
+      "bersel",
+      "kenajisan",
+      "mengadon"
+    ],
+    ["B-NNP", "B-VBI", "B-VBT", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["keambrukan", "tun", "barah", "sembah", "deder", "bersuara", "teluk", "berselepat", "letak"],
+    ["B-NNO", "B-NNO", "B-VBI", "B-NNP", "B-NNP", "B-VBI", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["telan", "bersuami", "pekaseh"],
+    ["B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["kere", "tahyul", "syafaat", "enggang", "ambah"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["erang", "dengungan", "arun"],
+    ["B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "diagnosa",
+      "didikan",
+      "menghardik",
+      "sewaan",
+      "adilan",
+      "kere",
+      "mencabik",
+      "gelagat",
+      "mendemah",
+      "kerabat",
+      "tunawisma",
+      "kesusilaan"
+    ],
+    [
+      "B-NNO",
+      "B-VBP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNO"
+    ]
+  ],
+  [
+    ["samseng", "aling", "penyumbang", "memperbagus", "berkebetulan", "ceki"],
+    ["B-NNP", "B-NNP", "B-NNO", "B-VBT", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["tercecah", "lempung", "ketel", "hipotenusa", "tajuk", "tersingkir"],
+    ["B-NNP", "B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["satir", "poster", "mencorongkan", "kelenteng", "perewa"],
+    ["B-NNO", "B-NNP", "B-VBT", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "akulah",
+      "mencocol",
+      "angsoka",
+      "esoknya",
+      "menyebukan",
+      "letak",
+      "bercintakan",
+      "kekurusan",
+      "berkeriput",
+      "angkut"
+    ],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-VBT", "B-NNO", "B-VBI", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["cerdik", "ketus", "ketek"],
+    ["B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["plagiat", "giginya", "kecandan", "serangsang", "helat", "kura", "cekcok", "pembungkus"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "berakhlak",
+      "berburuk",
+      "pesirah",
+      "menebari",
+      "belon",
+      "leding",
+      "beraris",
+      "puisi",
+      "deputasi",
+      "berlanggar",
+      "kempit"
+    ],
+    [
+      "B-VBI",
+      "B-NNP",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["efendi", "balada", "wakil", "relai", "merempuh", "eling"],
+    ["B-NNP", "B-NNP", "B-NNO", "B-NNO", "B-VBT", "B-NNP"]
+  ],
+  [
+    ["perbuahan", "adopsi", "lebam", "keambrukan", "dandanan"],
+    ["B-NNO", "B-NNO", "B-NNP", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "senget",
+      "teranas",
+      "bena",
+      "celurut",
+      "sebatan",
+      "palunya",
+      "temara",
+      "petir",
+      "amplifikasi",
+      "periode"
+    ],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["debut", "keramboja", "mencoangkan"],
+    ["B-VBP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["imut", "perbenturan", "jeli", "pakai", "forum"],
+    ["B-NNP", "B-NNO", "B-NNO", "B-VBI", "B-NNO"]
+  ],
+  [
+    ["sebat", "eksplosi", "enaknya", "membangkitkan", "bermadah", "transisi"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-VBT", "B-VBI", "B-NNO"]
+  ],
+  [
+    [
+      "cerompong",
+      "-kan",
+      "penologi",
+      "sela",
+      "rakyat",
+      "daster",
+      "kebel",
+      "mengadangi",
+      "korespondensi",
+      "kerpus",
+      "binasakan"
+    ],
+    [
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-VBT",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["memanjatkan", "tersohor", "mengerukkan", "ganteng", "hidangkan", "masya"],
+    ["B-VBT", "B-NNP", "B-VBT", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["setrika", "hidupnya", "menghitung", "kepar", "segeh", "diketik"],
+    ["B-NNP", "B-NNO", "B-VBT", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["berhari", "bekel", "samaan", "sekaligus", "arsiran", "cerca"],
+    ["B-VBI", "B-NNO", "B-NNO", "B-CCN", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["berpendar", "akuntan", "belentung", "berbual", "cembung", "alami", "ekstasi"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-VBI", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["belan", "beraksi", "kedi", "seledri"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["ceracau", "membuyur", "kota", "pembelokan", "ayuh", "memaparkan", "ciuman", "ganteng"],
+    ["B-NNP", "B-NNP", "B-NNO", "B-NNP", "B-NNP", "B-VBT", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["sebat", "kerasukan", "ceracap", "raut", "kas", "perling", "timpang", "kampungnya"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-NNO"]
+  ],
+  [
+    ["pikap", "dengkuran", "aung", "menggugat", "merasuki", "telan"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-VBT", "B-NNP", "B-NNO"]
+  ],
+  [
+    ["pencirian", "telan", "berkunci", "gimnastik", "merentangi", "masya"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-VBT", "B-NNP"]
+  ],
+  [
+    ["apaan", "cela", "mendorong", "terisak"],
+    ["B-NNO", "B-NNP", "B-VBT", "B-NNO"]
+  ],
+  [
+    ["keder", "cencaluk", "pengecut", "memaafkan", "bepergian", "pegoh"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-VBT", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["dibacakan", "unit", "menghentak", "suria", "sepak", "almalun"],
+    ["B-VBP", "B-NNO", "B-NNO", "B-NNP", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "prinsip",
+      "penanda",
+      "memperjudikan",
+      "penenungan",
+      "golak",
+      "serati",
+      "padamu",
+      "enggan",
+      "celak",
+      "membongmeh"
+    ],
+    ["B-NNO", "B-NNO", "B-VBT", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-ADV", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "menyelakan",
+      "cetok",
+      "setingkat",
+      "mendesis",
+      "setara",
+      "ecer",
+      "teralpa",
+      "menggambar",
+      "penambang",
+      "berkesot"
+    ],
+    ["B-VBT", "B-NNP", "B-NNO", "B-VBT", "B-NNO", "B-NNP", "B-NNP", "B-VBT", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["cendala", "pembual", "ditumbuk", "celak"],
+    ["B-NNP", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["sebat", "alergi", "hindu", "kosmis", "cureng", "pial", "kerusuhan"],
+    ["B-NNO", "B-NNO", "B-NNP", "B-NNO", "B-NNP", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["pemberian", "delima", "telan", "mengeropeng"],
+    ["B-NNO", "B-VBP", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["berumbun", "bungkas", "penggubalan", "teknis", "menegang", "depak", "negatif", "mencandui"],
+    ["B-NNP", "B-NNO", "B-NNO", "B-ADJ", "B-NNO", "B-NNO", "B-ADJ", "B-NNP"]
+  ],
+  [
+    ["pipa", "pelekat", "dibebani", "pesi", "harmonika", "harinya", "dimengerti", "pencegahan"],
+    ["B-NNO", "B-NNO", "B-VBP", "B-NNO", "B-NNP", "B-NNO", "B-PPO", "B-NNO"]
+  ],
+  [
+    [
+      "rotasi",
+      "nyai",
+      "bersewaka",
+      "mendegilkan",
+      "selak",
+      "perampas",
+      "feodalisme",
+      "menampun",
+      "cengkong",
+      "dihadang"
+    ],
+    ["B-NNO", "B-NNO", "B-NNP", "B-VBT", "B-NNO", "B-NNP", "B-NNO", "B-CSN", "B-NNP", "B-VBP"]
+  ],
+  [
+    ["mengobarkan", "begar", "heroin"],
+    ["B-VBT", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["tadahan", "kolom", "celak"],
+    ["B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "grasi",
+      "monitor",
+      "bercetak",
+      "ketel",
+      "kumparan",
+      "sosis",
+      "menggeletak",
+      "nyetel",
+      "pemimpinnya",
+      "congki",
+      "menyekrup"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["pelak", "analitis", "terarah", "menggali", "berjauhan"],
+    ["B-NNO", "B-NNO", "B-ADJ", "B-PPO", "B-NNO"]
+  ],
+  [
+    [
+      "membayari",
+      "kain",
+      "pertelingkahan",
+      "mengemudikan",
+      "lelap",
+      "tasawuf",
+      "pastoral",
+      "berok",
+      "sepihak",
+      "menepis",
+      "aborsi",
+      "pencobaan"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO"
+    ]
+  ],
+  [
+    [
+      "pegari",
+      "pembacokan",
+      "teras",
+      "duyung",
+      "kemuncak",
+      "kedengaran",
+      "berjangkitan",
+      "realitas",
+      "prasejahtera",
+      "anca",
+      "penyentuh",
+      "berputar"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-VBP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO"
+    ]
+  ],
+  [
+    ["sanubari", "ialah", "muat", "remah", "terbuku", "disambar"],
+    ["B-NNO", "B-ART", "B-VBT", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["kapang", "sengkelat", "konsumen"],
+    ["B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["sekretin", "lebam", "cerutu", "dia", "peladangan", "berbisikan", "berbalikan"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-PRN", "B-NNO", "B-VBI", "B-NNO"]
+  ],
+  [
+    [
+      "membengis",
+      "rayau",
+      "penganiayaan",
+      "bongkaran",
+      "dibantai",
+      "berak",
+      "memancar",
+      "jeleknya",
+      "terpaut",
+      "berkelit",
+      "berbakti"
+    ],
+    [
+      "B-VBT",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-VBP",
+      "B-VBI",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    [
+      "bodohnya",
+      "dispersi",
+      "tukik",
+      "mental",
+      "beraga",
+      "belandongan",
+      "lembam",
+      "eksakta",
+      "menggaungkan",
+      "iran"
+    ],
+    ["B-NNO", "B-VBP", "B-ADJ", "B-NNP", "B-VBI", "B-NNO", "B-NNP", "B-NNP", "B-VBT", "B-NNP"]
+  ],
+  [
+    [
+      "terangin",
+      "semipermanen",
+      "kekasihku",
+      "cetok",
+      "membanguni",
+      "pekerjanya",
+      "pementasan",
+      "keganasan",
+      "semprot",
+      "cempor",
+      "memerli"
+    ],
+    [
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["lungsuran", "mencarikan", "menebaskan", "serang", "khas"],
+    ["B-NNO", "B-VBT", "B-VBT", "B-NNO", "B-ADJ"]
+  ],
+  [
+    [
+      "pepet",
+      "pengacara",
+      "menggondol",
+      "awas",
+      "diferensiasi",
+      "mengait",
+      "mengimpor",
+      "prestasinya"
+    ],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-VBP", "B-ADJ", "B-VBT", "B-NNO"]
+  ],
+  [
+    [
+      "pretel",
+      "memakai",
+      "menuang",
+      "bangkal",
+      "pleno",
+      "dikhawatirkan",
+      "berdempet",
+      "lempeng",
+      "pelaminan",
+      "pengeksporan"
+    ],
+    ["B-NNO", "B-VBT", "B-NNO", "B-NNO", "B-NNO", "B-VBP", "B-NNO", "B-NNP", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["dag-dig-dug", "diperhebat", "jeli"],
+    ["B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "cendana",
+      "bingkisan",
+      "perangkatan",
+      "dipelajari",
+      "kawi",
+      "sengkang",
+      "perbalahan",
+      "watas",
+      "serondok"
+    ],
+    ["B-NNP", "B-NNO", "B-NNO", "B-VBP", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["pelak", "surealisme", "nyamuk", "pengobatan"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["mandat", "merta", "apel", "terlihat", "serit", "besel"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-VBP", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "kecerdikan",
+      "dedai",
+      "giginya",
+      "kesentengan",
+      "berselit",
+      "ekliptika",
+      "terapi",
+      "jamin",
+      "menangani",
+      "keterbatasan",
+      "pengaram"
+    ],
+    [
+      "B-NNO",
+      "B-VBP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO"
+    ]
+  ],
+  [
+    ["angkin", "bendaharawan", "tonjol", "paralel", "belek"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["mengecil", "timah", "mental", "mencandui", "arau", "termakan", "sentiliter", "aviator"],
+    ["B-VBT", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["indah", "pengudaraan", "erang", "kejamas", "arem"],
+    ["B-NNP", "B-NNO", "B-NNP", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "mendira",
+      "netra",
+      "pancaran",
+      "dekan",
+      "semburat",
+      "larutan",
+      "apam",
+      "departemen",
+      "pembaruan",
+      "berbuka",
+      "mengaso",
+      "menolongnya"
+    ],
+    [
+      "B-NNO",
+      "B-NNP",
+      "B-NNO",
+      "B-VBP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["sehalus", "tegur", "mendayung", "kekasihku", "mental"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["memperbabu", "selak", "pemberi", "sengon"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["legar", "menjayakan", "bungaan"],
+    ["B-NNO", "B-VBT", "B-NNO"]
+  ],
+  [
+    ["ensiklik", "selaju", "kecap", "penyanderaan", "bisnis", "ambrol"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "menciut",
+      "termostat",
+      "demobilisan",
+      "konsolidasi",
+      "membudak",
+      "nafiri",
+      "karisma",
+      "pening"
+    ],
+    ["B-NNP", "B-VBP", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["semi", "ketiak", "dipulangkan"],
+    ["B-NNO", "B-NNO", "B-VBP"]
+  ],
+  [
+    ["ajaib", "b", "terasakan", "rawit", "berumput", "membanguni", "kepar", "afeksi"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-VBT", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "sekelumit",
+      "ketip",
+      "depak",
+      "suraya",
+      "sektoral",
+      "bekantan",
+      "kemungkus",
+      "pagar",
+      "sebebas"
+    ],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["lembang", "artetis", "menyerukan", "kepunyaan"],
+    ["B-NNO", "B-NNO", "B-VBT", "B-NNO"]
+  ],
+  [
+    ["ranum", "ingatanmu", "finalis", "botelir", "belok", "beradegan", "dwitunggal", "perirana"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-VBI", "B-NNO", "B-NNO", "B-VBP", "B-NNO"]
+  ],
+  [
+    ["pening", "berbarut", "pendataan", "membengkak"],
+    ["B-NNP", "B-VBI", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["mengelupur", "bergas", "mencakus", "dinasihatkan", "bunian", "ketek", "biak"],
+    ["B-VBT", "B-NNO", "B-NNP", "B-VBP", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["leter", "mengerti", "fosil", "zat"],
+    ["B-NNO", "B-VBT", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["ungku", "pekikan", "stopkontak", "mengail", "rem", "kere"],
+    ["B-NNP", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "pe-te",
+      "ghairah",
+      "takungan",
+      "berak",
+      "pengganas",
+      "bersejuk",
+      "pembikinan",
+      "akuakultur",
+      "campakkan",
+      "pemisahan",
+      "asan"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-VBI",
+      "B-NNP",
+      "B-VBI",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO"
+    ]
+  ],
+  [
+    [
+      "menggairahkan",
+      "memeper",
+      "menidurkan",
+      "dijangkau",
+      "pelaga",
+      "penoreh",
+      "serengeh",
+      "leding"
+    ],
+    ["B-VBT", "B-NNP", "B-VBT", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["delik", "mengasingkan", "pementasan", "terapi", "kantoran"],
+    ["B-NNP", "B-VBT", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["-baur", "pekerja", "legar", "keluh"],
+    ["B-NNP", "B-NNO", "B-NNO", "B-NUM"]
+  ],
+  [
+    ["belok", "kadet", "selimpat", "bercukai", "bertelanjang", "panik"],
+    ["B-NNO", "B-NNO", "B-ADJ", "B-VBI", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["terbentang", "notes", "leter", "padamu", "dedau", "congkah", "dirawat", "sedak"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-VBP", "B-NNO"]
+  ],
+  [
+    ["kena", "pasu", "awet", "seloroh", "terkalahkan", "abrek"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-VBP", "B-NNP"]
+  ],
+  [
+    [
+      "memenungkan",
+      "formula",
+      "sebatan",
+      "keting",
+      "jeli",
+      "menyedot",
+      "dipakainya",
+      "teatris",
+      "melanggani"
+    ],
+    ["B-VBT", "B-NNP", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-VBP", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["berok", "berkemih", "kelihaian", "balam", "abaikan", "sengat"],
+    ["B-VBI", "B-NNP", "B-NNO", "B-NNP", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "privasi",
+      "peminjam",
+      "babe",
+      "wasitah",
+      "persentase",
+      "legal",
+      "cor",
+      "dipaksakan",
+      "menyembuhkan",
+      "muridnya",
+      "berbuntut",
+      "sebat"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNO",
+      "B-NNP",
+      "B-VBP",
+      "B-VBT",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO"
+    ]
+  ],
+  [
+    ["kepekaan", "lembang", "pangkatnya", "lumur", "bersiap", "fakir"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-VBI", "B-NNP"]
+  ],
+  [
+    [
+      "kanopi",
+      "kontan",
+      "memuji",
+      "talu",
+      "termin",
+      "galah",
+      "kepanjangan",
+      "mengairi",
+      "sedan",
+      "pemboran"
+    ],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["semester", "ketel", "ruangan", "penyayang", "merantau", "bilion"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "sembuh",
+      "minat",
+      "keder",
+      "persneling",
+      "gelagat",
+      "membilai",
+      "mengobral",
+      "jahe",
+      "jinak",
+      "kaidah",
+      "kerjasama",
+      "deris"
+    ],
+    [
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["berekreasi", "jawabnya", "baginda", "jaminan", "memansuhkan", "pinta", "erang"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-VBT", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "bersemak",
+      "lenyai",
+      "cerpen",
+      "kusam",
+      "berefleksi",
+      "mencacat",
+      "pelotaris",
+      "menaruh",
+      "begu",
+      "bakut"
+    ],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-NNO", "B-VBT", "B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "pasaran",
+      "menyerah-terimakan",
+      "radiologi",
+      "wang",
+      "pemurah",
+      "dikapalkan",
+      "apes",
+      "berkemudi",
+      "pelang",
+      "kebangkrutan"
+    ],
+    ["B-NNO", "B-VBT", "B-NNO", "B-NNO", "B-NNO", "B-VBP", "B-NNP", "B-NNP", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["pelindung", "kamus", "duble", "raksasa", "kepang", "saksofon"],
+    ["B-NNO", "B-NNO", "B-VBP", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "selempang",
+      "berfokus",
+      "berseberangan",
+      "menari",
+      "cengkaman",
+      "desainer",
+      "merica",
+      "daru",
+      "perkakasan"
+    ],
+    ["B-NNO", "B-NNO", "B-VBI", "B-VBT", "B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-NNO"]
+  ],
+  [
+    ["mericau", "kere", "mengercitkan", "dihemat", "secubit"],
+    ["B-NNP", "B-NNP", "B-VBT", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["keder", "tukaran", "situasi", "suguhan", "andiko", "ketagih", "keluan"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["debas", "mentereng", "kesengitan", "kelentang"],
+    ["B-NNO", "B-VBT", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["kediaman", "inframerah", "koordinasi", "rembes", "menumbuk", "berbini"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["relai", "penduduk", "abadiah", "mengataskan"],
+    ["B-NNO", "B-NNO", "B-NNP", "B-VBT"]
+  ],
+  [
+    ["bilal", "cumil", "unggas", "membatin", "menceluk", "kepal", "bedama", "embel"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-VBI", "B-NNP"]
+  ],
+  [
+    [
+      "konsumsi",
+      "cela",
+      "memohonkan",
+      "pencabutan",
+      "situlah",
+      "membenamkan",
+      "dahinya",
+      "pedet",
+      "menekang",
+      "gajah"
+    ],
+    ["B-NNO", "B-NNP", "B-VBT", "B-NNO", "B-NNO", "B-VBT", "B-NNO", "B-NNO", "B-VBT", "B-NNP"]
+  ],
+  [
+    [
+      "kelepak",
+      "bungkuk",
+      "mengambau",
+      "jajahan",
+      "celup",
+      "tercekik",
+      "membungkuk",
+      "menyelara",
+      "kuali",
+      "berpencar",
+      "akuaduk",
+      "pembagian"
+    ],
+    [
+      "B-NNO",
+      "B-NNP",
+      "B-VBT",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-VBT",
+      "B-NNO",
+      "B-VBI",
+      "B-NNO",
+      "B-NNO"
+    ]
+  ],
+  [
+    ["bekat", "belok", "adipenghantar"],
+    ["B-VBI", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "tudung",
+      "karak",
+      "pemanis",
+      "kehalusan",
+      "perkenaan",
+      "kopi",
+      "bersenggolan",
+      "debut",
+      "pengisian"
+    ],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-VBP", "B-NNO"]
+  ],
+  [
+    ["celak", "memperbubungkan", "didasarkan", "video"],
+    ["B-NNP", "B-VBT", "B-VBP", "B-NNO"]
+  ],
+  [
+    [
+      "z",
+      "gagak",
+      "arsip",
+      "benggol",
+      "baceman",
+      "berak",
+      "cercap",
+      "antikristus",
+      "lekuk",
+      "olehnya"
+    ],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-VBI", "B-NNP", "B-NNP", "B-NNP", "B-NNO"]
+  ],
+  [
+    ["relau", "dipijak", "telan", "kerendang", "persalinan", "menggadaikan"],
+    ["B-NNO", "B-VBP", "B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "serang",
+      "menggurui",
+      "evangelis",
+      "sebayanya",
+      "alias",
+      "bariton",
+      "kelesah",
+      "peti",
+      "bijian",
+      "kermanici",
+      "penjara",
+      "pemfitnah"
+    ],
+    [
+      "B-NNO",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO"
+    ]
+  ],
+  [
+    [
+      "mendasari",
+      "pedupaan",
+      "kedi",
+      "menyetrap",
+      "conet",
+      "memprogramkan",
+      "berengsek",
+      "berlarian",
+      "balalaika",
+      "lainan"
+    ],
+    ["B-VBT", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-VBT", "B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["tani", "telampung", "erang", "labut"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["bena", "celepuk", "julat", "eksploitasi", "nina", "rial", "kumal", "teladan"],
+    ["B-VBI", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "timbangan",
+      "mereda",
+      "rohaniah",
+      "bernasib",
+      "menokok",
+      "dekan",
+      "kealpaan",
+      "peniti",
+      "pembalutan",
+      "pelawan",
+      "agul",
+      "asimetris"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-VBP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["ikut", "cenung", "sukaria", "khemah", "belengset", "serang", "betot"],
+    ["B-VBI", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["saput", "guntur", "dempang", "purnama", "meraba", "delima", "helang", "menempong", "tekek"],
+    ["B-NNO", "B-NNO", "B-VBP", "B-NNO", "B-NNO", "B-VBP", "B-NNO", "B-VBT", "B-NNP"]
+  ],
+  [
+    ["bertekuk", "lenggang", "bungkalan"],
+    ["B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["anggar", "lampai", "migrasi", "leding", "cengger", "menyedang", "kitir", "langganan"],
+    ["B-NNO", "B-PPO", "B-NNO", "B-NNP", "B-NNP", "B-VBT", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["lempeng", "istimewa", "membedung", "menjalar"],
+    ["B-NNO", "B-ADJ", "B-VBT", "B-NNO"]
+  ],
+  [
+    ["kepercayaan", "lewat", "waris", "adibintang", "berkewajiban", "helat"],
+    ["B-NNO", "B-PPO", "B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["lenggang", "lambai", "pemerintah", "pencalonan", "mendinding", "mengerawan"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "tercatuk",
+      "mengurai",
+      "terakumulasi",
+      "kampungan",
+      "diapakan",
+      "saksikan",
+      "urung",
+      "asisten",
+      "bekel",
+      "perforasi",
+      "coretan"
+    ],
+    [
+      "B-NNO",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO",
+      "B-VBP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["aerasi", "kebengkalan", "surgawi", "memerah", "dewi", "elegan", "luntur", "damal"],
+    ["B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["talian", "embel", "sepesan"],
+    ["B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["sebegini", "dagel", "menenggang", "jeli"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["cetok", "matlamat", "tepian", "truf", "doktorandus", "rawatan", "bude", "wahid"],
+    ["B-NNP", "B-VBT", "B-NNO", "B-NNP", "B-VBP", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["mengadabi", "plester", "telaah", "semprong", "faham", "jejer", "patek"],
+    ["B-NNP", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["penyeruan", "suar", "amen", "jejer", "tingkapan", "seluler", "terbenam"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["sepenjara", "mendera", "beraturan", "menambalkan", "dendam", "menteri"],
+    ["B-NNO", "B-VBT", "B-NNO", "B-VBT", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["mejan", "sedini", "serun", "menyederhanakan"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "kena",
+      "muridnya",
+      "ketuk",
+      "keresek",
+      "memperpendek",
+      "berleluasa",
+      "berbuai",
+      "cendawan",
+      "kejangkitan"
+    ],
+    ["B-NNO", "B-VBT", "B-NNO", "B-NNO", "B-VBT", "B-NNO", "B-ADJ", "B-NNP", "B-NNO"]
+  ],
+  [
+    [
+      "memengapkan",
+      "kembera",
+      "disrupsi",
+      "sembari",
+      "cegak",
+      "massal",
+      "el",
+      "membingas",
+      "melabur",
+      "konteks"
+    ],
+    ["B-VBT", "B-NNO", "B-NNO", "B-CSN", "B-NNO", "B-ADJ", "B-NNP", "B-VBT", "B-VBT", "B-NNO"]
+  ],
+  [
+    [
+      "belangkas",
+      "berumbung",
+      "benci",
+      "bedaya",
+      "sendel",
+      "petia",
+      "pembeda",
+      "bintangnya",
+      "kedayan",
+      "saintis",
+      "sela"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO"
+    ]
+  ],
+  [
+    ["baris", "kemlandingan", "bentangan", "buncah", "belek", "dukun", "dorsum", "akademik"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-VBI", "B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "pembendungan",
+      "persenan",
+      "makyung",
+      "capuk",
+      "kelenteng",
+      "perenggan",
+      "terpaan",
+      "mencopotkan",
+      "non",
+      "dangar"
+    ],
+    ["B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-NNO", "B-VBT", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["bakul", "terpamer", "bergetar", "tepak"],
+    ["B-NNP", "B-NNP", "B-VBI", "B-NNO"]
+  ],
+  [
+    [
+      "sembarangan",
+      "opelet",
+      "terserak",
+      "semburan",
+      "pedagogis",
+      "percakapan",
+      "leding",
+      "algoritma",
+      "penyejuk",
+      "sekira"
+    ],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["seri", "trinitas", "khatib"],
+    ["B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "menancapkan",
+      "dibedah",
+      "geliat",
+      "melantik",
+      "kekhawatiran",
+      "akumulator",
+      "ketel",
+      "terhubung",
+      "kardiogram"
+    ],
+    ["B-VBT", "B-VBP", "B-NNO", "B-VBT", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "beti",
+      "demikian",
+      "mejan",
+      "pengintaian",
+      "menebal",
+      "bawakan",
+      "keanehan",
+      "membelakangi",
+      "rangkak"
+    ],
+    ["B-NNP", "B-PRN", "B-VBT", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-VBT", "B-NNP"]
+  ],
+  [
+    [
+      "kenur",
+      "kesesuaian",
+      "mencobai",
+      "kena",
+      "sekuritas",
+      "aras",
+      "boyas",
+      "anyelir",
+      "persegi",
+      "serling",
+      "nama"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNO"
+    ]
+  ],
+  [
+    [
+      "berkuda",
+      "tercelus",
+      "keder",
+      "belulang",
+      "kepribadian",
+      "gegas",
+      "beginilah",
+      "arsitek",
+      "watan"
+    ],
+    ["B-NNP", "B-NNP", "B-NNP", "B-VBI", "B-NNO", "B-NNP", "B-VBI", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["pengarit", "gajimu", "tepak", "berpendapat", "memercik", "pangkur", "pencatu"],
+    ["B-NNO", "B-NNP", "B-NNP", "B-VBI", "B-VBT", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["sengkang", "menyengkelangkan", "aguk", "bertingkap", "rumahku", "sepenuh"],
+    ["B-NNO", "B-VBT", "B-NNP", "B-VBI", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "mengahadkan",
+      "cantrik",
+      "berkualitas",
+      "ektohormon",
+      "embel",
+      "mendukacitakan",
+      "afirmatif",
+      "menghantarkan"
+    ],
+    ["B-VBT", "B-NNO", "B-VBI", "B-NNP", "B-NNP", "B-VBT", "B-NNO", "B-VBT"]
+  ],
+  [
+    [
+      "berdempetan",
+      "bakdahu",
+      "serang",
+      "keamanan",
+      "keasingan",
+      "tugu",
+      "merusak",
+      "celempong",
+      "sebau",
+      "dikait",
+      "jamu"
+    ],
+    [
+      "B-NNO",
+      "B-VBI",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-VBT",
+      "B-NNP",
+      "B-NNO",
+      "B-VBP",
+      "B-NNO"
+    ]
+  ],
+  [
+    [
+      "berdukun",
+      "gantang",
+      "pentil",
+      "turnamen",
+      "orgasme",
+      "semawar",
+      "antartika",
+      "dedaunan",
+      "terkelap",
+      "mengegatkan",
+      "telah",
+      "bait"
+    ],
+    [
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-VBP",
+      "B-ADJ",
+      "B-VBT",
+      "B-ADK",
+      "B-VBI"
+    ]
+  ],
+  [
+    ["kerumitan", "sengkelat", "rasakan", "aus"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["melantik", "animisme", "menyebadani", "kepar"],
+    ["B-VBT", "B-NNO", "B-VBT", "B-NNP"]
+  ],
+  [
+    ["berseri", "berbantal", "jepang"],
+    ["B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "berjubah",
+      "terwujud",
+      "erang",
+      "menepek",
+      "dodor",
+      "terserot",
+      "pon",
+      "diler",
+      "wisatawan",
+      "kenong"
+    ],
+    ["B-VBI", "B-NNP", "B-NNO", "B-NNO", "B-VBP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "sengkang",
+      "jambu",
+      "mengipas",
+      "diperolehnya",
+      "cerun",
+      "salep",
+      "peninjau",
+      "menekuk",
+      "pengabadian",
+      "mencucut",
+      "mengendalikan"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-VBT",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-VBT",
+      "B-NNO",
+      "B-NNP",
+      "B-VBT"
+    ]
+  ],
+  [
+    ["nasib", "gedek", "kepanjangan", "metodik"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["maritim", "ketel", "sederet", "serangga", "dai", "berlistrik", "abstraksi", "menggumuli"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-NNP", "B-VBI", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "trigonometri",
+      "cinde",
+      "sembari",
+      "mengulangi",
+      "teleng",
+      "peroleh",
+      "menyekat",
+      "ketabahan"
+    ],
+    ["B-NNO", "B-NNP", "B-CSN", "B-VBT", "B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "pelosot",
+      "pertobatan",
+      "adeh",
+      "buruknya",
+      "diluruskan",
+      "balada",
+      "percaloan",
+      "debur",
+      "jejer",
+      "poros",
+      "pompa",
+      "kemunafikan"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-VBI",
+      "B-VBP",
+      "B-NNO",
+      "B-NNO",
+      "B-VBP",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNO"
+    ]
+  ],
+  [
+    [
+      "meraih",
+      "berhentikan",
+      "penyiaran",
+      "dedap",
+      "pelat",
+      "tingkat",
+      "mendekatkan",
+      "industriawan",
+      "mengembang-biakkan",
+      "terkesima",
+      "kelapa",
+      "idulfitri"
+    ],
+    [
+      "B-VBI",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-VBT",
+      "B-NNO",
+      "B-VBT",
+      "B-NNP",
+      "B-NNO",
+      "B-NNP"
+    ]
+  ],
+  [
+    [
+      "membeting",
+      "menyetui",
+      "kelumit",
+      "prabu",
+      "etimologi",
+      "pelir",
+      "sela",
+      "dipancung",
+      "engkau"
+    ],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-NNP", "B-NNP", "B-NNO", "B-VBP", "B-NNP"]
+  ],
+  [
+    ["mejan", "grup", "liberalisasi"],
+    ["B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["mencobakan", "disewa", "masak", "serak", "ditambat"],
+    ["B-VBT", "B-NNP", "B-ADV", "B-NUM", "B-NNP"]
+  ],
+  [
+    [
+      "erektil",
+      "ketai",
+      "lokal",
+      "membendakan",
+      "fasisme",
+      "secepat",
+      "pepet",
+      "biduan",
+      "debirokratisasi",
+      "bolero",
+      "tumpahan"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-ADJ",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO"
+    ]
+  ],
+  [
+    [
+      "mencerca",
+      "kelentang",
+      "mengklasifikasikan",
+      "rebutan",
+      "bureng",
+      "memiskinkan",
+      "berpeluang",
+      "terjual",
+      "cengkurai",
+      "metamorfosis",
+      "membunga"
+    ],
+    [
+      "B-NNP",
+      "B-NNP",
+      "B-VBT",
+      "B-NNO",
+      "B-NNP",
+      "B-VBT",
+      "B-NNO",
+      "B-VBP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP"
+    ]
+  ],
+  [
+    [
+      "barongan",
+      "makamkan",
+      "pemberangkatan",
+      "losion",
+      "perancis",
+      "terangsang",
+      "serep",
+      "selempang",
+      "seagama",
+      "membenteh",
+      "mengunyah",
+      "oli"
+    ],
+    [
+      "B-NNO",
+      "B-VBT",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["musimnya", "seba", "goncangan", "belatung"],
+    ["B-VBT", "B-NNP", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["engkar", "kenyit", "dol", "lempeng", "percatutan", "dibukukan", "seka", "bol"],
+    ["B-NNO", "B-NNO", "B-VBP", "B-NNO", "B-NNO", "B-VBP", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "keng",
+      "kecakapan",
+      "membukakan",
+      "not",
+      "mengintai",
+      "lembang",
+      "pencetakan",
+      "berserat",
+      "bendahari",
+      "maklumat",
+      "telus",
+      "terakhir"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-VBT",
+      "B-NNO",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-VBI",
+      "B-VBT",
+      "B-NNO",
+      "B-ADJ"
+    ]
+  ],
+  [
+    ["berwarganegara", "kelesa", "melontari", "kekeliruan", "diperindah", "barkas", "gombal"],
+    ["B-NNO", "B-NNP", "B-VBT", "B-NNO", "B-VBP", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["jalak", "cidera", "pelat"],
+    ["B-NNP", "B-NNP", "B-NNO"]
+  ],
+  [
+    ["cerpen", "berpeti", "mengasini", "terik", "cuai", "merukunkan", "leding", "bermerek"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-NNP", "B-VBT", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["contohlah", "berang", "berbulan", "menganekakan"],
+    ["B-NNP", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "mengislamkan",
+      "stamina",
+      "gatal",
+      "meniran",
+      "historis",
+      "santap",
+      "samseng",
+      "menumbangkan",
+      "tenggat",
+      "tiung"
+    ],
+    ["B-VBT", "B-NNP", "B-NNP", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-VBT", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "kesenjataan",
+      "melukai",
+      "dengar",
+      "cegak",
+      "bonceng",
+      "mencabar",
+      "seusia",
+      "menolongnya",
+      "nas"
+    ],
+    ["B-NNO", "B-VBT", "B-VBP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-VBT", "B-NNP"]
+  ],
+  [
+    [
+      "pemercepat",
+      "ditempuh",
+      "kerakusan",
+      "jelai",
+      "mendalilkan",
+      "perian",
+      "sekesel",
+      "sawa",
+      "teleng",
+      "isap",
+      "ditampilkan"
+    ],
+    [
+      "B-NNO",
+      "B-VBP",
+      "B-NNO",
+      "B-NNP",
+      "B-VBT",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-VBP"
+    ]
+  ],
+  [
+    [
+      "mencerap",
+      "kebudayaan",
+      "sepak",
+      "gerangan",
+      "ekspresionisme",
+      "bermain",
+      "lidi",
+      "sihir",
+      "berkedok",
+      "pengental"
+    ],
+    ["B-VBT", "B-NNP", "B-NNO", "B-NNP", "B-NNO", "B-VBI", "B-NNO", "B-NNO", "B-VBI", "B-NNO"]
+  ],
+  [
+    [
+      "semen",
+      "berjerawat",
+      "dewasa",
+      "menambalkan",
+      "luaran",
+      "rasakan",
+      "menyetor",
+      "terbelintang",
+      "fobia"
+    ],
+    ["B-NNO", "B-NNP", "B-NNO", "B-VBT", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "dialih",
+      "mencuar",
+      "berdawai",
+      "tepus",
+      "biometrik",
+      "busur",
+      "berpamitan",
+      "mengomel",
+      "peluncuran",
+      "dibuang",
+      "keder"
+    ],
+    [
+      "B-VBP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-VBI",
+      "B-NNO",
+      "B-NNO",
+      "B-VBT",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["sekerat", "penerjemahan", "kegirangan", "kena", "menelentangkan", "metropolis", "geofisika"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-VBT", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["perdayaan", "mengarit", "dera", "brevet", "nuklir"],
+    ["B-NNO", "B-NNO", "B-VBP", "B-NNP", "B-NNO"]
+  ],
+  [
+    [
+      "membawakan",
+      "solo",
+      "berbulan",
+      "perumahan",
+      "pelang",
+      "penghapusan",
+      "menyanyi",
+      "teng",
+      "berkentut",
+      "puja",
+      "buat",
+      "dobel"
+    ],
+    [
+      "B-VBT",
+      "B-NNP",
+      "B-VBI",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNO",
+      "B-PPO",
+      "B-NNP"
+    ]
+  ],
+  [
+    [
+      "tela",
+      "item",
+      "merehatkan",
+      "dudus",
+      "penera",
+      "mandul",
+      "awal",
+      "mengancaikan",
+      "relatif",
+      "delman",
+      "stabil"
+    ],
+    [
+      "B-NNO",
+      "B-NNP",
+      "B-VBT",
+      "B-VBP",
+      "B-NNO",
+      "B-NNO",
+      "B-ADJ",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO"
+    ]
+  ],
+  [
+    [
+      "ekspresi",
+      "ayutan",
+      "udam",
+      "aerobatik",
+      "uri",
+      "amonium",
+      "tumang",
+      "sedan",
+      "mempercayakan",
+      "dependen",
+      "maksud"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-VBT",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["bau", "berbumbu", "mejan", "bausuku"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["menerpa", "tandas", "kalimatnya", "warisan", "kelanjutan", "kecap", "menyuapkan"],
+    ["B-NNP", "B-NNP", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "maulana",
+      "membudidayakan",
+      "katode",
+      "asese",
+      "barikade",
+      "bajunya",
+      "modern",
+      "huyung",
+      "rakyatnya",
+      "luahan",
+      "nyiur",
+      "berpendar"
+    ],
+    [
+      "B-NNO",
+      "B-VBT",
+      "B-NNO",
+      "B-NNP",
+      "B-NNO",
+      "B-VBI",
+      "B-VBT",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    [
+      "pengecatan",
+      "panitia",
+      "yakin",
+      "menyeringing",
+      "pembersih",
+      "beskal",
+      "dermatologi",
+      "sedat",
+      "agnostik",
+      "sertu"
+    ],
+    ["B-NNO", "B-NNO", "B-ADJ", "B-NNP", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["dingklang", "rintang", "berseri", "menuduhkan"],
+    ["B-VBP", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "kendang",
+      "debut",
+      "berpantingan",
+      "setip",
+      "perkuburan",
+      "bianglala",
+      "sisa",
+      "agroindustri"
+    ],
+    ["B-NNO", "B-VBP", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["bengkawang", "terkait", "penagihan", "partai", "seri", "penguin", "khir", "sahkan"],
+    ["B-NNO", "B-VBP", "B-NNO", "B-NNP", "B-NNO", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "menjijikkan",
+      "perusahaannya",
+      "pemboikotan",
+      "dep",
+      "lembang",
+      "pesanggrahan",
+      "teja",
+      "aster"
+    ],
+    ["B-VBT", "B-NNO", "B-NNO", "B-NNP", "B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["belo'on", "serak", "pengirim", "bintak", "uskup"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["per", "bana", "pengetatan"],
+    ["B-PAR", "B-NNP", "B-NNO"]
+  ],
+  [
+    ["lebar", "mengasosiasikan", "saidina", "tenggeran", "berjiran", "senggang", "disusuli"],
+    ["B-ADV", "B-VBT", "B-NNP", "B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["roket", "belak", "leding", "menonjol"],
+    ["B-NNO", "B-VBI", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["keraton", "ujung", "sepak", "berperasaan", "menggala", "kepuyuk"],
+    ["B-NNP", "B-NNP", "B-NNO", "B-NNO", "B-NUM", "B-NNO"]
+  ],
+  [
+    ["sebesar", "teleng", "tensi", "membahana", "cakram", "mundar-mandir", "pengapit"],
+    ["B-PPO", "B-NNO", "B-NNO", "B-VBT", "B-NNO", "B-NUM", "B-NNP"]
+  ],
+  [
+    [
+      "merumitkan",
+      "ter",
+      "persekitaran",
+      "setrap",
+      "bagus",
+      "seluler",
+      "gedek",
+      "sekawan",
+      "penyeranta"
+    ],
+    ["B-VBT", "B-NNO", "B-NNO", "B-NNO", "B-ADJ", "B-NNO", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["ase", "terhad", "genggang", "kasihan"],
+    ["B-NNP", "B-NNP", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["diktatorial", "memerah", "perdom"],
+    ["B-VBP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["embel", "cenayang", "arombai", "berdikari"],
+    ["B-NNO", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "adibintang",
+      "beloon",
+      "bebaskan",
+      "kesukuan",
+      "tercacak",
+      "oktana",
+      "sela",
+      "lepasan",
+      "perizinan",
+      "asbak"
+    ],
+    ["B-NNO", "B-NNP", "B-NNP", "B-NNO", "B-NNP", "B-NNP", "B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["gambaran", "disiapkan", "angel", "berdenting", "tekte"],
+    ["B-NNO", "B-VBP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "beti",
+      "bekertak",
+      "menanti",
+      "mencolek",
+      "masehi",
+      "diungkit",
+      "kebajikan",
+      "serak",
+      "pidato",
+      "turbin",
+      "denyitan",
+      "terapan"
+    ],
+    [
+      "B-NNP",
+      "B-NNP",
+      "B-VBI",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-VBP",
+      "B-NNO"
+    ]
+  ],
+  [
+    ["serak", "mendatang", "robot", "terkeluk", "pertentangan"],
+    ["B-NNO", "B-VBT", "B-NNO", "B-NNP", "B-NNO"]
+  ],
+  [
+    ["singkir", "jeda", "dera"],
+    ["B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["nipis", "dimaafkan", "bekerjalah", "foto", "mengusik", "semen", "pencegah", "ceter"],
+    ["B-NNP", "B-VBP", "B-VBI", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "dicukur",
+      "inti",
+      "berselubung",
+      "perikanan",
+      "badminton",
+      "ditumbuk",
+      "mencanak",
+      "representatif",
+      "mikrofon",
+      "ping",
+      "mejan"
+    ],
+    [
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-VBT",
+      "B-NNO",
+      "B-VBT",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["andai", "bengkalai", "tepak"],
+    ["B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["rembes", "pertaruhan", "mempengerusikan", "tenun", "sufian"],
+    ["B-NNO", "B-NNO", "B-VBT", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["pengarungan", "hidayah", "bludrek", "amanat", "pening", "penilai", "seharusnya"],
+    ["B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-ADV"]
+  ],
+  [
+    [
+      "syor",
+      "panasnya",
+      "brigadir",
+      "stratifikasi",
+      "samseng",
+      "dengki",
+      "membongkar",
+      "diumpamakan",
+      "juntai",
+      "asuh"
+    ],
+    ["B-NNP", "B-NNO", "B-VBI", "B-NNO", "B-NNP", "B-VBP", "B-NNO", "B-VBP", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["tersingkap", "shukur", "perluasan", "sengkang", "gayat"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "keedanan",
+      "rapi",
+      "caguh",
+      "konsekuensi",
+      "belang",
+      "tepak",
+      "berujul",
+      "menentukan",
+      "nyanyiannya",
+      "dahiat",
+      "berbareng"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNO",
+      "B-VBI",
+      "B-NNO",
+      "B-NNP",
+      "B-VBT",
+      "B-NNO",
+      "B-VBP",
+      "B-NNP"
+    ]
+  ],
+  [
+    [
+      "terpinggir",
+      "kurangnya",
+      "mendarab",
+      "genggang",
+      "astrologi",
+      "permanen",
+      "tunggul",
+      "mencemerlangkan",
+      "situlah",
+      "bertebaran"
+    ],
+    ["B-NNP", "B-NNO", "B-VBT", "B-NNO", "B-NNO", "B-NNO", "B-ADJ", "B-VBT", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["angel", "pelatuk", "cikar", "ekstase", "membenamkan", "mencupak", "menyeletuk", "debum"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-VBT", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "dasasila",
+      "gering",
+      "tembaganya",
+      "menyodok",
+      "bermerek",
+      "peninggalan",
+      "bauran",
+      "cenderung",
+      "penterjemah",
+      "komisi",
+      "mengelirukan",
+      "apel"
+    ],
+    [
+      "B-NNP",
+      "B-NNP",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-ADJ",
+      "B-NNO",
+      "B-NNP",
+      "B-VBT",
+      "B-NNP"
+    ]
+  ],
+  [
+    [
+      "berkerah",
+      "mengenyam",
+      "sedunia",
+      "kelarai",
+      "berguncang",
+      "mentok",
+      "berbahana",
+      "menggiurkan",
+      "jelas",
+      "berpendar",
+      "mayat"
+    ],
+    [
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNO",
+      "B-VBI",
+      "B-VBT",
+      "B-NNP",
+      "B-VBT",
+      "B-ADJ",
+      "B-NNO",
+      "B-NNO"
+    ]
+  ],
+  [
+    [
+      "mengeksploitasi",
+      "proyeknya",
+      "selancang",
+      "amputasi",
+      "kemurahan",
+      "pengucilan",
+      "tara",
+      "semi"
+    ],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["sejalan", "selurah", "ultimatum", "begar", "jahe", "hormon", "bekakas", "lengkuk"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-VBI", "B-NNP", "B-NNP", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["ketel", "terjadi", "pendayangan", "surgawi", "ngeri"],
+    ["B-NNO", "B-VBP", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["leding", "menyembelih", "seleler"],
+    ["B-NNP", "B-VBT", "B-NNO"]
+  ],
+  [
+    ["dendang", "penanaman", "membelenggu"],
+    ["B-VBP", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["kasuari", "semeleh", "percis", "kelepak", "melamar", "akal", "alkaloid", "lokal"],
+    ["B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-NNP", "B-ADJ"]
+  ],
+  [
+    ["cela", "beranda", "terburai", "kedewasaan", "kecimus", "bujeter"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "segenap",
+      "tenggara",
+      "letak",
+      "riba",
+      "menyerimpung",
+      "gempur",
+      "deodoran",
+      "dakik",
+      "terhina",
+      "gegar",
+      "merenggut"
+    ],
+    [
+      "B-NNP",
+      "B-NNP",
+      "B-NNO",
+      "B-NNP",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    [
+      "wajan",
+      "mengidentifikasi",
+      "terbul",
+      "comelan",
+      "deraian",
+      "rabuk",
+      "opsi",
+      "mengetap",
+      "pendaran",
+      "remah"
+    ],
+    ["B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-VBT", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "cegak",
+      "tentatif",
+      "kejamas",
+      "menjabarkan",
+      "abrakadabra",
+      "sempadan",
+      "mendidis",
+      "delas",
+      "memukulnya",
+      "layaran"
+    ],
+    ["B-NNP", "B-ADJ", "B-NNO", "B-VBT", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-VBT", "B-NNO"]
+  ],
+  [
+    [
+      "barangkali",
+      "atmometer",
+      "sedarun",
+      "menganggung",
+      "sehala",
+      "seadanya",
+      "ditelan",
+      "rakaat",
+      "belek",
+      "lift",
+      "jintan"
+    ],
+    [
+      "B-ADV",
+      "B-NNO",
+      "B-NNP",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO",
+      "B-VBP",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    [
+      "tersekang",
+      "berseloka",
+      "empuk",
+      "diri",
+      "pepet",
+      "cacah",
+      "cabang",
+      "kera",
+      "dihidupkannya",
+      "kelulut",
+      "kram",
+      "kobaran"
+    ],
+    [
+      "B-NNO",
+      "B-VBI",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-VBP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO"
+    ]
+  ],
+  [
+    ["kelah", "eksepsi", "mendudukkan", "terganggu", "tembelok", "mengotakan", "kebegaran"],
+    ["B-NNO", "B-NNO", "B-VBT", "B-NNP", "B-NNO", "B-VBT", "B-NNO"]
+  ],
+  [
+    [
+      "mengantih",
+      "transitif",
+      "leleh",
+      "kirmizi",
+      "reorganisasi",
+      "kelana",
+      "tela",
+      "cenderung",
+      "bedaru",
+      "takkan"
+    ],
+    ["B-NNP", "B-ADJ", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["peking", "kepil", "kelesa", "serata", "kuliah", "pembabat", "mandikan"],
+    ["B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-VBT"]
+  ],
+  [
+    [
+      "cela",
+      "sengihan",
+      "juta",
+      "parlemen",
+      "memperdahsyat",
+      "guntur",
+      "disemayamkan",
+      "pernisan",
+      "ketengan"
+    ],
+    ["B-NNO", "B-NUM", "B-NUM", "B-NNO", "B-VBT", "B-NNO", "B-VBP", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["eksposisi", "dimuatkan", "tebakan", "seba"],
+    ["B-NNO", "B-VBP", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "sopan",
+      "menetakkan",
+      "membatalkan",
+      "klausa",
+      "menangisi",
+      "hartawan",
+      "kewes",
+      "pelang",
+      "mengembeli"
+    ],
+    ["B-NNO", "B-VBT", "B-VBT", "B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["bungkalan", "lempeng", "r", "pendadah", "taubat", "usai"],
+    ["B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-VBI"]
+  ],
+  [
+    ["pembesar", "mengerdomkan", "berlawan", "penalti", "semi"],
+    ["B-NNP", "B-VBT", "B-VBI", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "nukilan",
+      "jintan",
+      "pertarungan",
+      "kanji",
+      "melepaskan",
+      "oranye",
+      "bajing",
+      "akhbar",
+      "adikarya",
+      "remah",
+      "kecaburan"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-VBT",
+      "B-NNP",
+      "B-VBI",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNO"
+    ]
+  ],
+  [
+    ["unjukan", "rengus", "respons", "memberanikan", "gedek", "melekuk"],
+    ["B-NNO", "B-NNP", "B-NNP", "B-VBT", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["serak", "melintas", "kemerosotan", "berdangdut", "menolakkan", "bendang"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-VBT", "B-NNO"]
+  ],
+  [
+    ["buram", "sertu", "setawar", "kocok", "selisih", "goblok", "gertak", "terpencil", "berkering"],
+    ["B-NNO", "B-NNO", "B-NNP", "B-NNO", "B-NNP", "B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["tegil", "selaka", "tentawan", "menyetrip", "bercadar", "dadanya", "dendang", "hidrogen"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-VBI", "B-NNO", "B-VBP", "B-NNP"]
+  ],
+  [
+    [
+      "penebatan",
+      "tela",
+      "mengantukkan",
+      "mur",
+      "bunbunan",
+      "menyiramkan",
+      "macet",
+      "pencicilan",
+      "tamat"
+    ],
+    ["B-NNO", "B-ADJ", "B-VBT", "B-NNO", "B-NNO", "B-VBT", "B-ADJ", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["menghambakan", "menghisap", "jejer", "pemergian", "menginjakkan", "mengancuk"],
+    ["B-VBT", "B-NNP", "B-NNO", "B-NNO", "B-VBT", "B-NNP"]
+  ],
+  [
+    [
+      "pesaing",
+      "terbelelang",
+      "relai",
+      "mencacah",
+      "mencerowok",
+      "membisiki",
+      "bahenol",
+      "dianjak",
+      "kesuma",
+      "serimpet",
+      "awah",
+      "konsultan"
+    ],
+    [
+      "B-NNO",
+      "B-ADJ",
+      "B-NNO",
+      "B-VBT",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    [
+      "pasangan",
+      "pengganas",
+      "dorong",
+      "merekrut",
+      "penggemblengan",
+      "tegun",
+      "pesta",
+      "mengangini",
+      "rela",
+      "penebar"
+    ],
+    ["B-NNO", "B-NNP", "B-NNP", "B-VBT", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-NNO"]
+  ],
+  [
+    ["cengal", "berputar", "angel", "berkawan", "berkeriput", "ditujukan"],
+    ["B-NNO", "B-VBI", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "laik",
+      "pacu",
+      "bude",
+      "keakraban",
+      "sendawa",
+      "kelentang",
+      "belintang",
+      "pendayangan",
+      "mengganas",
+      "berwenang",
+      "menyelusurkan",
+      "sumur"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNO",
+      "B-VBI",
+      "B-NNO",
+      "B-NNP",
+      "B-VBI",
+      "B-VBT",
+      "B-NNO"
+    ]
+  ],
+  [
+    ["biadab", "mengimbangi", "ilmuwan", "kedi", "padanan"],
+    ["B-NNP", "B-VBT", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["konsumerisme", "apel", "tersungkur", "emporium"],
+    ["B-NNO", "B-NNP", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "rupiah",
+      "tidaklah",
+      "jimat",
+      "alternatif",
+      "sertu",
+      "afrit",
+      "mengesalkan",
+      "mencermati",
+      "berkemas",
+      "hiba"
+    ],
+    ["B-NNP", "B-NEG", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-VBT", "B-VBT", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["membusut", "kembera", "ambles", "begar", "wewenang"],
+    ["B-VBT", "B-NNO", "B-NNP", "B-VBI", "B-NNO"]
+  ],
+  [
+    ["takwa", "arpus", "talak", "religius", "sengkang"],
+    ["B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["delta", "tunggu", "kelentang"],
+    ["B-NNP", "B-NNP", "B-NNO"]
+  ],
+  [
+    ["daldaru", "berbentrok", "kaligrafi", "kebun", "berseregang", "selak", "berucap", "bendo"],
+    ["B-VBP", "B-VBI", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["celepik", "rantai", "letak", "pektin", "meneladani"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["monogami", "keset", "dibarengi", "pelpolisi"],
+    ["B-VBT", "B-NNO", "B-VBP", "B-NNO"]
+  ],
+  [
+    [
+      "seisi",
+      "kisaran",
+      "koran",
+      "neraca",
+      "intelek",
+      "seindah",
+      "kekerapan",
+      "kutu",
+      "menyiangi",
+      "tuli",
+      "gelang",
+      "seksualitas"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-VBT",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO"
+    ]
+  ],
+  [
+    ["keset", "penyemprotan", "pahit", "kesungguhan"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["penggemblengan", "medis", "selap"],
+    ["B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "mejan",
+      "keadilan",
+      "cengkal",
+      "antarbangsa",
+      "guyon",
+      "anti",
+      "rodi",
+      "sengkarut",
+      "makamkan",
+      "tuangan",
+      "menghiraukan",
+      "tersedia"
+    ],
+    [
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-VBT",
+      "B-NNO",
+      "B-VBT",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["mengetemui", "kelai", "mandala", "terkilan", "perun", "mejan", "sendeng", "sema"],
+    ["B-NNP", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["belok", "buka", "peperangan", "umpuk", "membura", "berlian", "berdendang", "pemetik"],
+    ["B-NNO", "B-VBI", "B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-VBI", "B-NNO"]
+  ],
+  [
+    [
+      "memotong",
+      "biosfer",
+      "kakus",
+      "helat",
+      "sarat",
+      "necis",
+      "ketumpang",
+      "rangkaian",
+      "bacak",
+      "belenggu"
+    ],
+    ["B-NNO", "B-VBI", "B-NNO", "B-NNP", "B-NNO", "B-NNP", "B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["anti-beku", "ngeong", "mejan", "tercingangah", "untuk", "keserampangan"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-PPO", "B-NNO"]
+  ],
+  [
+    [
+      "senegara",
+      "digiring",
+      "kasar",
+      "ucapannya",
+      "omongan",
+      "makau",
+      "serunai",
+      "galeri",
+      "genggang",
+      "mencongklang"
+    ],
+    ["B-NNO", "B-VBP", "B-ADJ", "B-NNO", "B-NNO", "B-NNP", "B-PPO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "kere",
+      "mengot",
+      "mengangka",
+      "terbawah",
+      "berduru",
+      "cakupan",
+      "perisikan",
+      "menceriakan",
+      "membarat"
+    ],
+    ["B-NNP", "B-NNP", "B-VBT", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-VBT", "B-NNO"]
+  ],
+  [
+    ["diapakan", "tembusan", "perhotelan", "jawi", "seri", "mendongkak", "disetor"],
+    ["B-VBP", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-VBT", "B-NNO"]
+  ],
+  [
+    [
+      "sekawan",
+      "antah",
+      "diketik",
+      "maka",
+      "apresiatif",
+      "arkian",
+      "genggang",
+      "dengkang",
+      "penjagaan"
+    ],
+    ["B-NNO", "B-NNO", "B-NNO", "B-CSN", "B-NNO", "B-NNO", "B-NNO", "B-VBP", "B-NNO"]
+  ],
+  [
+    [
+      "menghirup",
+      "sewakan",
+      "rute",
+      "membahana",
+      "mempersendakan",
+      "tertekun",
+      "kelintar",
+      "kecap",
+      "surya"
+    ],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-VBT", "B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["lari", "terbantahkan", "memepet"],
+    ["B-NNP", "B-VBP", "B-NNP"]
+  ],
+  [
+    [
+      "anonimitas",
+      "razi",
+      "besut",
+      "remah",
+      "kekenesan",
+      "nisbah",
+      "baham",
+      "teluh",
+      "tabuh",
+      "keimaman"
+    ],
+    ["B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["gelang", "kuantitatif", "landskap"],
+    ["B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "fiting",
+      "botor",
+      "bantaran",
+      "jemput",
+      "sepatbor",
+      "dwiguna",
+      "berisiko",
+      "berpacaran",
+      "bibinda",
+      "kecap",
+      "ketangkasan",
+      "semara"
+    ],
+    [
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-VBP",
+      "B-VBI",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO"
+    ]
+  ],
+  [
+    [
+      "berselubung",
+      "gerincing",
+      "perbuatannya",
+      "teleng",
+      "melentur",
+      "picis",
+      "menggabung",
+      "pengecualian",
+      "berpintu",
+      "beronani",
+      "bawel"
+    ],
+    [
+      "B-VBI",
+      "B-NNP",
+      "B-NNO",
+      "B-NNP",
+      "B-VBT",
+      "B-NNP",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["petopan", "risiko", "legar"],
+    ["B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["dongeng", "berserudi", "kamit", "bengkar", "mendekut", "memerah"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["berkereket", "nomor", "gelang", "haiwan"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "pedongkang",
+      "beralun",
+      "menjangan",
+      "penyerbuan",
+      "paleontologi",
+      "apel",
+      "pembegalan",
+      "tujuh"
+    ],
+    ["B-NNO", "B-VBI", "B-VBT", "B-NNO", "B-NNO", "B-NNP", "B-NNO", "B-NUM"]
+  ],
+  [
+    [
+      "mahsyar",
+      "bagaimanapun",
+      "keselarasan",
+      "asbak",
+      "transisi",
+      "lembang",
+      "mencopot",
+      "penjelasan"
+    ],
+    ["B-NNO", "B-CSN", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-VBT", "B-NNO"]
+  ],
+  [
+    ["tatih", "pelog", "tembelian", "gairah", "sengkang", "buntal", "pengaram"],
+    ["B-NNP", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["menunggu", "lipstik", "herbivor", "boreh", "mengautopsi", "tekong", "baterai"],
+    ["B-VBT", "B-NNO", "B-NNP", "B-NNP", "B-VBT", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "corak",
+      "relai",
+      "cacingan",
+      "memerihkan",
+      "pertenunan",
+      "cecer",
+      "radio",
+      "setamat",
+      "menyerkup",
+      "sekar",
+      "keruyuk",
+      "torehan"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-VBT",
+      "B-NNO",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO"
+    ]
+  ],
+  [
+    ["menggelora", "drel", "petrokimia", "leter", "gawang"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNO"]
+  ],
+  [
+    [
+      "shah",
+      "pijat",
+      "lempeng",
+      "ketimpangan",
+      "pengadil",
+      "baskom",
+      "menggerebek",
+      "sebanjar",
+      "mengait",
+      "sekolahan",
+      "cemuk",
+      "sembarangan"
+    ],
+    [
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    [
+      "sengsara",
+      "densitas",
+      "penampilan",
+      "terapi",
+      "bolotu",
+      "mengamplopi",
+      "bambang",
+      "pemangkas",
+      "senti",
+      "ganggu"
+    ],
+    ["B-NNO", "B-VBP", "B-NNO", "B-ADJ", "B-NNP", "B-VBT", "B-NNP", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "getaran",
+      "pesong",
+      "sekutu",
+      "mengingini",
+      "benefaktif",
+      "dihanyutkan",
+      "legitimasi",
+      "pengotakan",
+      "sela",
+      "recikan"
+    ],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-ADJ", "B-VBP", "B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["papa", "lembang", "ditegakkan", "kempu"],
+    ["B-NNO", "B-NNO", "B-VBP", "B-NNO"]
+  ],
+  [
+    ["cekuh", "bandot", "tela", "kesembilan", "bibir", "kawanan"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["cerucuk", "pendurhakaan", "memujuk", "mengimbau", "tekek", "kolak", "kejernihan"],
+    ["B-NNP", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["erang", "memberitahu", "gelatin", "berdeku", "pembekal", "ani"],
+    ["B-NNO", "B-VBT", "B-NNO", "B-NNP", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "bakik",
+      "kebengisan",
+      "menyingkirkan",
+      "kefasikan",
+      "menghimpunkan",
+      "sekah",
+      "sempoyongan",
+      "kecap",
+      "kaos"
+    ],
+    ["B-NNP", "B-NNO", "B-VBT", "B-NNO", "B-VBT", "B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["kepot", "terapi", "dihias", "berdosa"],
+    ["B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["gelagat", "penetas", "tepak", "keterampilan", "musyrik", "mencuik", "disiarkan"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-VBP"]
+  ],
+  [
+    ["mengilat", "sertu", "kebatilan", "kemujuran", "pantang", "keterpelajaran", "menetaskan"],
+    ["B-NNO", "B-NNP", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-VBT"]
+  ],
+  [
+    ["pater", "meliar", "hitam", "perin", "turis", "intensitas", "geli", "keder"],
+    ["B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["memansuhkan", "apendiks", "mendasar", "gelang", "muhibah", "membulan"],
+    ["B-VBT", "B-NNP", "B-NNP", "B-NNO", "B-VBT", "B-NNO"]
+  ],
+  [
+    ["jelang", "codet", "mendukung", "apatis", "pakar", "definisi", "mental"],
+    ["B-NNP", "B-NNP", "B-VBT", "B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["menggerogoti", "membandari", "belok"],
+    ["B-NNP", "B-VBT", "B-NNO"]
+  ],
+  [
+    [
+      "penegang",
+      "bijih",
+      "pelak",
+      "belalah",
+      "gangsa",
+      "kontras",
+      "biosida",
+      "biarkan",
+      "proyeknya"
+    ],
+    ["B-NNO", "B-NNP", "B-NNP", "B-VBI", "B-NNO", "B-ADJ", "B-NNP", "B-VBI", "B-NNO"]
+  ],
+  [
+    ["serak", "ahkam", "mendongakkan"],
+    ["B-NNO", "B-NNP", "B-VBT"]
+  ],
+  [
+    ["aspirat", "teradili", "kepedasan", "pening"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "lenggang",
+      "membeton",
+      "sengkawang",
+      "dihadap",
+      "pengoperasian",
+      "memborgol",
+      "pencagaran",
+      "mempersembahkan",
+      "berpendidikan"
+    ],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-NNP", "B-NNO", "B-VBT", "B-NNO"]
+  ],
+  [
+    ["kritikan", "perjaka", "galian", "pentil"],
+    ["B-NNO", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "lokan",
+      "dadek",
+      "memulas",
+      "aktivis",
+      "komisi",
+      "gandengan",
+      "angkal",
+      "dicurigainya",
+      "adikodrati",
+      "enau",
+      "keserangan",
+      "dera"
+    ],
+    [
+      "B-NNO",
+      "B-VBP",
+      "B-VBT",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-VBP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNO",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["dirjen", "menyewakan", "muda", "pembakaran", "abtar", "mendinding", "jirus", "pepat", "cela"],
+    ["B-NNO", "B-VBT", "B-ADJ", "B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["diktat", "terasi", "sengkang", "penyambut", "sedatif", "ionisasi"],
+    ["B-VBP", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["dekan", "hayati", "cinda", "kemih", "tokok"],
+    ["B-VBP", "B-NNO", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["penampungan", "menghambat", "teras", "kekuatan", "melaksanakan"],
+    ["B-NNO", "B-VBT", "B-NNO", "B-NNO", "B-VBT"]
+  ],
+  [
+    ["baid", "mengindahkan", "bengoh", "patuk", "bureng", "pentil", "kudung"],
+    ["B-NNP", "B-VBT", "B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["aturan", "sengkang", "semprit", "syahwat"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "shekh",
+      "pertama",
+      "petaka",
+      "bintat",
+      "diperbaiki",
+      "ketek",
+      "hadirin",
+      "tempa",
+      "-mahasiswa",
+      "menggerutu",
+      "keroyokan"
+    ],
+    [
+      "B-NNP",
+      "B-NUM",
+      "B-NNP",
+      "B-NNP",
+      "B-VBP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["cemeeh", "kelesa", "melangit", "saus", "kompromi", "tersiram", "disangka"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["barang", "pesek", "hina", "senoyong", "bena", "kekejaman"],
+    ["B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-VBI", "B-NNO"]
+  ],
+  [
+    [
+      "tersekang",
+      "tersalah",
+      "mengerawang",
+      "rintang",
+      "ketek",
+      "menetas",
+      "semampang",
+      "mencelep"
+    ],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["dililit", "pemain", "ketuir", "teleng", "pentang", "nasibmu", "cangut"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "mengangkit",
+      "menduduki",
+      "terbelalak",
+      "bual",
+      "pondok",
+      "memegang",
+      "persamaan",
+      "sintal",
+      "debut",
+      "seluru"
+    ],
+    ["B-NNP", "B-NNP", "B-NNP", "B-VBI", "B-NNP", "B-VBT", "B-NNO", "B-NNP", "B-VBP", "B-NNP"]
+  ],
+  [
+    ["sakat", "megalomania", "catuan", "bap", "pelantikan", "ampaian", "seba", "dilempar"],
+    ["B-NNO", "B-VBT", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["ikatannya", "cungkil", "pembinasaan", "bekerlip", "menceku", "paip", "sela"],
+    ["B-NNO", "B-NNP", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "peruang",
+      "penyetrapan",
+      "tekek",
+      "ceplok",
+      "kepergok",
+      "amarahnya",
+      "buktikan",
+      "menyegerakan",
+      "liberalisasi",
+      "menembung"
+    ],
+    ["B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-VBI", "B-VBT", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["perkara", "rawatan", "kekel", "cencawan", "kelam"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["ajnas", "pencirian", "pelang", "bubu", "pengental", "menghalalkan"],
+    ["B-NNP", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-VBT"]
+  ],
+  [
+    [
+      "apel",
+      "kepedaran",
+      "terkepil",
+      "saudaranya",
+      "kambuh",
+      "mengipas",
+      "bertanggung",
+      "merica",
+      "saadah",
+      "komentator",
+      "suruhan"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-ADJ",
+      "B-NNO",
+      "B-NNO",
+      "B-VBT",
+      "B-VBI",
+      "B-NNP",
+      "B-NNP",
+      "B-NNO",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["kena", "makyung", "tenaga", "sbb"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["pengawalnya", "selera", "diksa", "selebihnya", "jiran", "cengang", "dengki", "seba"],
+    ["B-NNO", "B-NNO", "B-VBP", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["mengaibkan", "berjenaka", "imbang", "keset", "fatalisme"],
+    ["B-VBT", "B-NNP", "B-NNP", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "selir",
+      "tela",
+      "darulfana",
+      "belungkang",
+      "kerobek",
+      "memerli",
+      "menyerbuk",
+      "adiguna",
+      "aktiva",
+      "pencatuan"
+    ],
+    ["B-NNO", "B-NNO", "B-NNO", "B-VBI", "B-NNO", "B-NNP", "B-VBT", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["mental", "bandu", "durno", "diminutif", "dalaman", "bakul", "beranjangkarya"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["bentala", "berang", "mengemasi", "seluar"],
+    ["B-NNO", "B-VBI", "B-VBT", "B-NNO"]
+  ],
+  [
+    [
+      "tertanggung",
+      "sekerlip",
+      "kesenimanan",
+      "petan",
+      "kelentang",
+      "kepompong",
+      "belasungkawa",
+      "kesampaian",
+      "dibilang"
+    ],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-VBI", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "netral",
+      "duyung",
+      "selempang",
+      "limbah",
+      "tangkai",
+      "mendamik",
+      "utan",
+      "arja",
+      "akaid",
+      "sedia",
+      "deposito"
+    ],
+    [
+      "B-NNO",
+      "B-VBP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["berangkal", "kesetaraan", "panau", "per", "meninggi"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-PAR", "B-NNP"]
+  ],
+  [
+    [
+      "diperkirakan",
+      "romantik",
+      "kelenteng",
+      "hempas",
+      "dasasila",
+      "mencobakan",
+      "seleksi",
+      "auditorium",
+      "lanang",
+      "undur",
+      "priyayi"
+    ],
+    [
+      "B-VBP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO"
+    ]
+  ],
+  [
+    ["semi", "mencucikan", "samasekali"],
+    ["B-NNO", "B-VBT", "B-NNO"]
+  ],
+  [
+    [
+      "per",
+      "kapang",
+      "fasik",
+      "lesung",
+      "ventrikel",
+      "stabilitas",
+      "peri",
+      "novelnya",
+      "berkelit",
+      "setti"
+    ],
+    ["B-PAR", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "pegal",
+      "erektil",
+      "kesombongan",
+      "mengacah",
+      "altruis",
+      "belentung",
+      "berantas",
+      "sengkang",
+      "rosario",
+      "tergigit",
+      "mengasyikkan"
+    ],
+    [
+      "B-NNO",
+      "B-NNP",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-VBI",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-VBT"
+    ]
+  ],
+  [
+    ["mendetik", "didahului", "labut", "temanmu", "perawatan", "memepet", "cantum"],
+    ["B-VBT", "B-VBP", "B-NNO", "B-NNP", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["cela", "pendampingan", "siapapun", "jeritan", "ruah"],
+    ["B-NNO", "B-NNO", "B-CSN", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "bicara",
+      "ejawantah",
+      "petaram",
+      "laberang",
+      "ketek",
+      "menumbuk",
+      "membilas",
+      "sulung",
+      "sobat",
+      "drama",
+      "bel",
+      "adsorpsi"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["seperunjung", "debut", "ditunda"],
+    ["B-NNO", "B-VBP", "B-VBP"]
+  ],
+  [
+    ["selip", "vikaris", "kelongsong", "ketak", "palut", "terpukau", "imun", "pepet", "buritan"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["remah", "goda", "cikut", "bungsu"],
+    ["B-NNO", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "keduk",
+      "ambet",
+      "mejan",
+      "merebak",
+      "keterangannya",
+      "dukana",
+      "langsir",
+      "dimuntahkan",
+      "hak-milik"
+    ],
+    ["B-NNO", "B-NNP", "B-NNP", "B-VBT", "B-NNO", "B-VBP", "B-ADJ", "B-VBP", "B-NNP"]
+  ],
+  [
+    ["alak", "bancik", "bersulam", "boyong", "tekek"],
+    ["B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["km", "dendang", "cebil", "didong", "sekoteng", "afirmasi"],
+    ["B-UNS", "B-VBP", "B-NNP", "B-VBP", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["buang", "detar", "mengejawantah", "pentil", "mencelupkan", "bikir", "kercup", "tinggalan"],
+    ["B-VBI", "B-VBP", "B-VBT", "B-NNP", "B-VBT", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "berisik",
+      "pelasah",
+      "mengedep",
+      "mengingat",
+      "jejer",
+      "perlina",
+      "tempuh",
+      "kerucil",
+      "menyerot",
+      "dikecek"
+    ],
+    ["B-NNO", "B-NNO", "B-NNP", "B-VBT", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["cerompong", "pete", "belur", "eksplosif", "sengkang", "pertanda", "jasmaniah", "elektroskop"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "mengaron",
+      "cakela",
+      "lalu",
+      "kelekatu",
+      "rangkaian",
+      "liar",
+      "penyengat",
+      "embel",
+      "mencincang"
+    ],
+    ["B-NNP", "B-NNP", "B-CSN", "B-NNO", "B-NNO", "B-ADJ", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["rusuknya", "antiklimaks", "membagaikan", "dendang", "derma", "helium"],
+    ["B-NNO", "B-NNP", "B-VBT", "B-VBP", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["perbukitan", "kekel", "berkubang"],
+    ["B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["mengaktifkan", "sela", "pengembang", "penyentuhan"],
+    ["B-VBT", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "percuma",
+      "mendepakan",
+      "membuangkan",
+      "biometrik",
+      "berkobar",
+      "tidurnya",
+      "menggalas",
+      "stesen",
+      "embel",
+      "jamur"
+    ],
+    ["B-NNP", "B-VBT", "B-VBT", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "dipecah",
+      "penambal",
+      "mendompleng",
+      "merogol",
+      "sengkal",
+      "kecap",
+      "menganginkan",
+      "menunjuk",
+      "perdayaan"
+    ],
+    ["B-VBP", "B-NNO", "B-NNP", "B-NNP", "B-NNO", "B-NNO", "B-VBT", "B-VBT", "B-NNO"]
+  ],
+  [
+    ["elips", "mandikan", "pembukuan", "beza", "dera", "mengolok", "makau", "selindung"],
+    ["B-NNP", "B-VBT", "B-NNO", "B-NNP", "B-VBP", "B-NNO", "B-VBT", "B-NNO"]
+  ],
+  [
+    [
+      "gedek",
+      "bercadik",
+      "iritasi",
+      "markas",
+      "memperteguh",
+      "mencengkeram",
+      "asumtif",
+      "majikannya"
+    ],
+    ["B-NNO", "B-VBI", "B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["polah", "dehidrasi", "agihan", "ketek", "pemeranan"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNO"]
+  ],
+  [
+    ["keset", "sesamanya", "dukacarita", "bantah", "prakata"],
+    ["B-NNO", "B-NNO", "B-VBP", "B-ADJ", "B-NNO"]
+  ],
+  [
+    ["mendigulkan", "kecairan", "sernak", "bekil", "sembarang", "belok"],
+    ["B-VBT", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["jungkir", "kebuluran", "rebak", "membuahi", "ketandusan"],
+    ["B-NNP", "B-NNO", "B-NNO", "B-VBT", "B-NNO"]
+  ],
+  [
+    ["melekukkan", "berekreasi", "pening", "tertemukan"],
+    ["B-VBT", "B-NNO", "B-NNP", "B-VBP"]
+  ],
+  [
+    [
+      "kegemilangan",
+      "kirab",
+      "memeriahkan",
+      "boyongan",
+      "memernis",
+      "darjah",
+      "barbiturat",
+      "per",
+      "mengantuk",
+      "mengganas",
+      "getok",
+      "jurai"
+    ],
+    [
+      "B-NNO",
+      "B-NNP",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-PAR",
+      "B-VBT",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["mengagan", "kelubi", "menembus", "keselesaan", "perlente", "jeli", "perirana"],
+    ["B-NNO", "B-NNO", "B-VBT", "B-NNO", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["kompeten", "diyakini", "leding", "tuli", "mencalarkan"],
+    ["B-NNO", "B-VBP", "B-NNP", "B-NNP", "B-VBT"]
+  ],
+  [
+    ["dukung", "tenar", "pendakian", "kelah", "ulaman"],
+    ["B-VBP", "B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["kedi", "adempauze", "beristrikan", "kewartawanan", "putih", "berhidung", "potret"],
+    ["B-NNO", "B-NNP", "B-VBI", "B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["tan", "penggemblengan", "temayun", "memperadudombakan", "teragung", "bercinta"],
+    ["B-NNO", "B-NNO", "B-NNP", "B-VBT", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["berang", "seteman", "balairung", "bongkah", "disalahkan", "lebur"],
+    ["B-VBI", "B-NNO", "B-VBI", "B-NNO", "B-VBP", "B-NNO"]
+  ],
+  [
+    [
+      "semeleh",
+      "bazoka",
+      "kericuhan",
+      "erang",
+      "menetaskan",
+      "menumpukkan",
+      "kepentingan",
+      "sikit",
+      "berbiak"
+    ],
+    ["B-NNO", "B-VBI", "B-NNO", "B-NNO", "B-VBT", "B-VBT", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "keterandalan",
+      "anggitan",
+      "cengeh",
+      "ayap",
+      "jahitan",
+      "dandanggula",
+      "format",
+      "mencuci",
+      "pelang"
+    ],
+    ["B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-VBT", "B-NNO"]
+  ],
+  [
+    [
+      "beha",
+      "mengandungi",
+      "seram",
+      "mejan",
+      "pekan",
+      "cemburu",
+      "menganggung",
+      "pornografi",
+      "perasaan",
+      "serantau",
+      "pertal",
+      "selumbat"
+    ],
+    [
+      "B-NNP",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["coplok", "guna", "pembujangan", "juri", "empedu", "kekasihnya", "seba", "mengharumkan"],
+    ["B-NNO", "B-PPO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-VBT"]
+  ],
+  [
+    [
+      "persih",
+      "cekur",
+      "bercarut",
+      "gilanya",
+      "pelanduk",
+      "alfabet",
+      "hiris",
+      "kere",
+      "dilancarkan"
+    ],
+    ["B-NNO", "B-NNP", "B-VBI", "B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-VBP"]
+  ],
+  [
+    ["pengangkat", "sentana", "ganteng", "pergi", "rayap", "degen"],
+    ["B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["seberang", "seniman", "strategis", "bepercikan", "keset"],
+    ["B-NNO", "B-NNO", "B-ADJ", "B-VBI", "B-NNO"]
+  ],
+  [
+    ["jalinan", "semi", "capit", "demon", "eksem", "mangkih"],
+    ["B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "kekeluargaan",
+      "demikian",
+      "bertarung",
+      "hormat",
+      "bertitah",
+      "hidroponik",
+      "menyerbak",
+      "perlip",
+      "menyumpahi",
+      "diterimanya",
+      "keseraman",
+      "sengkang"
+    ],
+    [
+      "B-NNO",
+      "B-PRN",
+      "B-VBI",
+      "B-ADJ",
+      "B-VBI",
+      "B-NNO",
+      "B-VBT",
+      "B-NNO",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO"
+    ]
+  ],
+  [
+    [
+      "seberkas",
+      "derak",
+      "kemi",
+      "kecebong",
+      "mempitis",
+      "makannya",
+      "lebam",
+      "membanjiri",
+      "bergolek",
+      "sengkelit",
+      "handalan",
+      "belulang"
+    ],
+    [
+      "B-NNO",
+      "B-VBP",
+      "B-NNO",
+      "B-NNO",
+      "B-ADJ",
+      "B-NNO",
+      "B-NNO",
+      "B-VBT",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO"
+    ]
+  ],
+  [
+    ["penyejukan", "seri", "sebatas", "redha", "kebahagiaan", "penyetopan"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["sepak", "kokot", "niatnya", "seleler"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["durnoisme", "bercangap", "pelang", "ketahiran", "ter", "formal", "formalitas", "dibuang"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-ADJ", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["melambai", "mengemat", "mujarab", "bilas", "helat", "boga", "bahala", "habislah"],
+    ["B-NNP", "B-VBT", "B-NNP", "B-NNO", "B-NNP", "B-VBI", "B-VBI", "B-NNP"]
+  ],
+  [
+    [
+      "pengawas",
+      "bertatih",
+      "deprok",
+      "penceracau",
+      "absensi",
+      "diberikan",
+      "bumel",
+      "dorang",
+      "semi",
+      "terluka",
+      "terkena",
+      "belida"
+    ],
+    [
+      "B-NNO",
+      "B-NNP",
+      "B-VBP",
+      "B-NNO",
+      "B-NNO",
+      "B-VBP",
+      "B-VBI",
+      "B-NNO",
+      "B-NNO",
+      "B-VBP",
+      "B-VBP",
+      "B-NNP"
+    ]
+  ],
+  [
+    [
+      "tekek",
+      "habiskan",
+      "tematik",
+      "segalanya",
+      "membangsa",
+      "asing",
+      "memo",
+      "memperduakan",
+      "penswastaan",
+      "pelias",
+      "kobaran"
+    ],
+    [
+      "B-NNP",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-ADJ",
+      "B-NNO",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO"
+    ]
+  ],
+  [
+    ["memperjuangkan", "beremas", "fokus", "dek", "berudu", "darulbaka", "kepang"],
+    ["B-VBT", "B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "mengarang",
+      "abu",
+      "ketiganya",
+      "dakhil",
+      "bijih",
+      "tergadai",
+      "mengusap",
+      "kardus",
+      "butbut",
+      "rial",
+      "bioritme",
+      "berang"
+    ],
+    [
+      "B-VBT",
+      "B-NNO",
+      "B-NUM",
+      "B-VBP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["tengah", "republik", "pepet", "epidemi", "kebinasaan", "cupet"],
+    ["B-NNO", "B-NNP", "B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["ditentang", "vasektomi", "cegak", "kasino", "jurnalis", "susutan", "cidomo", "alperes"],
+    ["B-VBP", "B-NNO", "B-NNP", "B-NNP", "B-NNO", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "dentang",
+      "gempar",
+      "berjasa",
+      "keseruduk",
+      "telingkah",
+      "kelesa",
+      "keledang",
+      "batok",
+      "kerul"
+    ],
+    ["B-VBP", "B-NNO", "B-VBI", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["dakik", "selempang", "selasar"],
+    ["B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["bahari", "apel", "dibersihkan", "deham", "bertekan", "gaplek", "menganggarkan"],
+    ["B-VBI", "B-NNO", "B-VBP", "B-NNP", "B-NNO", "B-NNP", "B-VBT"]
+  ],
+  [
+    ["mengemuli", "kelima", "ditembaknya", "mewujud", "erang"],
+    ["B-VBT", "B-NUM", "B-NNO", "B-VBT", "B-NNO"]
+  ],
+  [
+    ["beberapa", "peratus", "caram", "menyita", "pelang", "pengatur", "menggegar", "mustahak"],
+    ["B-KUA", "B-NNO", "B-NNO", "B-VBT", "B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "pahanya",
+      "dijangkau",
+      "memoar",
+      "caguh",
+      "kesuntukan",
+      "kedinginan",
+      "angel",
+      "kabin",
+      "sekakar",
+      "kegelapan",
+      "lingkung"
+    ],
+    [
+      "B-NNO",
+      "B-VBP",
+      "B-VBT",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO"
+    ]
+  ],
+  [
+    [
+      "kegemilangan",
+      "lali",
+      "sipesan",
+      "mencabarkan",
+      "tiada",
+      "menyebelah",
+      "sambungannya",
+      "dendang",
+      "ringkasnya",
+      "agio",
+      "ialah"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-VBT",
+      "B-NNO",
+      "B-VBT",
+      "B-NNO",
+      "B-VBP",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["selama", "inga", "ketel", "bersimpati", "kelakuan", "apam", "dekak"],
+    ["B-PPO", "B-NNO", "B-NNO", "B-NNP", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "sendi",
+      "diplomat",
+      "mengurangkan",
+      "kelik",
+      "tenggayun",
+      "secercah",
+      "menyemprot",
+      "cek",
+      "edukatif",
+      "kekel"
+    ],
+    ["B-NNP", "B-NNP", "B-VBT", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["cing", "seluar", "dera"],
+    ["B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "membuktikan",
+      "perlindungan",
+      "depak",
+      "memutlakkan",
+      "sampaikan",
+      "rama-rama",
+      "cemar",
+      "pelalah",
+      "pejantan"
+    ],
+    ["B-VBT", "B-NNO", "B-NNO", "B-VBT", "B-NNO", "B-NUM", "B-NNP", "B-NNP", "B-NNO"]
+  ],
+  [
+    [
+      "gurun",
+      "jelmaan",
+      "tergabung",
+      "nenek",
+      "dam",
+      "toko",
+      "balalaika",
+      "destruksi",
+      "memepet",
+      "petunia",
+      "misal",
+      "menjarah"
+    ],
+    [
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNO",
+      "B-VBI",
+      "B-VBP",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["tatapan", "siapapun", "tanur", "termonuklir", "persepatuan", "mejan", "bermakna"],
+    ["B-NNO", "B-CSN", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "bambung",
+      "patut",
+      "pasok",
+      "seri",
+      "sateria",
+      "tembarau",
+      "kecapaian",
+      "tera",
+      "tipe",
+      "pencegah"
+    ],
+    ["B-VBI", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["rebak", "membusukkan", "mencekok"],
+    ["B-NNO", "B-VBT", "B-NNO"]
+  ],
+  [
+    ["melancarkan", "menyergap", "berbingkai", "kecupetan", "kosta", "pepet"],
+    ["B-VBT", "B-VBT", "B-VBI", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "borong",
+      "cempor",
+      "bengkatak",
+      "cikrak",
+      "tercenung",
+      "infanteri",
+      "kekel",
+      "tonjol",
+      "berkepak"
+    ],
+    ["B-NNO", "B-NNP", "B-NNO", "B-NNP", "B-VBP", "B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["beramanat", "penggemblengan", "koyakan", "berperata", "mantu"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["memepet", "sesudah", "penuhnya"],
+    ["B-NNP", "B-NNP", "B-NNO"]
+  ],
+  [
+    ["peristiwa", "tampak", "ketungging", "transmigran", "pemusatan", "semawang", "remah", "buduk"],
+    ["B-NNO", "B-VBI", "B-NNP", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["musik", "lagu", "gelugur", "sebar", "berak", "matrikulasi", "vanili", "faham"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-ADJ", "B-VBI", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["kepinis", "paking", "keset"],
+    ["B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["menyertai", "destruksi", "kemekmek", "menyenggangkan", "debuk", "embar", "tepok"],
+    ["B-VBT", "B-NNO", "B-NNP", "B-VBT", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["mahatinggi", "penyiaran", "kena", "amblek"],
+    ["B-VBT", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "ganteng",
+      "berkehendak",
+      "menumpukan",
+      "senonoh",
+      "dialami",
+      "antaran",
+      "keampuhan",
+      "pelancaran",
+      "inilah",
+      "keperagawatian",
+      "perhatikan"
+    ],
+    [
+      "B-NNP",
+      "B-NNO",
+      "B-VBT",
+      "B-NNO",
+      "B-VBP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-ART",
+      "B-NNO",
+      "B-NNO"
+    ]
+  ],
+  [
+    [
+      "kalimah",
+      "meminggir",
+      "siksaan",
+      "terkandas",
+      "kelap",
+      "membeginikan",
+      "mentas",
+      "tergiur",
+      "sebat",
+      "intan"
+    ],
+    ["B-NNO", "B-NNP", "B-NNO", "B-ADJ", "B-NNP", "B-VBT", "B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["sementung", "kedi", "alimbubu", "serawak"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "pencabikan",
+      "ziarah",
+      "esok",
+      "leding",
+      "tenggalung",
+      "demisioner",
+      "bulanan",
+      "individualis",
+      "kolot"
+    ],
+    ["B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "berorientasi",
+      "memecahkan",
+      "kemunafikan",
+      "kelentang",
+      "menekang",
+      "sempoyongan",
+      "pencantuman",
+      "belanga",
+      "bersuara"
+    ],
+    ["B-NNO", "B-VBT", "B-NNO", "B-NNO", "B-VBT", "B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["kerat", "mengkhusus", "menyusuli", "mencahayai", "menyuburkan", "dinding", "mental"],
+    ["B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-VBT", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["kesengsaman", "elpiji", "genggang", "pemboran", "vaksinasi"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["cabaran", "cegak", "baban"],
+    ["B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "tercanang",
+      "krematorium",
+      "pelang",
+      "tercabut",
+      "kemesuman",
+      "desiran",
+      "terandal",
+      "resolusi",
+      "selekoh",
+      "penyangga",
+      "setoran",
+      "sekeras"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO"
+    ]
+  ],
+  [
+    [
+      "awalan",
+      "telempap",
+      "mengutak",
+      "kelolong",
+      "revolusi",
+      "lembang",
+      "berbayar",
+      "berpengalaman",
+      "faktur",
+      "fragmentasi"
+    ],
+    ["B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNO", "B-NNO", "B-VBI", "B-VBI", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "diperiksa",
+      "canggih",
+      "embel",
+      "tempeleng",
+      "ce",
+      "berdatuk",
+      "keakasan",
+      "buruj",
+      "memberatkan",
+      "memujikan",
+      "hayati",
+      "kecekatan"
+    ],
+    [
+      "B-VBP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-VBI",
+      "B-NNO",
+      "B-NNP",
+      "B-VBT",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO"
+    ]
+  ],
+  [
+    [
+      "bentet",
+      "oksigen",
+      "tinju",
+      "menyuluh",
+      "samseng",
+      "detasering",
+      "keluargamu",
+      "memintai",
+      "selayun",
+      "spontanitas"
+    ],
+    ["B-NNP", "B-NNP", "B-NNP", "B-VBT", "B-NNO", "B-NNP", "B-NNO", "B-VBT", "B-NNP", "B-NNO"]
+  ],
+  [
+    ["perawatan", "katik", "remah"],
+    ["B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "apuran",
+      "digabung",
+      "selak",
+      "manila",
+      "membekali",
+      "coak",
+      "aklamasi",
+      "berkecumik",
+      "kewujudan",
+      "dorongan",
+      "sengkil"
+    ],
+    [
+      "B-NNO",
+      "B-VBP",
+      "B-ADJ",
+      "B-VBT",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP"
+    ]
+  ],
+  [
+    [
+      "pujian",
+      "katik",
+      "dikritik",
+      "imbal",
+      "pikiranmu",
+      "sekrip",
+      "cocol",
+      "daratan",
+      "membaca",
+      "begu",
+      "hadas",
+      "bercaran"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-VBP",
+      "B-VBT",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    [
+      "menambak",
+      "pening",
+      "seburas",
+      "inas",
+      "diperhebat",
+      "diambilnya",
+      "sepuas",
+      "peralatan",
+      "polemik",
+      "sedikitpun"
+    ],
+    ["B-VBT", "B-NNP", "B-ADJ", "B-NNP", "B-NNP", "B-VBP", "B-NNO", "B-NNO", "B-NNO", "B-CSN"]
+  ],
+  [
+    ["keder", "berdarmawisata", "kelompang", "mencangklong"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["membariskan", "begar", "latam", "lingkungan"],
+    ["B-VBT", "B-NNP", "B-NNP", "B-NNO"]
+  ],
+  [
+    ["berkecipak", "celak", "apologetis", "kemelut", "kegunaan", "bol", "bison"],
+    ["B-VBI", "B-NNP", "B-NNP", "B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["bercabut", "pendomplengan", "kesemaran", "semantung", "begar", "berguna", "pembunuhan"],
+    ["B-VBI", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-VBI", "B-NNO"]
+  ],
+  [
+    ["kepar", "ditebuk", "kecuraman", "diantar"],
+    ["B-NNP", "B-NNP", "B-NNO", "B-VBP"]
+  ],
+  [
+    ["canggu", "embel", "memasang"],
+    ["B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["pengambek-parama-artaan", "telan", "memperalat", "menyemai"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-ADJ"]
+  ],
+  [
+    [
+      "dera",
+      "terka",
+      "malasan",
+      "denting",
+      "hakekatnya",
+      "kaut",
+      "yung",
+      "dialektik",
+      "kwartir",
+      "syirik",
+      "dikawinkan"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-VBP"
+    ]
+  ],
+  [
+    ["daduk", "terak", "angel"],
+    ["B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["motivasi", "berdesar", "pendaur-ulangan", "acungkan", "semen", "bajan", "terperintah"],
+    ["B-NNO", "B-VBI", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["bertiang", "mengentengkan", "menghafal", "restriksi", "telan", "sumbat", "pengambilan"],
+    ["B-VBI", "B-VBT", "B-VBT", "B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "didukung",
+      "kemutul",
+      "bangkot",
+      "embalase",
+      "cemooh",
+      "lambatnya",
+      "petut",
+      "paman",
+      "pekerjaannya",
+      "menyayat",
+      "pentil",
+      "anakan"
+    ],
+    [
+      "B-VBP",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    [
+      "kesendalan",
+      "penderma",
+      "menduduki",
+      "gema",
+      "menyembunyikan",
+      "leding",
+      "terabai",
+      "kelepur",
+      "penghubung",
+      "beterjunan",
+      "serawak",
+      "tersembam"
+    ],
+    [
+      "B-NNO",
+      "B-NNP",
+      "B-VBT",
+      "B-NNP",
+      "B-VBT",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["mengamini", "erang", "gandingan", "kegersangan"],
+    ["B-PRN", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "perkembangan",
+      "pertanyaan",
+      "mengislamkan",
+      "sulap",
+      "begar",
+      "bodohnya",
+      "perkataan",
+      "dramatisasi"
+    ],
+    ["B-NNO", "B-NNO", "B-VBT", "B-NNO", "B-VBI", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "ramuan",
+      "diselami",
+      "adegan",
+      "penggemblengan",
+      "mendatar",
+      "menyadarkan",
+      "berkepentingan",
+      "diurutkan"
+    ],
+    ["B-NNP", "B-VBP", "B-NNO", "B-NNO", "B-NNO", "B-VBT", "B-NNO", "B-VBP"]
+  ],
+  [
+    [
+      "mencepatkan",
+      "kempung",
+      "duaja",
+      "catek",
+      "setang",
+      "mutiara",
+      "menyendiri",
+      "gemala",
+      "erang",
+      "makro",
+      "muzik"
+    ],
+    [
+      "B-VBT",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["gundar", "kertas", "kembalinya", "ciri", "tepak", "rasuah", "perepet"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["mengistirahatkan", "depak", "bingkis", "menekapkan", "ungku", "sempur", "mencocol"],
+    ["B-VBT", "B-NNO", "B-NNP", "B-VBT", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["diajari", "kontribusi", "dondangan", "sengkelat"],
+    ["B-VBP", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "membidikkan",
+      "cemeti",
+      "berdentung",
+      "helat",
+      "berimbangan",
+      "sundal",
+      "banjang",
+      "dilengkapi"
+    ],
+    ["B-VBT", "B-NNP", "B-VBI", "B-NNO", "B-NNO", "B-NNO", "B-VBI", "B-VBP"]
+  ],
+  [
+    ["bercedera", "imannya", "ares", "kaku", "curian", "semi", "dingkit", "lampir", "buai"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["retorik", "berpelitur", "pembalakan", "kerasulan", "julai", "relai"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "bermat",
+      "keanggotaan",
+      "beni",
+      "planet",
+      "kesaksamaan",
+      "menyelusur",
+      "mengemendang",
+      "membeliak",
+      "cawan",
+      "halte",
+      "genggang"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["nunda", "bergula", "pengguguran", "selangat", "pemecahan", "menjambret", "danawa", "samseng"],
+    ["B-NNO", "B-VBI", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["legam", "megaton", "menampalkan", "kerdam", "ubah", "ekspose", "sebat", "terlampau"],
+    ["B-NNP", "B-NNP", "B-VBT", "B-NNO", "B-NNO", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["didih", "berseri", "penyemangatan"],
+    ["B-NNP", "B-NNP", "B-NNO"]
+  ],
+  [
+    ["bertelut", "letak", "didamaikan", "mentua", "menderu", "yatim", "duyun", "kesimbukan"],
+    ["B-NNP", "B-NNO", "B-VBP", "B-NNO", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["menyetrip", "kejap", "sekuntum", "letak", "deging", "insya", "antalas", "ratus"],
+    ["B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "kawannya",
+      "tempala",
+      "cetok",
+      "melabur",
+      "biogas",
+      "kecrek",
+      "menandaskan",
+      "kepret",
+      "girangnya"
+    ],
+    ["B-NNO", "B-NNO", "B-NNP", "B-VBT", "B-NNP", "B-NNP", "B-VBT", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "keunggulan",
+      "periskop",
+      "mengutuk",
+      "terapi",
+      "memulas",
+      "campung",
+      "kesengitan",
+      "ambigu",
+      "bermanis",
+      "spontanitas"
+    ],
+    ["B-NNO", "B-NNO", "B-VBT", "B-NNO", "B-NNO", "B-NNP", "B-NNO", "B-NNP", "B-VBI", "B-NNO"]
+  ],
+  [
+    [
+      "pembaitan",
+      "indoktrinasi",
+      "menyesuaikan",
+      "ngomel",
+      "penelaah",
+      "muslihat",
+      "kelepak",
+      "detikan"
+    ],
+    ["B-NNO", "B-NNO", "B-VBT", "B-NNP", "B-NNO", "B-NNP", "B-NNO", "B-VBP"]
+  ],
+  [
+    [
+      "berikat",
+      "penyebab",
+      "mempercayai",
+      "kanji",
+      "berak",
+      "penguasaan",
+      "pencinta",
+      "menangkis",
+      "sopan",
+      "berdinding",
+      "menindih"
+    ],
+    [
+      "B-VBI",
+      "B-NNO",
+      "B-NNP",
+      "B-NNO",
+      "B-VBI",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["lendir", "menggema", "berapresiasi", "membawahkan", "kerenting", "embel", "khusyuk", "harap"],
+    ["B-NNO", "B-VBT", "B-NNO", "B-VBT", "B-NNP", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "keabsahan",
+      "mengguncangkan",
+      "kelendara",
+      "ekstrusi",
+      "dera",
+      "aziz",
+      "pengeritingan",
+      "mikrofilm",
+      "abulhayat",
+      "pepek"
+    ],
+    ["B-NNO", "B-VBT", "B-NNO", "B-NNO", "B-VBP", "B-NNP", "B-NNO", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["terbau", "tercerna", "dayuh", "berancang", "terhukum", "rumahnya", "sangkar", "sengkang"],
+    ["B-NNO", "B-NNP", "B-NNP", "B-VBI", "B-NNO", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "bundas",
+      "bodohnya",
+      "pembatasan",
+      "muat",
+      "dasar",
+      "tepak",
+      "hablur",
+      "divergensi",
+      "menggulung",
+      "tama"
+    ],
+    ["B-VBI", "B-VBI", "B-NNO", "B-VBT", "B-NNO", "B-NNO", "B-NNP", "B-VBP", "B-VBT", "B-NNO"]
+  ],
+  [
+    ["blekok", "kelahiran", "apel"],
+    ["B-VBI", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["kerinan", "usir", "mengerepas", "kemurkaan", "cela", "umum", "penundaan", "peria"],
+    ["B-NNO", "B-NNP", "B-VBT", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["semen", "pahit", "bozah", "kemacetan", "ayuh", "pengusung", "kederang", "pernik"],
+    ["B-NNO", "B-NNP", "B-NNP", "B-NNO", "B-NNP", "B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["indera", "kedi", "petinju", "terpinggir"],
+    ["B-NNP", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    [
+      "penyempitan",
+      "wati",
+      "samasekali",
+      "kerukunan",
+      "mental",
+      "menampi",
+      "mencumbu",
+      "kecamatan",
+      "kelocak",
+      "fitnahan",
+      "dedas"
+    ],
+    [
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP",
+      "B-NNO",
+      "B-NNP",
+      "B-NNP",
+      "B-NNP"
+    ]
+  ],
+  [
+    [
+      "pernikahannya",
+      "pengerusi",
+      "termonuklir",
+      "militer",
+      "membasahi",
+      "kekel",
+      "berbalam",
+      "kloroform",
+      "skematis",
+      "nabiah",
+      "telekomunikasi"
+    ],
+    [
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-VBT",
+      "B-NNO",
+      "B-VBI",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO",
+      "B-NNO"
+    ]
+  ],
+  [
+    ["asakan", "berdinding", "lenggang"],
+    ["B-NNO", "B-VBI", "B-NNO"]
+  ],
+  [
+    ["busana", "ibunda", "berang"],
+    ["B-NNO", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["berburu", "serbaneka", "kere", "dadih", "mengalir", "memantak"],
+    ["B-VBI", "B-KUA", "B-NNO", "B-NNP", "B-VBI", "B-NNO"]
+  ],
+  [
+    ["kongres", "tetap", "rakus", "hasad", "personal", "terapi", "lestari"],
+    ["B-NNO", "B-ADV", "B-NNO", "B-NNP", "B-ADJ", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "bedil",
+      "rebak",
+      "memperbubungkan",
+      "elit",
+      "pensterilan",
+      "dompak",
+      "kisi",
+      "mengkhawatirkan"
+    ],
+    ["B-VBI", "B-NNO", "B-VBT", "B-NNO", "B-NNO", "B-VBP", "B-NNO", "B-VBT"]
+  ],
+  [
+    ["samseng", "gara", "rada", "famili", "perundingan", "berkarat"],
+    ["B-NNP", "B-NNO", "B-NNO", "B-NNP", "B-NNO", "B-NNO"]
+  ],
+  [
+    ["sekrup", "barangan", "angsoka", "pelat", "rambutnya", "mengekstrak", "kedeki"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNP"]
+  ],
+  [
+    ["wa", "iparnya", "disorientasi", "apel", "darulakhirat", "selia", "menggeledek"],
+    ["B-NNP", "B-NNP", "B-VBP", "B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "bersuling",
+      "membatukkan",
+      "pedanda",
+      "memanaskan",
+      "mariah",
+      "debut",
+      "derak",
+      "bulang",
+      "keberadaan",
+      "tersentak"
+    ],
+    ["B-NNP", "B-VBT", "B-NNO", "B-VBT", "B-NNO", "B-VBP", "B-VBP", "B-VBI", "B-NNO", "B-NNO"]
+  ],
+  [
+    [
+      "bersekedudukan",
+      "mengekang",
+      "tanyakan",
+      "kelintaran",
+      "diraih",
+      "jingkat",
+      "sengkelat",
+      "mengetepikan",
+      "triliun",
+      "sosialistis",
+      "tenis",
+      "arsitek"
+    ],
+    [
+      "B-NNO",
+      "B-VBT",
+      "B-NNO",
+      "B-NNO",
+      "B-VBP",
+      "B-NNO",
+      "B-NNO",
+      "B-VBT",
+      "B-NUM",
+      "B-NNO",
+      "B-NNO",
+      "B-NNP"
+    ]
+  ],
+  [
+    ["lenggang", "upacara", "terjaring", "sayap", "gravitasi", "teodolit", "kalau"],
+    ["B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-NNO", "B-CSN"]
+  ],
+  [
+    ["pentil", "kerokan", "pengkritik", "tertarik", "semeleh"],
+    ["B-NNP", "B-NNO", "B-NNO", "B-VBP", "B-NNO"]
+  ],
+  [
+    ["membelandang", "prestasi", "semi", "mencekik", "pembosan", "pelorot", "akliah", "penurut"],
+    ["B-VBT", "B-NNO", "B-NNO", "B-NNP", "B-NNO", "B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["jatuhnya", "terkira", "sedan", "terhormat"],
+    ["B-NNO", "B-NNO", "B-NNP", "B-NNP"]
+  ],
+  [
+    ["mengot", "pengarah", "belok"],
+    ["B-NNP", "B-NNP", "B-NNP"]
+  ],
+  [
+    [
+      "mengetap",
+      "dipulangkan",
+      "gelang",
+      "dipertanggung-jawabkan",
+      "perlaksanaan",
+      "pemilih",
+      "blirik",
+      "perangai"
+    ],
+    ["B-NNO", "B-VBP", "B-NNO", "B-VBP", "B-NNO", "B-NNO", "B-VBI", "B-NNP"]
+  ],
+  [
+    ["tahun", "2024", "ini"],
+    ["B-NNO", "B-NUM", "B-ART"]
+  ],
+  [
+    ["anak-anak", "bermain"],
+    ["B-NNO", "B-VBI"]
+  ],
+  [
+    ["12", "apel"],
+    ["B-NUM", "B-NNP"]
+  ],
+  [["apel"], ["B-NNP"]],
+  [["a"], ["B-NNO"]]
+]
