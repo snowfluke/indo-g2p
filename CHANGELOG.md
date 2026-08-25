@@ -32,6 +32,11 @@ default. Only the first was marked `feat!:` at the time.
   15.6% of ordinary words came back as a single syllable. Folding `ə` to `e`
   for tagging drops that to 0.2%, and boundaries are no longer allowed inside
   `tʃ` or `dʒ` (975 such splits, now none). `phonemes` output is unchanged.
+- The English table is searched in place rather than parsed into a `Map`. It
+  is already sorted, so a binary search over the packed string needs no setup:
+  first call falls from 24 ms to 3.2 ms, heap from 27 MB to 13 MB, and a memo
+  on the result leaves steady-state throughput slightly better than before at
+  roughly 107,000 words per second.
 - A spelled-out number no longer spends the collocation window. Normalisation
   turns `17` into `tujuh belas` and `12345` into eight words, which pushed a
   homograph's trigger out of range and silently gave the wrong reading:

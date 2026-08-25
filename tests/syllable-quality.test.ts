@@ -2,7 +2,8 @@
 // Copyright (c) 2026 snowfluke
 
 import { describe, expect, test } from "bun:test";
-import { toPhoneme } from "../src/index.ts";
+import { lookUpEnglish, toPhoneme } from "../src/index.ts";
+import { ENGLISH } from "../src/data/english.ts";
 import { KNOWN_IMPROVEMENTS } from "./known-improvements.ts";
 
 describe("every syllable has a vowel", () => {
@@ -34,4 +35,36 @@ test("the parity allowlist has no duplicate keys", () => {
   // the build if that ever changes.
   const keys = KNOWN_IMPROVEMENTS.map(([upstream]) => upstream);
   expect(new Set(keys).size).toBe(keys.length);
+});
+
+describe("english lookup", () => {
+  test("agrees with a map built from the same table", () => {
+    const map = new Map(
+      ENGLISH.split("\n").map((line) => {
+        const at = line.lastIndexOf(" ");
+        return [line.slice(0, at), line.slice(at + 1)] as const;
+      })
+    );
+    const wrong: string[] = [];
+    for (const [word, phonemes] of map) {
+      if (lookUpEnglish(word) !== phonemes) wrong.push(word);
+    }
+    expect({ checked: map.size > 100_000, wrong: wrong.slice(0, 5) }).toEqual({
+      checked: true,
+      wrong: [],
+    });
+  });
+
+  test.each(["", "a", "zzzzzz", "makan", "aaaaaa"])("misses %p cleanly", (word) => {
+    expect(lookUpEnglish(word)).toBeUndefined();
+  });
+
+  test("the first and last rows are reachable", () => {
+    // An off-by-one at either end of the search would only show up here.
+    const lines = ENGLISH.split("\n");
+    for (const line of [lines.at(0) ?? "", lines.at(-1) ?? ""]) {
+      const at = line.lastIndexOf(" ");
+      expect(lookUpEnglish(line.slice(0, at))).toBe(line.slice(at + 1));
+    }
+  });
 });
