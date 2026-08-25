@@ -1,0 +1,8 @@
+# Code owners for indo-g2p. Listed maintainers are requested for review on
+# every pull request. See GOVERNANCE.md for roles.
+* @snowfluke
+
+# Generated model data and the curated homograph table change published
+# pronunciations, so they always need a maintainer's eyes.
+/src/data/ @snowfluke
+/data/ @snowfluke

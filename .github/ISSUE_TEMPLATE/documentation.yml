@@ -1,0 +1,17 @@
+name: Documentation
+description: Something in the docs is wrong, missing, or unclear
+labels: ["documentation"]
+body:
+  - type: input
+    id: where
+    attributes:
+      label: Where
+      placeholder: README.md, "Homographs" section
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong or unclear
+    validations:
+      required: true

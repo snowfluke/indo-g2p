@@ -1,0 +1,48 @@
+name: Wrong pronunciation
+description: A word comes out with the wrong phonemes
+labels: ["pronunciation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Wrong output is a correctness bug, not a security issue.
+        Note that `indo-g2p` reproduces the upstream Python implementation
+        exactly by design, so some wrong output is inherited on purpose.
+  - type: input
+    id: input
+    attributes:
+      label: Input text
+      placeholder: dia makan apel merah
+    validations:
+      required: true
+  - type: input
+    id: actual
+    attributes:
+      label: What you got
+      placeholder: dia makan apəl mərah
+    validations:
+      required: true
+  - type: input
+    id: expected
+    attributes:
+      label: What you expected
+      placeholder: dia makan apel mərah
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source for the expected reading
+      description: >
+        A dictionary entry that marks the pepet vowel, such as the Indonesian
+        entry on en.wiktionary.org where `ê` is /ə/. Without a source a rule
+        cannot ship.
+    validations:
+      required: false
+  - type: input
+    id: version
+    attributes:
+      label: indo-g2p version
+      placeholder: 0.1.0
+    validations:
+      required: true
