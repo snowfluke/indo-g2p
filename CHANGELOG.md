@@ -26,6 +26,14 @@ jsr.json and `src/version.ts` in lockstep; the pre-commit hook rejects drift.
   15.6% of ordinary words came back as a single syllable. Folding `ə` to `e`
   for tagging drops that to 0.2%, and boundaries are no longer allowed inside
   `tʃ` or `dʒ` (975 such splits, now none). `phonemes` output is unchanged.
+- Glottal stops no longer swallow the `kh` digraph. Upstream reads `akhir` as
+  `aʔhir`, so its own `kh` to `/x/` mapping never fires; the word is `axir`.
+  Affects `akhir`, `terakhir`, `akhirnya`, `makhluk`, `ikhlas`.
+- Glottal stops no longer fire before `r` and `l`. Those are Latin onset
+  clusters that a native root does not form across a syllable break, so every
+  word reaching them is borrowed: `demokrat`, `sekretaris`, `iklan`, `nuklir`,
+  `akrab`. The clitic `-lah` is excepted, since its `k` ends a root, so
+  `tidaklah` stays `tidaʔlah`.
 - Schwa is now recovered in derived words the dictionary does not list. The
   17,888-word dictionary covers roots, but Indonesian affixes them, so 28% of
   running text missed it and was read with a plain `/e/`. The prefixes `me-`,

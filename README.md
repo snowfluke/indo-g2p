@@ -6,11 +6,12 @@ Indonesian grapheme-to-phoneme conversion and syllabification, in TypeScript.
 
 **[Try it in the browser](https://snowfluke.github.io/indo-g2p/)**, no install needed.
 
-A port of [Wikidepia/g2p-id](https://github.com/Wikidepia/g2p-id), with two
-deliberate corrections: [schwa in derived words](#schwa-in-derived-words) and
-[syllable segmentation](#syllables). Everything else matches the Python
-original byte for byte, asserted over 886 recorded cases and 4,470 POS tags,
-with each divergence listed explicitly in the test.
+A port of [Wikidepia/g2p-id](https://github.com/Wikidepia/g2p-id), with three
+deliberate corrections: [schwa in derived words](#schwa-in-derived-words),
+[glottal stops](#glottal-stops) and [syllable segmentation](#syllables).
+Everything else matches the Python original byte for byte, asserted over 886
+recorded cases and 4,470 POS tags, with each divergence listed explicitly in
+the test.
 
 - Zero runtime dependencies. No native modules, no model downloads.
 - Runs on Node.js, Bun, Deno, and in the browser.
@@ -227,6 +228,33 @@ things hold them back: a root has to start with a legal Indonesian onset, so
 [data/schwa-overrides.tsv](./data/schwa-overrides.tsv) pins the rest by hand.
 That file is also where you correct the upstream dictionary itself, as it
 carries `mental`, whose common sense is `/mental/` rather than `/məntal/`.
+
+## Glottal stops
+
+A `k` at the end of a word, or between a vowel and a consonant, is a glottal
+stop: `rusak` is `/rusaʔ/` and `rakyat` is `/raʔjat/`. Two cases are excluded
+where upstream applies the rule anyway.
+
+`kh` is a digraph, not a `k` before a consonant. Upstream reads `akhir` as
+`aʔhir`, which also means its `kh` to `/x/` mapping never sees the word:
+
+```
+akhir      upstream: aʔhir       here: axir
+terakhir   upstream: təraʔhir    here: təraxir
+makhluk    upstream: maʔhluʔ     here: maxluʔ
+```
+
+`kr` and `kl` are Latin onset clusters, and a native Indonesian root does not
+form them across a syllable break, so a word that reaches them is borrowed:
+
+```
+demokrat   upstream: demoʔrat    here: demokrat
+iklan      upstream: iʔlan       here: iklan
+nuklir     upstream: nuʔlir      here: nuklir
+```
+
+The clitic `-lah` is the exception, because there the `k` really does end a
+root: `tidaklah` stays `/tidaʔlah/`.
 
 ## How it works
 

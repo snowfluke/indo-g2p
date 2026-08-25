@@ -3,6 +3,7 @@
 
 import {
   DIPHTHONGS,
+  GLOTTAL_BEFORE_CLITIC_PATTERN,
   GLOTTAL_STOP_PATTERN,
   GRAPHEME_REPLACEMENTS,
   LETTER_NAMES,
@@ -34,8 +35,10 @@ function spellOut(word: string): string {
 /** Mark every `k` that sits between a vowel and a consonant as a glottal stop. */
 function applyGlottalStops(word: string): string {
   const chars = [...word];
-  for (const match of word.matchAll(GLOTTAL_STOP_PATTERN)) {
-    chars[match.index + 1] = "ʔ";
+  for (const pattern of [GLOTTAL_STOP_PATTERN, GLOTTAL_BEFORE_CLITIC_PATTERN]) {
+    for (const match of word.matchAll(pattern)) {
+      chars[match.index + 1] = "ʔ";
+    }
   }
   return chars.join("");
 }

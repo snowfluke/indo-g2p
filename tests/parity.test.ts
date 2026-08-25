@@ -19,10 +19,15 @@ const fixtures: ParityCase[] = cases;
  * The only phoneme outputs allowed to differ from the Python original, keyed
  * by upstream's string.
  *
- * Every one is a word the schwa dictionary does not list, where the affix
- * rules in `src/affix.ts` recover a prefix schwa upstream misses: `seoraŋ`
- * becomes `səoraŋ`, `terbenam` becomes `tərbənam`. Listing them explicitly
- * means a new divergence fails this test instead of slipping through.
+ * There are two causes, both deliberate:
+ *
+ * - The affix rules in `src/affix.ts` recover a prefix schwa upstream misses,
+ *   so `seoraŋ` becomes `səoraŋ` and `terbenam` becomes `tərbənam`.
+ * - The glottal-stop rule no longer fires before `r` and `l`, which are Latin
+ *   onset clusters, so `biroʔratismə` becomes `birokratismə`.
+ *
+ * Listing them explicitly means a new divergence fails this test instead of
+ * slipping through.
  */
 const KNOWN_IMPROVEMENTS: ReadonlyMap<string, string> = new Map([
   [
@@ -54,6 +59,11 @@ const KNOWN_IMPROVEMENTS: ReadonlyMap<string, string> = new Map([
     "unifərsitas indonesia məɲeleŋgarakan səminar təntaŋ teʔnologi kətʃərdasan buatan.",
   ],
   ["mempermanènkan", "məmpərmanènkan"],
+  ["nuʔleotidasə", "nukleotidasə"],
+  ["səʔlub", "səklub"],
+  ["deʔristənisasi", "dekristənisasi"],
+  ["pətiʔrah", "pətikrah"],
+  ["biroʔratismə", "birokratismə"],
 ]);
 
 test("phonemes match the upstream Python implementation on every fixture", () => {
@@ -161,9 +171,48 @@ describe("affix schwa recovery", () => {
     expect(toPhoneme(word).phonemes).toBe(expected);
   });
 
+  test.each([
+    // `kh` is a digraph, so the glottal-stop rule must not claim its `k`.
+    // Upstream does, which leaves `akhir` as `aʔhir` and never maps kh to x.
+    ["akhir", "axir"],
+    ["terakhir", "təraxir"],
+    ["makhluk", "maxluʔ"],
+    ["ikhlas", "ixlas"],
+  ])("reads the kh digraph in %s", (word, expected) => {
+    expect(toPhoneme(word).phonemes).toBe(expected);
+  });
+
+  test.each([
+    // A real `k` before a consonant is still a glottal stop.
+    ["rakyat", "raʔjat"],
+    ["periksa", "pəriʔsa"],
+    ["taksi", "taʔsi"],
+    ["bakso", "baʔso"],
+  ])("keeps the glottal stop in %s", (word, expected) => {
+    expect(toPhoneme(word).phonemes).toBe(expected);
+  });
+
   test("the curated dictionary always wins over the rules", () => {
     // `sekolah` and `pertama` are listed, and keep exactly their listed reading.
     expect(toPhoneme("sekolah").phonemes).toBe("səkolah");
     expect(toPhoneme("pertama").phonemes).toBe("pərtama");
+  });
+});
+
+describe("glottal stops in borrowings", () => {
+  test.each([
+    // kr and kl are Latin onset clusters; a native root does not form them
+    // across a syllable break, so every word that reaches here is borrowed.
+    ["demokrat", "demokrat"],
+    ["iklan", "iklan"],
+    ["akrab", "akrab"],
+    ["nuklir", "nuklir"],
+    ["deklarasi", "deklarasi"],
+  ])("keeps a plain k in %s", (word, expected) => {
+    expect(toPhoneme(word).phonemes).toBe(expected);
+  });
+
+  test("but -lah is a clitic, so its k still ends a root", () => {
+    expect(toPhoneme("tidaklah").phonemes).toBe("tidaʔlah");
   });
 });

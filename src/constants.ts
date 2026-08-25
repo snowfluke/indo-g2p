@@ -53,8 +53,28 @@ export const SYLLABLE_PATTERNS: readonly string[] = [
   "KVKKK",
 ];
 
-/** A `k` between a vowel and a consonant is a glottal stop, as in `pa/ʔ/sa`. */
-export const GLOTTAL_STOP_PATTERN: RegExp = /[aiueəo]k[bcdfghjklmnpqrstvwxyz]/g;
+/**
+ * A `k` between a vowel and a consonant is a glottal stop, as in `pa/ʔ/sa`.
+ *
+ * Three consonants are left out of the following set, where upstream includes
+ * them all:
+ *
+ * - `h`, because `kh` is a digraph rather than a `k` before a consonant.
+ *   Upstream turns `akhir` into `aʔhir`, so the later `kh` to `x` mapping
+ *   never sees its input; the word is `axir`.
+ * - `r` and `l`, because `kr` and `kl` are Latin onset clusters that native
+ *   roots do not form across a syllable break. Every word that reaches them is
+ *   a borrowing: `demokrat`, `sekretaris`, `iklan`, `nuklir`, `akrab`.
+ */
+export const GLOTTAL_STOP_PATTERN: RegExp = /[aiueəo]k[bcdfgjkmnpqstvwxyz]/g;
+
+/**
+ * The one place a `k` before `l` still is a glottal stop.
+ *
+ * `-lah` is a clitic, so its `k` ends a root rather than opening a cluster:
+ * `tidak` + `lah` is `tidaʔlah`, not `tidaklah`.
+ */
+export const GLOTTAL_BEFORE_CLITIC_PATTERN: RegExp = /[aiueəo]k(?=lah$)/g;
 
 /** Runs of Latin letters. Everything else passes through untouched. */
 export const WORD_PATTERN: RegExp = /[a-z]+/g;
