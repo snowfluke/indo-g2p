@@ -94,10 +94,16 @@ resolver leaves it alone. A linguistically correct rule that the tagger
 misfires on does not ship; see `pening` in
 [docs/homograph-review.md](./docs/homograph-review.md) for a worked example.
 
+`scripts/verify-homographs.py` re-runs the whole audit against Wiktionary and
+prints a verdict per word, so the shipped set is reproducible rather than
+asserted. Note that KBBI publishes no pronunciation field, so it cannot settle
+a schwa question.
+
 After editing the table:
 
 ```bash
-python3 scripts/dump-pos.py .   # regenerates src/data/homographs.ts
+python3 scripts/dump-pos.py .        # regenerates src/data/homographs.ts
+bun scripts/gen-homograph-doc.ts     # regenerates docs/homograph-review.md
 bun test
 ```
 

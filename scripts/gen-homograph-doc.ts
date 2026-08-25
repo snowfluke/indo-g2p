@@ -16,6 +16,12 @@ import { knownHomographs } from "../src/homographs.ts";
 import { applySchwa } from "../src/schwa.ts";
 
 const ROOT = resolve(import.meta.dir, "..");
+
+/**
+ * Verdict counts printed by `python3 scripts/verify-homographs.py`, which
+ * re-runs the whole audit against Wiktionary. Update both together.
+ */
+const AUDIT = { confirmed: 5, half: 6, single: 16, contradicted: 3, unverified: 27 };
 const NAME: Record<string, string> = {
   N: "noun",
   V: "verb",
@@ -72,18 +78,35 @@ to the schwa dictionary.
 ## What survived
 
 Bookbot's upstream table has 102 entries. 45 are unusable, because both
-readings share a part of speech or the readings are identical. Of the
-remaining 57:
+readings share a part of speech or the readings are identical. Reproduce the
+verdicts on the remaining 57 with:
 
-| Outcome | Count | Why |
+\`\`\`bash
+python3 scripts/verify-homographs.py <path-to>/homographs_id.tsv
+\`\`\`
+
+| Verdict | Count | Meaning |
 | --- | --- | --- |
-| Rule kept | ${rows.length} | Wiktionary marks two readings that split by part of speech |
-| One pronunciation | 3 | \`ganteng\`, \`relai\` and \`semi\` are marked the same in every sense, so no rule can apply |
-| No marked evidence | 43 | Wiktionary has no pepet-marked Indonesian entry, so nothing can be checked |
+| \`confirmed\` | ${AUDIT.confirmed} | both classes match a marked Wiktionary reading; the rule ships both ways |
+| \`half\` | ${AUDIT.half} | one class matches; only that side ships |
+| \`single\` | ${AUDIT.single} | every marked sense reads the same, so no part-of-speech rule can apply |
+| \`contradicted\` | ${AUDIT.contradicted} | the marked readings do not split along these classes |
+| \`unverified\` | ${AUDIT.unverified} | no pepet-marked Indonesian entry exists to check against |
 
-The dictionary already spells \`ganteng\` as \`gantəng\`, \`relai\` as \`rəlai\` and
-\`semi\` as \`səmi\`, matching Wiktionary. Dropping those rules made the output
-more correct, not less.
+That leaves ${rows.length} rules shipping and ${AUDIT.single + AUDIT.contradicted + AUDIT.unverified} dropped.
+
+The \`single\` group matters more than its name suggests. \`ganteng\`, \`relai\` and
+\`semi\` are marked identically in every sense with nothing left unmarked, so
+their upstream rules were simply wrong. The dictionary already spells them
+\`gantəng\`, \`rəlai\` and \`səmi\`, matching Wiktionary, so dropping those rules
+made the output more correct rather than less.
+
+### Why the other sources do not help
+
+KBBI, the official dictionary, splits homographs into numbered entries but
+publishes no pronunciation field at all, so it cannot say which \`e\` is a
+schwa. That leaves Wiktionary as the only machine-checkable source, and the
+\`unverified\` group is the set of words it has never marked.
 
 ## The kept rules
 

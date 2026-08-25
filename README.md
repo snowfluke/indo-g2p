@@ -167,10 +167,12 @@ These are upstream behaviours the port reproduces rather than fixes:
 - Words containing `ə` or `ŋ` can confuse the syllabifier, which was trained on
   plain letters, so `dəŋan` comes back as one syllable.
 - Only `[a-z]` runs are converted. Accented input is left alone.
-- Homographs are off by default and cover 11 words. Upstream ships 102 entries,
-  but 45 have identical readings or share a part of speech, and 43 more have no
-  pepet-marked Wiktionary entry to check against, so they are not shipped.
-  Guessing on them made the output worse, not better.
+- Homographs are off by default and cover 11 words. Upstream ships 102 entries;
+  45 have identical readings or share a part of speech, and of the 57 that
+  remain, 27 have no pepet-marked Wiktionary entry, 16 turn out to have one
+  pronunciation across every sense, and 3 contradict the upstream mapping.
+  `python3 scripts/verify-homographs.py` reproduces every verdict. Guessing on
+  the unverifiable ones made the output worse, not better.
 - The tagger is the weak link, not the rules. 42 of the upstream homographs
   never appear in the POSP corpus the tagger was trained on, so it emits its
   unknown-word default for them. The resolver therefore requires the tag to
