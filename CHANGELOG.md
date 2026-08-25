@@ -33,6 +33,10 @@ jsr.json and `src/version.ts` in lockstep; the pre-commit hook rejects drift.
   the untouched behaviour. It changes 8 of the 886 parity fixtures, every one
   an improvement, and removes no characters from ordinary text.
   `normalizeText`, `spellNumber` and `spellDecimal` are exported on their own.
+- `ch` is read as a single `/tʃ/`. Mapping `c` first left `tʃh`, a sound
+  Indonesian cannot make, in every borrowed name carrying it: `manchester` was
+  `mantʃhester` and is now `mantʃester`. Only three dictionary words contain
+  `ch`, all of them foreign names, and `kh` is unaffected.
 - The `ny` digraph now needs a following vowel. Indonesian words do not end
   in `ny`, so upstream's unconditional mapping turned borrowed names into a
   syllable with no vowel: `denny` became `denɲ`. Such names are still not read

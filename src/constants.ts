@@ -93,6 +93,9 @@ export const NASAL_DIGRAPH_PATTERN: RegExp = /ny(?=[aiueoəéè])/g;
 
 /** Grapheme to phoneme substitutions, applied in order. */
 export const PHONEME_REPLACEMENTS: readonly (readonly [string, string])[] = [
+  // `ch` is read as plain /tʃ/. Mapping `c` first would leave `tʃh`, which
+  // Indonesian cannot pronounce, in every borrowed name that has it.
+  ["ch", "tʃ"],
   ["x", "ks"],
   ["c", "tʃ"],
   ["j", "dʒ"],

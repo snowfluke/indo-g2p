@@ -305,3 +305,23 @@ describe("the ny digraph needs a following vowel", () => {
     expect(toPhoneme("uang").phonemes).toBe("uaŋ");
   });
 });
+
+describe("the ch digraph is a single affricate", () => {
+  test.each([
+    ["manchester", "mantʃester"],
+    ["michael", "mitʃael"],
+    ["chelsea", "tʃelsea"],
+  ])("reads ch in %s", (word, expected) => {
+    expect(toPhoneme(word).phonemes).toBe(expected);
+  });
+
+  test.each([
+    // kh and a plain c must be untouched.
+    ["khusus", "xusus"],
+    ["akhir", "axir"],
+    ["cacing", "tʃatʃiŋ"],
+    ["cahaya", "tʃahaja"],
+  ])("leaves %s alone", (word, expected) => {
+    expect(toPhoneme(word).phonemes).toBe(expected);
+  });
+});
