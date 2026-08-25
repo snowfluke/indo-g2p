@@ -9,10 +9,10 @@ Versions are published to npm as `indo-g2p` and to JSR as `@snowfluke/indo-g2p`
 from the same tag. `bun scripts/bump.ts patch|minor|major` keeps package.json,
 jsr.json and `src/version.ts` in lockstep; the pre-commit hook rejects drift.
 
-## [0.1.0] - unreleased
+## [0.1.0] - 2026-08-25
 
-Not yet published to npm or JSR. Everything below is the initial release as it
-stands.
+The initial release, published to npm as `indo-g2p` and to JSR as
+`@snowfluke/indo-g2p`.
 
 Three commits changed what `toPhoneme` returns by default and are breaking for
 anyone who tracked the repository before release: text normalisation, English
@@ -152,3 +152,5 @@ data from a bundle.
 - Releases publish to npm with provenance and to JSR over OIDC, then attach a
   CycloneDX SBOM and a keyless cosign signature to the GitHub release.
 - Every source file carries an `SPDX-License-Identifier: MIT` header.
+
+[0.1.0]: https://github.com/snowfluke/indo-g2p/releases/tag/v0.1.0
