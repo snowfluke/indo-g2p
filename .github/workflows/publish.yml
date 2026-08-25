@@ -30,6 +30,14 @@ jobs:
           registry-url: "https://registry.npmjs.org"
           package-manager-cache: false
 
+      # Trusted publishing needs npm >= 11.5.1 to do the OIDC exchange. Node 24
+      # currently bundles a new enough npm, but the bundled version moves on
+      # its own, and a silent downgrade would publish without an attestation.
+      - name: Upgrade npm for trusted publishing
+        run: |
+          npm install -g npm@latest
+          npm --version
+
       - name: Install Bun
         uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
         with:
