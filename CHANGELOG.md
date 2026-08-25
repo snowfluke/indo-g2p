@@ -19,8 +19,13 @@ jsr.json and `src/version.ts` in lockstep; the pre-commit hook rejects drift.
 - `toPhoneme`, `toSyllables`, `toGrapheme`, and `applySchwa`.
 - CRF syllabifier unpacked from `syllabifier.crfsuite` into plain weights.
 - 17,888-word schwa dictionary packed as a per-`e` bitmask.
-- Byte-for-byte parity with the Python original: 886 recorded fixtures in CI,
-  plus a 53,776-case fuzz sweep run against the reference implementation.
+- Byte-for-byte `phonemes` parity with the Python original: 886 recorded
+  fixtures in CI, plus a 53,776-case fuzz sweep against the reference.
+- Syllable segmentation fixed relative to upstream. The CRF was trained
+  without schwa marking, and being fed `ə` stopped it predicting boundaries:
+  15.6% of ordinary words came back as a single syllable. Folding `ə` to `e`
+  for tagging drops that to 0.2%, and boundaries are no longer allowed inside
+  `tʃ` or `dʒ` (975 such splits, now none). `phonemes` output is unchanged.
 - `indo-g2p/homographs`: opt-in homograph resolution for 11 words, driven by an
   averaged-perceptron POSP tagger ported from Bookbot's g2p_id (Apache-2.0).
   Parity-tested against the Python tagger over 4,470 recorded tags.

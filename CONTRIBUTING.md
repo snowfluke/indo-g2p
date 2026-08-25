@@ -50,10 +50,16 @@ bun run build        # emits lib/ for npm
 
 ## The parity contract
 
-`toPhoneme` must match [Wikidepia/g2p-id](https://github.com/Wikidepia/g2p-id)
-byte for byte on its default settings. `tests/fixtures/parity.json` holds 886
-recorded input/output pairs from the Python original, and
-`tests/parity.test.ts` asserts every one.
+`toPhoneme(...).phonemes` must match
+[Wikidepia/g2p-id](https://github.com/Wikidepia/g2p-id) byte for byte on its
+default settings. `tests/fixtures/parity.json` holds 886 recorded input/output
+pairs from the Python original, and `tests/parity.test.ts` asserts every one.
+
+`syllables` is the documented exception. Upstream feeds the CRF a schwa it was
+never trained on, which suppresses boundary prediction; this port folds `ə` to
+`e` for tagging. That divergence is pinned by property assertions rather than
+by upstream's strings. Widening it needs the same sign-off as any other output
+change.
 
 If your change alters that output, the parity tests will fail. That is the
 tests working, not a flake. Either fix the change, or make a deliberate case in

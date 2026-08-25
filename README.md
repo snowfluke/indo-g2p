@@ -6,9 +6,10 @@ Indonesian grapheme-to-phoneme conversion and syllabification, in TypeScript.
 
 **[Try it in the browser](https://snowfluke.github.io/indo-g2p/)**, no install needed.
 
-A port of [Wikidepia/g2p-id](https://github.com/Wikidepia/g2p-id). Output matches
-the Python original exactly: the test suite asserts byte-for-byte parity over
-886 recorded cases, and the POS tagger over 4,470 recorded tags.
+A port of [Wikidepia/g2p-id](https://github.com/Wikidepia/g2p-id). `phonemes`
+matches the Python original byte for byte, asserted over 886 recorded cases,
+and the POS tagger over 4,470 recorded tags. `syllables` deliberately improves
+on it; see [syllables](#syllables).
 
 - Zero runtime dependencies. No native modules, no model downloads.
 - Runs on Node.js, Bun, Deno, and in the browser.
@@ -71,13 +72,37 @@ toPhoneme("tv").phonemes; // "tf"
 toPhoneme("tv", { expandAbbr: true }).phonemes; // "téfé"
 ```
 
-### Syllables on their own
+### Syllables
 
 ```ts
 import { toSyllables } from "indo-g2p";
 
 toSyllables("sekolah"); // [ "se", "ko", "lah" ]
 ```
+
+Syllables are the one place this port deliberately differs from the Python
+original, because upstream has a bug here that matters for text-to-speech.
+
+The CRF syllabifier was trained on text with the digraphs already mapped, `ng`
+to `ŋ`, but with no schwa marking. Upstream feeds it its own output, schwa
+included, and the model responds by predicting almost no boundaries at all.
+This port folds `ə` back to `e` for tagging only, and refuses a boundary
+inside the two-character affricates `tʃ` and `dʒ`.
+
+Measured over the 17,888-word schwa dictionary:
+
+|                                 | upstream      | this port |
+| ------------------------------- | ------------- | --------- |
+| words collapsed to one syllable | 2,706 (15.6%) | 35 (0.2%) |
+| boundary inside `tʃ` or `dʒ`    | 975           | 0         |
+
+```
+cerdas    tʃərdas    upstream: tʃərdas       here: tʃər|das
+cerca     tʃərtʃa    upstream: tʃərt|ʃa      here: tʃər|tʃa
+sekolah   səkolah    upstream: səko|lah      here: sə|ko|lah
+```
+
+`phonemes` is untouched by this and still matches upstream exactly.
 
 ### Back to spelling
 
@@ -166,9 +191,11 @@ binary. Nothing is fetched at runtime.
 
 These are upstream behaviours the port reproduces rather than fixes:
 
-- Words containing `ə` or `ŋ` can confuse the syllabifier, which was trained on
-  plain letters, so `dəŋan` comes back as one syllable.
-- Only `[a-z]` runs are converted. Accented input is left alone.
+- Only `[a-z]` runs are converted. Accented and non-ASCII input passes through
+  like punctuation, so it belongs to no syllable.
+- The syllabifier is still the upstream CRF and still gets words wrong, for
+  example `dəŋ|an` rather than `də|ŋan`. It is a character model with no notion
+  of Indonesian morphology.
 - Homographs are off by default and cover 11 words. Upstream ships 102 entries;
   45 have identical readings or share a part of speech, and of the 57 that
   remain, 27 have no pepet-marked Wiktionary entry, 16 turn out to have one

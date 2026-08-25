@@ -89,10 +89,47 @@ function decode(word: string): number[] {
 }
 
 /**
+ * Move a boundary that fell inside `tʃ` or `dʒ`.
+ *
+ * Those affricates are one sound written with two characters, and the model
+ * scores characters, so it happily cuts between them. A syllable ending in
+ * `t` followed by one starting with `ʃ` is not Indonesian; the cut belongs one
+ * character earlier.
+ */
+function keepAffricatesWhole(syllables: readonly string[]): string[] {
+  const fixed: string[] = [];
+
+  for (const syllable of syllables) {
+    const previous = fixed.at(-1);
+    const splits =
+      previous !== undefined &&
+      ((previous.endsWith("t") && syllable.startsWith("ʃ")) ||
+        (previous.endsWith("d") && syllable.startsWith("ʒ")));
+
+    if (!splits || previous === undefined) {
+      fixed.push(syllable);
+      continue;
+    }
+
+    fixed[fixed.length - 1] = previous.slice(0, -1);
+    fixed.push(previous.slice(-1) + syllable);
+    // A syllable that was only the stray consonant is now empty; drop it.
+    if (fixed[fixed.length - 2] === "") fixed.splice(fixed.length - 2, 1);
+  }
+
+  return fixed;
+}
+
+/**
  * Split a word into syllables with the CRF model ported from g2p-id.
  *
- * The model was trained on plain uppercase letters, so `é` is folded to `e`
- * before tagging. The returned syllables keep the original characters.
+ * The model was trained on uppercase text that had the digraphs already
+ * mapped, `ng` to `ŋ` and so on, but with no schwa marking. Feeding it `ə`
+ * makes it stop predicting boundaries at all: 16% of ordinary words come back
+ * as a single syllable. Folding `ə` and `é` to `e` for tagging brings that
+ * down to 0.4%. Both foldings are one character for one character, so the
+ * boundaries still line up and the returned syllables keep the real
+ * characters.
  *
  * @param word A single word, already lowercased.
  * @returns The syllables in order. An empty word yields `[""]`.
@@ -105,7 +142,7 @@ function decode(word: string): number[] {
 export function toSyllables(word: string): string[] {
   if (word.length === 0) return [""];
 
-  const tags = decode(word.replaceAll("é", "e").toUpperCase());
+  const tags = decode(word.replaceAll("é", "e").replaceAll("ə", "e").toUpperCase());
   const syllables: string[] = [];
   let current = "";
 
@@ -119,5 +156,5 @@ export function toSyllables(word: string): string[] {
 
   // A trailing boundary leaves an empty tail, which upstream keeps.
   syllables.push(current);
-  return syllables;
+  return keepAffricatesWhole(syllables);
 }
