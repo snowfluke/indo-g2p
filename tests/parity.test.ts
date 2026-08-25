@@ -77,9 +77,9 @@ const KNOWN_IMPROVEMENTS: ReadonlyMap<string, string> = new Map([
   ["nuʔleotidasə", "nukleotidasə"],
   ["səʔlub", "səklub"],
   ["deʔristənisasi", "dekristənisasi"],
+  ["ko.reh", "ko.re"],
   ["pətiʔrah", "pətikrah"],
   ["biroʔratismə", "birokratismə"],
-  ["sms", "esemes"],
 ]);
 
 test("phonemes match the upstream Python implementation on every fixture", () => {
@@ -337,8 +337,8 @@ describe("English words are read as English", () => {
     ["game", "gem"],
     ["new", "nju"],
     ["city", "siti"],
-    ["download", "daunlod"],
-    ["online", "onlain"],
+    ["download", "daʊnlod"],
+    ["online", "onlaɪn"],
     // Names come out better this way than through Indonesian spelling rules,
     // which would give mitʃael and dʒames.
     ["michael", "maɪkəl"],
@@ -362,5 +362,24 @@ describe("English words are read as English", () => {
 
   test("can be switched off", () => {
     expect(toPhoneme("event", { english: false }).phonemes).toBe("efent");
+  });
+});
+
+describe("foreign names are read as names", () => {
+  test.each([
+    // Indonesian rules gave `dennj` and `sonj`, a syllable with no vowel.
+    ["denny", "deni"],
+    ["sony", "soni"],
+    ["benny", "beni"],
+    ["iphone", "aɪfon"],
+  ])("%s", (word, expected) => {
+    expect(toPhoneme(word).phonemes).toBe(expected);
+  });
+
+  test("diphthongs survive the English mapping", () => {
+    // A single-vowel rule running before the diphthong would give `maikəl`.
+    expect(toPhoneme("michael").phonemes).toBe("maɪkəl");
+    expect(toPhoneme("house").phonemes).toBe("haʊs");
+    expect(toPhoneme("boy").phonemes).toBe("bɔɪ");
   });
 });

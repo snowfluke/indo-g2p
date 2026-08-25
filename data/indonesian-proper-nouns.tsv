@@ -1,24 +1,118 @@
-# Proper nouns that must keep their Indonesian reading.
+# Words that must keep their Indonesian reading.
 #
-# The English layer only ever sees words no Indonesian list places, and many
-# of those are names that English dictionaries also carry: `jakarta` is in
-# en_US.txt, and reading it as /dʒəkɑɹtə/ instead of /dʒakarta/ is wrong.
+# The English layer only ever sees words no Indonesian source places, and many
+# of those are names and loanwords that English dictionaries also carry:
+# `jakarta` is in en_US.txt, and reading it as /dʒəkɑɹtə/ rather than
+# /dʒakarta/ is wrong.
 #
-# A word here is never handed to the English layer. Ordinary Indonesian
+# A word listed here is never handed to the English layer. Ordinary Indonesian
 # vocabulary does not belong in this file; it belongs in the schwa dictionary.
 #
-# This is a list of names, so it is facts rather than anyone's data set.
+# The `name` rows are facts about what places and institutions are called. The
+# `naturalised` rows were found by checking every eligible English word against
+# an Indonesian word list, and are the words that list claims as Indonesian.
+# That check is complete rather than a sample, because the eligible set is
+# bounded by the English dictionary.
 #
 # category	words (space separated)
-month	januari februari maret april mei juni juli agustus september oktober november desember
-day	senin selasa rabu kamis jumat sabtu minggu
-country	indonesia malaysia singapura brunei thailand filipina vietnam kamboja laos myanmar timor australia selandia amerika serikat kanada meksiko brasil argentina chili peru kolombia inggris britania irlandia jerman perancis prancis belanda belgia swiss austria italia spanyol portugal yunani turki rusia ukraina polandia swedia norwegia denmark finlandia islandia china tiongkok jepang korea india pakistan bangladesh nepal srilanka afghanistan iran irak arab saudi qatar kuwait emirat oman yaman suriah lebanon yordania israel palestina mesir libya tunisia maroko aljazair sudan somalia etiopia kenya nigeria ghana senegal afrika
-province	aceh sumatera riau jambi bengkulu lampung banten jakarta jawa yogyakarta bali kalimantan sulawesi gorontalo maluku papua nusa tenggara
-city	bandung surabaya medan semarang palembang makassar depok tangerang bekasi bogor batam pekanbaru padang malang solo surakarta denpasar manado balikpapan samarinda pontianak banjarmasin mataram kupang jayapura ambon ternate serang cirebon tasikmalaya purwokerto magelang salatiga kudus jepara madiun kediri jember probolinggo pasuruan sidoarjo gresik lamongan tuban
-foreign city	london madrid paris roma milan barcelona munchen berlin moskow tokyo osaka beijing shanghai seoul bangkok manila hanoi delhi mumbai dubai doha riyadh kairo istanbul sydney melbourne york washington chicago boston texas florida
-organisation	golkar gerindra nasdem demokrat hanura perindo berkarya garuda pertamina telkom mandiri bri bni bca antara kompas tempo detik tribun republika
-institution	kpk dpr mpr dpd tni polri kejaksaan mahkamah bawaslu kpu ojk bpjs bumn bulog basarnas bnpb kemenkeu kemendagri kemenlu
-faith	islam kristen protestan katolik hindu buddha konghucu muslim nasrani
-misc	pancasila garuda merdeka nusantara majapahit sriwijaya borobudur prambanan
-web	com net org www http https amp html php aspx co id
-brand	yamaha honda suzuki toyota daihatsu samsung xiaomi oppo vivo realme telkomsel indosat
+
+name month	januari februari maret april mei juni juli agustus september oktober november desember
+name day	senin selasa rabu kamis jumat sabtu minggu
+name country	indonesia malaysia singapura brunei thailand filipina vietnam kamboja laos myanmar timor australia selandia amerika serikat kanada meksiko brasil argentina chili peru kolombia inggris britania irlandia jerman perancis prancis belanda belgia swiss austria italia spanyol portugal yunani turki rusia ukraina polandia swedia norwegia denmark finlandia islandia china tiongkok jepang korea india pakistan bangladesh nepal srilanka afghanistan iran irak arab saudi qatar kuwait emirat oman yaman suriah lebanon yordania israel palestina mesir libya tunisia maroko aljazair sudan somalia etiopia kenya nigeria ghana senegal afrika
+name province	aceh sumatera riau jambi bengkulu lampung banten jakarta jawa yogyakarta bali kalimantan sulawesi gorontalo maluku papua nusa tenggara
+name city	bandung surabaya medan semarang palembang makassar depok tangerang bekasi bogor batam pekanbaru padang malang solo surakarta denpasar manado balikpapan samarinda pontianak banjarmasin mataram kupang jayapura ambon ternate serang cirebon tasikmalaya purwokerto magelang salatiga kudus jepara madiun kediri jember probolinggo pasuruan sidoarjo gresik lamongan tuban
+name foreign city	london madrid paris roma milan barcelona munchen berlin moskow tokyo osaka beijing shanghai seoul bangkok manila hanoi delhi mumbai dubai doha riyadh kairo istanbul sydney melbourne york washington chicago boston texas florida
+name organisation	golkar gerindra nasdem demokrat hanura perindo berkarya garuda pertamina telkom mandiri bri bni bca antara kompas tempo detik tribun republika micom kalla bakrie tbk persib persija arema
+name institution	kpk dpr mpr dpd tni polri kejaksaan mahkamah bawaslu kpu ojk bpjs bumn bulog basarnas bnpb kemenkeu kemendagri kemenlu
+name faith	islam kristen protestan katolik hindu buddha konghucu muslim nasrani
+name misc	pancasila merdeka nusantara majapahit sriwijaya borobudur prambanan
+name web	com net org www http https amp html php aspx
+name brand	yamaha honda suzuki toyota daihatsu samsung xiaomi oppo vivo realme telkomsel indosat
+naturalised	abasia abbas abdul abo abor abs absorb abt abut acc adah adak adan ade adena adenoid adenovirus adios admin adnan
+naturalised	ado adobe adora advertorial aeolus aerial aerostat agape ago aha aids ail aka alane alban albania albumin alena alfalfa algol
+naturalised	alien aliyah all almon aloha aloi along alpin alumina aluminum alveolar alveoli amber ambrosia amd amerika amor amparan anagram andante
+naturalised	andantino andi andreas android andromeda anemia anfal angel angi angiogenesis angora angstrom angus animator anime anno anorak anterior antidumping antipasto
+naturalised	antiviral antol anton antoni apnea apoptosis apotheosis appetizer april apter aquarius aquila aran arbitrator arboreal arboretum areta argo argot ariel
+naturalised	aries arko armed armenia art aruba asbestos asbestosis asta ata atm atman atp atrium auditor aural aurora aurum australia auto
+naturalised	autobahn automaton autopilot autumnal avatar azalea bachelor backhand badu bair balboa bandana banjo banta bao barbarian barga bargas barista baros
+naturalised	basic basin bastion bat batan batat batavia baton baud bazaar bento bethel bid bigos bigot bihari bima bingo binomial bioflavonoid
+naturalised	biosensor biotin bipartisan bistro blackout blenda blitz blitzkrieg blog blur boa bobak bobo boda bog bohemian bois bonafide bonar bongo
+naturalised	bora bordeaux borneo boron bourbon boxer bra brahmin bray brontosaurus browser buddha buggy buil bulimia bumping buol burda burgo bustier
+naturalised	but caisson call canasta canberra cane cao car carat carillon cato caudillo caya cele celsius chalet chili chop cicero cie
+naturalised	circa clear clearance cling cob cobo colt come confer console cote coto count couture couturier crash crescendo crooner cuban cum
+naturalised	cupit curie cutlery dae dag dalal dani danton dao daria daring dat deflator del delirium dental dentin depo deposit dermis
+naturalised	description desk desktop desmoplasia detritus deuce dharma dildo dinda dishonor dna doldrum dole dolman domain dominion dominus dore dori dorman
+naturalised	douche dromomania dry dual duhe duke dula dumbo duo duodenum duren edema eeg egalitarian eka email emeritus emulator enamel ende
+naturalised	endometriosis enema enigma ente entre eon epidermis epidural epsilon ergot essay establishment estrogen estrus eureka europa evaporator exclude faal familiar
+naturalised	fan fandango faring fatah fault fedora felon feral fermata fermium fetus fez fiat fib fibrin fibroid fibrosis fibula figura filet
+naturalised	filial filo fjord flamingo flares flavin flis flop floral flores flu fluor foil fora foramen forehand forma forman forte fortin
+naturalised	francis frau freon frigid frontal fungi fungus furlong gaba gabor gadget gaga gagan gai gail gain gait gaitan galan gama
+naturalised	gamal gambling gamet gamma ganglion gao gap gar garda gari garnet gasket gastritis gastrointestinal gating gaz gaza gel gena genial
+naturalised	genital genitalia genre gentian geranium ghetto gibas giblet gigolo gilda ginseng gladiator glamour glasnost globulin globus glori gluten goa gob
+naturalised	gober godot goes gogo golkar gonad gondola gopher gora gore gori gout grad gradual granular gravitas gray grendel grip guano
+naturalised	gude guillotine gul gum gun gung gurit guyot habib habibi hadron hafen hafnium haik haiku hail halogen hamada hamal hana
+naturalised	hangar hap haploid haring hart hasid haul havana head heling helmet hemiplegia hemoglobin henry herbal herbarium hering hernia heterosis hiatus
+naturalised	himalaya hindi hippie his histogram hit hiv hobo hoi holmium hologram homeostasis hominid honorarium hook hooligan hop horak horizon horizontal
+naturalised	hormonal hot http hub hud huh human humerus hun hut huta iain ibid ibrahim ida idiom idiot iguana ilo imitator
+naturalised	imperial imprimatur impromptu ina inca incognito index indigo indium indo indochina indonesia inertia infanticide inferior inferno infinitesimal ingar ingot inhibitor
+naturalised	inset insomnia insulator intaglio intercom interlude interregnum intro inventor iota ira iras irian iridium isbn isis islam islami ismail isomer
+naturalised	israel its jab jabar jackpot jaguar jail jakarta jamal jami jani janik jap japan jargon java jerk jerman jib jig
+naturalised	jil jim jindra jirak jojoba jonson judo juju juli jumbo junior junta jupiter jura juran juris jurist jute kabat kabuki
+naturalised	kah kahan kal kalan kalas kalk kalo kam kama kamali kamikaze kamir kampa kamra kana kane kang kania kantola kaolin
+naturalised	kappa karabin karas karate karel karibu karina karma karon karst kastel kates kato kelp kelvin ken khaki khalaf kia kiam
+naturalised	kibbutz kila kiln kilobit kilowatt kilt kim kin kip kir kiryat kiss kit kiting kits kiwi klan klas klem knop
+naturalised	knot koala kobak koci koh koki kolek kolin koman kombat komisar komodo kona koops kopek kopka koret korona kosa kosar
+naturalised	kosel kowal koyo krah krans kras kring krista krol krom kruk kubin kukuk kulon kulpa kun kuna kunce kung kuras
+naturalised	kus kusa kut kwh laas labeau labuda lace lad ladas laden lading lagan lage lago laguna lai lais lak lam
+naturalised	lambda lambe lambing lame lamina laminar laminating lamping lan lana lancia lancing lancit landau lang langen langsam lani lanolin lantana
+naturalised	lantis lapel laptop lar largo larva lasagna lasik lat latin lau laur lavender layah leak leber legato lege leghorn legislator
+naturalised	lego lei leman lemma lemon lender lenis lens lento leo leonid lepe leper leptin lesbian leukemia levan lex lian liana
+naturalised	liau libido libra lid lifo ligas lignin lil lila lilah lili liman limit lin linda linear ling lini lining lipid
+naturalised	lipoprotein lira lise lita litigant litmus lob log logogram lola lone longitudinal longo lop lor lora lorah loran lorber lore
+naturalised	lorgnette loso lotus love loya ludlow ludo luk lukas luks lum lumbago lumbar lumping lun lunar luncheon lung luring maag
+naturalised	mace mad mada madam madar madia madras maestro mafia mag magana magenta magi magma magnesia magnifier magnum mahabharata mahatma mahayana
+naturalised	mahdi mahe mahmud mai mair majik making mako malak malan malin malis malt mam man mandarin manga mangas mangino mangle
+naturalised	mania manna mano manta mapi mar maras marathon marbut maret margin maria marimba marina marital marjoram mark markus marlin maro
+naturalised	marsupial martini mason mastodon matador mate matrilineal mausoleum mayday mea mee mei melton men mer merk mers met mezzo miasma
+naturalised	microfiche midi mim mimi mimosa min mina minaret minibus minium minus miranda mob modeling modular modulator modulus mohair moi moiety
+naturalised	mok moka moke mol mola mole moler moles molest molotov monad mong mongol mongolia mongoloid mono monolingual monomer montana monti
+naturalised	monumental mop moped mor moratorium mori mormon moron moros mortar mota motivator motto mud mudra mug muhammad mui mullah multilingual
+naturalised	multimedia multivitamin mura mural musa musket muslin mustang mutagen mute naas nabil nafta naim nambi nang nanogram napalm napoleon nasal
+naturalised	natuna natural nau nausea nautilus navigator nazi neala neapolitan nebula negatron negro negroid negus nekton neonatal neptunium nestor netting netto
+naturalised	neural neuron neurosis neutrino neutron newton nik nike nile nimbus ninja niobium nip noa nobelium nomad none nonpartisan nonprofit nonstop
+naturalised	nova november novice novum nub numeral nuptial oasis oblak oblong obsidian ogan ohm oja oki okra okura olefin oliva oma
+naturalised	ombudsman omega omnibus onan oncor ondo ong opal opt opus orangutan orator orbital oregano organogenesis ori oriental origami orion orla
+naturalised	ornamental ose osmium osteoporosis ostinato otello ott oval overcoat overture overweight ovum pace pagan pagoda pah pai pail pair pais
+naturalised	pakistan pal palau pale palen palm palma pan pandit panko panorama papas papua paradiso paragon paranoia paranormal paraplegia parental parga
+naturalised	parietal paring paris parka parkinson paro parse partial pascal pasteur patin patina patio patois patrimonial patrol patron paul paulus pavo
+naturalised	pels pens phi photo pica pico pike pilgrim pilon pimping pina pines pint pisa pit piton pivot plan planetarium plankton
+naturalised	plano plasmodium platinum plato plaza pleiades plenum pleuritis plug plum plural pluto plutonium pluvial pneumonia pod pogo pogrom pol polar
+naturalised	polaris polaroid poles polka pollster polonium pom pompon ponte ponti ponto ponton poo pop por porta portal porter porto poser
+naturalised	positron postel posterior postmortem prada predator prefab premier prenatal pres presto primordial pris prodi profit progenitor prognosis promo propfan proposal
+naturalised	protean protozoa provisional psalm psi psoriasis pub pulp pulsar puma punch pung punk pupa pure puri purina puris puritan qua
+naturalised	quasar rabi rabies rabon rad radi radial radon radu rafe rafi ragas rago ram ramadan randa randi rani rank rap
+naturalised	rase rasia raskin rating rau raum raun ravioli rea reagen real realpolitik regan reggae region regulator reli relief remi remo
+naturalised	renal rendezvous rengo renin rental reset reshuffle resin resistor respirator resto resume resveratrol ret retail retina retinal retinoblastoma retinoid retro
+naturalised	retrovirus revival rho ribi rica rim rima rini rip risa rise risi risin ritual rival rna rob rococo roi romo
+naturalised	rong rosin rostrum rote rotor rotunda rouge royer rua rubel rubik rubin rudi rudin ruh rumor rupe rural rush rutan
+naturalised	ruud saba sabas sabo sad safir sagar sage sago sahara sai said saif sais sak sakai sakau sake sakura sal
+naturalised	sala salada salata sale salim salina saliva salmon salvage salvo samara samba samir sampling samsara samurai sanda sando sandro sano
+naturalised	sanskrit santana sap sar sarin sars sat sauk saur say sensei septima serda serge serpas serve sherry shinto sian sic
+naturalised	sidak sideris sidi siding sigma sil silo silt sim sima simulator sin sing singular sinusoid sip sir sirna sis sit
+naturalised	sitar ska skip slalom sling slip smet smoking sms snatch snob snooker soak sodium sofa sofitel sogang sogo soja solak
+naturalised	solid solis solum soma sombrero son sonogram sope soprano sorbet sorus sow spa spam span sparing spartan spatula spin spina
+naturalised	spirit spot spring sprint sputnik sputum sql stadium stain stalon standard stanza start statin sten step steroid stigmata stimulator stimulus
+naturalised	stockpile stoking stol stoma stomata stop strata strategem stratum stratus streng stress strip strontium stupor subplot subunit suda sugar suh
+naturalised	suite suk suki sukiyaki sulawesi sum sumatra sun suni sura suren surplus survey swap swastika sweepstake tabak taber tabloid taekwondo
+naturalised	taiko taki taku tal talk talkin talmud talon tamas tambo tamil tamping tampon tangen tango tania tantrum tao tap tape
+naturalised	tarantula taras tarot tarsus tartan tartar tatar taul taurus taut tawes temporal tendon term tesla tian tibia tike timpani ting
+naturalised	tipo tips tiramisu titan titania titanium todo tofu toga toilet tom tomako tomas tonda tonsil tor tornado toro torso tort
+naturalised	toto towel toya tram trans transom trap tremor tribal tribune trifecta trim trio trip triplet tripod trips tritium triton trivia
+naturalised	trivial troika tsar tsunami tubular tufa tuhan tuk tula tulip tuman tundra tungsten turban turbojet turquoise tursi tutu udo ufo
+naturalised	ultima ultramodern ultraviolet uma umbra una ungar uniform unisex until upp uram uranus urdu urea uremia urian using uterus utilitarian
+naturalised	vaginal valentine valid valin valis valium vanadium vandal vegan velvet venal vendor vent ventilator ventral ventura venus ver verba verbatim
+naturalised	verbena vernal vernis vertebra vertigo vespa vestibular vestigial vet vibrato vibrator vide videotron vigor vila vim viola violin virago viral
+naturalised	virga virginia virgo virtual virtuoso viscount vista vitiligo vitriol vodka volt vulva wadas wadi wage wai waid walas walrus wanda
+naturalised	war waring watermark waterway watt web wei wein were wet wig wiki wing wisdom wisman wispy wit wolfram wombat won
+naturalised	wong wor workaholic wow xenia xenon yacht yagi yah yahya yak yankee yard yasmin yen yeti yin yogi yolk yolks
+naturalised	yom yon yoyo yuk yup yuri zan zarah zeitgeist zen zero zeta zink zion zoom zulfikar zulu

@@ -50,3 +50,10 @@ and contributors.
 - `src/data/english.ts` - English pronunciations from `data/en_US.txt`, mapped
   onto this library's phoneme set and limited to words no Indonesian source
   places. `scripts/dump-english.py` reproduces it.
+
+The `naturalised` rows of `data/indonesian-proper-nouns.tsv` were found by
+checking every eligible English word against
+<https://github.com/Wikidepia/indonesian_datasets>, which carries no licence.
+Only the answer is kept: 1,757 words that list claims as Indonesian, recorded
+as our own list. None of its data is redistributed here, and it is not needed
+to build this package.

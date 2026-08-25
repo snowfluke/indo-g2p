@@ -1,20 +1,19 @@
 """Pack English pronunciations for words Indonesian has no answer for.
 
-Indonesian text carries English words, and reading them with Indonesian
-grapheme rules makes `event` into `efent`. This maps ipa-dict's English IPA
-onto the phoneme set this library already emits, which is the approximation an
-Indonesian speaker makes anyway.
+Indonesian text carries English words and foreign names, and reading them with
+Indonesian spelling rules gives `efent` for `event` and `dennj` for `denny`.
+This maps ipa-dict's English IPA onto the phoneme set this library already
+emits, which is the approximation an Indonesian speaker makes anyway.
 
-Three filters keep it from touching anything Indonesian:
+Two filters keep it away from Indonesian:
 
-1. Words any Indonesian list already answers are dropped, so English is only
+1. Words any Indonesian source already places are dropped, so English is only
    ever consulted last.
-2. Only reasonably common English words are kept, since the long tail of a
-   125,000-word dictionary is mostly names.
-3. data/indonesian-proper-nouns.tsv blocks the names that survive both, such
-   as `jakarta` and `april`, which English dictionaries also carry.
+2. data/indonesian-proper-nouns.tsv blocks the names and naturalised loanwords
+   that survive the first filter, such as `jakarta` and `april`, which English
+   dictionaries also carry.
 
-    uv run scripts/dump-english.py <ipa-dict en_US.txt> <common-words.txt>
+    uv run scripts/dump-english.py <ipa-dict en_US.txt>
 
 Source: https://github.com/open-dict-data/ipa-dict (MIT).
 """
@@ -34,21 +33,21 @@ HEADER = (
 ROOT = Path(__file__).resolve().parent.parent
 MIN_LENGTH = 3
 
-# English sounds rewritten as the nearest thing this library emits. Applied in
-# order, so the longer sequences win. `dʒ` is parked first because the plain
-# `ʒ` rule below would otherwise eat its second half.
+# English sounds rewritten as the nearest thing this library emits, applied in
+# order. Diphthongs and `dʒ` are parked as placeholders first, so the
+# single-symbol rules below cannot eat half of one: without that, `maɪkəl`
+# comes out as `maikəl`.
 SOUND_MAP: list[tuple[str, str]] = [
-    ("dʒ", "\x01"),
-    ("aʊ", "aʊ"), ("aɪ", "aɪ"), ("ɔɪ", "ɔɪ"),
-    ("oʊ", "o"), ("eɪ", "e"),
-    ("ɝ", "ər"), ("ɚ", "ər"),
+    ("dʒ", "\x01"), ("aɪ", "\x02"), ("aʊ", "\x03"), ("ɔɪ", "\x04"),
+    ("oʊ", "o"), ("eɪ", "e"), ("ɝ", "ər"), ("ɚ", "ər"),
     ("ɪ", "i"), ("ɛ", "e"), ("ɑ", "a"), ("ʊ", "u"),
     ("æ", "a"), ("ɔ", "o"), ("ʌ", "a"),
     ("ɫ", "l"), ("ɹ", "r"), ("ɡ", "g"),
     ("ʒ", "ʃ"), ("θ", "t"), ("ð", "d"), ("v", "f"),
-    ("\x01", "dʒ"),
+    ("\x01", "dʒ"), ("\x02", "aɪ"), ("\x03", "aʊ"), ("\x04", "ɔɪ"),
 ]
 DROPPED = "ˈˌː()"
+EMITTED = re.compile(r"^[a-zəŋɲʃʒʔɪʊɔ]+$")
 
 
 def to_local(ipa: str) -> str:
@@ -70,7 +69,7 @@ def blocked_words() -> set[str]:
 
 
 def indonesian_words() -> set[str]:
-    """Everything the Indonesian sources already answer."""
+    """Everything the Indonesian sources already place."""
     words: set[str] = set()
     for name in ("schwa-dict.ts", "lexicon.ts", "schwa-overrides.ts"):
         source = (ROOT / "src" / "data" / name).read_text(encoding="utf-8")
@@ -81,11 +80,6 @@ def indonesian_words() -> set[str]:
 
 
 def main() -> None:
-    common = {
-        w.strip()
-        for w in Path(sys.argv[2]).read_text(encoding="utf-8").splitlines()
-        if w.strip()
-    }
     skip = indonesian_words() | blocked_words()
 
     entries: dict[str, str] = {}
@@ -96,13 +90,13 @@ def main() -> None:
         word = parts[0]
         if len(word) < MIN_LENGTH or not re.fullmatch(r"[a-z]+", word):
             continue
-        if word not in common or word in skip:
+        if word in skip:
             continue
 
         spoken = to_local(parts[1].split(",")[0])
         # A mapping that left anything unrecognised would inject a symbol the
         # rest of the library never emits, so it is dropped instead.
-        if not spoken or re.search(r"[^a-zəŋɲʃʒʔɪʊ]", spoken):
+        if not spoken or not EMITTED.match(spoken):
             continue
         entries[word] = spoken
 
@@ -111,14 +105,14 @@ def main() -> None:
     out.write_text(
         f"{HEADER}\n"
         f"/**\n"
-        f" * English pronunciations for words no Indonesian list answers,\n"
+        f" * English pronunciations for words no Indonesian source places,\n"
         f" * from ipa-dict (MIT), mapped onto this library's phoneme set.\n"
         f" *\n"
         f" * Packed as `word phonemes` per line.\n"
         f" */\n"
         f"export const ENGLISH: string = {lines!r};\n"
     )
-    print(f"{len(entries)} English entries -> {out}")
+    print(f"{len(entries):,} English entries -> {out}")
 
 
 if __name__ == "__main__":

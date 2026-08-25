@@ -216,12 +216,15 @@ toPhoneme("download").phonemes; // "daunlod"
 toPhoneme("michael").phonemes; // "maɪkəl", not "mitʃael"
 ```
 
-Three filters keep it away from Indonesian. A word is only eligible if no
-Indonesian source places it, if it is a reasonably common English word rather
-than one of the 125,000-word tail that is mostly names, and if it is not in
+Two filters keep it away from Indonesian. A word is only eligible if no
+Indonesian source places it, and if it is not one of the 2,036 names and
+naturalised loanwords in
 [data/indonesian-proper-nouns.tsv](./data/indonesian-proper-nouns.tsv). That
-last file is why `jakarta`, `april` and `islam` keep their Indonesian
-readings, since English dictionaries carry those spellings too.
+file is why `jakarta`, `april` and `islam` keep their Indonesian readings,
+since English dictionaries carry those spellings too.
+
+Names are included rather than filtered out, because Indonesian rules read
+them badly: `denny` was `dennj`, a syllable with no vowel, and is now `deni`.
 
 Pass `english: false` to switch it off.
 
@@ -345,8 +348,9 @@ These are upstream behaviours the port reproduces rather than fixes:
 - No stress marks are emitted. Indonesian stress is not contrastive, and a
   speech model learns the symbol set it is trained on, so adding them would
   enlarge the vocabulary for nothing.
-- Names outside the English table still follow Indonesian rules, which is the
-  wrong language for many of them. `denny` and `sony` are read as Indonesian.
+- The name list has holes. Any place, brand or surname missing from
+  `data/indonesian-proper-nouns.tsv` and present in the English dictionary
+  gets an English reading. Adding one is a one-line edit.
 - The syllabifier is still the upstream CRF and still gets words wrong, for
   example `dəŋ|an` rather than `də|ŋan`. It is a character model with no notion
   of Indonesian morphology.
