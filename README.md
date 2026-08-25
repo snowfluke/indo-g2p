@@ -231,7 +231,7 @@ toPhoneme("michael").phonemes; // "maɪkəl", not "mitʃael"
 ```
 
 Two filters keep it away from Indonesian. A word is only eligible if no
-Indonesian source places it, and if it is not one of the 2,102 names and
+Indonesian source places it, and if it is not one of the 2,082 names and
 naturalised loanwords in
 [data/indonesian-proper-nouns.tsv](./data/indonesian-proper-nouns.tsv). That
 file is why `jakarta`, `april` and `islam` keep their Indonesian readings,
