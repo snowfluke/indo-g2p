@@ -9,6 +9,46 @@ Versions are published to npm as `indo-g2p` and to JSR as `@snowfluke/indo-g2p`
 from the same tag. `bun scripts/bump.ts patch|minor|major` keeps package.json,
 jsr.json and `src/version.ts` in lockstep; the pre-commit hook rejects drift.
 
+## [0.1.1] - 2026-08-25
+
+Documentation and packaging only. No behaviour changed: `toPhoneme` and every
+other export return exactly what they did in 0.1.0.
+
+### Added
+
+- `docs/agents.md`, a one-page reference for an agent or a pipeline calling
+  the library: entry points, every export with real output, why each option
+  default is the default, how to read `explain`, the failure modes, and the
+  determinism guarantee. It ships inside the package on both registries.
+- A project banner, `assets/banner.png`, also used as the social preview and
+  as the `og:image` on the demo site, which now carries link-preview tags.
+
+### Changed
+
+- The README leads with what the library does and why Indonesian G2P is hard,
+  and the reference material follows. It no longer opens by comparing itself
+  to the Python project it started from: indo-g2p is developed on its own
+  terms, and g2p-id is credited as the starting point rather than treated as
+  a specification to match.
+- The module doc, which is what JSR renders on the package overview, now
+  describes the library rather than its origin.
+
+### Fixed
+
+- The OpenSSF Scorecard badge pointed at `api.securityscorecards.dev`, which
+  returns 404 for this repository. It now reads `api.scorecard.dev`, where the
+  score is published.
+- The proper-noun stoplist was described as 2,102 words. It is 2,082, counted
+  the way `scripts/dump-english.py` counts it.
+- Every workflow failed at `bun install --frozen-lockfile`, because `bun.lock`
+  is lockfile version 2 and the pinned Bun 1.3.14 cannot parse it. Pinned to
+  1.4.0. No release before this one ever ran the CI gates.
+- `bun run coverage` and the checked-in README disagreed on table padding and
+  on one blank line, so the coverage gate could never pass. The generator now
+  produces the checked-in form and is idempotent.
+- `build:site` cleans its output directory and copies the banner, which Bun
+  does not follow from a meta tag.
+
 ## [0.1.0] - 2026-08-25
 
 The initial release, published to npm as `indo-g2p` and to JSR as
@@ -153,4 +193,5 @@ data from a bundle.
   CycloneDX SBOM and a keyless cosign signature to the GitHub release.
 - Every source file carries an `SPDX-License-Identifier: MIT` header.
 
+[0.1.1]: https://github.com/snowfluke/indo-g2p/releases/tag/v0.1.1
 [0.1.0]: https://github.com/snowfluke/indo-g2p/releases/tag/v0.1.0
