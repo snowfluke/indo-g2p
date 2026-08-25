@@ -6,12 +6,18 @@ Indonesian grapheme-to-phoneme conversion and syllabification, in TypeScript.
 
 **[Try it in the browser](https://snowfluke.github.io/indo-g2p/)**, no install needed.
 
-A port of [Wikidepia/g2p-id](https://github.com/Wikidepia/g2p-id), with three
-deliberate corrections: [schwa in derived words](#schwa-in-derived-words),
-[glottal stops](#glottal-stops) and [syllable segmentation](#syllables).
-Everything else matches the Python original byte for byte, asserted over 886
-recorded cases and 4,470 POS tags, with each divergence listed explicitly in
-the test.
+A port of [Wikidepia/g2p-id](https://github.com/Wikidepia/g2p-id) that
+deliberately diverges from it where the original is wrong: see
+[schwa in derived words](#schwa-in-derived-words), [glottal
+stops](#glottal-stops) and [syllables](#syllables).
+
+**It is not byte-for-byte compatible with the Python original, and no option
+setting makes it so.** 34 of the 886 recorded fixtures differ under the
+defaults, and 26 still differ with every optional layer switched off, because
+the glottal-stop, digraph and homograph corrections are not optional. Each
+divergence is listed by name in `tests/parity.test.ts`, so a 35th fails the
+build. The port is faithful where the original is right, not where it is
+wrong.
 
 - Zero runtime dependencies. No native modules, no model downloads.
 - Runs on Node.js, Bun, Deno, and in the browser.
@@ -24,7 +30,7 @@ the test.
 import { toPhoneme } from "indo-g2p";
 
 const { phonemes } = toPhoneme("Tak seorang pun boleh ditangkap.");
-// "taʔ seoraŋ pun boleh ditaŋkap."
+// "taʔ səoraŋ pun boleh ditaŋkap."
 ```
 
 ## Table of Contents
@@ -55,10 +61,10 @@ const { phonemes, syllables } = toPhoneme(
 );
 
 console.log(phonemes);
-// taʔ seoraŋ pun boleh ditaŋkap, ditahan ataʊ dibuaŋ dəŋan sewenaŋ-wənaŋ.
+// taʔ səoraŋ pun boleh ditaŋkap, ditahan ataʊ dibuaŋ dəŋan səwənaŋ-wənaŋ.
 
 console.log(syllables.slice(0, 6));
-// [ "taʔ", " ", "se", "o", "raŋ", " " ]
+// [ "taʔ", " ", "sə", "o", "raŋ", " " ]
 ```
 
 Text is lowercased first. Punctuation, digits, and spacing pass through
@@ -212,12 +218,12 @@ English instead, in the same phoneme set as everything else:
 
 ```ts
 toPhoneme("event").phonemes; // "ifent"
-toPhoneme("download").phonemes; // "daunlod"
+toPhoneme("download").phonemes; // "daʊnlod"
 toPhoneme("michael").phonemes; // "maɪkəl", not "mitʃael"
 ```
 
 Two filters keep it away from Indonesian. A word is only eligible if no
-Indonesian source places it, and if it is not one of the 2,036 names and
+Indonesian source places it, and if it is not one of the 2,102 names and
 naturalised loanwords in
 [data/indonesian-proper-nouns.tsv](./data/indonesian-proper-nouns.tsv). That
 file is why `jakarta`, `april` and `islam` keep their Indonesian readings,
@@ -236,6 +242,13 @@ Pass `english: false` to switch it off.
 | `toSyllables`                                | `(word: string) => string[]`                              |
 | `toGrapheme`                                 | `(text: string) => string`                                |
 | `applySchwa`                                 | `(word: string) => string`                                |
+| `normalizeText`                              | `(text: string) => string`                                |
+| `spellNumber`                                | `(value: number) => string`                               |
+| `spellDecimal`                               | `(whole: number, fraction: string) => string`             |
+| `resolveCollocations`                        | `(words: readonly string[]) => (string \| undefined)[]`   |
+| `collocationRules`                           | `() => { word: string; triggers: string[] }[]`            |
+| `lookUpEnglish`                              | `(word: string) => string \| undefined`                   |
+| `englishWords`                               | `() => string[]`                                          |
 | `VERSION`                                    | `string`                                                  |
 | `resolveHomographs` <sub>`/homographs`</sub> | `(words: readonly string[]) => (string \| undefined)[]`   |
 | `knownHomographs` <sub>`/homographs`</sub>   | `() => string[]`                                          |
@@ -337,6 +350,21 @@ binary. Nothing is fetched at runtime.
 | Schwa dictionary | 206 KB | on first `toPhoneme` with an `e`                                  |
 | CRF syllabifier  | 295 KB | on first `toSyllables`                                            |
 | POSP tagger      | 3.3 MB | only via `indo-g2p/homographs`, and only when a homograph appears |
+
+### What a bundle actually costs
+
+Importing `toPhoneme` pulls in the English table whether or not you use it,
+because the import is static. A bundle containing nothing but `toPhoneme`
+measures **2.7 MB unminified**. `english: false` turns the lookup off but
+cannot remove the data.
+
+The part-of-speech tagger is genuinely separate: it lives behind
+`indo-g2p/homographs` and never reaches a bundle that does not import that
+path. Verified by building a consumer that imports only `toPhoneme` and
+checking for the tagger's symbols.
+
+For a server-side text-to-speech pipeline this is unremarkable. For a browser
+bundle it is not, and `english: false` will not help you.
 
 ## Known limits
 

@@ -70,4 +70,4 @@ jobs:
       - name: Verify generated data is reproducible
         run: |
           python3 scripts/dump-pos.py .
-          git diff --exit-code -- src/data/homographs.ts
+          git diff --exit-code -- src/data/homographs.ts src/data/collocations.ts

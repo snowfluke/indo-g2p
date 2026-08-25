@@ -25,7 +25,7 @@ export type SchwaResolver = (words: readonly string[]) => readonly (string | und
  */
 export type ToPhonemeOptions = {
   /**
-   * Spell out words that have no valid syllable shape, such as `tv` to `tévé`.
+   * Spell out words that have no valid syllable shape, such as `tv` to `téfé`.
    * Defaults to `false`.
    */
   expandAbbr?: boolean;

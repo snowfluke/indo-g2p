@@ -9,9 +9,15 @@ Versions are published to npm as `indo-g2p` and to JSR as `@snowfluke/indo-g2p`
 from the same tag. `bun scripts/bump.ts patch|minor|major` keeps package.json,
 jsr.json and `src/version.ts` in lockstep; the pre-commit hook rejects drift.
 
-## [Unreleased]
+## [0.1.0] - unreleased
 
-## [0.1.0] - 2026-08-22
+Not yet published to npm or JSR. Everything below is the initial release as it
+stands.
+
+Three commits changed what `toPhoneme` returns by default and are breaking for
+anyone who tracked the repository before release: text normalisation, English
+word readings, and collocation-based homograph resolution all became the
+default. Only the first was marked `feat!:` at the time.
 
 ### Added
 
@@ -48,7 +54,7 @@ jsr.json and `src/version.ts` in lockstep; the pre-commit hook rejects drift.
   deliberately left English.
 - Foreign names are read as names. ipa-dict already carried them, and dropping
   the common-word filter lets them through: `denny` was `dennj`, a syllable
-  with no vowel, and is now `deni`. 113,187 entries.
+  with no vowel, and is now `deni`. 113,140 entries.
 - Fixed a bug where the single-vowel rules ate half of a diphthong, so
   `michael` came out `maikəl` rather than `maɪkəl`.
 - `ch` is read as a single `/tʃ/`. Mapping `c` first left `tʃh`, a sound
