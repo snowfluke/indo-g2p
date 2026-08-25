@@ -6,10 +6,11 @@ Indonesian grapheme-to-phoneme conversion and syllabification, in TypeScript.
 
 **[Try it in the browser](https://snowfluke.github.io/indo-g2p/)**, no install needed.
 
-A port of [Wikidepia/g2p-id](https://github.com/Wikidepia/g2p-id). `phonemes`
-matches the Python original byte for byte, asserted over 886 recorded cases,
-and the POS tagger over 4,470 recorded tags. `syllables` deliberately improves
-on it; see [syllables](#syllables).
+A port of [Wikidepia/g2p-id](https://github.com/Wikidepia/g2p-id), with two
+deliberate corrections: [schwa in derived words](#schwa-in-derived-words) and
+[syllable segmentation](#syllables). Everything else matches the Python
+original byte for byte, asserted over 886 recorded cases and 4,470 POS tags,
+with each divergence listed explicitly in the test.
 
 - Zero runtime dependencies. No native modules, no model downloads.
 - Runs on Node.js, Bun, Deno, and in the browser.
@@ -194,6 +195,38 @@ const myResolver: SchwaResolver = (words) => words.map(() => undefined);
 `resolveSchwa` defaults to `resolveCollocations` and `false` disables
 resolution entirely.
 `SchwaResolver` is `(words: readonly string[]) => readonly (string | undefined)[]`.
+
+## Schwa in derived words
+
+Indonesian spelling writes `/e/` and `/ə/` with the same letter, so a
+dictionary decides which is which. Upstream ships a 17,888-word one, but the
+language builds most of its vocabulary by affixing roots, and the derived
+forms are not listed. On 141,770 tokens of news text, **28% of all words** are
+`e`-words the dictionary has never seen, and every one of them was read with a
+plain `/e/`.
+
+The prefixes `me-`, `se-`, `te-`, `be-`, `pe-`, `ke-`, `ber-`, `ter-`, `per-`
+always carry a schwa. That is a fact about the language rather than about any
+word list, so an unlisted word can still be read correctly:
+
+```
+tersebut     upstream: tersebut       here: tərsəbut
+menjadi      upstream: menjadi        here: məndʒadi
+mengatakan   upstream: mengatakan     here: məŋatakan
+beberapa     upstream: beberapa       here: bəbərapa
+```
+
+The rules only run for words the dictionary does not list, so all 17,888
+curated entries are untouched. Scored against the dictionary itself, guessing
+each known word as if it were missing, the prefix vowel comes out right
+**96.8%** of the time.
+
+Loanwords that merely begin with a prefix's letters are the failure mode. Two
+things hold them back: a root has to start with a legal Indonesian onset, so
+`teknologi` is not read as `te` + `knologi`, and
+[data/schwa-overrides.tsv](./data/schwa-overrides.tsv) pins the rest by hand.
+That file is also where you correct the upstream dictionary itself, as it
+carries `mental`, whose common sense is `/mental/` rather than `/məntal/`.
 
 ## How it works
 

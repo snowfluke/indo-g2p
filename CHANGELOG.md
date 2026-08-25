@@ -26,6 +26,17 @@ jsr.json and `src/version.ts` in lockstep; the pre-commit hook rejects drift.
   15.6% of ordinary words came back as a single syllable. Folding `ə` to `e`
   for tagging drops that to 0.2%, and boundaries are no longer allowed inside
   `tʃ` or `dʒ` (975 such splits, now none). `phonemes` output is unchanged.
+- Schwa is now recovered in derived words the dictionary does not list. The
+  17,888-word dictionary covers roots, but Indonesian affixes them, so 28% of
+  running text missed it and was read with a plain `/e/`. The prefixes `me-`,
+  `se-`, `te-`, `be-`, `pe-`, `ke-`, `ber-`, `ter-` and `per-` always carry a
+  schwa, which recovers 63% of those tokens at 96.8% precision on a held-out
+  scoring against the dictionary. Curated entries always win, a root must
+  start with a legal Indonesian onset, and `data/schwa-overrides.tsv` pins the
+  loanwords that slip through. This diverges from the Python original's
+  `phonemes` for 8 of the 886 fixtures, each listed in the parity test.
+- `data/schwa-overrides.tsv` corrects the upstream dictionary itself. It
+  carries `mental`, whose common sense is `/mental/` rather than `/məntal/`.
 - Homograph resolution is on by default, driven by collocation rules: a word
   keeps its dictionary reading unless one of its trigger words is within four
   words in the same sentence. Under 1 KB, no model, deterministic. Disable with

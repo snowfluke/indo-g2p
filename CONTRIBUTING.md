@@ -55,7 +55,11 @@ bun run build        # emits lib/ for npm
 default settings. `tests/fixtures/parity.json` holds 886 recorded input/output
 pairs from the Python original, and `tests/parity.test.ts` asserts every one.
 
-`syllables` is the documented exception. Upstream feeds the CRF a schwa it was
+There are two documented exceptions. `data/schwa-overrides.tsv` and the affix
+rules in `src/affix.ts` recover schwa in derived words the dictionary misses,
+and `syllables` is the other.
+
+`syllables` is the second exception. Upstream feeds the CRF a schwa it was
 never trained on, which suppresses boundary prediction; this port folds `ə` to
 `e` for tagging. That divergence is pinned by property assertions rather than
 by upstream's strings. Widening it needs the same sign-off as any other output

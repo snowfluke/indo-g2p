@@ -1,0 +1,19 @@
+# Corrections to the upstream schwa dictionary.
+#
+# data/../src/data/schwa-dict.ts is Wikidepia's curated data and is right
+# almost everywhere. A row here overrides one word, and needs the same
+# evidence any reading needs: a source that marks the pepet vowel, where "ê"
+# is /ə/ and "é" and "è" are not.
+#
+# This diverges from the Python original's `phonemes` output on purpose, so a
+# row is a deliberate decision, not a bug fix in passing. Keep it short.
+#
+# mask is a hex bitmask over the word's "e"s: bit i set = the i-th "e" is /ə/.
+#
+# word	mask	evidence
+mental	0	en.wiktionary marks the adjective and noun "mental" with no pepet, so the common sense (mentality, psychological) is /mental/. Upstream's /məntal/ belongs to the rarer verb sense, to be flung or bounce off, which the collocation rules select instead.
+terapi	0	Loanword from Dutch "therapie", not ter- + api, so no pepet. The affix rules would otherwise read it as a prefixed root. The rarer superlative tərapi (ter- + rapi) is selected by the part-of-speech resolver instead.
+serong	0	Not se- + rong. Upstream's own test suite asserts /seroŋ/, listing it among the [e] allophones.
+teknologi	0	Loanword, not te- + knologi. The onset check already rejects it; the row keeps that explicit if the check ever loosens.
+metode	0	Loanword from Dutch "methode", not me- + tode.
+medan	0	Not me- + dan; the common sense is the place name and the field noun, both /medan/.

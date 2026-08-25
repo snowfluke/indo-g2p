@@ -71,12 +71,31 @@ def dump_schwa(csv_path: Path, out: Path) -> None:
     )
 
 
+def dump_overrides(tsv_path: Path, out: Path) -> int:
+    """Pack the corrections to the upstream dictionary. See data/schwa-overrides.tsv."""
+    lines = []
+    for row in tsv_path.read_text(encoding="utf-8").splitlines():
+        if not row.strip() or row.startswith("#"):
+            continue
+        word, mask, _evidence = row.split("\t")
+        lines.append(f"{word} {int(mask, 16):x}")
+
+    out.write_text(
+        f"{HEADER}\n"
+        f'/** Packed corrections to the schwa dictionary: `word hexMask` per line. */\n'
+        f"export const SCHWA_OVERRIDES: string = {chr(10).join(lines)!r};\n"
+    )
+    return len(lines)
+
+
 def main() -> None:
     src = Path(sys.argv[1]) / "g2p_id"
     out = Path(__file__).resolve().parent.parent / "src" / "data"
     out.mkdir(parents=True, exist_ok=True)
     dump_model(src / "model" / "syllabifier.crfsuite", out / "syllabifier-model.ts")
     dump_schwa(src / "data" / "schwa_dict.csv", out / "schwa-dict.ts")
+    overrides = Path(__file__).resolve().parent.parent / "data" / "schwa-overrides.tsv"
+    print(f"wrote {dump_overrides(overrides, out / 'schwa-overrides.ts')} overrides")
     print(f"wrote {out}")
 
 

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 // Copyright (c) 2026 snowfluke
 
-import { expect, test } from "bun:test";
+import { describe, expect, test } from "bun:test";
 import { toGrapheme, toPhoneme } from "../src/index.ts";
 import cases from "./fixtures/parity.json" with { type: "json" };
 
@@ -15,14 +15,57 @@ type ParityCase = {
 
 const fixtures: ParityCase[] = cases;
 
+/**
+ * The only phoneme outputs allowed to differ from the Python original, keyed
+ * by upstream's string.
+ *
+ * Every one is a word the schwa dictionary does not list, where the affix
+ * rules in `src/affix.ts` recover a prefix schwa upstream misses: `seoraŋ`
+ * becomes `səoraŋ`, `terbenam` becomes `tərbənam`. Listing them explicitly
+ * means a new divergence fails this test instead of slipping through.
+ */
+const KNOWN_IMPROVEMENTS: ReadonlyMap<string, string> = new Map([
+  [
+    "taʔ seoraŋ pun boleh ditaŋkap, ditahan ataʊ dibuaŋ dəŋan sewenaŋ-wənaŋ.",
+    "taʔ səoraŋ pun boleh ditaŋkap, ditahan ataʊ dibuaŋ dəŋan səwənaŋ-wənaŋ.",
+  ],
+  [
+    "ɲaɲian ʃahdu itu meŋgema di səluruh ruaŋan jaŋ gəlap.",
+    "ɲaɲian ʃahdu itu məŋgəma di səluruh ruaŋan jaŋ gəlap.",
+  ],
+  [
+    "pt kaɪ meŋumumkan dʒadwal baru krl dʒabodetabəʔ mulaɪ 1 dʒanuari.",
+    "pt kaɪ məŋumumkan dʒadwal baru krl dʒabodetabəʔ mulaɪ 1 dʒanuari.",
+  ],
+  [
+    "pété kaɪ meŋumumkan dʒadwal baru kaèrèl dʒabodetabəʔ mulaɪ 1 dʒanuari.",
+    "pété kaɪ məŋumumkan dʒadwal baru kaèrèl dʒabodetabəʔ mulaɪ 1 dʒanuari.",
+  ],
+  [
+    "anaʔ-anaʔ bermain lajaŋ-lajaŋ di pantaɪ kətika matahari terbenam.",
+    "anaʔ-anaʔ bərmain lajaŋ-lajaŋ di pantaɪ kətika matahari tərbənam.",
+  ],
+  [
+    'dia mendʒawab, "tidaʔ!" lalu pərgi bəgitu sadʒa.',
+    'dia məndʒawab, "tidaʔ!" lalu pərgi bəgitu sadʒa.',
+  ],
+  [
+    "unifərsitas indonesia meɲeleŋgarakan səminar təntaŋ teʔnologi ketʃerdasan buatan.",
+    "unifərsitas indonesia məɲeleŋgarakan səminar təntaŋ teʔnologi kətʃərdasan buatan.",
+  ],
+  ["mempermanènkan", "məmpərmanènkan"],
+]);
+
 test("phonemes match the upstream Python implementation on every fixture", () => {
   const mismatches: string[] = [];
 
   for (const item of fixtures) {
     const { phonemes } = toPhoneme(item.text, { expandAbbr: item.expandAbbr });
-    if (phonemes !== item.phonemes) {
+    const allowed = KNOWN_IMPROVEMENTS.get(item.phonemes);
+    if (phonemes !== item.phonemes && phonemes !== allowed) {
       mismatches.push(`phonemes ${JSON.stringify(item.text)}: ${phonemes} != ${item.phonemes}`);
     }
+    // toGrapheme maps ə back to e, so it is unaffected by the schwa recovery.
     if (toGrapheme(phonemes) !== item.grapheme) {
       mismatches.push(
         `grapheme ${JSON.stringify(item.text)}: ${toGrapheme(phonemes)} != ${item.grapheme}`
@@ -93,4 +136,34 @@ test("no longer collapses ordinary words to a single syllable", () => {
 
 test("fixture corpus is not empty", () => {
   expect(fixtures.length).toBeGreaterThan(500);
+});
+
+describe("affix schwa recovery", () => {
+  test.each([
+    ["tersebut", "tərsəbut"],
+    ["menjadi", "məndʒadi"],
+    ["mengatakan", "məŋatakan"],
+    ["beberapa", "bəbərapa"],
+    ["kecelakaan", "kətʃəlakaan"],
+    ["memperbaiki", "məmpərbaiki"],
+  ])("recovers the prefix schwa in %s", (word, expected) => {
+    expect(toPhoneme(word).phonemes).toBe(expected);
+  });
+
+  test.each([
+    // Loanwords that merely start with a prefix's letters. See
+    // data/schwa-overrides.tsv, and the onset check in src/affix.ts.
+    ["terapi", "terapi"],
+    ["teknologi", "teʔnologi"],
+    ["metode", "metode"],
+    ["serong", "seroŋ"],
+  ])("leaves %s alone", (word, expected) => {
+    expect(toPhoneme(word).phonemes).toBe(expected);
+  });
+
+  test("the curated dictionary always wins over the rules", () => {
+    // `sekolah` and `pertama` are listed, and keep exactly their listed reading.
+    expect(toPhoneme("sekolah").phonemes).toBe("səkolah");
+    expect(toPhoneme("pertama").phonemes).toBe("pərtama");
+  });
 });
