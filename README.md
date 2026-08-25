@@ -308,6 +308,28 @@ default options, so it cannot drift from what the library does. Regenerate with
 
 Syllables come back alongside the phonemes: `cerdas` → `tʃər · das`, `sekolah` → `sə · ko · lah`, `memperbaiki` → `məm · pər · ba · ik · i`, `beautiful` → `bju · tə · fəl`.
 
+## Finding out why
+
+Five sources can answer for a word, and when one of them is wrong the useful
+question is which one spoke. `explain` answers it:
+
+```ts
+import { explain } from "indo-g2p";
+
+explain("upacara apel di jakarta");
+// [ { word: "upacara", phonemes: "upatʃara", source: "lexicon" },
+//   { word: "apel",    phonemes: "apel",     source: "collocation" },
+//   { word: "di",      phonemes: "di",       source: "lexicon" },
+//   { word: "jakarta", phonemes: "dʒakarta", source: "rules" } ]
+```
+
+`source` is one of `override`, `dictionary`, `lexicon`, `affix`, `english`,
+`collocation` or `rules`, and tells you where to go to fix a wrong reading:
+a bad `dictionary` answer belongs in `data/schwa-overrides.tsv`, a bad
+`collocation` in `data/homographs-collocations.tsv`, a wrongly-`english` word
+in `data/indonesian-proper-nouns.tsv`. It takes the same options as
+`toPhoneme`, so it reports what that call would really do.
+
 ## API
 
 | Export                                       | Signature                                                 |
@@ -333,6 +355,8 @@ Syllables come back alongside the phonemes: `cerdas` → `tʃər · das`, `sekol
 `resolveSchwa` defaults to `resolveCollocations` and `false` disables
 resolution entirely.
 `SchwaResolver` is `(words: readonly string[]) => readonly (string | undefined)[]`.
+`WordTrace` is `{ word: string; phonemes: string; source: PhonemeSource }`, and
+`PhonemeSource` is a union of the seven layer names above.
 
 ## Schwa in derived words
 

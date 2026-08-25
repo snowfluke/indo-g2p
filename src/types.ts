@@ -62,6 +62,38 @@ export type ToPhonemeOptions = {
 };
 
 /**
+ * Which layer decided a word's pronunciation.
+ *
+ * - `override` a hand-written correction in `data/schwa-overrides.tsv`
+ * - `dictionary` the curated 17,888-word schwa dictionary
+ * - `lexicon` Bookbot's lexicon, for words the dictionary does not list
+ * - `affix` the prefix rules, for words neither list places
+ * - `english` the English table, for words no Indonesian source places
+ * - `collocation` a homograph settled by the words around it
+ * - `rules` no word list applied; spelling rules alone
+ */
+export type PhonemeSource =
+  | "override"
+  | "dictionary"
+  | "lexicon"
+  | "affix"
+  | "english"
+  | "collocation"
+  | "rules";
+
+/**
+ * One word, its phonemes, and which layer produced them.
+ */
+export type WordTrace = {
+  /** The word as it reached the converter, lowercased and after normalisation. */
+  word: string;
+  /** Its phonemes, exactly as they appear in the full transcription. */
+  phonemes: string;
+  /** Which layer answered. See {@linkcode PhonemeSource}. */
+  source: PhonemeSource;
+};
+
+/**
  * A syllable boundary tag from the CRF model.
  * `O` continues the current syllable, `S` closes it.
  */

@@ -6,6 +6,7 @@ import { LEXICON } from "./data/lexicon.ts";
 import { SCHWA_DICT } from "./data/schwa-dict.ts";
 import { SCHWA_OVERRIDES } from "./data/schwa-overrides.ts";
 import { applyMask } from "./mask.ts";
+import type { PhonemeSource } from "./types.ts";
 
 let masks: Map<string, number> | undefined;
 
@@ -50,4 +51,35 @@ export function applySchwa(word: string): string {
   // words it has never seen, which is 28% of running text.
   const mask = masks.get(word) ?? affixSchwaMask(word, (root) => masks.get(root));
   return mask === undefined ? word : applyMask(word, mask);
+}
+
+/** One parsed table per source, built once, for reporting provenance. */
+let bySource: Map<string, PhonemeSource> | undefined;
+
+/**
+ * Say which layer places a word, without converting it.
+ *
+ * Used by {@linkcode explain}. It costs a second pass over the tables, so it
+ * is built only if something asks.
+ *
+ * @param word A single lowercase word.
+ * @returns The layer that answers for it.
+ */
+export function schwaSource(word: string): PhonemeSource {
+  if (!bySource) {
+    const built = new Map<string, PhonemeSource>();
+    for (const [source, packed] of [
+      ["lexicon", LEXICON],
+      ["dictionary", SCHWA_DICT],
+      ["override", SCHWA_OVERRIDES],
+    ] as const) {
+      for (const line of packed.split("\n"))
+        built.set(line.slice(0, line.lastIndexOf(" ")), source);
+    }
+    bySource = built;
+  }
+
+  const listed = bySource.get(word);
+  if (listed) return listed;
+  return affixSchwaMask(word, (root) => schwaMasks().get(root)) === undefined ? "rules" : "affix";
 }
