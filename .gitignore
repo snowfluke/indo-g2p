@@ -35,6 +35,7 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 
 # build output
 lib
+site
 
 # python venv used by the data dump scripts
 .venv

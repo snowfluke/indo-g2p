@@ -1,8 +1,10 @@
 # indo-g2p
 
-[![npm version](https://img.shields.io/npm/v/indo-g2p)](https://www.npmjs.com/package/indo-g2p) [![JSR](https://jsr.io/badges/@snowfluke/indo-g2p)](https://jsr.io/@snowfluke/indo-g2p) [![NPM downloads](https://img.shields.io/npm/dw/indo-g2p)](https://www.npmjs.com/package/indo-g2p) [![Provenance](https://img.shields.io/badge/npm-signed%20provenance-blue?logo=npm)](https://www.npmjs.com/package/indo-g2p#provenance) [![License: MIT](https://img.shields.io/npm/l/indo-g2p)](./LICENSE) [![CI](https://github.com/snowfluke/indo-g2p/actions/workflows/ci.yml/badge.svg)](https://github.com/snowfluke/indo-g2p/actions/workflows/ci.yml) [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/snowfluke/indo-g2p/badge)](https://scorecard.dev/viewer/?uri=github.com/snowfluke/indo-g2p) [![Socket Badge](https://socket.dev/api/badge/npm/package/indo-g2p)](https://socket.dev/npm/package/indo-g2p) [![Zero dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)](./package.json)
+[![npm version](https://img.shields.io/npm/v/indo-g2p)](https://www.npmjs.com/package/indo-g2p) [![JSR](https://jsr.io/badges/@snowfluke/indo-g2p)](https://jsr.io/@snowfluke/indo-g2p) [![NPM downloads](https://img.shields.io/npm/dw/indo-g2p)](https://www.npmjs.com/package/indo-g2p) [![Provenance](https://img.shields.io/badge/npm-signed%20provenance-blue?logo=npm)](https://www.npmjs.com/package/indo-g2p#provenance) [![License: MIT](https://img.shields.io/npm/l/indo-g2p)](./LICENSE) [![CI](https://github.com/snowfluke/indo-g2p/actions/workflows/ci.yml/badge.svg)](https://github.com/snowfluke/indo-g2p/actions/workflows/ci.yml) [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/snowfluke/indo-g2p/badge)](https://scorecard.dev/viewer/?uri=github.com/snowfluke/indo-g2p) [![Socket Badge](https://socket.dev/api/badge/npm/package/indo-g2p)](https://socket.dev/npm/package/indo-g2p) [![Zero dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)](./package.json) [![Live demo](https://img.shields.io/badge/demo-live-7a3e12)](https://snowfluke.github.io/indo-g2p/)
 
 Indonesian grapheme-to-phoneme conversion and syllabification, in TypeScript.
+
+**[Try it in the browser](https://snowfluke.github.io/indo-g2p/)**, no install needed.
 
 A port of [Wikidepia/g2p-id](https://github.com/Wikidepia/g2p-id). Output matches
 the Python original exactly: the test suite asserts byte-for-byte parity over
@@ -193,8 +195,13 @@ bun test          # includes the Python parity fixtures
 bun run lint
 bun run fmt
 bun run type-check
-bun run build     # emits lib/ for npm
+bun run build       # emits lib/ for npm
+bun run demo        # serves the demo at localhost:3000
+bun run build:site  # emits site/ for GitHub Pages
 ```
+
+The demo deploys to GitHub Pages from `.github/workflows/pages.yml` on every
+push to `main`. Enable it once under Settings > Pages > Source: GitHub Actions.
 
 `src/data/` is generated. Regenerate with the dev-only scripts:
 
