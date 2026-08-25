@@ -26,6 +26,11 @@ jsr.json and `src/version.ts` in lockstep; the pre-commit hook rejects drift.
   15.6% of ordinary words came back as a single syllable. Folding `ə` to `e`
   for tagging drops that to 0.2%, and boundaries are no longer allowed inside
   `tʃ` or `dʒ` (975 such splits, now none). `phonemes` output is unchanged.
+- `normalize: true` spells digits, currency, percentages, degrees and
+  arithmetic symbols as Indonesian words, and folds typographic quotes and
+  dashes onto the plain ones, so text reaching a speech model contains only
+  words and the punctuation it phrases on. Off by default. `normalizeText`,
+  `spellNumber` and `spellDecimal` are exported on their own.
 - The `ny` digraph now needs a following vowel. Indonesian words do not end
   in `ny`, so upstream's unconditional mapping turned borrowed names into a
   syllable with no vowel: `denny` became `denɲ`. Such names are still not read

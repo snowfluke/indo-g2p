@@ -31,6 +31,17 @@ export type ToPhonemeOptions = {
   expandAbbr?: boolean;
 
   /**
+   * Spell out digits, currency, percentages and symbols before converting,
+   * and fold typographic quotes and dashes onto the plain ones.
+   *
+   * A speech model has no phoneme for `5` or `%`, so text going to one wants
+   * this on. It is off by default because it rewrites the input, which a
+   * caller doing its own normalisation would not want. See
+   * {@linkcode normalizeText}.
+   */
+  normalize?: boolean;
+
+  /**
    * How homographs are resolved.
    *
    * Defaults to the built-in collocation rules, which read the words around

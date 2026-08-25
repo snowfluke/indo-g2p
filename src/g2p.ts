@@ -14,6 +14,7 @@ import {
   WORD_PATTERN,
 } from "./constants.ts";
 import { resolveCollocations } from "./collocations.ts";
+import { normalizeText } from "./normalize.ts";
 import { applySchwa } from "./schwa.ts";
 import { toSyllables } from "./syllabifier.ts";
 import type { G2PResult, ToPhonemeOptions } from "./types.ts";
@@ -89,7 +90,7 @@ function wordToPhonemes(
  * ```
  */
 export function toPhoneme(text: string, options: ToPhonemeOptions = {}): G2PResult {
-  const lowered = text.toLowerCase();
+  const lowered = (options.normalize ? normalizeText(text) : text).toLowerCase();
   const matches = [...lowered.matchAll(WORD_PATTERN)];
 
   // The resolver sees the whole sentence at once, so it can use context.

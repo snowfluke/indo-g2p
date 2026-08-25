@@ -178,6 +178,29 @@ import type { SchwaResolver } from "indo-g2p";
 const myResolver: SchwaResolver = (words) => words.map(() => undefined);
 ```
 
+## Text for a speech model
+
+A speech model has no phoneme for `5`, `%` or `°`, so those either fail or get
+dropped. `normalize: true` spells them out in Indonesian first:
+
+```ts
+toPhoneme("harga Rp15.000 naik 5%", { normalize: true }).phonemes;
+// "harga lima bəlas ribu rupiah naɪʔ lima pərsen"
+```
+
+It handles digits with Indonesian grouping (`1.234,56`), currency, percentages,
+degrees and arithmetic symbols, and folds typographic quotes and dashes onto
+the plain ones. `.,!?;:'"()-` are kept, because that is what a model phrases
+on; anything else with no reading is dropped.
+
+Times and dates are deliberately not interpreted. `07.30` could be a time, a
+version or a price, and guessing wrong is worse than reading the digits, so
+`versi 1.2.3` becomes `versi satu titik dua titik tiga`.
+
+It is off by default, since a caller doing its own normalisation would not
+want its input rewritten. `normalizeText` and `spellNumber` are exported for
+use on their own.
+
 ## API
 
 | Export                                       | Signature                                                 |
@@ -192,7 +215,7 @@ const myResolver: SchwaResolver = (words) => words.map(() => undefined);
 
 `G2PResult` is `{ phonemes: string; syllables: string[] }`.
 `ToPhonemeOptions` is
-`{ expandAbbr?: boolean; resolveSchwa?: SchwaResolver | false }`, where
+`{ expandAbbr?: boolean; normalize?: boolean; resolveSchwa?: SchwaResolver | false }`, where
 `resolveSchwa` defaults to `resolveCollocations` and `false` disables
 resolution entirely.
 `SchwaResolver` is `(words: readonly string[]) => readonly (string | undefined)[]`.
@@ -294,6 +317,12 @@ These are upstream behaviours the port reproduces rather than fixes:
 
 - Only `[a-z]` runs are converted. Accented and non-ASCII input passes through
   like punctuation, so it belongs to no syllable.
+- Digits and symbols pass through unless `normalize: true` is set.
+- No stress marks are emitted. Indonesian stress is not contrastive, and a
+  speech model learns the symbol set it is trained on, so adding them would
+  enlarge the vocabulary for nothing.
+- Foreign names are not read correctly. `denny` and `sony` follow Indonesian
+  grapheme rules, which is the wrong language for them.
 - The syllabifier is still the upstream CRF and still gets words wrong, for
   example `dəŋ|an` rather than `də|ŋan`. It is a character model with no notion
   of Indonesian morphology.
