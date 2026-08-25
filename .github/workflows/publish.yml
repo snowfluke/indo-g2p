@@ -32,14 +32,19 @@ jobs:
           package-manager-cache: false
 
       # Trusted publishing needs npm >= 11.5.1 to do the OIDC exchange. Node 24
-      # currently bundles a new enough npm, but the bundled version moves on
-      # its own, and a silent downgrade would publish without an attestation.
-      # Pinned rather than `latest` so a release is reproducible and Scorecard's
-      # Pinned-Dependencies check passes.
-      - name: Upgrade npm for trusted publishing
+      # bundles 11.17.0, so nothing needs installing; this only refuses to
+      # continue if that ever regresses. Checking beats installing here: too old
+      # an npm publishes without an attestation and says nothing, and a global
+      # `npm install -g npm@...` is an unpinnable dependency in the release path.
+      - name: Verify npm can do trusted publishing
         run: |
-          npm install -g npm@12.0.2
-          npm --version
+          min=11.5.1
+          cur=$(npm --version)
+          echo "npm $cur (minimum $min)"
+          if [ "$(printf '%s\n%s\n' "$min" "$cur" | sort -V | head -n1)" != "$min" ]; then
+            echo "::error::npm $cur is older than $min; publishing would skip provenance"
+            exit 1
+          fi
 
       - name: Install Bun
         uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2

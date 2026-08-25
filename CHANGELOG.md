@@ -9,6 +9,38 @@ Versions are published to npm as `indo-g2p` and to JSR as `@snowfluke/indo-g2p`
 from the same tag. `bun scripts/bump.ts patch|minor|major` keeps package.json,
 jsr.json and `src/version.ts` in lockstep; the pre-commit hook rejects drift.
 
+## [0.1.2] - 2026-08-25
+
+Supply chain and correctness of the packaging. No behaviour changed: every
+export returns exactly what it did in 0.1.0.
+
+### Added
+
+- Property-based tests with fast-check. Seven invariants, 11,425 assertions
+  per run: `toPhoneme` never throws under any combination of options, it is
+  deterministic, syllables rejoin to the phonemes they came from, every
+  syllable of a vowel-bearing word has a nucleus, normalisation leaves no
+  ASCII digit, and `toGrapheme` emits no phoneme-only characters.
+- Release tarballs now carry SLSA build provenance as a `.intoto.jsonl`
+  attestation alongside the existing cosign signature.
+
+### Fixed
+
+- `LICENSE` had an attribution paragraph between the copyright line and the
+  MIT grant, so no license detector matched the file. It is now verbatim MIT.
+  The attribution was already in `NOTICE.md`, and g2p-id's MIT text is
+  vendored in full at `licenses/g2p-id-MIT.txt`, so the notice obligation is
+  met by inclusion rather than by reference.
+- `toSyllables` returns a syllable with no vowel for input that contains no
+  vowel at all, such as `f`. Found by the new property tests. Not reachable
+  from Indonesian text, and now pinned as documented degradation rather than
+  left for a caller to discover.
+- The release workflow installed `npm@latest` to satisfy trusted publishing.
+  Node 24 already bundles npm 11.17.0, past the 11.5.1 that OIDC needs, so
+  the step now asserts the version instead of installing one. That removes an
+  unpinnable dependency from the release path and fails loudly if the bundled
+  npm ever regresses, rather than silently publishing without provenance.
+
 ## [0.1.1] - 2026-08-25
 
 Documentation and packaging only. No behaviour changed: `toPhoneme` and every
@@ -193,5 +225,6 @@ data from a bundle.
   CycloneDX SBOM and a keyless cosign signature to the GitHub release.
 - Every source file carries an `SPDX-License-Identifier: MIT` header.
 
+[0.1.2]: https://github.com/snowfluke/indo-g2p/releases/tag/v0.1.2
 [0.1.1]: https://github.com/snowfluke/indo-g2p/releases/tag/v0.1.1
 [0.1.0]: https://github.com/snowfluke/indo-g2p/releases/tag/v0.1.0

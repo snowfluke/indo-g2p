@@ -1,6 +1,6 @@
 {
   "name": "indo-g2p",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Indonesian grapheme-to-phoneme (G2P) and phonemizer for text-to-speech. Converts Bahasa Indonesia text to IPA phonemes, splits words into syllables, resolves schwa and glottal stops. Zero dependencies, TypeScript, works on Node.js, Bun, Deno, and in the browser.",
   "keywords": [
     "bahasa-indonesia",
