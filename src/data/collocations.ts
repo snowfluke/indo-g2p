@@ -4,7 +4,7 @@
 
 /** Packed collocations: `word mask trigger...` per line. A trigger within
  * COLLOCATION_WINDOW words selects the reading `mask` describes. */
-export const COLLOCATIONS: string = 'apel 0 upacara bendera lapangan komandan pasukan barisan digelar menggelar mengikuti gabungan kesiapan kesiapsiagaan siaga akbar personel anggota polres polda kodim rutin\nper 0 mobil motor kasur sofa patah ganti baja suspensi pegas\nseret 0 kursi meja kaki tangan tubuh barang koper karung\npepet 0 lawan musuh jalan sudut tembok pojok';
+export const COLLOCATIONS: string = 'apel 0 upacara bendera lapangan komandan pasukan barisan digelar menggelar gabungan kesiapan kesiapsiagaan polres polda kodim\nper 0 patah ganti pegas suspensi baja\nseret 0 kursi meja barang koper karung\npepet 0 lawan musuh jalan sudut tembok pojok';
 
 /** How many words either side of a homograph are searched for a trigger. */
 export const COLLOCATION_WINDOW: number = 4;
