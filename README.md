@@ -1,30 +1,9 @@
-# indo-g2p
+![indo-g2p](https://raw.githubusercontent.com/snowfluke/indo-g2p/main/assets/banner.png)
 
-[![npm version](https://img.shields.io/npm/v/indo-g2p)](https://www.npmjs.com/package/indo-g2p) [![JSR](https://jsr.io/badges/@snowfluke/indo-g2p)](https://jsr.io/@snowfluke/indo-g2p) [![NPM downloads](https://img.shields.io/npm/dw/indo-g2p)](https://www.npmjs.com/package/indo-g2p) [![Provenance](https://img.shields.io/badge/npm-signed%20provenance-blue?logo=npm)](https://www.npmjs.com/package/indo-g2p#provenance) [![License: MIT](https://img.shields.io/npm/l/indo-g2p)](./LICENSE) [![CI](https://github.com/snowfluke/indo-g2p/actions/workflows/ci.yml/badge.svg)](https://github.com/snowfluke/indo-g2p/actions/workflows/ci.yml) [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/snowfluke/indo-g2p/badge)](https://scorecard.dev/viewer/?uri=github.com/snowfluke/indo-g2p) [![Socket Badge](https://socket.dev/api/badge/npm/package/indo-g2p)](https://socket.dev/npm/package/indo-g2p) [![Zero dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)](./package.json) [![Live demo](https://img.shields.io/badge/demo-live-7a3e12)](https://snowfluke.github.io/indo-g2p/)
+[![npm version](https://img.shields.io/npm/v/indo-g2p)](https://www.npmjs.com/package/indo-g2p) [![JSR](https://jsr.io/badges/@snowfluke/indo-g2p)](https://jsr.io/@snowfluke/indo-g2p) [![NPM downloads](https://img.shields.io/npm/dw/indo-g2p)](https://www.npmjs.com/package/indo-g2p) [![Provenance](https://img.shields.io/badge/npm-signed%20provenance-blue?logo=npm)](https://www.npmjs.com/package/indo-g2p#provenance) [![License: MIT](https://img.shields.io/npm/l/indo-g2p)](./LICENSE) [![CI](https://github.com/snowfluke/indo-g2p/actions/workflows/ci.yml/badge.svg)](https://github.com/snowfluke/indo-g2p/actions/workflows/ci.yml) [![OpenSSF Scorecard](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.scorecard.dev%2Fprojects%2Fgithub.com%2Fsnowfluke%2Findo-g2p&query=%24.score&label=openssf%20scorecard&color=2f7d31)](https://scorecard.dev/viewer/?uri=github.com/snowfluke/indo-g2p) [![Socket Badge](https://socket.dev/api/badge/npm/package/indo-g2p)](https://socket.dev/npm/package/indo-g2p) [![Zero dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)](./package.json) [![Live demo](https://img.shields.io/badge/demo-live-7a3e12)](https://snowfluke.github.io/indo-g2p/)
 
-Indonesian grapheme-to-phoneme conversion and syllabification, in TypeScript.
-
-**[Try it in the browser](https://snowfluke.github.io/indo-g2p/)**, no install needed.
-
-A port of [Wikidepia/g2p-id](https://github.com/Wikidepia/g2p-id) that
-deliberately diverges from it where the original is wrong: see
-[schwa in derived words](#schwa-in-derived-words), [glottal
-stops](#glottal-stops) and [syllables](#syllables).
-
-**It is not byte-for-byte compatible with the Python original, and no option
-setting makes it so.** 34 of the 886 recorded fixtures differ under the
-defaults, and 26 still differ with every optional layer switched off, because
-the glottal-stop, digraph and homograph corrections are not optional. Each
-divergence is listed by name in `tests/parity.test.ts`, so a 35th fails the
-build. The port is faithful where the original is right, not where it is
-wrong.
-
-- Zero runtime dependencies. No native modules, no model downloads.
-- Runs on Node.js, Bun, Deno, and in the browser.
-- Optional POS-driven homograph resolution, also zero dependency.
-- Ships to both [npm](https://www.npmjs.com/package/indo-g2p) and
-  [JSR](https://jsr.io/@snowfluke/indo-g2p), with npm provenance and a
-  per-release SBOM.
+Turn Indonesian text into IPA phonemes and syllables, ready for a speech model.
+TypeScript, zero dependencies, runs anywhere.
 
 ```ts
 import { toPhoneme } from "indo-g2p";
@@ -33,16 +12,49 @@ const { phonemes } = toPhoneme("Tak seorang pun boleh ditangkap.");
 // "taʔ səoraŋ pun boleh ditaŋkap."
 ```
 
-## Table of Contents
+<details>
+<summary>Contents</summary>
 
+- [Why indo-g2p](#why-indo-g2p)
 - [Install](#install)
-- [Usage](#usage)
-- [Homographs](#homographs)
+- [Quick start](#quick-start)
+- [What it covers](#what-it-covers)
 - [API](#api)
+- [Homographs](#homographs)
+- [Text for a speech model](#text-for-a-speech-model)
+- [English words in Indonesian text](#english-words-in-indonesian-text)
+- [Finding out why](#finding-out-why)
+- [Schwa in derived words](#schwa-in-derived-words)
+- [Glottal stops](#glottal-stops)
 - [How it works](#how-it-works)
 - [Known limits](#known-limits)
 - [Development](#development)
-- [License](#license)
+- [Credits and licence](#credits-and-licence)
+- [AI agent guide](./docs/agents.md)
+
+</details>
+
+## Why indo-g2p
+
+Indonesian looks phonetic and is not. One letter spells two different vowels,
+`k` is usually a glottal stop, and some spellings have two readings. A plain
+letter-to-sound mapping gets all three wrong, and a speech model trained on
+that output learns the mistake.
+
+|                                |                                                                                                                                                          |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Both `e` sounds**            | `pergi` is `pərgi`, `kaget` is `kaget`. A dictionary, a lexicon and affix rules place the schwa; only **6.0%** of running text is left without evidence. |
+| **Homographs from context**    | `upacara apel` is `apel`, `makan apel` is `apəl`. Rules are checked against Wiktionary and abstain rather than guess.                                    |
+| **Syllables you can use**      | Boundaries are placed for real phoneme strings, not just clean ones: **0.2%** of dictionary words collapse to a single syllable.                         |
+| **Messy text, not clean text** | `Harga Rp15.000 naik 20%.` becomes `harga lima bəlas ribu rupiah naɪʔ dua puluh pərsen.`                                                                 |
+| **Loanwords read as English**  | `event` is `ifent`, not `efent`, behind filters that keep `jakarta` and `april` Indonesian.                                                              |
+| **Nothing at runtime**         | Zero dependencies, no native modules, no model downloads. Node, Bun, Deno, browser.                                                                      |
+| **Signed supply chain**        | npm provenance, a CycloneDX SBOM and a cosign signature on every release.                                                                                |
+
+**[Try it in the browser](https://snowfluke.github.io/indo-g2p/)** before you install.
+Wiring this into an agent or a pipeline? Start with the
+[AI agent guide](./docs/agents.md): the whole API, the failure modes and
+the determinism guarantees on one page.
 
 ## Install
 
@@ -59,7 +71,7 @@ Three entry points, so a bundle carries only the tables it uses:
 | `indo-g2p`            | the same, plus English word readings  |
 | `indo-g2p/homographs` | the part-of-speech homograph resolver |
 
-## Usage
+## Quick start
 
 ```ts
 import { toPhoneme } from "indo-g2p";
@@ -96,29 +108,29 @@ import { toSyllables } from "indo-g2p";
 toSyllables("sekolah"); // [ "se", "ko", "lah" ]
 ```
 
-Syllables are the one place this port deliberately differs from the Python
-original, because upstream has a bug here that matters for text-to-speech.
+Syllable boundaries get special care here, because the obvious approach has
+a bug that matters for text-to-speech.
 
 The CRF syllabifier was trained on text with the digraphs already mapped, `ng`
-to `ŋ`, but with no schwa marking. Upstream feeds it its own output, schwa
+to `ŋ`, but with no schwa marking. g2p-id feeds it its own output, schwa
 included, and the model responds by predicting almost no boundaries at all.
-This port folds `ə` back to `e` for tagging only, and refuses a boundary
+indo-g2p folds `ə` back to `e` for tagging only, and refuses a boundary
 inside the two-character affricates `tʃ` and `dʒ`.
 
 Measured over the 17,888-word schwa dictionary:
 
-|                                 | upstream      | this port |
+|                                 | g2p-id        | indo-g2p  |
 | ------------------------------- | ------------- | --------- |
 | words collapsed to one syllable | 2,706 (15.6%) | 35 (0.2%) |
 | boundary inside `tʃ` or `dʒ`    | 975           | 0         |
 
 ```
-cerdas    tʃərdas    upstream: tʃərdas       here: tʃər|das
-cerca     tʃərtʃa    upstream: tʃərt|ʃa      here: tʃər|tʃa
-sekolah   səkolah    upstream: səko|lah      here: sə|ko|lah
+cerdas    tʃərdas    g2p-id: tʃərdas       here: tʃər|das
+cerca     tʃərtʃa    g2p-id: tʃərt|ʃa      here: tʃər|tʃa
+sekolah   səkolah    g2p-id: səko|lah      here: sə|ko|lah
 ```
 
-`phonemes` is untouched by this and still matches upstream exactly.
+`phonemes` is untouched by this.
 
 ### Back to spelling
 
@@ -130,119 +142,6 @@ toGrapheme("ditaŋkap"); // "ditangkap"
 
 This is best-effort. Both `/ə/` and `/e/` spell as `e`, and a glottal stop
 always spells as `k`, so the round trip is lossy.
-
-## Homographs
-
-`apel` is `/apəl/` as a noun (the fruit) and `/apel/` as a verb (roll call).
-Which one you get depends on the sentence, so resolution is **on by default**:
-
-```ts
-import { toPhoneme } from "indo-g2p";
-
-toPhoneme("upacara apel di lapangan").phonemes; // "upatʃara apel di lapaŋan"
-toPhoneme("dia makan apel merah").phonemes; // "dia makan apəl mərah"
-```
-
-The default resolver reads the words around each homograph. A rule fires only
-when one of its trigger words is within four words in the same sentence;
-otherwise the schwa dictionary decides. That makes a missing trigger free and
-keeps the whole thing to a few kilobytes with no model.
-
-The readings come from
-[data/homographs-verified.tsv](./data/homographs-verified.tsv), each checked
-against the Indonesian entry on [en.wiktionary.org](https://en.wiktionary.org),
-which marks the pepet vowel (`ê` is `/ə/`, `é` and `è` are not). The trigger
-lists live in
-[data/homographs-collocations.tsv](./data/homographs-collocations.tsv).
-
-Turn it off with `resolveSchwa: false`:
-
-```ts
-toPhoneme("upacara apel di lapangan", { resolveSchwa: false }).phonemes;
-// "upatʃara apəl di lapaŋan"
-```
-
-### The part-of-speech resolver
-
-`indo-g2p/homographs` swaps the collocation rules for an averaged-perceptron
-POSP tagger ported from
-[Bookbot's g2p_id](https://github.com/bookbot-kids/g2p_id). It covers 11 words
-instead of 4, at the cost of a 3.3 MB table:
-
-```ts
-import { toPhoneme } from "indo-g2p";
-import { resolveHomographs } from "indo-g2p/homographs";
-
-toPhoneme(text, { resolveSchwa: resolveHomographs });
-```
-
-Measured on 176,038 tokens of Indonesian news text, the tagger changed the
-output of **zero** sentences while the collocation rules corrected three. The
-tagger has never seen 42 of the upstream homographs in training, so it emits
-its unknown-word default for them and the resolver abstains. That is why it is
-not the default. See
-[docs/homograph-review.md](./docs/homograph-review.md).
-
-Any function of the same shape works, so you can bring your own:
-
-```ts
-import type { SchwaResolver } from "indo-g2p";
-
-// Return the resolved spelling per word, or undefined to use the dictionary.
-const myResolver: SchwaResolver = (words) => words.map(() => undefined);
-```
-
-## Text for a speech model
-
-A speech model has no phoneme for `5`, `%` or `°`, so those either fail or get
-dropped. They are spelled out in Indonesian by default:
-
-```ts
-toPhoneme("harga Rp15.000 naik 5%").phonemes;
-// "harga lima bəlas ribu rupiah naɪʔ lima pərsen"
-
-toPhoneme("harga Rp15.000 naik 5%", { normalize: false }).phonemes;
-// "harga rp15.000 naɪʔ 5%"
-```
-
-It handles digits with Indonesian grouping (`1.234,56`), currency, percentages,
-degrees and arithmetic symbols, and folds typographic quotes and dashes onto
-the plain ones. `.,!?;:'"()-` are kept, because that is what a model phrases
-on; anything else with no reading is dropped.
-
-Times and dates are deliberately not interpreted. `07.30` could be a time, a
-version or a price, and guessing wrong is worse than reading the digits, so
-`versi 1.2.3` becomes `versi satu titik dua titik tiga`.
-
-Pass `normalize: false` to hand the text through untouched, which is what a
-caller doing its own normalisation wants. `normalizeText` and `spellNumber`
-are exported for use on their own.
-
-## English words in Indonesian text
-
-Indonesian writing borrows English freely, and reading those words with
-Indonesian spelling rules gives `efent` for `event`. English words are read as
-English instead, in the same phoneme set as everything else:
-
-```ts
-toPhoneme("event").phonemes; // "ifent"
-toPhoneme("download").phonemes; // "daʊnlod"
-toPhoneme("michael").phonemes; // "maɪkəl", not "mitʃael"
-```
-
-Two filters keep it away from Indonesian. A word is only eligible if no
-Indonesian source places it, and if it is not one of the 2,082 names and
-naturalised loanwords in
-[data/indonesian-proper-nouns.tsv](./data/indonesian-proper-nouns.tsv). That
-file is why `jakarta`, `april` and `islam` keep their Indonesian readings,
-since English dictionaries carry those spellings too.
-
-Names are included rather than filtered out, because Indonesian rules read
-them badly: `denny` was `dennj`, a syllable with no vowel, and is now `deni`.
-
-Pass `english: false` to switch it off, or import
-[`indo-g2p/core`](#what-a-bundle-actually-costs) to leave the 2 MB table out of
-the bundle entirely.
 
 ## What it covers
 
@@ -318,28 +217,6 @@ default options, so it cannot drift from what the library does. Regenerate with
 
 Syllables come back alongside the phonemes: `cerdas` → `tʃər · das`, `sekolah` → `sə · ko · lah`, `memperbaiki` → `məm · pər · ba · ik · i`, `beautiful` → `bju · tə · fəl`.
 
-## Finding out why
-
-Five sources can answer for a word, and when one of them is wrong the useful
-question is which one spoke. `explain` answers it:
-
-```ts
-import { explain } from "indo-g2p";
-
-explain("upacara apel di jakarta");
-// [ { word: "upacara", phonemes: "upatʃara", source: "lexicon" },
-//   { word: "apel",    phonemes: "apel",     source: "collocation" },
-//   { word: "di",      phonemes: "di",       source: "lexicon" },
-//   { word: "jakarta", phonemes: "dʒakarta", source: "rules" } ]
-```
-
-`source` is one of `override`, `dictionary`, `lexicon`, `affix`, `english`,
-`collocation` or `rules`, and tells you where to go to fix a wrong reading:
-a bad `dictionary` answer belongs in `data/schwa-overrides.tsv`, a bad
-`collocation` in `data/homographs-collocations.tsv`, a wrongly-`english` word
-in `data/indonesian-proper-nouns.tsv`. It takes the same options as
-`toPhoneme`, so it reports what that call would really do.
-
 ## API
 
 | Export                                       | Signature                                                 |
@@ -368,10 +245,145 @@ resolution entirely.
 `WordTrace` is `{ word: string; phonemes: string; source: PhonemeSource }`, and
 `PhonemeSource` is a union of the seven layer names above.
 
+## Homographs
+
+`apel` is `/apəl/` as a noun (the fruit) and `/apel/` as a verb (roll call).
+Which one you get depends on the sentence, so resolution is **on by default**:
+
+```ts
+import { toPhoneme } from "indo-g2p";
+
+toPhoneme("upacara apel di lapangan").phonemes; // "upatʃara apel di lapaŋan"
+toPhoneme("dia makan apel merah").phonemes; // "dia makan apəl mərah"
+```
+
+The default resolver reads the words around each homograph. A rule fires only
+when one of its trigger words is within four words in the same sentence;
+otherwise the schwa dictionary decides. That makes a missing trigger free and
+keeps the whole thing to a few kilobytes with no model.
+
+The readings come from
+[data/homographs-verified.tsv](./data/homographs-verified.tsv), each checked
+against the Indonesian entry on [en.wiktionary.org](https://en.wiktionary.org),
+which marks the pepet vowel (`ê` is `/ə/`, `é` and `è` are not). The trigger
+lists live in
+[data/homographs-collocations.tsv](./data/homographs-collocations.tsv).
+
+Turn it off with `resolveSchwa: false`:
+
+```ts
+toPhoneme("upacara apel di lapangan", { resolveSchwa: false }).phonemes;
+// "upatʃara apəl di lapaŋan"
+```
+
+### The part-of-speech resolver
+
+`indo-g2p/homographs` swaps the collocation rules for an averaged-perceptron
+POSP tagger adapted from
+[Bookbot's g2p_id](https://github.com/bookbot-kids/g2p_id). It covers 11 words
+instead of 4, at the cost of a 3.3 MB table:
+
+```ts
+import { toPhoneme } from "indo-g2p";
+import { resolveHomographs } from "indo-g2p/homographs";
+
+toPhoneme(text, { resolveSchwa: resolveHomographs });
+```
+
+Measured on 176,038 tokens of Indonesian news text, the tagger changed the
+output of **zero** sentences while the collocation rules corrected three. The
+tagger has never seen 42 of the 57 candidate homographs in training, so it emits
+its unknown-word default for them and the resolver abstains. That is why it is
+not the default. See
+[docs/homograph-review.md](./docs/homograph-review.md).
+
+Any function of the same shape works, so you can bring your own:
+
+```ts
+import type { SchwaResolver } from "indo-g2p";
+
+// Return the resolved spelling per word, or undefined to use the dictionary.
+const myResolver: SchwaResolver = (words) => words.map(() => undefined);
+```
+
+## Text for a speech model
+
+A speech model has no phoneme for `5`, `%` or `°`, so those either fail or get
+dropped. They are spelled out in Indonesian by default:
+
+```ts
+toPhoneme("harga Rp15.000 naik 5%").phonemes;
+// "harga lima bəlas ribu rupiah naɪʔ lima pərsen"
+
+toPhoneme("harga Rp15.000 naik 5%", { normalize: false }).phonemes;
+// "harga rp15.000 naɪʔ 5%"
+```
+
+It handles digits with Indonesian grouping (`1.234,56`), currency, percentages,
+degrees and arithmetic symbols, and folds typographic quotes and dashes onto
+the plain ones. `.,!?;:'"()-` are kept, because that is what a model phrases
+on; anything else with no reading is dropped.
+
+Times and dates are deliberately not interpreted. `07.30` could be a time, a
+version or a price, and guessing wrong is worse than reading the digits, so
+`versi 1.2.3` becomes `versi satu titik dua titik tiga`.
+
+Pass `normalize: false` to hand the text through untouched, which is what a
+caller doing its own normalisation wants. `normalizeText` and `spellNumber`
+are exported for use on their own.
+
+## English words in Indonesian text
+
+Indonesian writing borrows English freely, and reading those words with
+Indonesian spelling rules gives `efent` for `event`. English words are read as
+English instead, in the same phoneme set as everything else:
+
+```ts
+toPhoneme("event").phonemes; // "ifent"
+toPhoneme("download").phonemes; // "daʊnlod"
+toPhoneme("michael").phonemes; // "maɪkəl", not "mitʃael"
+```
+
+Two filters keep it away from Indonesian. A word is only eligible if no
+Indonesian source places it, and if it is not one of the 2,082 names and
+naturalised loanwords in
+[data/indonesian-proper-nouns.tsv](./data/indonesian-proper-nouns.tsv). That
+file is why `jakarta`, `april` and `islam` keep their Indonesian readings,
+since English dictionaries carry those spellings too.
+
+Names are included rather than filtered out, because Indonesian rules read
+them badly: `denny` was `dennj`, a syllable with no vowel, and is now `deni`.
+
+Pass `english: false` to switch it off, or import
+[`indo-g2p/core`](#what-a-bundle-actually-costs) to leave the 2 MB table out of
+the bundle entirely.
+
+## Finding out why
+
+Five sources can answer for a word, and when one of them is wrong the useful
+question is which one spoke. `explain` answers it:
+
+```ts
+import { explain } from "indo-g2p";
+
+explain("upacara apel di jakarta");
+// [ { word: "upacara", phonemes: "upatʃara", source: "lexicon" },
+//   { word: "apel",    phonemes: "apel",     source: "collocation" },
+//   { word: "di",      phonemes: "di",       source: "lexicon" },
+//   { word: "jakarta", phonemes: "dʒakarta", source: "rules" } ]
+```
+
+`source` is one of `override`, `dictionary`, `lexicon`, `affix`, `english`,
+`collocation` or `rules`, and tells you where to go to fix a wrong reading:
+a bad `dictionary` answer belongs in `data/schwa-overrides.tsv`, a bad
+`collocation` in `data/homographs-collocations.tsv`, a wrongly-`english` word
+in `data/indonesian-proper-nouns.tsv`. It takes the same options as
+`toPhoneme`, so it reports what that call would really do.
+
 ## Schwa in derived words
 
 Indonesian spelling writes `/e/` and `/ə/` with the same letter, so a word
-list decides which is which. Upstream ships a 17,888-word one, but the
+list decides which is which. g2p-id ships a 17,888-word one, but the
 language builds most of its vocabulary by affixing roots, and the derived
 forms are not listed. On 141,770 tokens of news text, **28% of all words**
 were `e`-words it had never seen, and every one was read with a plain `/e/`.
@@ -396,10 +408,10 @@ always carry a schwa. That is a fact about the language rather than about any
 word list, so an unlisted word can still be read correctly:
 
 ```
-tersebut     upstream: tersebut       here: tərsəbut
-menjadi      upstream: menjadi        here: məndʒadi
-mengatakan   upstream: mengatakan     here: məŋatakan
-beberapa     upstream: beberapa       here: bəbərapa
+tersebut     g2p-id: tersebut       here: tərsəbut
+menjadi      g2p-id: menjadi        here: məndʒadi
+mengatakan   g2p-id: mengatakan     here: məŋatakan
+beberapa     g2p-id: beberapa       here: bəbərapa
 ```
 
 The rules only run for words no list places, so every curated entry is
@@ -410,31 +422,31 @@ Loanwords that merely begin with a prefix's letters are the failure mode. Two
 things hold them back: a root has to start with a legal Indonesian onset, so
 `teknologi` is not read as `te` + `knologi`, and
 [data/schwa-overrides.tsv](./data/schwa-overrides.tsv) pins the rest by hand.
-That file is also where you correct the upstream dictionary itself, as it
+That file is also where you correct the inherited dictionary itself, as it
 carries `mental`, whose common sense is `/mental/` rather than `/məntal/`.
 
 ## Glottal stops
 
 A `k` at the end of a word, or between a vowel and a consonant, is a glottal
 stop: `rusak` is `/rusaʔ/` and `rakyat` is `/raʔjat/`. Two cases are excluded
-where upstream applies the rule anyway.
+where g2p-id applies the rule anyway.
 
-`kh` is a digraph, not a `k` before a consonant. Upstream reads `akhir` as
+`kh` is a digraph, not a `k` before a consonant. g2p-id reads `akhir` as
 `aʔhir`, which also means its `kh` to `/x/` mapping never sees the word:
 
 ```
-akhir      upstream: aʔhir       here: axir
-terakhir   upstream: təraʔhir    here: təraxir
-makhluk    upstream: maʔhluʔ     here: maxluʔ
+akhir      g2p-id: aʔhir       here: axir
+terakhir   g2p-id: təraʔhir    here: təraxir
+makhluk    g2p-id: maʔhluʔ     here: maxluʔ
 ```
 
 `kr` and `kl` are Latin onset clusters, and a native Indonesian root does not
 form them across a syllable break, so a word that reaches them is borrowed:
 
 ```
-demokrat   upstream: demoʔrat    here: demokrat
-iklan      upstream: iʔlan       here: iklan
-nuklir     upstream: nuʔlir      here: nuklir
+demokrat   g2p-id: demoʔrat    here: demokrat
+iklan      g2p-id: iʔlan       here: iklan
+nuklir     g2p-id: nuʔlir      here: nuklir
 ```
 
 The clitic `-lah` is the exception, because there the `k` really does end a
@@ -450,7 +462,7 @@ root: `tidaklah` stays `/tidaʔlah/`.
 | Syllabify    | A CRF tagger labels each character as continuing or closing a syllable |
 | Diphthongs   | Inside a syllable, `ai→aɪ`, `au→aʊ`, `oi→ɔɪ`                           |
 
-Every model ships as plain weights in `src/data/`, unpacked from its upstream
+Every model ships as plain weights in `src/data/`, unpacked from its original
 binary. Nothing is fetched at runtime.
 
 | Table            | Size   | Loaded                                                            |
@@ -483,7 +495,7 @@ then checking the output for each table's symbols.
 
 ## Known limits
 
-These are upstream behaviours the port reproduces rather than fixes:
+These are inherited behaviours indo-g2p keeps rather than fixes:
 
 - Only `[a-z]` runs are converted. Accented and non-ASCII input passes through
   like punctuation, so it belongs to no syllable.
@@ -494,19 +506,19 @@ These are upstream behaviours the port reproduces rather than fixes:
 - The name list has holes. Any place, brand or surname missing from
   `data/indonesian-proper-nouns.tsv` and present in the English dictionary
   gets an English reading. Adding one is a one-line edit.
-- The syllabifier is still the upstream CRF and still gets words wrong, for
+- The syllabifier is a CRF model and still gets words wrong, for
   example `dəŋ|an` rather than `də|ŋan`. It is a character model with no notion
   of Indonesian morphology.
 - The default collocation rules cover 4 words. They only fire on a lexical
   trigger, so a syntactic case like _mereka tetap apel seperti biasa_ is left
   to the dictionary rather than guessed.
-- The part-of-speech resolver covers 11 words. Upstream ships 102 entries;
+- The part-of-speech resolver covers 11 words. g2p-id ships 102 entries;
   45 have identical readings or share a part of speech, and of the 57 that
   remain, 27 have no pepet-marked Wiktionary entry, 16 turn out to have one
-  pronunciation across every sense, and 3 contradict the upstream mapping.
+  pronunciation across every sense, and 3 contradict the inherited mapping.
   `python3 scripts/verify-homographs.py` reproduces every verdict. Guessing on
   the unverifiable ones made the output worse, not better.
-- The tagger is the weak link, not the rules. 42 of the upstream homographs
+- The tagger is the weak link, not the rules. 42 of the 57 candidate homographs
   never appear in the POSP corpus the tagger was trained on, so it emits its
   unknown-word default for them. The resolver therefore requires the tag to
   match one of an entry's two verified classes and abstains otherwise. A larger
@@ -546,11 +558,20 @@ python3 scripts/dump-pos.py .
 a homograph rule. [SECURITY.md](./SECURITY.md) covers reporting and release
 verification. [GOVERNANCE.md](./GOVERNANCE.md) covers who decides what.
 
-## License
+## Credits and licence
 
 MIT. See [LICENSE](./LICENSE) and [NOTICE.md](./NOTICE.md).
 
-The CRF weights and schwa dictionary come from
-[Wikidepia/g2p-id](https://github.com/Wikidepia/g2p-id) (MIT). The perceptron
-POS tagger and homograph table come from
+indo-g2p began as a study of
+[Wikidepia/g2p-id](https://github.com/Wikidepia/g2p-id) (MIT) and owes it the
+original idea, the CRF weights and the schwa dictionary. The perceptron POS
+tagger and the homograph table come from
 [bookbot-kids/g2p_id](https://github.com/bookbot-kids/g2p_id) (Apache-2.0).
+English pronunciations come from
+[open-dict-data/ipa-dict](https://github.com/open-dict-data/ipa-dict) (MIT),
+and the homograph readings are checked against
+[en.wiktionary.org](https://en.wiktionary.org).
+
+The rules, the corrections and the layering above those inputs are this
+project's own, and it is developed on its own terms rather than tracking any
+other implementation.

@@ -2,8 +2,13 @@
 // Copyright (c) 2026 snowfluke
 
 /**
- * Indonesian grapheme-to-phoneme conversion, ported from
- * {@link https://github.com/Wikidepia/g2p-id | Wikidepia/g2p-id}.
+ * Turn Indonesian text into IPA phonemes and syllables, ready for a speech
+ * model. Zero dependencies, and nothing is fetched at runtime.
+ *
+ * Both `e` sounds are distinguished, `k` becomes a glottal stop where the
+ * language calls for one, digits and symbols are spelled out as words, and
+ * homographs are resolved from context. See the
+ * {@link https://github.com/snowfluke/indo-g2p | README} for the full picture.
  *
  * @example
  * ```ts

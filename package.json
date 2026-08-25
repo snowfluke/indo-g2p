@@ -81,7 +81,7 @@
   },
   "scripts": {
     "build": "bun scripts/build.ts",
-    "build:site": "bun build demo/index.html --outdir=site --minify --splitting",
+    "build:site": "rm -rf site && bun build demo/index.html --outdir=site --minify --splitting && cp assets/banner.png site/banner.png",
     "bump": "bun scripts/bump.ts",
     "coverage": "bun scripts/gen-coverage.ts",
     "demo": "bun scripts/demo.ts",
