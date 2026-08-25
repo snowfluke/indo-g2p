@@ -45,8 +45,8 @@ commit-msg:
     conventional:
       run: |
         subject=$(head -1 "{1}")
-        if ! echo "$subject" | grep -qE "^(feat|fix|chore|refactor|test|docs|perf|ci)(\(.+\))?!?: .+$"; then
+        if ! echo "$subject" | grep -qE "^(feat|fix|chore|refactor|test|docs|perf|ci|style|build|revert)(\(.+\))?!?: .+$"; then
           echo "Invalid commit format. Expected: type: description" >&2
-          echo "Types: feat, fix, chore, refactor, test, docs, perf, ci" >&2
+          echo "Types: feat, fix, chore, refactor, test, docs, perf, ci, style, build, revert" >&2
           exit 1
         fi

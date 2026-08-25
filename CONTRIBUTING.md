@@ -143,7 +143,7 @@ git commit -s -m "fix: keep the dictionary reading of pening"
 1. Run the full gate above. CI runs the same commands.
 2. Use [Conventional Commits](https://www.conventionalcommits.org) for the
    title: `feat:`, `fix:`, `chore:`, `refactor:`, `test:`, `docs:`, `perf:`,
-   `ci:`.
+   `ci:`, `style:`, `build:`, `revert:`.
 3. Fill in the pull request template. Say what changed and why.
 4. Keep `package.json` and `jsr.json` versions in lockstep. The pre-commit hook
    checks this, along with `src/version.ts`.
