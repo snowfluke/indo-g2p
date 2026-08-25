@@ -1,0 +1,21 @@
+{
+  "name": "@snowfluke/indo-g2p",
+  "version": "0.1.0",
+  "license": "MIT",
+  "exports": {
+    ".": "./src/index.ts",
+    "./homographs": "./src/homographs.ts"
+  },
+  "publish": {
+    "include": [
+      "LICENSE",
+      "NOTICE.md",
+      "README.md",
+      "data/**",
+      "docs/**",
+      "licenses/**",
+      "src/**/*.ts"
+    ],
+    "exclude": ["lib", "out", "scripts", "tests"]
+  }
+}

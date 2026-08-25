@@ -1,0 +1,99 @@
+{
+  "name": "indo-g2p",
+  "version": "0.1.0",
+  "description": "Indonesian grapheme-to-phoneme (G2P) and phonemizer for text-to-speech. Converts Bahasa Indonesia text to IPA phonemes, splits words into syllables, resolves schwa and glottal stops. Zero dependencies, TypeScript, works on Node.js, Bun, Deno, and in the browser.",
+  "keywords": [
+    "bahasa-indonesia",
+    "g2p",
+    "grapheme-to-phoneme",
+    "phonemizer",
+    "indonesian",
+    "indonesian-nlp",
+    "ipa",
+    "ipa-transcription",
+    "phoneme",
+    "phonetics",
+    "phonology",
+    "pronunciation",
+    "schwa",
+    "pepet",
+    "glottal-stop",
+    "homograph",
+    "syllabification",
+    "syllabifier",
+    "hyphenation",
+    "text-to-speech",
+    "tts",
+    "tts-preprocessing",
+    "speech-synthesis",
+    "linguistics",
+    "nlp",
+    "typescript",
+    "zero-dependency",
+    "browser",
+    "deno",
+    "bun",
+    "jsr"
+  ],
+  "author": "snowfluke",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snowfluke/indo-g2p.git"
+  },
+  "homepage": "https://github.com/snowfluke/indo-g2p#readme",
+  "bugs": {
+    "url": "https://github.com/snowfluke/indo-g2p/issues"
+  },
+  "type": "module",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./homographs": {
+      "types": "./lib/homographs.d.ts",
+      "default": "./lib/homographs.js"
+    }
+  },
+  "files": [
+    "lib",
+    "data",
+    "docs",
+    "LICENSE",
+    "NOTICE.md",
+    "README.md",
+    "licenses"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "build": "bun scripts/build.ts",
+    "bump": "bun scripts/bump.ts",
+    "demo": "bun scripts/demo.ts",
+    "docs": "bun scripts/gen-homograph-doc.ts",
+    "fmt": "oxfmt --check",
+    "fmt:fix": "oxfmt .",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "prepare": "lefthook install",
+    "test": "bun test",
+    "test:coverage": "bun test --coverage",
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.14",
+    "lefthook": "^2.1.10",
+    "oxfmt": "^0.58.0",
+    "oxlint": "^1.73.0",
+    "typescript": "^5.9.3"
+  }
+}

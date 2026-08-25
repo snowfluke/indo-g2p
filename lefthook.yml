@@ -1,0 +1,52 @@
+# Git hooks. Installed by `bun install` via the prepare script, or by hand
+# with `bunx lefthook install`. Bypass a hook with `git commit --no-verify`;
+# CI runs the same checks and is the real gate.
+
+pre-commit:
+  parallel: true
+  commands:
+    # Formats only the staged files and restages the result, so a commit never
+    # sweeps in unrelated reformatting.
+    fmt:
+      glob: "*.{ts,js,mjs,json,md}"
+      run: bunx oxfmt {staged_files}
+      stage_fixed: true
+
+    lint:
+      glob: "*.ts"
+      run: bunx oxlint {staged_files}
+
+    type-check:
+      glob: "*.ts"
+      run: bun run type-check
+
+    # package.json, jsr.json and src/version.ts must agree. A mismatch means a
+    # release bump touched one manifest but not the others.
+    versions:
+      run: |
+        ver() { sed -n 's/.*"version"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p' "$1" | head -1; }
+        pkg=$(ver package.json)
+        src=$(sed -n 's/.*VERSION: string = "\([^"]*\)".*/\1/p' src/version.ts | head -1)
+        if [ "$pkg" != "$(ver jsr.json)" ] || [ "$pkg" != "$src" ]; then
+          echo "version mismatch across package.json, jsr.json and src/version.ts" >&2
+          exit 1
+        fi
+
+    # src/data/ is generated. A hand-edit there silently changes published
+    # pronunciations, so regenerate and fail if the result differs.
+    generated-data:
+      glob: "{data/*.tsv,src/data/homographs.ts,scripts/dump-pos.py}"
+      run: |
+        python3 scripts/dump-pos.py . >/dev/null
+        git diff --exit-code -- src/data/homographs.ts
+
+commit-msg:
+  commands:
+    conventional:
+      run: |
+        subject=$(head -1 "{1}")
+        if ! echo "$subject" | grep -qE "^(feat|fix|chore|refactor|test|docs|perf|ci)(\(.+\))?!?: .+$"; then
+          echo "Invalid commit format. Expected: type: description" >&2
+          echo "Types: feat, fix, chore, refactor, test, docs, perf, ci" >&2
+          exit 1
+        fi

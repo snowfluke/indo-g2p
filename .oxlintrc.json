@@ -1,0 +1,61 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "unicorn", "oxc", "import", "promise"],
+  "categories": {
+    "correctness": "error"
+  },
+  "rules": {
+    // Never silence a type error without a contract. `@ts-expect-error` needs
+    // a reason; `@ts-ignore` and `@ts-nocheck` are banned outright.
+    "typescript/ban-ts-comment": [
+      "error",
+      {
+        "ts-expect-error": "allow-with-description",
+        "ts-ignore": true,
+        "ts-nocheck": true,
+        "ts-check": false
+      }
+    ],
+
+    // Use `unknown` and narrow it.
+    "typescript/no-explicit-any": "error",
+
+    // JSR scores every exported symbol; explicit types keep it out of slow types.
+    "typescript/explicit-module-boundary-types": "error",
+
+    // Prefer `type` over `interface` for data shapes.
+    "typescript/consistent-type-definitions": ["error", "type"],
+
+    // Keep type imports in their own statement.
+    "typescript/consistent-type-imports": [
+      "error",
+      { "prefer": "type-imports", "fixStyle": "separate-type-imports" }
+    ],
+    "import/consistent-type-specifier-style": ["error", "prefer-top-level"],
+
+    // No casts to unrelated types and no `!` assertions. Handle null explicitly.
+    "typescript/no-unsafe-type-assertion": "error",
+    "typescript/no-non-null-assertion": "error",
+    "typescript/use-unknown-in-catch-callback-variable": "error",
+
+    // async/await only. No `.then()` chains, no silent fire-and-forget.
+    "promise/prefer-await-to-then": "error",
+    "promise/no-nesting": "error",
+
+    "no-nested-ternary": "error",
+    "prefer-const": "error",
+    "object-shorthand": "error",
+    "prefer-template": "error"
+  },
+  "overrides": [
+    {
+      // Cap source files at 300 lines. Split into focused modules past that.
+      "files": ["**/*.ts"],
+      "rules": {
+        "max-lines": ["error", { "max": 300, "skipBlankLines": true, "skipComments": true }]
+      }
+    }
+  ],
+  "env": { "builtin": true },
+  "ignorePatterns": [".claude", "lib", "out", "*.lock", "src/data"]
+}
