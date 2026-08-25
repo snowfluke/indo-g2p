@@ -7,13 +7,20 @@ pre-commit:
   commands:
     # Formats only the staged files and restages the result, so a commit never
     # sweeps in unrelated reformatting.
+    # tools/oxlint/anti-slop is vendored third-party code. It is kept
+    # byte-identical to upstream so it can be re-copied on update, so it is
+    # neither formatted nor linted here.
     fmt:
       glob: "*.{ts,js,mjs,json,md}"
+      exclude:
+        - "tools/oxlint/anti-slop/**"
       run: bunx oxfmt {staged_files}
       stage_fixed: true
 
     lint:
       glob: "*.ts"
+      exclude:
+        - "tools/oxlint/anti-slop/**"
       run: bunx oxlint {staged_files}
 
     type-check:

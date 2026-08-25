@@ -22,12 +22,14 @@ const ROOT = resolve(import.meta.dir, "..");
  * re-runs the whole audit against Wiktionary. Update both together.
  */
 const AUDIT = { confirmed: 5, half: 6, single: 16, contradicted: 3, unverified: 27 };
-const NAME: Record<string, string> = {
-  N: "noun",
-  V: "verb",
-  A: "adjective",
-  P: "particle/prep",
-};
+/** Spell out a coarse POS letter for the table. */
+function className(letter: string): string {
+  if (letter === "N") return "noun";
+  if (letter === "V") return "verb";
+  if (letter === "A") return "adjective";
+  if (letter === "P") return "particle/prep";
+  return letter;
+}
 
 /** Rewrite the `e`s selected by `bits` as `ə`. */
 function reading(word: string, bits: number): string {
@@ -54,7 +56,7 @@ const rows = knownHomographs()
     const entry = homographTable().get(word);
     if (!entry) return "";
     const side = (cls: string, bits: number): string =>
-      POS_GROUPS[cls] ? `${NAME[cls]} to \`${reading(word, bits)}\`` : "abstains";
+      POS_GROUPS[cls] ? `${className(cls)} to \`${reading(word, bits)}\`` : "abstains";
     return (
       `| \`${word}\` | ${side(entry.first, entry.forFirst)} ` +
       `| ${side(entry.second, entry.forSecond)} ` +

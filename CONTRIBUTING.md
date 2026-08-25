@@ -126,6 +126,11 @@ python3 scripts/dump-pos.py .
 - Source files are capped at 300 lines, excluding blanks and comments. Split
   into focused modules past that. Generated data files are exempt.
 - Every file carries an `SPDX-License-Identifier: MIT` header.
+- The [anti-slop](https://github.com/dmmulroy/anti-slop) oxlint rules are on.
+  They reject the patterns a tired author reaches for when unsure of a type:
+  widening a value you already know, `unknown` in a signature, `Reflect.get`,
+  runtime `typeof` narrowing, and assertions without a `SAFETY:` comment. Fix
+  the type rather than the lint.
 - Comments explain why, not what.
 
 ## Developer Certificate of Origin

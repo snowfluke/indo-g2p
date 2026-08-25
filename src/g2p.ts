@@ -15,19 +15,19 @@ import { applySchwa } from "./schwa.ts";
 import { toSyllables } from "./syllabifier.ts";
 import type { G2PResult, ToPhonemeOptions } from "./types.ts";
 
-/** Describe a word as its consonant/vowel shape, such as `KVKKVK` for `bangsat`. */
-function syllableShape(word: string): string {
+/** Write a word as consonants and vowels, so `bangsat` becomes `KVKKVK`. */
+function consonantVowelPattern(word: string): string {
   return [...word].map((char) => (VOWELS.has(char) ? "V" : "K")).join("");
 }
 
-/** A word with no valid syllable shape is read letter by letter, so `tv` becomes `tévé`. */
+/** A word that spells no valid syllable is read letter by letter, so `tv` becomes `tévé`. */
 function isAbbreviation(word: string): boolean {
-  const shape = syllableShape(word);
-  return !SYLLABLE_PATTERNS.some((pattern) => shape.includes(pattern));
+  const spelling = consonantVowelPattern(word);
+  return !SYLLABLE_PATTERNS.some((pattern) => spelling.includes(pattern));
 }
 
 function spellOut(word: string): string {
-  return [...word].map((char) => LETTER_NAMES[char] ?? char).join("");
+  return [...word].map((char) => LETTER_NAMES.get(char) ?? char).join("");
 }
 
 /** Mark every `k` that sits between a vowel and a consonant as a glottal stop. */
@@ -45,12 +45,15 @@ function applyReplacements(text: string, pairs: readonly (readonly [string, stri
   return result;
 }
 
+/** One word's phonemes, and whether it was read out letter by letter. */
+type WordPhonemes = { phonemes: string; abbr: boolean };
+
 /** Convert one already-lowercased word to its phonemes. */
 function wordToPhonemes(
   word: string,
   expandAbbr: boolean,
   resolved: string | undefined
-): { phonemes: string; abbr: boolean } {
+): WordPhonemes {
   const abbr = expandAbbr && isAbbreviation(word);
   let result = abbr ? spellOut(word) : word;
 

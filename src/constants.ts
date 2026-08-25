@@ -5,34 +5,35 @@
 export const VOWELS: ReadonlySet<string> = new Set(["a", "i", "u", "e", "o"]);
 
 /** Spoken name of each letter of the alphabet, used to expand abbreviations. */
-export const LETTER_NAMES: Readonly<Record<string, string>> = {
-  a: "a",
-  b: "bé",
-  c: "cé",
-  d: "dé",
-  e: "é",
-  f: "èf",
-  g: "gé",
-  h: "ha",
-  i: "i",
-  j: "jé",
-  k: "ka",
-  l: "èl",
-  m: "èm",
-  n: "èn",
-  o: "o",
-  p: "pé",
-  q: "ki",
-  r: "èr",
-  s: "ès",
-  t: "té",
-  u: "u",
-  v: "vé",
-  w: "wé",
-  x: "èks",
-  y: "yé",
-  z: "zèt",
-};
+/** Spoken name of each letter of the alphabet, used to expand abbreviations. */
+export const LETTER_NAMES: ReadonlyMap<string, string> = new Map([
+  ["a", "a"],
+  ["b", "bé"],
+  ["c", "cé"],
+  ["d", "dé"],
+  ["e", "é"],
+  ["f", "èf"],
+  ["g", "gé"],
+  ["h", "ha"],
+  ["i", "i"],
+  ["j", "jé"],
+  ["k", "ka"],
+  ["l", "èl"],
+  ["m", "èm"],
+  ["n", "èn"],
+  ["o", "o"],
+  ["p", "pé"],
+  ["q", "ki"],
+  ["r", "èr"],
+  ["s", "ès"],
+  ["t", "té"],
+  ["u", "u"],
+  ["v", "vé"],
+  ["w", "wé"],
+  ["x", "èks"],
+  ["y", "yé"],
+  ["z", "zèt"],
+]);
 
 /**
  * Consonant/vowel shapes a real Indonesian word can be built from.

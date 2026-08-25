@@ -1,6 +1,10 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
   "plugins": ["typescript", "unicorn", "oxc", "import", "promise"],
+
+  // Vendored from https://github.com/dmmulroy/anti-slop (MIT). Rejects
+  // low-evidence patterns an agent reaches for when it is unsure of a type.
+  "jsPlugins": [{ "name": "anti-slop", "specifier": "./tools/oxlint/anti-slop/index.ts" }],
   "categories": {
     "correctness": "error"
   },
@@ -45,7 +49,25 @@
     "no-nested-ternary": "error",
     "prefer-const": "error",
     "object-shorthand": "error",
-    "prefer-template": "error"
+    "prefer-template": "error",
+
+    // anti-slop: no widening a type you already know, and no asserting your
+    // way back out of it. An `unknown` in a signature is a missing type.
+    "anti-slop/no-chained-type-assertions": "error",
+    "anti-slop/no-conditional-empty-object-spread": "error",
+    "anti-slop/no-known-value-widening": "error",
+    "anti-slop/no-module-mocking": "error",
+    "anti-slop/no-object-parameters": "error",
+    "anti-slop/no-reflect-apply": "error",
+    "anti-slop/no-reflect-get": "error",
+    "anti-slop/no-runtime-typeof": "error",
+    "anti-slop/no-shape-in-symbol-names": "error",
+    "anti-slop/no-unknown-parameters": "error",
+    "anti-slop/no-unknown-returns": "error",
+    "anti-slop/no-unknown-type-aliases": "error",
+    "anti-slop/no-unsafe-dictionary-type": "error",
+    "anti-slop/no-widen-then-assert": "error",
+    "anti-slop/require-safety-comment-for-type-assertion": "error"
   },
   "overrides": [
     {

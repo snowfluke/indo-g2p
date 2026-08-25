@@ -35,8 +35,9 @@ function next(current: string, level: Level): string {
     .join(".");
 }
 
-async function readJson(path: string): Promise<Record<string, unknown>> {
-  return await Bun.file(resolve(root, path)).json();
+async function readVersion(path: string): Promise<string> {
+  const text = await Bun.file(resolve(root, path)).text();
+  return /"version": "([^"]*)"/.exec(text)?.[1] ?? "0.0.0";
 }
 
 async function writeVersion(path: string, version: string): Promise<void> {
@@ -45,8 +46,7 @@ async function writeVersion(path: string, version: string): Promise<void> {
   await Bun.write(file, text.replace(/"version": "[^"]*"/, `"version": "${version}"`));
 }
 
-const pkg = await readJson("package.json");
-const current = typeof pkg["version"] === "string" ? pkg["version"] : "0.0.0";
+const current = await readVersion("package.json");
 
 if (!bump || (!isLevel(bump) && !SEMVER.test(bump))) {
   console.error(`Usage: bun scripts/bump.ts ${LEVELS.join("|")}|<x.y.z>   (current ${current})`);

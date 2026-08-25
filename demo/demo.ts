@@ -13,19 +13,20 @@ const SAMPLES = [
   "PT KAI mengumumkan jadwal baru KRL Jabodetabek.",
 ];
 
-const el = <T extends HTMLElement>(id: string): T => {
+/** Look up an element and prove its type at runtime, so no cast is needed. */
+function el<T extends HTMLElement>(id: string, kind: new () => T): T {
   const node = document.getElementById(id);
-  if (!node) throw new Error(`missing #${id}`);
-  return node as T;
-};
+  if (!(node instanceof kind)) throw new Error(`#${id} is not a ${kind.name}`);
+  return node;
+}
 
-const input = el<HTMLTextAreaElement>("input");
-const expandAbbr = el<HTMLInputElement>("expandAbbr");
-const homographs = el<HTMLInputElement>("homographs");
-const phonemesOut = el<HTMLOutputElement>("phonemes");
-const syllablesOut = el<HTMLOutputElement>("syllables");
-const graphemeOut = el<HTMLOutputElement>("grapheme");
-const timing = el<HTMLParagraphElement>("timing");
+const input = el("input", HTMLTextAreaElement);
+const expandAbbr = el("expandAbbr", HTMLInputElement);
+const homographs = el("homographs", HTMLInputElement);
+const phonemesOut = el("phonemes", HTMLOutputElement);
+const syllablesOut = el("syllables", HTMLOutputElement);
+const graphemeOut = el("grapheme", HTMLOutputElement);
+const timing = el("timing", HTMLParagraphElement);
 
 // The tagger is 3.3 MB, so it is only fetched if the box is ticked.
 let resolver: SchwaResolver | undefined;
@@ -68,7 +69,7 @@ homographs.addEventListener("change", async () => {
   render();
 });
 
-const samples = el<HTMLDivElement>("samples");
+const samples = el("samples", HTMLDivElement);
 for (const sample of SAMPLES) {
   const button = document.createElement("button");
   button.type = "button";

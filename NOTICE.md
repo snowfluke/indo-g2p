@@ -34,3 +34,10 @@ feature set, which those weights were trained against.
 Pronunciations in `data/homographs-verified.tsv` were checked against the
 Indonesian entries on <https://en.wiktionary.org>. The evidence column
 paraphrases the marked headwords; no Wiktionary text is redistributed.
+
+## dmmulroy/anti-slop: MIT
+
+<https://github.com/dmmulroy/anti-slop>, Copyright (c) 2026 Dillon Mulroy.
+Vendored into `tools/oxlint/anti-slop/`, which upstream distributes by copying.
+The copy is byte-identical to its `src/`, minus the plugin's own tests and its
+Effect-specific rules. See `tools/oxlint/anti-slop/LICENSE`.
