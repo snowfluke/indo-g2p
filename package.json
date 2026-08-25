@@ -101,6 +101,6 @@
     "lefthook": "^2.1.10",
     "oxfmt": "^0.58.0",
     "oxlint": "^1.73.0",
-    "typescript": "^5.9.3"
+    "typescript": "^7.0.2"
   }
 }
