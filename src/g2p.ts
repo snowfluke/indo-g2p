@@ -14,11 +14,10 @@ import {
   WORD_PATTERN,
 } from "./constants.ts";
 import { resolveCollocations } from "./collocations.ts";
-import { lookUpEnglish } from "./english.ts";
 import { normalizeText } from "./normalize.ts";
 import { applySchwa } from "./schwa.ts";
 import { toSyllables } from "./syllabifier.ts";
-import type { G2PResult, ToPhonemeOptions } from "./types.ts";
+import type { EnglishLookup, G2PResult, ToPhonemeOptions } from "./types.ts";
 
 /** Write a word as consonants and vowels, so `bangsat` becomes `KVKKVK`. */
 function consonantVowelPattern(word: string): string {
@@ -60,14 +59,14 @@ function wordToPhonemes(
   word: string,
   expandAbbr: boolean,
   resolved: string | undefined,
-  useEnglish: boolean
+  english: EnglishLookup | undefined
 ): WordPhonemes {
   const abbr = expandAbbr && isAbbreviation(word);
 
   // Consulted before the Indonesian rules, but the table only holds words
   // those rules have no answer for, so it can never override them.
-  if (useEnglish && !abbr && resolved === undefined) {
-    const borrowed = lookUpEnglish(word);
+  if (english && !abbr && resolved === undefined) {
+    const borrowed = english(word);
     if (borrowed !== undefined) return { phonemes: borrowed, abbr };
   }
 
@@ -86,20 +85,21 @@ function wordToPhonemes(
 /**
  * Convert Indonesian text to IPA phonemes.
  *
- * Non-letter characters, including punctuation and digits, pass through
- * unchanged. The text is lowercased first.
+ * The English lookup is passed in rather than imported, so a build that never
+ * asks for it never carries its 2 MB table. `indo-g2p` supplies it and
+ * `indo-g2p/core` does not; both call this.
  *
  * @param text The text to convert.
  * @param options Conversion options.
+ * @param english Reads English words, or `undefined` to leave them to the
+ * Indonesian rules.
  * @returns The phonemic transcription and the syllables it is built from.
- *
- * @example
- * ```ts
- * const { phonemes } = toPhoneme("Tak seorang pun boleh ditangkap.");
- * // "taʔ seoraŋ pun boleh ditaŋkap."
- * ```
  */
-export function toPhoneme(text: string, options: ToPhonemeOptions = {}): G2PResult {
+export function convert(
+  text: string,
+  options: ToPhonemeOptions,
+  english: EnglishLookup | undefined
+): G2PResult {
   const prepared = options.normalize === false ? text : normalizeText(text);
   const lowered = prepared.toLowerCase();
   const matches = [...lowered.matchAll(WORD_PATTERN)];
@@ -118,7 +118,7 @@ export function toPhoneme(text: string, options: ToPhonemeOptions = {}): G2PResu
       match[0],
       options.expandAbbr ?? false,
       resolved[index],
-      options.english !== false
+      options.english === false ? undefined : english
     );
     let wordSyllables = toSyllables(phonemes);
 

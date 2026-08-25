@@ -51,6 +51,14 @@ bun add indo-g2p        # npm i indo-g2p
 deno add jsr:@snowfluke/indo-g2p
 ```
 
+Three entry points, so a bundle carries only the tables it uses:
+
+| Entry point           | What it adds                          |
+| --------------------- | ------------------------------------- |
+| `indo-g2p/core`       | the converter, 234 KB gzipped         |
+| `indo-g2p`            | the same, plus English word readings  |
+| `indo-g2p/homographs` | the part-of-speech homograph resolver |
+
 ## Usage
 
 ```ts
@@ -232,7 +240,9 @@ since English dictionaries carry those spellings too.
 Names are included rather than filtered out, because Indonesian rules read
 them badly: `denny` was `dennj`, a syllable with no vowel, and is now `deni`.
 
-Pass `english: false` to switch it off.
+Pass `english: false` to switch it off, or import
+[`indo-g2p/core`](#what-a-bundle-actually-costs) to leave the 2 MB table out of
+the bundle entirely.
 
 ## What it covers
 
@@ -448,21 +458,28 @@ binary. Nothing is fetched at runtime.
 | Schwa dictionary | 206 KB | on first `toPhoneme` with an `e`                                  |
 | CRF syllabifier  | 295 KB | on first `toSyllables`                                            |
 | POSP tagger      | 3.3 MB | only via `indo-g2p/homographs`, and only when a homograph appears |
+| English table    | 2.0 MB | only via `indo-g2p`, never via `indo-g2p/core`                    |
 
 ### What a bundle actually costs
 
-Importing `toPhoneme` pulls in the English table whether or not you use it,
-because the import is static. A bundle containing nothing but `toPhoneme`
-measures **2.7 MB unminified**. `english: false` turns the lookup off but
-cannot remove the data.
+`english: false` turns the English lookup off, but a static import cannot be
+argued out of a bundle, so the data ships anyway. Import `indo-g2p/core`
+instead and the table is never referenced:
 
-The part-of-speech tagger is genuinely separate: it lives behind
-`indo-g2p/homographs` and never reaches a bundle that does not import that
-path. Verified by building a consumer that imports only `toPhoneme` and
-checking for the tagger's symbols.
+| Import          | Minified | Gzipped | English words            |
+| --------------- | -------- | ------- | ------------------------ |
+| `indo-g2p`      | 2.69 MB  | 888 KB  | read as English          |
+| `indo-g2p/core` | 0.72 MB  | 234 KB  | read by Indonesian rules |
 
-For a server-side text-to-speech pipeline this is unremarkable. For a browser
-bundle it is not, and `english: false` will not help you.
+Both entry points expose the same API and agree on every Indonesian word.
+`indo-g2p/core` is the better default for a browser bundle; take the full
+entry point when the input mixes in English, which Indonesian writing usually
+does.
+
+The part-of-speech tagger is separate again: it lives behind
+`indo-g2p/homographs` and reaches neither of the tables above. All three
+figures come from building a real consumer and checking for each table's
+symbols.
 
 ## Known limits
 

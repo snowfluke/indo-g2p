@@ -62,6 +62,15 @@ export type ToPhonemeOptions = {
 };
 
 /**
+ * Reads an English word's phonemes, or returns `undefined` for a word the
+ * table does not carry.
+ *
+ * Passing this in rather than importing it is what lets `indo-g2p/core` exist:
+ * the 2 MB English table only reaches a bundle that asks for it.
+ */
+export type EnglishLookup = (word: string) => string | undefined;
+
+/**
  * Which layer decided a word's pronunciation.
  *
  * - `override` a hand-written correction in `data/schwa-overrides.tsv`

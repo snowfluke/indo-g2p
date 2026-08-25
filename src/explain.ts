@@ -4,7 +4,7 @@
 import { resolveCollocations } from "./collocations.ts";
 import { WORD_PATTERN } from "./constants.ts";
 import { lookUpEnglish } from "./english.ts";
-import { toPhoneme } from "./g2p.ts";
+import { convert } from "./g2p.ts";
 import { normalizeText } from "./normalize.ts";
 import { schwaSource } from "./schwa.ts";
 import type { ToPhonemeOptions, WordTrace } from "./types.ts";
@@ -41,15 +41,19 @@ export function explain(text: string, options: ToPhonemeOptions = {}): WordTrace
   return words.map((word, index) => {
     // Asking for one word at a time keeps this honest: whatever `toPhoneme`
     // would do to the word in context is what gets reported.
-    const single = toPhoneme(word, { ...options, normalize: false, resolveSchwa: false });
+    const single = convert(
+      word,
+      { ...options, normalize: false, resolveSchwa: false },
+      lookUpEnglish
+    );
     const phonemes =
       resolved[index] === undefined
         ? single.phonemes
-        : toPhoneme(word, {
-            ...options,
-            normalize: false,
-            resolveSchwa: () => [resolved[index]],
-          }).phonemes;
+        : convert(
+            word,
+            { ...options, normalize: false, resolveSchwa: () => [resolved[index]] },
+            lookUpEnglish
+          ).phonemes;
 
     return { word, phonemes, source: sourceOf(word, options, resolved[index] !== undefined) };
   });
