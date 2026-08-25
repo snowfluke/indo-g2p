@@ -5,6 +5,7 @@ import {
   DIPHTHONGS,
   GLOTTAL_BEFORE_CLITIC_PATTERN,
   GLOTTAL_STOP_PATTERN,
+  NASAL_DIGRAPH_PATTERN,
   GRAPHEME_REPLACEMENTS,
   LETTER_NAMES,
   PHONEME_REPLACEMENTS,
@@ -66,6 +67,8 @@ function wordToPhonemes(
   if (result.endsWith("k")) result = `${result.slice(0, -1)}ʔ`;
 
   result = applyGlottalStops(result);
+  // Handled before the literal map, which cannot express "only before a vowel".
+  result = result.replace(NASAL_DIGRAPH_PATTERN, "ɲ");
   return { phonemes: applyReplacements(result, PHONEME_REPLACEMENTS), abbr };
 }
 

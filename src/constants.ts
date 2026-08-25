@@ -79,13 +79,24 @@ export const GLOTTAL_BEFORE_CLITIC_PATTERN: RegExp = /[aiueəo]k(?=lah$)/g;
 /** Runs of Latin letters. Everything else passes through untouched. */
 export const WORD_PATTERN: RegExp = /[a-z]+/g;
 
+/**
+ * `ny` is only the digraph `/ɲ/` when a vowel follows it.
+ *
+ * Indonesian words do not end in `ny`, so every word that reaches this rule
+ * without a following vowel is a borrowed name. Upstream maps them anyway,
+ * turning `denny` into `denɲ`, a syllable with no vowel at all.
+ *
+ * `sy` gets no such guard: `musyrik` is `/muʃrik/`, with the digraph before a
+ * consonant, and `ng` is a real Indonesian ending as in `uang`.
+ */
+export const NASAL_DIGRAPH_PATTERN: RegExp = /ny(?=[aiueoəéè])/g;
+
 /** Grapheme to phoneme substitutions, applied in order. */
 export const PHONEME_REPLACEMENTS: readonly (readonly [string, string])[] = [
   ["x", "ks"],
   ["c", "tʃ"],
   ["j", "dʒ"],
   ["ng", "ŋ"],
-  ["ny", "ɲ"],
   ["sy", "ʃ"],
   ["kh", "x"],
   ["v", "f"],

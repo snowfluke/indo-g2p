@@ -267,3 +267,27 @@ describe("the lexicon fills gaps the dictionary leaves", () => {
     expect(toPhoneme(word).phonemes).toBe(expected);
   });
 });
+
+describe("the ny digraph needs a following vowel", () => {
+  test.each([
+    ["nyanyi", "ɲaɲi"],
+    ["banyak", "baɲaʔ"],
+    ["menyebut", "məɲəbut"],
+    ["penyakit", "pəɲakit"],
+  ])("maps ny in %s", (word, expected) => {
+    expect(toPhoneme(word).phonemes).toBe(expected);
+  });
+
+  test.each(["denny", "sony", "anthony"])("does not leave a vowelless ɲ in %s", (word) => {
+    // Indonesian words do not end in `ny`, so these are borrowed names, which
+    // no grapheme rule reads correctly. The narrow claim is only that `ɲ`
+    // never appears without a vowel after it, which is impossible in the
+    // language. Upstream produces `denɲ`.
+    expect(toPhoneme(word).phonemes).not.toContain("ɲ");
+  });
+
+  test("sy and ng keep working without a following vowel", () => {
+    expect(toPhoneme("musyrik").phonemes).toBe("muʃriʔ");
+    expect(toPhoneme("uang").phonemes).toBe("uaŋ");
+  });
+});
