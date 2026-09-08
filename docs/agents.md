@@ -84,7 +84,7 @@ explain("apel merah");
 //   { word: "merah", phonemes: "merah", source: "override" } ]
 ```
 
-`source` is one of `override`, `dictionary`, `lexicon`, `affix`, `english`,
+`source` is one of `override`, `wiktionary`, `dictionary`, `lexicon`, `affix`, `english`,
 `collocation`, or `rules`, in the order the layers are consulted. `rules` means
 no word list placed it and the letter-to-sound rules ran.
 

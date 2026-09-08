@@ -71,7 +71,7 @@ def blocked_words() -> set[str]:
 def indonesian_words() -> set[str]:
     """Everything the Indonesian sources already place."""
     words: set[str] = set()
-    for name in ("schwa-dict.ts", "lexicon.ts", "schwa-overrides.ts"):
+    for name in ("schwa-dict.ts", "lexicon.ts", "schwa-wiktionary.ts", "schwa-overrides.ts"):
         source = (ROOT / "src" / "data" / name).read_text(encoding="utf-8")
         packed = source.split("= ", 1)[1].strip().rstrip(";").strip("'")
         for line in packed.split("\\n"):

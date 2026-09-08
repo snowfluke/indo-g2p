@@ -1,10 +1,15 @@
 """Pack Bookbot's Indonesian lexicon into a fallback schwa table.
 
-The curated dictionary in src/data/schwa-dict.ts answers first and is right on
-native vocabulary, where this lexicon is not: it reads memang, desa, merah and
-bebas without a schwa. This is only ever consulted for words that dictionary
-does not list, where it beats the affix rules on both counts, correcting
-mədia to media and pəmerintah to pəmərintah.
+The curated dictionary in src/data/schwa-dict.ts answers first because it is
+right more often on long words and loanwords: over the 745 words both list
+that Wiktionary marks with a single reading, the dictionary agrees with
+Wiktionary on 98.9% and this lexicon on 96.6%, and where the two disagree
+Wiktionary sides with the dictionary 24 times to 7. On words of six letters
+or fewer the two are level, and the dictionary's misses there are everyday
+words this lexicon gets right, memang, desa, merah and bebas among them.
+data/schwa-overrides.tsv corrects those. This is only ever consulted for
+words the dictionary does not list, where it beats the affix rules on both
+counts, correcting mədia to media and pəmerintah to pəmərintah.
 
 Only the schwa pattern is taken. The rest of the lexicon's IPA is discarded,
 since the phoneme mapping here is the port's own.

@@ -74,6 +74,7 @@ export type EnglishLookup = (word: string) => string | undefined;
  * Which layer decided a word's pronunciation.
  *
  * - `override` a hand-written correction in `data/schwa-overrides.tsv`
+ * - `wiktionary` a marked Wiktionary headword, correcting or adding a word
  * - `dictionary` the curated 17,888-word schwa dictionary
  * - `lexicon` Bookbot's lexicon, for words the dictionary does not list
  * - `affix` the prefix rules, for words neither list places
@@ -83,6 +84,7 @@ export type EnglishLookup = (word: string) => string | undefined;
  */
 export type PhonemeSource =
   | "override"
+  | "wiktionary"
   | "dictionary"
   | "lexicon"
   | "affix"
