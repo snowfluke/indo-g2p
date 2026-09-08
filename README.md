@@ -41,15 +41,15 @@ Indonesian looks phonetic and is not. One letter spells two different vowels,
 letter-to-sound mapping gets all three wrong, and a speech model trained on
 that output learns the mistake.
 
-|                                |                                                                                                                                                          |
-| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Both `e` sounds**            | `pergi` is `pərgi`, `kaget` is `kaget`. A dictionary, a lexicon and affix rules place the schwa; only **6.0%** of running text is left without evidence. |
-| **Homographs from context**    | `upacara apel` is `apel`, `makan apel` is `apəl`. Rules are checked against Wiktionary and abstain rather than guess.                                    |
-| **Syllables you can use**      | Boundaries are placed for real phoneme strings, not just clean ones: **0.2%** of dictionary words collapse to a single syllable.                         |
-| **Messy text, not clean text** | `Harga Rp15.000 naik 20%.` becomes `harga lima bəlas ribu rupiah naɪʔ dua puluh pərsen.`                                                                 |
-| **Loanwords read as English**  | `event` is `ifent`, not `efent`, behind filters that keep `jakarta` and `april` Indonesian.                                                              |
-| **Nothing at runtime**         | Zero dependencies, no native modules, no model downloads. Node, Bun, Deno, browser.                                                                      |
-| **Signed supply chain**        | npm provenance, a CycloneDX SBOM and a cosign signature on every release.                                                                                |
+|                                |                                                                                                                                                                      |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Both `e` sounds**            | `pergi` is `pərgi`, `kaget` is `kaget`. A dictionary, a lexicon, Wiktionary and affix rules place the schwa; only **6.0%** of running text is left without evidence. |
+| **Homographs from context**    | `upacara apel` is `apel`, `makan apel` is `apəl`. Rules are checked against Wiktionary and abstain rather than guess.                                                |
+| **Syllables you can use**      | Boundaries are placed for real phoneme strings, not just clean ones: **0.2%** of dictionary words collapse to a single syllable.                                     |
+| **Messy text, not clean text** | `Harga Rp15.000 naik 20%.` becomes `harga lima bəlas ribu rupiah naɪʔ dua puluh pərsen.`                                                                             |
+| **Loanwords read as English**  | `event` is `ifent`, not `efent`, behind filters that keep `jakarta` and `april` Indonesian.                                                                          |
+| **Nothing at runtime**         | Zero dependencies, no native modules, no model downloads. Node, Bun, Deno, browser.                                                                                  |
+| **Signed supply chain**        | npm provenance, a CycloneDX SBOM and a cosign signature on every release.                                                                                            |
 
 **[Try it in the browser](https://snowfluke.github.io/indo-g2p/)** before you install.
 Wiring this into an agent or a pipeline? Start with the
@@ -373,7 +373,7 @@ explain("upacara apel di jakarta");
 //   { word: "jakarta", phonemes: "dʒakarta", source: "rules" } ]
 ```
 
-`source` is one of `override`, `dictionary`, `lexicon`, `affix`, `english`,
+`source` is one of `override`, `wiktionary`, `dictionary`, `lexicon`, `affix`, `english`,
 `collocation` or `rules`, and tells you where to go to fix a wrong reading:
 a bad `dictionary` answer belongs in `data/schwa-overrides.tsv`, a bad
 `collocation` in `data/homographs-collocations.tsv`, a wrongly-`english` word
@@ -388,20 +388,30 @@ language builds most of its vocabulary by affixing roots, and the derived
 forms are not listed. On 141,770 tokens of news text, **28% of all words**
 were `e`-words it had never seen, and every one was read with a plain `/e/`.
 
-Three sources answer instead, in order of how far each is trusted:
+Four sources answer instead, in order of how far each is trusted:
 
 | Source                                                                   | Words       | Answers         |
 | ------------------------------------------------------------------------ | ----------- | --------------- |
-| Curated dictionary, plus `data/schwa-overrides.tsv`                      | 17,888      | 32.6% of tokens |
+| Hand corrections in `data/schwa-overrides.tsv`                           | 28          | 32.6% of tokens |
+| [Wiktionary](https://en.wiktionary.org) headwords, marked for the schwa  | 1,085       | included above  |
+| Curated dictionary                                                       | 17,888      | included above  |
 | [Bookbot's lexicon](https://github.com/bookbot-kids/g2p_id) (Apache-2.0) | 22,659 more | included above  |
 | Affix rules, no word list at all                                         | n/a         | 1.9% of tokens  |
 | Nothing places it, so it keeps a plain `/e/`                             |             | 6.0% of tokens  |
 
-The dictionary outranks the lexicon because it is right on native vocabulary
-where the lexicon is not: it reads `memang`, `desa`, `merah` and `bebas` with
-a schwa, and the lexicon does not. The lexicon outranks the affix rules
-because it is a word list rather than a guess, correcting both their misses
-(`pəmerintah` to `pəmərintah`) and their overreach (`mədia` to `media`).
+The dictionary outranks the lexicon because it is right more often on long
+words and loanwords. Scored against the 745 words both list that Wiktionary
+marks with a single reading, the dictionary agrees with Wiktionary on 98.9%
+and the lexicon on 96.6%; where the two disagree, Wiktionary sides with the
+dictionary 24 times to 7. On words of six letters or fewer the two are level,
+380 against 381 of 385, and the dictionary's misses there are everyday words
+it reads with a schwa that KBBI marks `é`: `merah`, `bebas`, `memang`,
+`desa`. `data/schwa-overrides.tsv` corrects those by hand, and
+`scripts/dump-wiktionary.py` corrects what Wiktionary marks wherever headword
+and IPA agree, and places the 1,062 marked words neither list has. The
+lexicon outranks the affix rules because it is a word list rather than a
+guess, correcting both their misses (`pəmerintah` to `pəmərintah`) and their
+overreach (`mədia` to `media`).
 
 The prefixes `me-`, `se-`, `te-`, `be-`, `pe-`, `ke-`, `ber-`, `ter-`, `per-`
 always carry a schwa. That is a fact about the language rather than about any

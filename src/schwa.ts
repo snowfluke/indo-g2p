@@ -5,6 +5,7 @@ import { affixSchwaMask } from "./affix.ts";
 import { LEXICON } from "./data/lexicon.ts";
 import { SCHWA_DICT } from "./data/schwa-dict.ts";
 import { SCHWA_OVERRIDES } from "./data/schwa-overrides.ts";
+import { SCHWA_WIKTIONARY } from "./data/schwa-wiktionary.ts";
 import { applyMask } from "./mask.ts";
 import type { PhonemeSource } from "./types.ts";
 
@@ -16,9 +17,11 @@ function schwaMasks(): Map<string, number> {
 
   const parsed = new Map<string, number>();
   // Read weakest first, so a later source wins: Bookbot's lexicon fills gaps,
-  // the curated dictionary overrules it on native vocabulary, and the
-  // hand-written corrections in data/schwa-overrides.tsv overrule both.
-  for (const source of [LEXICON, SCHWA_DICT, SCHWA_OVERRIDES]) {
+  // the curated dictionary overrules it on native vocabulary, Wiktionary's
+  // marked headwords correct both where they over-read the schwa and add the
+  // words neither has, and the hand-written corrections in
+  // data/schwa-overrides.tsv overrule everything.
+  for (const source of [LEXICON, SCHWA_DICT, SCHWA_WIKTIONARY, SCHWA_OVERRIDES]) {
     for (const line of source.split("\n")) {
       const space = line.lastIndexOf(" ");
       parsed.set(line.slice(0, space), Number.parseInt(line.slice(space + 1), 16));
@@ -32,11 +35,13 @@ function schwaMasks(): Map<string, number> {
 /**
  * Rewrite the `e`s that are pronounced as a schwa `/ə/`, as in `təman`.
  *
- * Indonesian spelling does not distinguish `/e/` from `/ə/`, so three sources
+ * Indonesian spelling does not distinguish `/e/` from `/ə/`, so four sources
  * are consulted in order of how much they are trusted:
  *
  * 1. The curated dictionary, plus the corrections in
- *    `data/schwa-overrides.tsv`.
+ *    `data/schwa-overrides.tsv` and the ones Wiktionary's marked headwords
+ *    give, in `data/schwa-wiktionary.ts`, which also adds the marked words
+ *    neither list has.
  * 2. Bookbot's lexicon, for the 22,659 words the dictionary does not list.
  * 3. The affix rules in `affix.ts`, which need no word list at all.
  *
@@ -71,6 +76,7 @@ export function schwaSource(word: string): PhonemeSource {
     for (const [source, packed] of [
       ["lexicon", LEXICON],
       ["dictionary", SCHWA_DICT],
+      ["wiktionary", SCHWA_WIKTIONARY],
       ["override", SCHWA_OVERRIDES],
     ] as const) {
       for (const line of packed.split("\n"))

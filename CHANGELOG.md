@@ -11,6 +11,30 @@ jsr.json and `src/version.ts` in lockstep; the pre-commit hook rejects drift.
 
 ## [Unreleased]
 
+### Added
+
+- A fourth schwa source. `scripts/dump-wiktionary.py` reads the kaikki.org
+  extract of the Indonesian Wiktionary and packs every word whose marked
+  headword contradicts the dictionary or the lexicon into
+  `src/data/schwa-wiktionary.ts`, consulted after both and before the
+  hand-written overrides. A reading counts only when the headword marks and
+  the IPA line agree, only when the word has one reading, only when no
+  part-of-speech rule already splits it, and only when it removes a schwa:
+  the dictionary's errors run one way (`bébék` read as `bəbəʔ`) and
+  Wiktionary's the other (`cêcêr` marked for KBBI's `/cécér/`). A word with
+  more than one etymology is skipped even when only one sense is marked,
+  since a mark on one sense says nothing about the other: `seri` is marked
+  /séri/ for the noun and is /səri/ as radiance. 2,530 words checked, 23
+  corrected, 7 printed for review. The 1,062 marked words no table listed
+  are added as well; the affix rules already read most of them the same
+  way, and the rest change (`denger` from `deŋer` to `dəŋər`, `cendikiawan`
+  from `tʃendikiawan` to `tʃəndikiawan`). `explain` reports the layer as
+  `wiktionary`.
+- `src/data/english.ts` regenerated, dropping the ten words the Wiktionary
+  table now places (`palisade`, `taper`, `terminator`), and a test that the
+  English table never overlaps an Indonesian one, so a refresh of any table
+  cannot leave English shadowing it again.
+
 ### Fixed
 
 - Eleven everyday words read with a schwa in every syllable: `bebek` was
@@ -20,9 +44,18 @@ jsr.json and `src/version.ts` in lockstep; the pre-commit hook rejects drift.
   KBBI reading on every row. `apel merah` in the README changes with it.
 - The README and `scripts/dump-lexicon.py` held up `memang`, `desa`, `merah`
   and `bebas` as proof that the dictionary beats the lexicon. All four are
-  wrong in the dictionary and right in the lexicon.
+  wrong in the dictionary and right in the lexicon. The ordering still
+  stands, on a measurement this time, but only on long words and loanwords:
+  over the 745 words both list that Wiktionary marks with a single reading,
+  the dictionary agrees with Wiktionary on 98.9% and the lexicon on 96.6%,
+  and where the two disagree Wiktionary sides with the dictionary 24 times
+  to 7. On words of six letters or fewer the two are level.
 - `serangan` and `keserangan` read with no schwa, from the lexicon, against
   their own root `serang` in the dictionary. Overridden.
+- A native speaker read the ten words Wiktionary and the tables disagreed on
+  with no KBBI lafal to settle them. Three change: `sekjen` to `seʔdʒen`,
+  `bekel` to `bəkəl`, `bendel` to `bəndəl`. The other seven were already
+  right, `geber` and `woles` as Wiktionary marks them.
 - A suffixed word now reads as its stem. `bebeknya` was `bəbeʔɲa` because
   the affix rules peeled a prefix first and found `be-` + `bek` + `-nya`;
   the same made `merahnya` into `me-` + `rah` + `-nya`. The rules now check
