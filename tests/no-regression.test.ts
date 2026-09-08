@@ -205,4 +205,19 @@ describe("KBBI-verified plain e", () => {
   test("puts back the schwa the lexicon dropped from serangan", () => {
     expect(toPhoneme("serangan keserangan").phonemes).toBe("səraŋan kəsəraŋan");
   });
+
+  test.each([
+    // A suffixed form reads as its stem. Before, the affix rules peeled a
+    // prefix first and found `be-` + `bek` + `-nya`.
+    ["bebeknya", "bebeʔɲa"],
+    ["merahnya", "merahɲa"],
+    ["kemerahan", "kəmerahan"],
+    // The longest listed stem wins: `pelan` + `-nya`, not `pel` + `-annya`.
+    ["pelannya", "pəlanɲa"],
+    ["menelannya", "mənəlanɲa"],
+    // A two-letter stem is a coincidence, so `sei` is not `se` + `-i`.
+    ["sei", "sei"],
+  ])("carries the reading into %s", (word, expected) => {
+    expect(toPhoneme(word).phonemes).toBe(expected);
+  });
 });
