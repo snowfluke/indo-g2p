@@ -26,3 +26,20 @@ jejer	0	Native speaker: the common sense is /dʒedʒer/ (a row, to line up), not
 teleng	0	Native speaker: the common sense is /teleŋ/ (tilted, the centre), not /tələŋ/.
 keder	1	Native speaker: the common sense is /kəder/ (nervous, intimidated), not /keder/.
 kelepak	3	Native speaker: the common sense is /kələpaʔ/ (the sound of flapping), not /kəlepaʔ/.
+# Upstream marks every "e" of these everyday words as pepet. KBBI marks them
+# "é" (not pepet), and Bookbot's lexicon agrees through the affixed forms it
+# lists (membebek 1, pemerah 1, mencetak 1, berbelok 1, menggendong 1: only
+# the prefix vowel is a schwa). Checked against kbbi.web.id, 2026-09-08.
+bebek	0	KBBI /bébék/ (duck). Upstream's /bəbəʔ/ contradicts its own membebek and pembebek, which read the root without a schwa.
+merah	0	KBBI /mérah/ (red). Upstream's /mərah/ contradicts pemerah and semerah in the lexicon.
+bebas	0	KBBI /bébas/ (free). Upstream's /bəbas/ contradicts pembebas, terbebas and sebebas in the lexicon.
+cetak	0	KBBI /cétak/ (print). Upstream's /tʃətaʔ/ contradicts mencetak, pencetak, bercetak and dicetak in the lexicon.
+belok	0	KBBI /bélok/ (turn). Upstream's /bəloʔ/ contradicts membelok and berbelok in the lexicon.
+lele	0	KBBI /lélé/ (catfish). Upstream reads /lələ/.
+gendong	0	KBBI /géndong/ (carry on the back). Upstream's /gəndoŋ/ contradicts menggendong in the lexicon.
+derek	0	KBBI /dérék/ (a row; a crane). Upstream's /dərəʔ/ contradicts menderek in the lexicon.
+petak	0	KBBI /pétak/ (a plot, a compartment). Upstream's /pətaʔ/ contradicts berpetak in the lexicon.
+memang	0	KBBI /mémang/ (indeed). The README once held this up as the dictionary being right; it is not. The Jakarta clipping "emang" is /émang/.
+desa	0	KBBI /désa/ (village). As above. Wiktionary marks dèsa and agrees.
+serangan	1	An attack, from serang /səraŋ/, which the dictionary, Bookbot and Wiktionary all read with a pepet. The lexicon's own /seraŋan/ contradicts all three; Wiktionary marks sêrangan.
+keserangan	3	As above: ke- + serang. The lexicon reads /kəseraŋan/.

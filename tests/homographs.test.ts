@@ -39,7 +39,7 @@ describe("POS tagger", () => {
 describe("homograph resolution", () => {
   test("picks the noun reading of apel", () => {
     const { phonemes } = toPhoneme("dia makan apel merah", { resolveSchwa: resolveHomographs });
-    expect(phonemes).toBe("dia makan apəl mərah");
+    expect(phonemes).toBe("dia makan apəl merah");
   });
 
   test("leaves words it does not know to the dictionary", () => {

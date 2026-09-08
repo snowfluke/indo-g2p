@@ -81,7 +81,7 @@ right file instead of guessing.
 ```ts
 explain("apel merah");
 // [ { word: "apel",  phonemes: "apəl",  source: "dictionary" },
-//   { word: "merah", phonemes: "mərah", source: "dictionary" } ]
+//   { word: "merah", phonemes: "merah", source: "override" } ]
 ```
 
 `source` is one of `override`, `dictionary`, `lexicon`, `affix`, `english`,

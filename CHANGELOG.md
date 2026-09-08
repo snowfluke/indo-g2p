@@ -9,6 +9,21 @@ Versions are published to npm as `indo-g2p` and to JSR as `@snowfluke/indo-g2p`
 from the same tag. `bun scripts/bump.ts patch|minor|major` keeps package.json,
 jsr.json and `src/version.ts` in lockstep; the pre-commit hook rejects drift.
 
+## [Unreleased]
+
+### Fixed
+
+- Eleven everyday words read with a schwa in every syllable: `bebek` was
+  `bəbəʔ`, `merah` was `mərah`, `memang` was `məmaŋ`, `desa` was `dəsa`, and
+  `bebas`, `cetak`, `belok`, `lele`, `gendong`, `derek` and `petak` likewise.
+  KBBI marks each vowel `é`. Corrected in `data/schwa-overrides.tsv` with the
+  KBBI reading on every row. `apel merah` in the README changes with it.
+- The README and `scripts/dump-lexicon.py` held up `memang`, `desa`, `merah`
+  and `bebas` as proof that the dictionary beats the lexicon. All four are
+  wrong in the dictionary and right in the lexicon.
+- `serangan` and `keserangan` read with no schwa, from the lexicon, against
+  their own root `serang` in the dictionary. Overridden.
+
 ## [0.1.2] - 2026-08-25
 
 Supply chain and correctness of the packaging. No behaviour changed: every
