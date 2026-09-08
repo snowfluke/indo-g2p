@@ -1,7 +1,7 @@
 # indo-g2p for AI agents
 
 A compact, complete reference for an agent choosing and calling this library.
-Everything below is real output from version 0.2.0.
+Everything below is real output from version 0.2.1.
 
 ## What this library does, and does not
 
@@ -70,7 +70,7 @@ applySchwa("sekolah")       // → "səkolah"                 schwa only, no oth
 normalizeText("Rp15.000")   // → "lima belas ribu rupiah"  text stays text
 spellNumber(2026)           // → "dua ribu dua puluh enam"
 spellDecimal(3, "14")       // → "tiga koma satu empat"
-VERSION                     // → "0.2.0"
+VERSION                     // → "0.2.1"
 ```
 
 ## Diagnosing a wrong reading
