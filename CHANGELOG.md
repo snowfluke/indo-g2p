@@ -56,6 +56,11 @@ jsr.json and `src/version.ts` in lockstep; the pre-commit hook rejects drift.
   with no KBBI lafal to settle them. Three change: `sekjen` to `seʔdʒen`,
   `bekel` to `bəkəl`, `bendel` to `bəndəl`. The other seven were already
   right, `geber` and `woles` as Wiktionary marks them.
+- `bun run docs` no longer reproduced `docs/homograph-review.md`: the speaker
+  review of 2026-08-25 and a note on Bookbot's lexicon had been written into
+  the doc by hand, and the tables had been padded by hand. Both passages now
+  live in the generator, which pads its tables with the helper the README
+  coverage matrix uses, and CI fails if the two drift again.
 - A suffixed word now reads as its stem. `bebeknya` was `bəbeʔɲa` because
   the affix rules peeled a prefix first and found `be-` + `bek` + `-nya`;
   the same made `merahnya` into `me-` + `rah` + `-nya`. The rules now check

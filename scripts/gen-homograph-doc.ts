@@ -14,6 +14,7 @@ import { POS_GROUPS } from "../src/data/pos-model.ts";
 import { homographTable } from "../src/homograph-table.ts";
 import { knownHomographs } from "../src/homographs.ts";
 import { applySchwa } from "../src/schwa.ts";
+import { table } from "./markdown-table.ts";
 
 const ROOT = resolve(import.meta.dir, "..");
 
@@ -51,19 +52,48 @@ for (const line of (await Bun.file(`${ROOT}/data/homographs-verified.tsv`).text(
   evidence.set(cells[0] ?? "", cells[5] ?? "");
 }
 
-const rows = knownHomographs()
-  .map((word) => {
-    const entry = homographTable().get(word);
-    if (!entry) return "";
-    const side = (cls: string, bits: number): string =>
-      POS_GROUPS[cls] ? `${className(cls)} to \`${reading(word, bits)}\`` : "abstains";
-    return (
-      `| \`${word}\` | ${side(entry.first, entry.forFirst)} ` +
-      `| ${side(entry.second, entry.forSecond)} ` +
-      `| \`${applySchwa(word)}\` | ${evidence.get(word)} |`
-    );
-  })
-  .filter(Boolean);
+const rows = knownHomographs().flatMap((word) => {
+  const entry = homographTable().get(word);
+  if (!entry) return [];
+  const side = (cls: string, bits: number): string =>
+    POS_GROUPS[cls] ? `${className(cls)} to \`${reading(word, bits)}\`` : "abstains";
+  return [
+    [
+      `\`${word}\``,
+      side(entry.first, entry.forFirst),
+      side(entry.second, entry.forSecond),
+      `\`${applySchwa(word)}\``,
+      evidence.get(word) ?? "",
+    ],
+  ];
+});
+
+const verdicts = table(
+  ["Verdict", "Count", "Meaning"],
+  [
+    [
+      "`confirmed`",
+      `${AUDIT.confirmed}`,
+      "both classes match a marked Wiktionary reading; the rule ships both ways",
+    ],
+    ["`half`", `${AUDIT.half}`, "one class matches; only that side ships"],
+    [
+      "`single`",
+      `${AUDIT.single}`,
+      "every marked sense reads the same, so no part-of-speech rule can apply",
+    ],
+    [
+      "`contradicted`",
+      `${AUDIT.contradicted}`,
+      "the marked readings do not split along these classes",
+    ],
+    [
+      "`unverified`",
+      `${AUDIT.unverified}`,
+      "no pepet-marked Indonesian entry exists to check against",
+    ],
+  ]
+);
 
 const doc = `# Homograph review
 
@@ -87,13 +117,7 @@ verdicts on the remaining 57 with:
 python3 scripts/verify-homographs.py <path-to>/homographs_id.tsv
 \`\`\`
 
-| Verdict | Count | Meaning |
-| --- | --- | --- |
-| \`confirmed\` | ${AUDIT.confirmed} | both classes match a marked Wiktionary reading; the rule ships both ways |
-| \`half\` | ${AUDIT.half} | one class matches; only that side ships |
-| \`single\` | ${AUDIT.single} | every marked sense reads the same, so no part-of-speech rule can apply |
-| \`contradicted\` | ${AUDIT.contradicted} | the marked readings do not split along these classes |
-| \`unverified\` | ${AUDIT.unverified} | no pepet-marked Indonesian entry exists to check against |
+${verdicts}
 
 That leaves ${rows.length} rules shipping and ${AUDIT.single + AUDIT.contradicted + AUDIT.unverified} dropped.
 
@@ -103,28 +127,37 @@ their upstream rules were simply wrong. The dictionary already spells them
 \`gantəng\`, \`rəlai\` and \`səmi\`, matching Wiktionary, so dropping those rules
 made the output more correct rather than less.
 
+### The unverified group, settled by review
+
+The \`unverified\` words have no pepet-marked entry anywhere, so no measurement
+can place them. They were read by a native speaker on 2026-08-25 instead. Six
+had the wrong default and are corrected in
+[data/schwa-overrides.tsv](../data/schwa-overrides.tsv); the other 21 were
+already right. \`tests/no-regression.test.ts\` records both halves, so a later
+data change cannot quietly undo the review.
+
 ### Why the other sources do not help
 
 KBBI, the official dictionary, splits homographs into numbered entries but
 publishes no pronunciation field at all, so it cannot say which \`e\` is a
-schwa. That leaves Wiktionary as the only machine-checkable source, and the
-\`unverified\` group is the set of words it has never marked.
+schwa. Bookbot's own 27,411-word lexicon keeps homographs in a separate file,
+so only one of these 57 words appears in it. That leaves Wiktionary as the
+only machine-checkable source, and the \`unverified\` group is the set of words
+it has never marked.
 
 ## The kept rules
 
 "abstains" marks a side that could not be verified, or was verified but proved
 unsafe. That side always falls through to the schwa dictionary.
 
-| word | class A | class B | dictionary | evidence |
-| --- | --- | --- | --- | --- |
-${rows.join("\n")}
+${table(["word", "class A", "class B", "dictionary", "evidence"], rows)}
 
 ## Why a verified rule can still be dropped
 
 \`pening\` is a real homograph: \`pêning\` (adjective, dizzy) against \`pening\`
 (noun, a tax plate). The noun is archaic, and the tagger labels the common
 adjective as a noun, so the rule fired the wrong way on ordinary sentences like
-*kepala saya pening sekali*. Its noun side is dropped for that reason, not for
+_kepala saya pening sekali_. Its noun side is dropped for that reason, not for
 lack of evidence.
 
 \`tests/no-regression.test.ts\` holds a sentence for the common sense of every
