@@ -79,3 +79,11 @@ jobs:
         run: |
           bun run coverage
           git diff --exit-code -- README.md
+
+      # The homograph review is generated from the curated table. It drifted
+      # once, when a review was written into the doc by hand and the next
+      # regeneration would have dropped it.
+      - name: Verify the homograph review is reproducible
+        run: |
+          bun run docs
+          git diff --exit-code -- docs/homograph-review.md

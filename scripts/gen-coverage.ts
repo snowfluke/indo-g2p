@@ -16,6 +16,7 @@
 import { resolve } from "node:path";
 
 import { toPhoneme } from "../src/index.ts";
+import { table } from "./markdown-table.ts";
 
 /** One row: what the library handles, and an input that shows it. */
 type Case = { covers: string; input: string; note?: string };
@@ -94,26 +95,6 @@ const GROUPS: { title: string; cases: Case[] }[] = [
 ];
 
 const escape = (text: string): string => text.replaceAll("|", "\\|");
-
-/**
- * Pad a table's columns to an even width.
- *
- * The checked-in README is padded, and CI fails the build when this file's
- * output differs from it, so the padding has to happen here rather than in a
- * formatter. Nothing formats markdown in this repo.
- */
-function table(header: string[], body: string[][]): string {
-  const all = [header, ...body];
-  const widths = header.map((_, column) =>
-    Math.max(...all.map((row) => [...(row[column] ?? "")].length))
-  );
-  // Counted in code points, so a phoneme like `ʃ` costs one column, not two.
-  const line = (cells: string[]): string =>
-    `| ${cells.map((cell, i) => cell + " ".repeat((widths[i] ?? 0) - [...cell].length)).join(" | ")} |`;
-  return [line(header), line(widths.map((width) => "-".repeat(width))), ...body.map(line)].join(
-    "\n"
-  );
-}
 
 const rows = GROUPS.map(({ title, cases }) => {
   const body = cases.map((item) => {
