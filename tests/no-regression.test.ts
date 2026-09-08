@@ -179,3 +179,30 @@ describe("speaker-verified homograph defaults", () => {
     expect(toPhoneme(word).phonemes).toBe(expected);
   });
 });
+
+/**
+ * Everyday words upstream reads with a schwa in every syllable. KBBI marks
+ * them "é", and Bookbot's lexicon agrees through their affixed forms. See
+ * data/schwa-overrides.tsv, checked 2026-09-08.
+ */
+describe("KBBI-verified plain e", () => {
+  test.each([
+    ["bebek", "bebeʔ"],
+    ["merah", "merah"],
+    ["bebas", "bebas"],
+    ["cetak", "tʃetaʔ"],
+    ["belok", "beloʔ"],
+    ["lele", "lele"],
+    ["gendong", "gendoŋ"],
+    ["derek", "dereʔ"],
+    ["petak", "petaʔ"],
+    ["memang", "memaŋ"],
+    ["desa", "desa"],
+  ])("corrects %s", (word, expected) => {
+    expect(toPhoneme(word).phonemes).toBe(expected);
+  });
+
+  test("puts back the schwa the lexicon dropped from serangan", () => {
+    expect(toPhoneme("serangan keserangan").phonemes).toBe("səraŋan kəsəraŋan");
+  });
+});

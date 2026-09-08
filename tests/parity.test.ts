@@ -210,12 +210,14 @@ describe("the lexicon fills gaps the dictionary leaves", () => {
   });
 
   test.each([
-    // The curated dictionary is right on native vocabulary where the lexicon
-    // is not, so it must keep winning.
-    ["memang", "məmaŋ"],
-    ["desa", "dəsa"],
-    ["merah", "mərah"],
-    ["bebas", "bəbas"],
+    // Bookbot's lexicon reads these with no schwa, and the dictionary, which
+    // Wiktionary agrees with, must keep winning. The four words this test
+    // once listed, `memang`, `desa`, `merah` and `bebas`, were wrong in the
+    // dictionary and are now overridden; see tests/no-regression.test.ts.
+    ["tekan", "təkan"],
+    ["serah", "sərah"],
+    ["keramik", "kəramiʔ"],
+    ["universitas", "unifərsitas"],
   ])("the curated dictionary still wins for %s", (word, expected) => {
     expect(toPhoneme(word).phonemes).toBe(expected);
   });

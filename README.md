@@ -176,7 +176,7 @@ default options, so it cannot drift from what the library does. Regenerate with
 | Covers                                             | Input                         | Output                                 |
 | -------------------------------------------------- | ----------------------------- | -------------------------------------- |
 | Homograph, by context                              | `upacara apel di lapangan`    | `upatʃara apel di lapaŋan`             |
-| The same word, other sense                         | `dia makan apel merah`        | `dia makan apəl mərah`                 |
+| The same word, other sense                         | `dia makan apel merah`        | `dia makan apəl merah`                 |
 | Homograph with a number between                    | `apel 17 agustus di lapangan` | `apel tudʒuh bəlas agustus di lapaŋan` |
 | Abbreviation, opt in <sub>`expandAbbr: true`</sub> | `tv`                          | `téfé`                                 |
 
@@ -254,7 +254,7 @@ Which one you get depends on the sentence, so resolution is **on by default**:
 import { toPhoneme } from "indo-g2p";
 
 toPhoneme("upacara apel di lapangan").phonemes; // "upatʃara apel di lapaŋan"
-toPhoneme("dia makan apel merah").phonemes; // "dia makan apəl mərah"
+toPhoneme("dia makan apel merah").phonemes; // "dia makan apəl merah"
 ```
 
 The default resolver reads the words around each homograph. A rule fires only

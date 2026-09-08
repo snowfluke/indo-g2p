@@ -3,4 +3,4 @@
 // Copyright (c) 2026 snowfluke
 
 /** Packed corrections to the schwa dictionary: `word hexMask` per line. */
-export const SCHWA_OVERRIDES: string = 'mental 0\nterapi 0\nserong 0\nteknologi 0\nmetode 0\nmedan 0\nkeset 0\nkere 0\njejer 0\nteleng 0\nkeder 1\nkelepak 3';
+export const SCHWA_OVERRIDES: string = 'mental 0\nterapi 0\nserong 0\nteknologi 0\nmetode 0\nmedan 0\nkeset 0\nkere 0\njejer 0\nteleng 0\nkeder 1\nkelepak 3\nbebek 0\nmerah 0\nbebas 0\ncetak 0\nbelok 0\nlele 0\ngendong 0\nderek 0\npetak 0\nmemang 0\ndesa 0\nserangan 1\nkeserangan 3';

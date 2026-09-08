@@ -13,7 +13,9 @@
  * - The glottal-stop rule no longer fires before `r` and `l`, which are Latin
  *   onset clusters, so `biroʔratismə` becomes `birokratismə`.
  * - A native speaker corrected six homograph defaults, so `dʒədʒər` becomes
- *   `dʒedʒer`. See data/schwa-overrides.tsv.
+ *   `dʒedʒer`, and KBBI corrects eleven everyday words upstream reads with a
+ *   schwa in every syllable, so `bəbəʔ` becomes `bebeʔ`. See
+ *   data/schwa-overrides.tsv.
  * - English words are read as English, so `the` is `də` rather than `tə`.
  *   Pass `english: false` for the Indonesian-rules behaviour.
  * - Normalisation is on by default, so digits and symbols are spelled out:
@@ -59,6 +61,7 @@ export const KNOWN_IMPROVEMENTS: readonly (readonly [string, string])[] = [
   ["   ", " "],
   ["12345", "dua bəlas ribu tiga ratus əmpat puluh lima"],
   ["dʒədʒər", "dʒedʒer"],
+  ["bəbəʔ", "bebeʔ"],
   ["mempermanènkan", "məmpərmanènkan"],
   ["nuʔleotidasə", "nukleotidasə"],
   ["səʔlub", "səklub"],
