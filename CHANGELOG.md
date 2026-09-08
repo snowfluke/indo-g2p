@@ -11,6 +11,27 @@ jsr.json and `src/version.ts` in lockstep; the pre-commit hook rejects drift.
 
 ## [Unreleased]
 
+## [0.2.1] - 2026-09-08
+
+Two faults the sanonesia-tts corpus exposed on its first run. No export
+changes reading except where a sentence ends on a number or names one of
+the forty-three places below.
+
+### Fixed
+
+- A number at the end of a sentence swallowed its full stop and read it as
+  a decimal point: `pada 2000.` became `pada dua ribu titik nol`, and
+  `tahun 1998. Lalu` lost the boundary between its sentences. The number
+  pattern now has to end on a digit. Found by rendering an 8,000-sentence
+  corpus, where it hit every sentence that closes on a year.
+- Forty-three Indonesian spellings of foreign places fell through to the
+  English table: `Moskwa` was `maskfə`, `Kuba` was `kjubə`, `Bulgaria` was
+  `bəlgeriə`. Named in `data/indonesian-proper-nouns.tsv`; the English table
+  is regenerated without them. Five that Indonesians do say the English way
+  (`seattle`, `houston`, `hollywood`, `phoenix`, `vegas`) stay. `Teheran`
+  then reached the affix rules as `te-` + `heran` and is overridden like
+  `medan`.
+
 ## [0.2.0] - 2026-09-08
 
 The schwa tables, corrected. Everyday words the dictionary read with a pepet
