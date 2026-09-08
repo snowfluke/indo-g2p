@@ -294,6 +294,12 @@ describe("English words are read as English", () => {
     ["indonesia", "indonesia"],
     ["makan", "makan"],
     ["pemerintah", "pəmərintah"],
+    // Indonesian spellings of foreign places that en_US.txt also carries.
+    // `moskwa` was read as `maskfə` before the stoplist named it.
+    ["moskwa", "moskwa"],
+    ["kuba", "kuba"],
+    ["teheran", "teheran"],
+    ["bulgaria", "bulgaria"],
   ])("never touches %s", (word, expected) => {
     expect(toPhoneme(word).phonemes).toBe(expected);
   });

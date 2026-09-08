@@ -22,6 +22,8 @@ name country	indonesia malaysia singapura brunei thailand filipina vietnam kambo
 name province	aceh sumatera riau jambi bengkulu lampung banten jakarta jawa yogyakarta bali kalimantan sulawesi gorontalo maluku papua nusa tenggara
 name city	bandung surabaya medan semarang palembang makassar depok tangerang bekasi bogor batam pekanbaru padang malang solo surakarta denpasar manado balikpapan samarinda pontianak banjarmasin mataram kupang jayapura ambon ternate serang cirebon tasikmalaya purwokerto magelang salatiga kudus jepara madiun kediri jember probolinggo pasuruan sidoarjo gresik lamongan tuban
 name foreign city	london madrid paris roma milan barcelona munchen berlin moskow tokyo osaka beijing shanghai seoul bangkok manila hanoi delhi mumbai dubai doha riyadh kairo istanbul sydney melbourne york washington chicago boston texas florida
+name foreign country	moskwa rumania bulgaria belarus kuba haiti panama honduras guatemala bolivia paraguay uruguay bhutan uzbekistan kazakhstan taiwan hongkong fiji samoa tonga bahrain
+name foreign city 2	athena kiev teheran bagdad ankara turin florence zurich oslo stockholm helsinki dublin sidney beirut amman alaska hawaii atlanta miami dallas denver detroit
 name organisation	golkar gerindra nasdem demokrat hanura perindo berkarya garuda pertamina telkom mandiri bri bni bca antara kompas tempo detik tribun republika micom kalla bakrie tbk persib persija arema
 name institution	kpk dpr mpr dpd tni polri kejaksaan mahkamah bawaslu kpu ojk bpjs bumn bulog basarnas bnpb kemenkeu kemendagri kemenlu
 name faith	islam kristen protestan katolik hindu buddha konghucu muslim nasrani

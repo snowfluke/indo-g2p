@@ -34,8 +34,12 @@ const SPOKEN_SYMBOLS: readonly (readonly [RegExp, string])[] = [
 /** `Rp5.000` and `Rp 5.000` both mean five thousand rupiah. */
 const RUPIAH = /\brp\s*([\d.,]*\d)/gi;
 
-/** A number written with `.` for thousands and `,` for the decimal. */
-const NUMBER = /\d[\d.]*(?:,\d+)?/g;
+/**
+ * A number written with `.` for thousands and `,` for the decimal. It must
+ * end on a digit, or the full stop that closes `pada 2000.` is swallowed and
+ * read as a decimal point with nothing after it.
+ */
+const NUMBER = /\d(?:[\d.]*\d)?(?:,\d+)?/g;
 
 /** Read one written number, honouring Indonesian digit grouping. */
 function readNumber(text: string): string {
