@@ -11,6 +11,14 @@ jsr.json and `src/version.ts` in lockstep; the pre-commit hook rejects drift.
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-09-08
+
+The schwa tables, corrected. Everyday words the dictionary read with a pepet
+where KBBI marks é (`bebek`, `merah`, `memang`, `desa`) now read as spoken,
+a Wiktionary-derived layer corrects and extends the tables, and suffixed
+words read as their stem. Around 1,200 words change reading; every other
+export returns what it did in 0.1.2.
+
 ### Added
 
 - A fourth schwa source. `scripts/dump-wiktionary.py` reads the kaikki.org
