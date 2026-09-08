@@ -16,8 +16,9 @@ jsr.json and `src/version.ts` in lockstep; the pre-commit hook rejects drift.
 The schwa tables, corrected. Everyday words the dictionary read with a pepet
 where KBBI marks é (`bebek`, `merah`, `memang`, `desa`) now read as spoken,
 a Wiktionary-derived layer corrects and extends the tables, and suffixed
-words read as their stem. Around 1,200 words change reading; every other
-export returns what it did in 0.1.2.
+words read as their stem. 156 of the 41,609 listed words change reading,
+and suffixed forms of them follow; every other export returns what it did
+in 0.1.2.
 
 ### Added
 
