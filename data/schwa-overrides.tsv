@@ -17,6 +17,7 @@ serong	0	Not se- + rong. Upstream's own test suite asserts /seroŋ/, listing it 
 teknologi	0	Loanword, not te- + knologi. The onset check already rejects it; the row keeps that explicit if the check ever loosens.
 metode	0	Loanword from Dutch "methode", not me- + tode.
 medan	0	Not me- + dan; the common sense is the place name and the field noun, both /medan/.
+teheran	0	Not te- + heran; the city, /teheran/. Reached the affix rules once data/indonesian-proper-nouns.tsv kept it from the English table.
 # Verified by a native speaker, 2026-08-25. These are homographs whose upstream
 # table offered two readings with no source to choose between them; the rows
 # below fix the default reading rather than the part-of-speech rule.

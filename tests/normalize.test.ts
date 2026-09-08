@@ -65,6 +65,18 @@ describe("normalizeText", () => {
     expect(normalizeText("versi 1.2.3")).toBe("versi satu titik dua titik tiga");
   });
 
+  test("leaves the full stop after a number alone", () => {
+    // `2000.` once matched as a number ending in a decimal point with nothing
+    // after it, and came out as `dua ribu titik nol` with the sentence's full
+    // stop gone.
+    expect(normalizeText("pada 2000.")).toBe("pada dua ribu.");
+    expect(normalizeText("tahun 1998. Lalu")).toBe(
+      "tahun seribu sembilan ratus sembilan puluh delapan. Lalu"
+    );
+    expect(normalizeText("versi 1.2.3.")).toBe("versi satu titik dua titik tiga.");
+    expect(normalizeText("Rp15.000.")).toBe("lima belas ribu rupiah.");
+  });
+
   test("is on by default, and can be switched off", () => {
     expect(toPhoneme("naik 5%").phonemes).toBe("naɪʔ lima pərsen");
     expect(toPhoneme("naik 5%", { normalize: false }).phonemes).toBe("naɪʔ 5%");
