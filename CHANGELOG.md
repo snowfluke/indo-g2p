@@ -23,6 +23,15 @@ jsr.json and `src/version.ts` in lockstep; the pre-commit hook rejects drift.
   wrong in the dictionary and right in the lexicon.
 - `serangan` and `keserangan` read with no schwa, from the lexicon, against
   their own root `serang` in the dictionary. Overridden.
+- A suffixed word now reads as its stem. `bebeknya` was `bəbeʔɲa` because
+  the affix rules peeled a prefix first and found `be-` + `bek` + `-nya`;
+  the same made `merahnya` into `me-` + `rah` + `-nya`. The rules now check
+  whether the word minus a suffix is listed before peeling anything, taking
+  the longest listed stem and never one under three letters. Over every
+  listed root with an `e` inflected with every suffix, 281,029 forms no
+  table lists, the wrong readings fall from 128,972 to 212, and the 212 are
+  roots that collide (`bedakan` is `bedak` + `-an` and `beda` + `-kan`). No
+  word in the test fixtures changes.
 
 ## [0.1.2] - 2026-08-25
 

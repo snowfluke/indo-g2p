@@ -54,6 +54,11 @@ const SUFFIXES: readonly string[] = [
   "i",
 ];
 
+/** The same suffixes, shortest first, for finding the longest listed stem. */
+const SUFFIXES_SHORTEST_FIRST: readonly string[] = [...SUFFIXES].sort(
+  (a, b) => a.length - b.length
+);
+
 /**
  * What an Indonesian root may start with: a vowel, one consonant, or one of
  * the clusters the language allows.
@@ -91,6 +96,18 @@ export type SchwaLookup = (word: string) => number | undefined;
  */
 export function affixSchwaMask(word: string, lookup: SchwaLookup, depth = 0): number | undefined {
   if (depth >= MAX_DEPTH) return undefined;
+
+  // A suffix carries no vowel, so a word whose stem is listed reads exactly as
+  // the stem does. Check that before peeling a prefix, or `bebeknya` becomes
+  // `be-` + `bek` + `-nya` and `merahnya` becomes `me-` + `rah` + `-nya`.
+  // Shortest suffix first, so the longest listed stem wins: `pelannya` is
+  // `pelan` + `-nya`, not `pel` + `-annya`. A stem under three letters is
+  // never a root, only a coincidence like `se` inside `sei`.
+  for (const suffix of SUFFIXES_SHORTEST_FIRST) {
+    if (!word.endsWith(suffix) || word.length < suffix.length + 3) continue;
+    const mask = lookup(word.slice(0, -suffix.length));
+    if (mask !== undefined) return mask;
+  }
 
   for (const prefix of SCHWA_PREFIXES) {
     if (!word.startsWith(prefix) || word.length <= prefix.length + 1) continue;
