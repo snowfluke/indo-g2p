@@ -70,6 +70,8 @@ applySchwa("sekolah")       // → "səkolah"                 schwa only, no oth
 normalizeText("Rp15.000")   // → "lima belas ribu rupiah"  text stays text
 spellNumber(2026)           // → "dua ribu dua puluh enam"
 spellDecimal(3, "14")       // → "tiga koma satu empat"
+collocationRules()          // → [{ word, triggers }]       the default schwa collocation rules
+resolveCollocations(words)  // → (string | undefined)[]    the default `resolveSchwa` resolver
 VERSION                     // → "0.2.1"
 ```
 

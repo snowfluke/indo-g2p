@@ -1,4 +1,6 @@
-Default to using Bun instead of Node.js.
+Default to using Bun instead of Node.js for tooling, scripts, and tests.
+
+The published library (`src/`) must stay runtime-neutral: it supports Node >= 18, Bun, Deno, and browsers. Do not use `Bun.*` or `node:*` APIs in `src/`. The Bun APIs below apply to `scripts/`, `tools/`, and tests only.
 
 - Use `bun <file>` instead of `node <file>` or `ts-node <file>`
 - Use `bun test` instead of `jest` or `vitest`
